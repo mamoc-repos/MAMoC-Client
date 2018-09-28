@@ -24,6 +24,8 @@ import android.net.nsd.NsdManager;
 import android.util.Log;
 
 public class NsdHelper {
+    public static final String BROADCAST_TAG = "NSDBroadcast";
+
     Context mContext;
     NsdManager mNsdManager;
     NsdManager.ResolveListener mResolveListener;

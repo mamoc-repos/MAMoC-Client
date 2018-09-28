@@ -2,7 +2,11 @@ package uk.ac.standrews.cs.emap;
 
 import android.os.Build;
 
-class MamocNode {
+import com.google.gson.Gson;
+
+import java.io.Serializable;
+
+class MamocNode implements Serializable {
     private String nodeName = Build.MODEL;
     private String osVersion = Build.VERSION.RELEASE;
     private String manufacturer = Build.MANUFACTURER;
@@ -49,15 +53,23 @@ class MamocNode {
         this.port = port;
     }
 
+    public static MamocNode fromJSON(String deviceJSON) {
+        Gson gson = new Gson();
+        MamocNode deviceDTO = gson.fromJson(deviceJSON, MamocNode.class);
+        return deviceDTO;
+    }
+
     @Override
     public String toString() {
-        return "MamocNode{" +
-                "nodeName='" + nodeName + '\'' +
-                ", osVersion='" + osVersion + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", ip='" + ip + '\'' +
-                ", port=" + port +
-                '}';
+//        return "MamocNode{" +
+//                "nodeName='" + nodeName + '\'' +
+//                ", osVersion='" + osVersion + '\'' +
+//                ", manufacturer='" + manufacturer + '\'' +
+//                ", ip='" + ip + '\'' +
+//                ", port=" + port +
+//                '}';
+        String stringRep = (new Gson()).toJson(this);
+        return stringRep;
     }
 
 }

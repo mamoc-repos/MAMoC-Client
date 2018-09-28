@@ -1,5 +1,6 @@
 package uk.ac.standrews.cs.emap;
 
+import android.Manifest;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
     private Button discoverButton;
+
+    public static final String WRITE_PERMISSION = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+    public static final int WRITE_PERM_REQ_CODE = 19;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,20 +61,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startNSD(){
-        if (isWifiConnected()){
+        if (Utils.isWifiConnected(this)){
             Intent nsdIntent = new Intent(MainActivity.this, NSD_Activity.class);
             startActivity(nsdIntent);
             finish();
         } else {
             Toast.makeText(this, "Wifi not connected! :(", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public boolean isWifiConnected()
-    {
-        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(this.getApplicationContext().CONNECTIVITY_SERVICE);
-
-        return (cm != null) && (cm.getActiveNetworkInfo() != null) &&
-                (cm.getActiveNetworkInfo().getType() == 1);
     }
 }
