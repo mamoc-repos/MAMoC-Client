@@ -1,8 +1,13 @@
 package uk.ac.standrews.cs.emap;
 
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -11,65 +16,65 @@ import java.net.Socket;
 public class ConnectionListener extends Thread {
 
     private Context mContext;
+    private int mPort;
+    private ServerSocket mServer;
 
     private boolean acceptRequests = true;
 
     public ConnectionListener(Context context, int port) throws IOException {
         this.mContext = context;
-        ServerListener server = new ServerListener(port);
-        server.start();
+        this.mPort = port;
     }
 
-    static class ServerListener extends Thread {
-        private int mPort;
-        private ServerSocket mServer;
+    @Override
+    public void run() {
+        try {
+            Log.v("ConnListener", Build.MANUFACTURER + ": conn listener: " + mPort);
 
-        public ServerListener(int port) throws IOException {
-            mServer = new ServerSocket(port);
-            mServer.setReuseAddress(true);        }
+            mServer = new ServerSocket(mPort);
+            mServer.setReuseAddress(true);
 
-        @Override
-        public void run() {
-            while (true) {
-
-                try {
-
-                    if (mServer != null && !mServer.isBound()){
-                        mServer.bind(new InetSocketAddress(mPort));
-                    }
-
-                    final Socket socketToClient = mServer.accept();
-                    ClientHandler clientHandler = new ClientHandler(socketToClient);
-                    clientHandler.start();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            if (mServer != null && !mServer.isBound()) {
+                mServer.bind(new InetSocketAddress(mPort));
             }
+
+            Socket client = null;
+
+            while (acceptRequests){
+                client = mServer.accept();
+                handleData(client.getInetAddress().getHostAddress(), client.getInputStream());
+            }
+
+            Log.v("ConnListener", "ConnListener Terminated");
+
+            client.close();
+            client = null;
+
+
+        } catch (IOException e) {
+            Log.v("ConnListener", Build.MANUFACTURER + ": ConnListener Exception: " + e.toString());
+            e.printStackTrace();
         }
     }
 
-    static class ClientHandler extends Thread{
-        private Socket socket;
-        ObjectInputStream inputStream;
+    private void handleData(String hostAddress, InputStream inputStream) {
+        byte[] input = Utils.getInputStreamByteArray(inputStream);
+        ObjectInput oin = null;
+        try {
+            oin = new ObjectInputStream(new ByteArrayInputStream(input));
+            ITransferable transferObject = (ITransferable) oin.readObject();
 
-        ClientHandler(Socket socket) throws IOException {
-            this.socket = socket;
-            inputStream = new ObjectInputStream(socket.getInputStream());
+            new DataHandler(mContext, transferObject, hostAddress).process();
+
+            oin.close();
+            return;
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
+    }
 
-        @Override
-        public void run() {
-            while (true) {
-                try {
-                    Object o = inputStream.readObject();
-                    System.out.println("Read object: "+o);
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+    public void tearDown(){
+        acceptRequests = false;
     }
 }

@@ -29,7 +29,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     PeerListFragment deviceListFragment;
 
     private MamocNode selectedNode;
-    ConnectionListener connListener;
+    AppController appController = null;
 
     View progressBar;
 
@@ -46,15 +46,12 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         String ip = Utils.getLocalIpAddress();
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
 
-
-        connListener = null;
+        appController = (AppController) getApplicationContext();
         try {
-            connListener = new ConnectionListener(this, Utils.getPort());
-
+            appController.startConnectionListener();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        connListener.start();
 
         checkWritePermission();
 
@@ -101,7 +98,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     }
 
     public void advertiseService(View v) {
-        nsdHelper.registerService(Utils.getPort());
+        nsdHelper.registerService(Utils.getPort(this));
 
         Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getLocalIpAddress());
         Snackbar.make(v, "Advertising service", Snackbar.LENGTH_LONG)
@@ -136,15 +133,16 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         //mNsdHelper.tearDown();
 //        Utility.clearPreferences(LocalDashNSD.this);
 //        appController.stopConnectionListener();
+//        connListener.stop();
         nsdHelper.tearDown();
-//        mNsdHelper = null;
-//        DBAdapter.getInstance(LocalDashNSD.this).clearDatabase();
+        nsdHelper = null;
+        DBAdapter.getInstance(this).clearDatabase();
         super.onDestroy();
     }
 
     @Override
     protected void onStop() {
-        Log.d("DXDX", Build.MANUFACTURER + ": local dash NSD Stopped");
+        Log.d("DXDX", Build.MANUFACTURER + ": NSD Stopped");
         super.onStop();
     }
 

@@ -73,6 +73,11 @@ public class PeerListFragment extends Fragment {
         fragmentListener = null;
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
     public interface OnListFragmentInteractionListener {
         void onListFragmentInteraction(MamocNode node);
     }

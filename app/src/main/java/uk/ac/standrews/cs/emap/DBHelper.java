@@ -21,7 +21,7 @@ class DBHelper extends SQLiteOpenHelper {
             + COL_DEV_IP + " TEXT NOT NULL, "
             + COL_DEV_MODEL + " TEXT NOT NULL, "
             + COL_DEV_PORT + " INTEGER DEFAULT -1, "
-            + COL_DEV_VERSION + " TEXT, " + ");";
+            + COL_DEV_VERSION + " TEXT " + ");";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -39,28 +40,30 @@ public class Utils {
         return null;
     }
 
-    public static int getPort() {
+    public static int getPort(Context context){
+        int localPort = Utils.getInt(context, "localport");
+        if (localPort < 0){
+           localPort = getNextFreePort();
+           Utils.savePort(context, "localport", localPort);
+        }
+        return localPort;
+    }
+
+    public static int getNextFreePort() {
+        int localPort = -1;
         ServerSocket socket = null;
         try {
             socket = new ServerSocket(0);
-            socket.setReuseAddress(true);
-            int port = socket.getLocalPort();
-            try {
+            localPort = socket.getLocalPort();
+            if (socket != null && !socket.isClosed()){
                 socket.close();
-            } catch (IOException e) {
-                // Ignore IOException on close()
             }
-            return port;
         } catch (IOException e) {
-        } finally {
-            if (socket != null) {
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                }
-            }
+            e.printStackTrace();
         }
-        return 0;
+
+        Log.v("Port", Build.MANUFACTURER + " asked for a port: " + localPort);
+        return localPort;
     }
 
     public static boolean isWifiConnected(Context context) {
@@ -99,9 +102,20 @@ public class Utils {
         prefsEditor.apply();
     }
 
+    private static void savePort(Context context, String localport, int localPort) {
+        SharedPreferences.Editor editor = context.getSharedPreferences("kkd", Context.MODE_PRIVATE).edit();
+        editor.putInt(localport, localPort);
+        editor.apply();
+    }
+
     public static String getValue(Context cxt, String key) {
         SharedPreferences prefs = cxt.getSharedPreferences("kkd", Context.MODE_PRIVATE);
         return prefs.getString(key, null);
+    }
+
+    public static int getInt(Context cxt, String key) {
+        SharedPreferences prefs = cxt.getSharedPreferences("kkd", Context.MODE_PRIVATE);
+        return prefs.getInt(key, -1);
     }
 
     public static boolean copyFile(InputStream is, OutputStream os) {
@@ -118,5 +132,23 @@ public class Utils {
             return false;
         }
         return true;
+    }
+
+    public static byte[] getInputStreamByteArray(InputStream inputStream) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        byte[] buffer = new byte[1024];
+        int len;
+
+        try {
+            while ((len = inputStream.read(buffer)) > -1){
+                baos.write(len);
+            }
+            baos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return baos.toByteArray();
     }
 }

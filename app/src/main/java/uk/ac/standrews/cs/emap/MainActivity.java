@@ -2,7 +2,9 @@ package uk.ac.standrews.cs.emap;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,7 +38,25 @@ public class MainActivity extends AppCompatActivity {
                 startNSD();
             }
         });
+
+        checkWritePermissions();
         logInterfaces();
+    }
+
+    private void checkWritePermissions() {
+        boolean isGranted = Utils.checkPermission(WRITE_PERMISSION, this);
+        if (!isGranted){
+            Utils.requestPermission(WRITE_PERMISSION, WRITE_PERM_REQ_CODE, this);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (grantResults[0] == PackageManager.PERMISSION_DENIED){
+            Toast.makeText(this, "This permission is needed!", Toast.LENGTH_SHORT).show();
+        //    finish();
+        }
     }
 
     private void logInterfaces(){

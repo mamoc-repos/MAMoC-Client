@@ -40,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <fragment
+        <FrameLayout
             android:id="@+id/fragment"
             android:name="uk.ac.standrews.cs.emap.PeerListFragment"
             android:tag="fragment_tag"

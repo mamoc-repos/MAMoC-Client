@@ -7,7 +7,7 @@ class DataSender {
     public static void sendCurrentDeviceData(Context context, String destIP, int destPort,
                                              boolean isRequest) {
         MamocNode currentNode = new MamocNode();
-        currentNode.setPort(Utils.getPort());
+        currentNode.setPort(Utils.getPort(context));
 
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
         if (playerName != null) {
@@ -42,7 +42,7 @@ class DataSender {
 
     public static void sendChatRequest(Context context, String destIP, int destPort) {
         MamocNode currentDevice = new MamocNode();
-        currentDevice.setPort(Utils.getPort());
+        currentDevice.setPort(Utils.getPort(context));
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
         if (playerName != null) {
             currentDevice.setNodeName(playerName);
@@ -55,7 +55,7 @@ class DataSender {
     public static void sendChatResponse(Context context, String destIP, int destPort, boolean
             isAccepted) {
         MamocNode currentDevice = new MamocNode();
-        currentDevice.setPort(Utils.getPort());
+        currentDevice.setPort(Utils.getPort(context));
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
         if (playerName != null) {
             currentDevice.setNodeName(playerName);

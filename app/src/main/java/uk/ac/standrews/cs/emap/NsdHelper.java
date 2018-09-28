@@ -31,7 +31,7 @@ public class NsdHelper {
     NsdManager.ResolveListener mResolveListener;
     NsdManager.DiscoveryListener mDiscoveryListener;
     NsdManager.RegistrationListener mRegistrationListener;
-    public static final String SERVICE_TYPE = "_http._tcp.";
+    public static final String SERVICE_TYPE = "_mamoc._tcp.";
     public static final String TAG = "NsdHelper";
     public String mServiceName = "MAMoC";
     NsdServiceInfo mService;
