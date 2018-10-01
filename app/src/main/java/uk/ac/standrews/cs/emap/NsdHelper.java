@@ -19,19 +19,28 @@
 package uk.ac.standrews.cs.emap;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.nsd.NsdServiceInfo;
 import android.net.nsd.NsdManager;
+import android.os.Build;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 public class NsdHelper {
     public static final String BROADCAST_TAG = "NSDBroadcast";
 
     Context mContext;
+    private LocalBroadcastManager broadcaster;
+
     NsdManager mNsdManager;
     NsdManager.ResolveListener mResolveListener;
     NsdManager.DiscoveryListener mDiscoveryListener;
     NsdManager.RegistrationListener mRegistrationListener;
     public static final String SERVICE_TYPE = "_mamoc._tcp.";
+    // There is an additional dot at the end of service name most probably by os, this is to
+    // rectify that problem
+    public static final String SERVICE_TYPE_PLUS_DOT = SERVICE_TYPE + ".";
+
     public static final String TAG = "NsdHelper";
     public String mServiceName = "MAMoC";
     NsdServiceInfo mService;
@@ -39,6 +48,7 @@ public class NsdHelper {
     public NsdHelper(Context context) {
         mContext = context;
         mNsdManager = (NsdManager) context.getSystemService(Context.NSD_SERVICE);
+        broadcaster = LocalBroadcastManager.getInstance(mContext);
     }
 
     public void initializeNsd() {
@@ -57,11 +67,19 @@ public class NsdHelper {
             @Override
             public void onServiceFound(NsdServiceInfo service) {
                 Log.d(TAG, "Service discovery success" + service);
-                if (!service.getServiceType().equals(SERVICE_TYPE)) {
+                String serviceType = service.getServiceType();
+                Log.d(TAG, "Service discovery success: " + service.getServiceName());
+                // For some reason the service type received has an extra dot with it, hence
+                // handling that case
+                boolean isOurService = serviceType.equals(SERVICE_TYPE) || serviceType.equals
+                        (SERVICE_TYPE_PLUS_DOT);
+                if (!isOurService) {
                     Log.d(TAG, "Unknown Service Type: " + service.getServiceType());
                 } else if (service.getServiceName().equals(mServiceName)) {
                     Log.d(TAG, "Same machine: " + mServiceName);
-                } else if (service.getServiceName().contains(mServiceName)){
+                } else if (service.getServiceName().contains(mServiceName)) {
+                    Log.d(TAG, "different machines. (" + service.getServiceName() + "-" +
+                            mServiceName + ")");
                     mNsdManager.resolveService(service, mResolveListener);
                 }
             }
@@ -105,12 +123,14 @@ public class NsdHelper {
                     return;
                 }
                 mService = serviceInfo;
+
+                Intent intent = new Intent(BROADCAST_TAG);
+                broadcaster.sendBroadcast(intent);
             }
         };
     }
     public void initializeRegistrationListener() {
         mRegistrationListener = new NsdManager.RegistrationListener() {
-
             @Override
             public void onServiceRegistered(NsdServiceInfo NsdServiceInfo) {
                 mServiceName = NsdServiceInfo.getServiceName();
@@ -140,6 +160,8 @@ public class NsdHelper {
         serviceInfo.setPort(port);
         serviceInfo.setServiceName(mServiceName);
         serviceInfo.setServiceType(SERVICE_TYPE);
+        Log.v(TAG, Build.MANUFACTURER + " registering service: " + port);
+
         mNsdManager.registerService(
                 serviceInfo, NsdManager.PROTOCOL_DNS_SD, mRegistrationListener);
     }

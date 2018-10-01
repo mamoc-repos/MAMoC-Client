@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -15,29 +16,61 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.ServerSocket;
+import java.nio.ByteOrder;
 import java.util.Enumeration;
 
 public class Utils {
 
-    public static String getLocalIpAddress()
+    public static String getLocalIpAddress(Context context)
     {
-        try {
-            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
-                NetworkInterface intf = en.nextElement();
-                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
-                    InetAddress inetAddress = enumIpAddr.nextElement();
-                    if (!inetAddress.isLoopbackAddress()) {
-                        return inetAddress.getHostAddress().toString();
-                    }
-                }
-            }
-        } catch (Exception ex) {
-            Log.e("IP Address", ex.toString());
+//        try {
+//            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+//                NetworkInterface intf = en.nextElement();
+//                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+//                    InetAddress inetAddress = enumIpAddr.nextElement();
+//                    if (!inetAddress.isLoopbackAddress()) {
+//                        return inetAddress.getHostAddress().toString();
+//                    }
+//                }
+//            }
+//        } catch (Exception ex) {
+//            Log.e("IP Address", ex.toString());
+//        }
+//        return null;
+
+
+        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        String ip = getDottedDecimalIP(wm.getConnectionInfo().getIpAddress());
+        return ip;
+    }
+
+    public static String getDottedDecimalIP(int ipAddr) {
+
+        if (ByteOrder.nativeOrder().equals(ByteOrder.LITTLE_ENDIAN)) {
+            ipAddr = Integer.reverseBytes(ipAddr);
         }
-        return null;
+
+        byte[] ipByteArray = BigInteger.valueOf(ipAddr).toByteArray();
+
+        //convert to dotted decimal notation:
+        String ipAddrStr = getDottedDecimalIP(ipByteArray);
+        return ipAddrStr;
+    }
+
+    public static String getDottedDecimalIP(byte[] ipAddr) {
+        //convert to dotted decimal notation:
+        String ipAddrStr = "";
+        for (int i = 0; i < ipAddr.length; i++) {
+            if (i > 0) {
+                ipAddrStr += ".";
+            }
+            ipAddrStr += ipAddr[i] & 0xFF;
+        }
+        return ipAddrStr;
     }
 
     public static int getPort(Context context){
@@ -141,14 +174,20 @@ public class Utils {
         int len;
 
         try {
-            while ((len = inputStream.read(buffer)) > -1){
-                baos.write(len);
+            while ((len = inputStream.read(buffer)) > -1) {
+                baos.write(buffer, 0, len);
             }
             baos.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
 
-        return baos.toByteArray();
+        return (baos.toByteArray());
+    }
+
+    public static void clearPreferences(Context cxt) {
+        SharedPreferences.Editor prefsEditor = cxt.getSharedPreferences("kkd", Context
+                .MODE_PRIVATE).edit();
+        prefsEditor.clear().commit();
     }
 }

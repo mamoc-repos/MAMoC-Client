@@ -1,6 +1,7 @@
 package uk.ac.standrews.cs.emap;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.InetAddress;
@@ -25,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String WRITE_PERMISSION = Manifest.permission.WRITE_EXTERNAL_STORAGE;
     public static final int WRITE_PERM_REQ_CODE = 19;
+    private TextView listeningPort;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listeningPort = findViewById(R.id.ListenPort);
 
         discoverButton = findViewById(R.id.discoverBtn);
         discoverButton.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
         checkWritePermissions();
         logInterfaces();
+    }
+
+    @SuppressLint("StringFormatMatches")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        DBAdapter.getInstance(MainActivity.this).clearDatabase();
+        listeningPort.setText(String.format(getString(R.string.port_info), Utils.getPort(this)));
     }
 
     private void checkWritePermissions() {
@@ -55,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults[0] == PackageManager.PERMISSION_DENIED){
             Toast.makeText(this, "This permission is needed!", Toast.LENGTH_SHORT).show();
-        //    finish();
+            finish();
         }
     }
 

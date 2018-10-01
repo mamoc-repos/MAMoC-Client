@@ -2,6 +2,7 @@ package uk.ac.standrews.cs.emap;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +16,14 @@ class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHolder> {
 
     public PeerListAdapter(List<MamocNode> nodes, PeerListFragment.OnListFragmentInteractionListener fragmentListener) {
         mNodes = nodes;
+        mListener = fragmentListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.device_item, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.device_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -41,18 +44,24 @@ class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        Log.v("count", String.valueOf(mNodes.size()));
+        return mNodes.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mContentView;
         public MamocNode node;
-        
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
             mContentView = (TextView) itemView;
+        }
+
+        @Override
+        public String toString() {
+            return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
 }

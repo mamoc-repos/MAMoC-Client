@@ -2,6 +2,7 @@ package uk.ac.standrews.cs.emap;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 class DataSender {
     public static void sendCurrentDeviceData(Context context, String destIP, int destPort,
@@ -23,6 +24,7 @@ class DataSender {
             transferData = TransferModelGenerator.generateDeviceTransferModelRequest
                     (currentNode);
         }
+        Log.v("sendcurrentdevicedata", destIP + destPort + transferData);
 
         sendData(context, destIP, destPort, transferData);
     }

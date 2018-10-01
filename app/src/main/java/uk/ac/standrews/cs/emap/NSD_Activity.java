@@ -43,7 +43,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
 
         progressBar = findViewById(R.id.progressBarNSD);
 
-        String ip = Utils.getLocalIpAddress();
+        String ip = Utils.getLocalIpAddress(this);
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
 
         appController = (AppController) getApplicationContext();
@@ -100,7 +100,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     public void advertiseService(View v) {
         nsdHelper.registerService(Utils.getPort(this));
 
-        Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getLocalIpAddress());
+        Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getLocalIpAddress(this));
         Snackbar.make(v, "Advertising service", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
@@ -110,7 +110,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         if (nsdHelper != null) {
             nsdHelper.stopDiscovery();
         }
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(localDashReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mamocReceiver);
         super.onPause();
     }
 
@@ -122,7 +122,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         filter.addAction(DataHandler.DEVICE_LIST_CHANGED);
         filter.addAction(DataHandler.REQUEST_RECEIVED);
         filter.addAction(DataHandler.RESPONSE_RECEIVED);
-        LocalBroadcastManager.getInstance(NSD_Activity.this).registerReceiver(localDashReceiver,
+        LocalBroadcastManager.getInstance(NSD_Activity.this).registerReceiver(mamocReceiver,
                 filter);
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(DataHandler
                 .DEVICE_LIST_CHANGED));
@@ -131,9 +131,8 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     @Override
     protected void onDestroy() {
         //mNsdHelper.tearDown();
-//        Utility.clearPreferences(LocalDashNSD.this);
-//        appController.stopConnectionListener();
-//        connListener.stop();
+        Utils.clearPreferences(this);
+        appController.stopConnectionListener();
         nsdHelper.tearDown();
         nsdHelper = null;
         DBAdapter.getInstance(this).clearDatabase();
@@ -146,9 +145,11 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         super.onStop();
     }
 
-    private BroadcastReceiver localDashReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver mamocReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.v("broadcastswitch", intent.getAction());
+
             switch (intent.getAction()) {
                 case NsdHelper.BROADCAST_TAG:
                     NsdServiceInfo serviceInfo = nsdHelper.getChosenServiceInfo();
@@ -157,9 +158,12 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                     DataSender.sendCurrentDeviceData(NSD_Activity.this, ipAddress, port, true);
                     break;
                 case DataHandler.DEVICE_LIST_CHANGED:
+                    Log.v("change:", DataHandler.DEVICE_LIST_CHANGED);
                     ArrayList<MamocNode> devices = DBAdapter.getInstance(NSD_Activity.this)
                             .getDeviceList();
                     int peerCount = (devices == null) ? 0 : devices.size();
+                    Log.v("peercount:", String.valueOf(peerCount));
+
                     if (peerCount > 0) {
                         progressBar.setVisibility(View.GONE);
                         deviceListFragment = new PeerListFragment();
@@ -199,6 +203,23 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     };
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+//        switch (requestCode) {
+//            case DialogUtils.CODE_PICK_IMAGE:
+//                if (resultCode == RESULT_OK) {
+//                    Uri imageUri = data.getData();
+//                    DataSender.sendFile(LocalDashNSD.this, selectedDevice.getIp(),
+//                            selectedDevice.getPort(), imageUri);
+//                }
+//                break;
+//            default:
+//                break;
+//        }
+    }
+
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
@@ -219,6 +240,6 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         Toast.makeText(this, "Trying to connect to: " + node.getNodeName(), Toast.LENGTH_SHORT).show();
         selectedNode = node;
         DialogUtils.getServiceSelectionDialog(this, selectedNode);
-
     }
+
 }

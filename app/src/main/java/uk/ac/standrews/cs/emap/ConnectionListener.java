@@ -59,7 +59,7 @@ public class ConnectionListener extends Thread {
 
     private void handleData(String hostAddress, InputStream inputStream) {
         byte[] input = Utils.getInputStreamByteArray(inputStream);
-        ObjectInput oin = null;
+        ObjectInput oin;
         try {
             oin = new ObjectInputStream(new ByteArrayInputStream(input));
             ITransferable transferObject = (ITransferable) oin.readObject();
