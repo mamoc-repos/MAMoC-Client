@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">EMAP</string>
-    <string name="nsd_title_with_count">NSD (%s)</string>
-    <string name="action_settings">Settings</string>
-    <string name="chat_request_title">Chat Request from %s</string>
-    <string name="port_info">Listening on port: %s</string>
-</resources>
