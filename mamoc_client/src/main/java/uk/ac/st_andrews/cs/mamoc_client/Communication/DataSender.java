@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
-import uk.ac.st_andrews.cs.mamoc_client.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class DataSender {
     public static void sendCurrentDeviceData(Context context, String destIP, int destPort,

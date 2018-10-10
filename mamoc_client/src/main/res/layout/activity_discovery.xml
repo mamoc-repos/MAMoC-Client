@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cloudletTextView" />
 
     <Button
-        android:id="@+id/cloudletConnect2"
+        android:id="@+id/cloudConnect"
         android:layout_width="196dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -82,9 +82,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloudletTextView2" />
+        app:layout_constraintTop_toBottomOf="@+id/cloudTextView" />
 
-    <TextView
+    <EditText
         android:id="@+id/cloudletTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -98,8 +98,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <TextView
-        android:id="@+id/cloudletTextView2"
+    <EditText
+        android:id="@+id/cloudTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="6dp"
@@ -107,7 +107,7 @@
         android:layout_marginBottom="13dp"
         android:text="Enter Cloud Server IP"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/cloudletConnect2"
+        app:layout_constraintBottom_toTopOf="@+id/cloudConnect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -120,7 +120,7 @@
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="197dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/cloudletTextView2"
+        app:layout_constraintBottom_toTopOf="@+id/cloudTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView2"
@@ -158,10 +158,10 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="11dp"
         android:text="Previously connected cloud servers:"
-        app:layout_constraintBottom_toTopOf="@+id/cloudletTextView2"
+        app:layout_constraintBottom_toTopOf="@+id/cloudTextView"
         app:layout_constraintEnd_toStartOf="@+id/cloudSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cloudletConnect" />
+        app:layout_constraintTop_toBottomOf="@+id/cloudConnect" />
 
     <!--<android.support.design.widget.FloatingActionButton-->
     <!--android:id="@+id/fab"-->

@@ -23,10 +23,11 @@ import java.util.Enumeration;
 
 import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
 import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
+import io.crossbar.autobahn.websocket.types.WebSocketOptions;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
-import uk.ac.st_andrews.cs.mamoc_client.WebSocket.Cloudlet;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PHONE_ACCESS_PERM_REQ_CODE;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.REQUEST_READ_PHONE_STATE;
@@ -62,58 +63,46 @@ public class DiscoveryActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        controller = new CommunicationController(this);
+        checkWritePermissions();
+        logInterfaces();
+
+        controller = CommunicationController.getInstance(this);
+
+        //new CommunicationController(this);
         controller.startConnectionListener();
 
         listeningPort = findViewById(R.id.ListenPort);
 
         discoverButton = findViewById(R.id.discoverBtn);
-        discoverButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startNSD();
-            }
-        });
+        discoverButton.setOnClickListener(View -> startNSD());
 
         cloudletBtn = findViewById(R.id.cloudletConnect);
         cloudletTextView = findViewById(R.id.cloudletTextView);
-        cloudBtn = findViewById(R.id.cloudletConnect2);
+        cloudBtn = findViewById(R.id.cloudConnect);
 
         cloudletSpinner = findViewById(R.id.cloudletSpinner);
         cloudletSpinnerAdapter = (ArrayAdapter<String>)cloudletSpinner.getAdapter();
 
         loadPrefs();
 
-        cloudletBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            //    cloudletIP = cloudletTextView.getText().toString();
-                try {
-                    connectCloudlet();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        cloudletBtn.setOnClickListener(view -> connectCloudlet());
+        cloudBtn.setOnClickListener(view -> connectCloud());
 
-        cloudBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                connectCloud();
-            }
-        });
-        checkWritePermissions();
-        logInterfaces();
     }
 
     private void loadPrefs() {
         String cloudletIP = Utils.getValue(this, "cloudletIP");
-        if (Utils.getValue(this, cloudletIP) != null) {
+        if (cloudletIP != null) {
             cloudletTextView.setText(cloudletIP);
-            cloudletSpinnerAdapter.add(cloudletIP);
+            // TODO: fix this
+//            cloudletSpinnerAdapter.add(cloudletIP);
         } else {
-            cloudletTextView.setText("localhost");
+            cloudletTextView.setText(R.string.localhost);
         }
+    }
+
+    private void savePrefs(String key, String value) {
+        Utils.save(this, key, value);
     }
 
     private void connectCloud() {
@@ -127,26 +116,28 @@ public class DiscoveryActivity extends AppCompatActivity {
         cloudlet = new CloudletNode(cloudletIP, 8080);
         cloudlet.setCpuFreq(5);
 
-        final String wsUri = "ws://192.168.0.12:9000";
+        final String wsUri = cloudletTextView.getText().toString();
+                //"ws://192.168.0.12:9000";
                 //"ws://" + cloudletIP + "/connect";
 
 //        if (!wsUri.startsWith("ws://") && !wsUri.startsWith("wss://")) {
 //            wsUri = "ws://" + wsUri;
 //        }
 
+        WebSocketOptions connectOptions = new WebSocketOptions();
+        connectOptions.setReconnectInterval(5000);
+
         try {
-            cloudlet.connect();
             cloudlet.cloudletConnection.connect(wsUri, new WebSocketConnectionHandler(){
             @Override
             public void onOpen() {
                 Utils.alert(DiscoveryActivity.this, "Connected.");
                 cloudletBtn.setText("Status: Connected to " + wsUri);
-                Utils.save(DiscoveryActivity.this, "cloudletIP", wsUri);
                 cloudletBtn.setEnabled(false);
-                controller.addCloudletDevices(cloudlet);
-//                savePrefs();
-//                mSendMessage.setEnabled(true);
-//                mMessage.setEnabled(true);
+                controller.addCloudletDevice(cloudlet);
+                cloudlet.send("hello");
+                savePrefs("cloudletIP", wsUri);
+                Log.d("connection: ", String.valueOf(cloudlet.cloudletConnection));
             }
 
             @Override
@@ -157,9 +148,11 @@ public class DiscoveryActivity extends AppCompatActivity {
             @Override
             public void onClose(int code, String reason) {
                 Utils.alert(DiscoveryActivity.this, "Connection lost.");
+                controller.removeCloudletDevice(cloudlet);
+                loadPrefs();
                 cloudletBtn.setEnabled(true);
             }
-        });
+        }, connectOptions);
     } catch (WebSocketException e) {
         Log.d(TAG, e.toString());
     }
@@ -171,6 +164,7 @@ public class DiscoveryActivity extends AppCompatActivity {
 //        client.send(new byte[] {(byte) 0xDE, (byte) 0xAD, (byte) 0xBE, (byte) 0xEF});
 //        client.end();
     }
+
 
     @SuppressLint("StringFormatMatches")
     @Override
@@ -238,5 +232,13 @@ public class DiscoveryActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        if (mConnection.isConnected()) {
+//            mConnection.sendClose();
+//        }
     }
 }

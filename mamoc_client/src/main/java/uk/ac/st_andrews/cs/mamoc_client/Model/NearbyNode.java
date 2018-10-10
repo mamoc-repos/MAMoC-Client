@@ -5,7 +5,7 @@ import android.os.Build;
 
 import java.util.Date;
 
-import uk.ac.st_andrews.cs.mamoc_client.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 import uk.ac.st_andrews.cs.mamoc_client.profilers.BatteryState;
 import uk.ac.st_andrews.cs.mamoc_client.profilers.DeviceProfiler;
 

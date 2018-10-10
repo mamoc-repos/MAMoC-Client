@@ -7,12 +7,14 @@ import java.util.TreeSet;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.NearbyNode;
-import uk.ac.st_andrews.cs.mamoc_client.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class CommunicationController {
     private Context mContext;
     private int myPort;
     private ConnectionListener connListener;
+
+    private static CommunicationController instance;
 
     private TreeSet<NearbyNode> nearbyDevices = new TreeSet<>();
     private TreeSet<CloudletNode> cloudletDevices = new TreeSet<>();
@@ -24,6 +26,17 @@ public class CommunicationController {
         this.mContext = context;
         myPort = Utils.getPort(mContext);
         connListener = new ConnectionListener(mContext, myPort);
+    }
+
+    public static CommunicationController getInstance(Context context) {
+        if (instance == null) {
+            synchronized (CommunicationController.class) {
+                if (instance == null) {
+                    instance = new CommunicationController(context);
+                }
+            }
+        }
+        return instance;
     }
 
     public void stopConnectionListener(){
@@ -84,8 +97,12 @@ public class CommunicationController {
         return cloudletDevices;
     }
 
-    public void addCloudletDevices(CloudletNode cloudletDevice) {
-        this.cloudletDevices.add(cloudletDevice);
+    public void addCloudletDevice(CloudletNode cloudlet) {
+        this.cloudletDevices.add(cloudlet);
+    }
+
+    public void removeCloudletDevice(CloudletNode cloudlet){
+        this.cloudletDevices.remove(cloudlet);
     }
 
     public TreeSet<CloudNode> getCloudDevices() {

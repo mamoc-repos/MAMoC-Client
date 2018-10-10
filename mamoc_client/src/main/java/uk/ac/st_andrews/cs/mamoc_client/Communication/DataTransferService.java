@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import uk.ac.st_andrews.cs.mamoc_client.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class DataTransferService extends IntentService {
     private static final int SOCKET_TIMEOUT = 5000;

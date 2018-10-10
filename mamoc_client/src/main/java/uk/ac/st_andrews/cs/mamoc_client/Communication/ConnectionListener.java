@@ -13,7 +13,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import uk.ac.st_andrews.cs.mamoc_client.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class ConnectionListener extends Thread {
 

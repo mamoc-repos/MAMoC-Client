@@ -1,0 +1,4 @@
+#Fri Sep 28 20:48:42 BST 2018
+base.0=/cs/home/djs21/StudioProjects/EMAP/app/build/intermediates/transforms/dexMerger/debug/4
+path.0=classes.dex
+renamed.0=classes.dex

@@ -20,21 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         discoveryBtn = findViewById(R.id.buttonDiscovery);
+        discoveryBtn.setOnClickListener(view -> openDiscoveryActivity());
 
-        discoveryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDiscoveryActivity();
-            }
-        });
         searchTextDemo = findViewById(R.id.buttonSearchText);
-
-        searchTextDemo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSearchTextDemo();
-            }
-        });
+        searchTextDemo.setOnClickListener(view -> openSearchTextDemo());
     }
 
     private void openDiscoveryActivity() {

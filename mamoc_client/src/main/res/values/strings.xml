@@ -6,4 +6,5 @@
     <string name="port_info">Listening on port: %s</string>
     <string name="cpu_cur_freq">CPU %1$d : Freq %2$s Hz</string>
     <string name="cpu_stopped">CPU %1$d: Stopped</string>
+    <string name="localhost">localhost</string>
 </resources>

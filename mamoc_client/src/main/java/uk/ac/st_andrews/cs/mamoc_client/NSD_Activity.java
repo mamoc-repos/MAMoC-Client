@@ -30,6 +30,8 @@ import uk.ac.st_andrews.cs.mamoc_client.Communication.NsdHelper;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.TransferConstants;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.DialogUtils;
+import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class NSD_Activity extends AppCompatActivity implements PeerListFragment.OnListFragmentInteractionListener {
     NsdHelper nsdHelper;

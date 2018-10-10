@@ -1,2 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uk.ac.st_andrews.cs.mamoc_client" />
+    xmlns:tools="http://schemas.android.com/tools"
+    package="uk.ac.st_andrews.cs.mamoc_client">
+
+<uses-permission android:name="android.permission.INTERNET" android:required="true" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" android:required="true" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" android:required="true"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+<uses-sdk tools:overrideLibrary="io.crossbar.autobahn"/>
+
+</manifest>
