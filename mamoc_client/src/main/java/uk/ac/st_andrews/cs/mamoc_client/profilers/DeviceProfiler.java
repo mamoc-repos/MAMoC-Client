@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -31,7 +33,16 @@ public class DeviceProfiler {
         this.context = context;
     }
 
-    public static int getNumCpuCores() {
+    @SuppressLint({"HardwareIds", "MissingPermission"})
+    public String getDeviceID(Context context){
+        TelephonyManager mngr = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
+        String IMEI = mngr.getDeviceId();
+        String device_unique_id = Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+        return device_unique_id;
+    }
+
+    public int getNumCpuCores() {
         try {
             // Get directory containing CPU info
             File dir = new File("/sys/devices/system/cpu/");
@@ -56,7 +67,7 @@ public class DeviceProfiler {
     }
 
     @SuppressLint("StringFormatInvalid")
-    public static List<String> getCpuCurFreq(Context mContext) {
+    public List<String> getCpuCurFreq(Context mContext) {
         List<String> result = new ArrayList<>();
         int mCpuCoreNumber = getNumCpuCores();
         BufferedReader br = null;
@@ -87,7 +98,6 @@ public class DeviceProfiler {
                 }
             }
         }
-
 
         return result;
     }
@@ -133,5 +143,4 @@ public class DeviceProfiler {
 
         return totalMemory;
     }
-
 }

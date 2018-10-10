@@ -16,7 +16,7 @@ public class DBAdapter {
 
     private SQLiteDatabase db = null;
 
-    public DBAdapter(Context context) {
+    private DBAdapter(Context context) {
         this.context = context;
         DBHelper dbHelper = new DBHelper(context);
         db = dbHelper.getWritableDatabase();
@@ -41,7 +41,7 @@ public class DBAdapter {
         values.put(DBHelper.COL_DEV_MODEL, device.getNodeName());
         values.put(DBHelper.COL_DEV_IP, device.getIp());
         values.put(DBHelper.COL_DEV_PORT, device.getPort());
-        values.put(DBHelper.COL_DEV_VERSION, device.getOsVersion());
+       // values.put(DBHelper.COL_DEV_VERSION, device.getOsVersion());
 
         if (!deviceExists(device.getIp())) {
             long rowId = db.insert(DBHelper.TABLE_DEVICES, null, values);
@@ -73,12 +73,12 @@ public class DBAdapter {
             device.setNodeName(cursor.getString(modelIndex));
             device.setIp(cursor.getString(ipIndex));
             device.setPort(cursor.getInt(portIndex));
-            device.setOsVersion(cursor.getString(versionIndex));
+        //    device.setOsVersion(cursor.getString(versionIndex));
 
             devices.add(device);
         }
 
-        if (cursor != null && !cursor.isClosed()) {
+        if (!cursor.isClosed()) {
             cursor.close();
         }
 
@@ -87,7 +87,7 @@ public class DBAdapter {
 
 
 
-    public boolean deviceExists(String ip) {
+    private boolean deviceExists(String ip) {
         Cursor cursor = db.query(DBHelper.TABLE_DEVICES, null, DBHelper.COL_DEV_IP + "=?", new
                 String[]{ip}, null, null, null);
 
@@ -126,10 +126,10 @@ public class DBAdapter {
             device.setNodeName(cursor.getString(modelIndex));
             device.setIp(cursor.getString(ipIndex));
             device.setPort(cursor.getInt(portIndex));
-            device.setOsVersion(cursor.getString(versionIndex));
+        //    device.setOsVersion(cursor.getString(versionIndex));
         }
 
-        if (cursor != null && !cursor.isClosed()) {
+        if (!cursor.isClosed()) {
             cursor.close();
         }
 

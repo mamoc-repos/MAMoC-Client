@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.DataHandler;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.DataSender;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.NsdHelper;
@@ -30,12 +31,12 @@ import uk.ac.st_andrews.cs.mamoc_client.Communication.TransferConstants;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
 
-public class NSD_Activity extends AppCompatActivity implements PeerListFragment.OnListFragmentInteractionListener{
+public class NSD_Activity extends AppCompatActivity implements PeerListFragment.OnListFragmentInteractionListener {
     NsdHelper nsdHelper;
     PeerListFragment deviceListFragment;
 
     private MamocNode selectedNode;
-    AppController appController = null;
+    CommunicationController communicationController = null;
 
     View progressBar;
 
@@ -47,13 +48,19 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         progressBar = findViewById(R.id.progressBarNSD);
 
         String ip = Utils.getLocalIpAddress(this);
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
 
-        appController = (AppController) getApplicationContext();
-        appController.startConnectionListener();
+//        communicationController = (CommunicationController) getApplicationContext();
+//        communicationController.startConnectionListener();
 
         checkWritePermission();
 
@@ -96,15 +103,22 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
             return true;
         }
 
+        // handle arrow click here
+        if (id == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
-    public void advertiseService(View v) {
+    public void advertiseService(View view) {
         nsdHelper.registerService(Utils.getPort(this));
 
         Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getLocalIpAddress(this));
-        Snackbar.make(v, "Advertising service", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        Snackbar.make(view,
+                "Advertising on: " + Utils.getLocalIpAddress(this),
+                Snackbar.LENGTH_LONG)
+                .show();
     }
 
     @Override
@@ -133,7 +147,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     @Override
     protected void onDestroy() {
         Utils.clearPreferences(NSD_Activity.this);
-        appController.stopConnectionListener();
+        communicationController.stopConnectionListener();
         nsdHelper.tearDown();
         nsdHelper = null;
         DBAdapter.getInstance(this).clearDatabase();
@@ -182,7 +196,6 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                 case DataHandler.REQUEST_RECEIVED:
                     MamocNode chatRequesterDevice = (MamocNode) intent.getSerializableExtra(DataHandler
                             .KEY_CHAT_REQUEST);
-                    //showChatRequestedDialog(chatRequesterDevice);
                     DialogUtils.getChatRequestDialog(NSD_Activity.this, chatRequesterDevice).show();
                     break;
                 case DataHandler.RESPONSE_RECEIVED:
@@ -241,6 +254,12 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         Toast.makeText(this, "Trying to connect to: " + node.getNodeName(), Toast.LENGTH_SHORT).show();
         selectedNode = node;
         DialogUtils.getServiceSelectionDialog(this, selectedNode);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 }

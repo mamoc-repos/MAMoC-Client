@@ -7,11 +7,30 @@ import com.google.gson.Gson;
 import java.io.Serializable;
 
 public class MamocNode implements Serializable {
-    private String nodeName = Build.MODEL;
-    private String osVersion = Build.VERSION.RELEASE;
-    private String manufacturer = Build.MANUFACTURER;
+
+    private String nodeName;
     private String ip;
     private int port;
+    private long joinedDate;
+    private int numberOfCPUs;
+    private int cpuFreq;
+    private long memoryMB;
+
+    public long getJoinedDate() { return joinedDate; }
+
+    public void setJoinedDate(long joinedDate) { this.joinedDate = joinedDate; }
+
+    public int getNumberOfCPUs() { return numberOfCPUs; }
+
+    public void setNumberOfCPUs(int numberOfCPUs) { this.numberOfCPUs = numberOfCPUs; }
+
+    public int getCpuFreq() { return cpuFreq; }
+
+    public void setCpuFreq(int cpuFreq) { this.cpuFreq = cpuFreq; }
+
+    public long getMemoryMB() { return memoryMB; }
+
+    public void setMemoryMB(long memoryMB) { this.memoryMB = memoryMB; }
 
     public String getNodeName() {
         return nodeName;
@@ -19,22 +38,6 @@ public class MamocNode implements Serializable {
 
     public void setNodeName(String nodeName) {
         this.nodeName = nodeName;
-    }
-
-    public String getOsVersion() {
-        return osVersion;
-    }
-
-    public void setOsVersion(String osVersion) {
-        this.osVersion = osVersion;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
     }
 
     public String getIp() {

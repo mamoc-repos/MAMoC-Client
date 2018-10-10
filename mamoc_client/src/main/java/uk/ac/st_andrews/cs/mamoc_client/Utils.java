@@ -32,15 +32,6 @@ public class Utils {
         toast.show();
     }
 
-    @SuppressLint({"HardwareIds", "MissingPermission"})
-    public static String getDeviceID(Context context){
-        TelephonyManager mngr = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
-        String IMEI = mngr.getDeviceId();
-        String device_unique_id = Settings.Secure.getString(context.getContentResolver(),
-                Settings.Secure.ANDROID_ID);
-        return device_unique_id;
-    }
-
     public static String getLocalIpAddress(Context context)
     {
         WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);

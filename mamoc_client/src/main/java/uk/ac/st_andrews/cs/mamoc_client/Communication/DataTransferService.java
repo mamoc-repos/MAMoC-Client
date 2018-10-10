@@ -17,7 +17,7 @@ import java.net.Socket;
 
 import uk.ac.st_andrews.cs.mamoc_client.Utils;
 
-class DataTransferService extends IntentService {
+public class DataTransferService extends IntentService {
     private static final int SOCKET_TIMEOUT = 5000;
 
     public static final String ACTION_SEND_FILE = "SEND_FILE";
