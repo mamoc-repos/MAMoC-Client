@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,17 +13,15 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.TreeSet;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 import io.crossbar.autobahn.wamp.Client;
 import io.crossbar.autobahn.wamp.Session;
+import io.crossbar.autobahn.wamp.interfaces.ISession;
 import io.crossbar.autobahn.wamp.types.CallResult;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
 import io.crossbar.autobahn.wamp.types.SessionDetails;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
 import uk.ac.standrews.cs.emap.R;
 
 public class SearchActivity extends AppCompatActivity {
@@ -73,27 +70,35 @@ public class SearchActivity extends AppCompatActivity {
         // Create a session object
         Session session = new Session();
         // Add all onJoin listeners
+        session.addOnConnectListener(this::onConnectCallback);
 //        session.addOnJoinListener(this::demonstrateSubscribe);
 //        session.addOnJoinListener(this::demonstratePublish);
-//        session.addOnJoinListener(this::demonstrateCall);
-//        session.addOnJoinListener(this::demonstrateRegister);
         session.addOnJoinListener(this::demonstrateCall);
+//        session.addOnJoinListener(this::demonstrateRegister);
 
         // finally, provide everything to a Client and connect
-        Client client = new Client(session, "ws://138.251.207.16:8080/ws", "realm1");
+        Client client = new Client(session, "ws://138.251.252.69:8080/ws", "realm1");
         CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
+
+        Log.d("client:", exitInfoCompletableFuture.toString());
 
     }
 
+    private void onConnectCallback(Session session) {
+        Log.d("session", "Session connected, ID=" + session.getID());
+    }
+
     public void demonstrateCall(Session session, SessionDetails details) {
+
+        Log.d("demonstrate","yeah");
 
         keyword = keywordTextView.getText().toString();
 
         // Call a remote procedure.
         CompletableFuture<CallResult> callFuture = session.call("uk.ac.standrews.cs.search", keyword);
 //        callFuture.thenAccept(callResult -> System.out.println(String.format(
-        callFuture.acceptEitherAsync(callResult ->
-                System.out.println(String.format("Call result: %s", callResult.results.get(0))));
+        callFuture.thenAccept(callResult ->
+                Log.d("callResult", String.format("Call result: %s", callResult.results.get(0))));
 
 //        try {
 //            Log.v("Call result: %s", (String) callFuture.get().results.get(0));
