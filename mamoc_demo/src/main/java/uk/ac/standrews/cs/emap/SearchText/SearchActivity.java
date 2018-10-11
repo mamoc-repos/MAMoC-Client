@@ -17,7 +17,6 @@ import java.util.concurrent.CompletableFuture;
 
 import io.crossbar.autobahn.wamp.Client;
 import io.crossbar.autobahn.wamp.Session;
-import io.crossbar.autobahn.wamp.interfaces.ISession;
 import io.crossbar.autobahn.wamp.types.CallResult;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
 import io.crossbar.autobahn.wamp.types.SessionDetails;
@@ -33,6 +32,7 @@ public class SearchActivity extends AppCompatActivity {
     //variables
     private String keyword;
     private CommunicationController controller;
+    private Session session;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,6 +55,15 @@ public class SearchActivity extends AppCompatActivity {
         localButton.setOnClickListener(view -> searchLocal());
         cloudletButton.setOnClickListener(view -> searchCloudlet());
 
+        // Create a session object
+        session = new Session();
+        // Add all onJoin listeners
+
+        session.addOnConnectListener(this::onConnectCallback);
+//        session.addOnJoinListener(this::demonstrateSubscribe);
+//        session.addOnJoinListener(this::demonstratePublish);
+        session.addOnJoinListener(this::demonstrateCall);
+//        session.addOnJoinListener(this::demonstrateRegister);
     }
 
     private void searchCloudlet() {
@@ -67,20 +76,11 @@ public class SearchActivity extends AppCompatActivity {
 //        Log.d("connection: ", String.valueOf(node.cloudletConnection));
 //        node.send(keyword);
 
-        // Create a session object
-        Session session = new Session();
-        // Add all onJoin listeners
-        session.addOnConnectListener(this::onConnectCallback);
-//        session.addOnJoinListener(this::demonstrateSubscribe);
-//        session.addOnJoinListener(this::demonstratePublish);
-        session.addOnJoinListener(this::demonstrateCall);
-//        session.addOnJoinListener(this::demonstrateRegister);
-
         // finally, provide everything to a Client and connect
-        Client client = new Client(session, "ws://138.251.252.69:8080/ws", "realm1");
+        Client client = new Client(session, "ws://104.248.167.173:8080/ws", "realm1");
         CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
 
-        Log.d("client:", exitInfoCompletableFuture.toString());
+        Log.d("client", exitInfoCompletableFuture.toString());
 
     }
 
@@ -90,12 +90,10 @@ public class SearchActivity extends AppCompatActivity {
 
     public void demonstrateCall(Session session, SessionDetails details) {
 
-        Log.d("demonstrate","yeah");
-
         keyword = keywordTextView.getText().toString();
 
         // Call a remote procedure.
-        CompletableFuture<CallResult> callFuture = session.call("uk.ac.standrews.cs.search", keyword);
+        CompletableFuture<CallResult> callFuture = session.call("com.arguments.add2", 2, 3);
 //        callFuture.thenAccept(callResult -> System.out.println(String.format(
         callFuture.thenAccept(callResult ->
                 Log.d("callResult", String.format("Call result: %s", callResult.results.get(0))));
