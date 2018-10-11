@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.TreeSet;
 import java.util.concurrent.CompletableFuture;
 
 import io.crossbar.autobahn.wamp.Client;
@@ -21,6 +22,7 @@ import io.crossbar.autobahn.wamp.types.CallResult;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
 import io.crossbar.autobahn.wamp.types.SessionDetails;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
+import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
 import uk.ac.standrews.cs.emap.R;
 
 public class SearchActivity extends AppCompatActivity {
@@ -32,7 +34,6 @@ public class SearchActivity extends AppCompatActivity {
     //variables
     private String keyword;
     private CommunicationController controller;
-    private Session session;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,55 +56,24 @@ public class SearchActivity extends AppCompatActivity {
         localButton.setOnClickListener(view -> searchLocal());
         cloudletButton.setOnClickListener(view -> searchCloudlet());
 
-        // Create a session object
-        session = new Session();
-        // Add all onJoin listeners
-
-        session.addOnConnectListener(this::onConnectCallback);
-//        session.addOnJoinListener(this::demonstrateSubscribe);
-//        session.addOnJoinListener(this::demonstratePublish);
-        session.addOnJoinListener(this::demonstrateCall);
-//        session.addOnJoinListener(this::demonstrateRegister);
     }
 
     private void searchCloudlet() {
 
         keyword = keywordTextView.getText().toString();
 
-//        TreeSet<CloudletNode> cloudletNodes = controller.getCloudletDevices();
-//        CloudletNode node = cloudletNodes.first();
-//        Log.d("cloudlet:", String.valueOf(node.getCpuFreq()));
-//        Log.d("connection: ", String.valueOf(node.cloudletConnection));
-//        node.send(keyword);
-
-        // finally, provide everything to a Client and connect
-        Client client = new Client(session, "ws://104.248.167.173:8080/ws", "realm1");
-        CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
-
-        Log.d("client", exitInfoCompletableFuture.toString());
-
-    }
-
-    private void onConnectCallback(Session session) {
-        Log.d("session", "Session connected, ID=" + session.getID());
-    }
-
-    public void demonstrateCall(Session session, SessionDetails details) {
-
-        keyword = keywordTextView.getText().toString();
+        TreeSet<CloudletNode> cloudletNodes = controller.getCloudletDevices();
+        CloudletNode node = cloudletNodes.first();
+        Log.d("cloudlet:", String.valueOf(node.getCpuFreq()));
 
         // Call a remote procedure.
-        CompletableFuture<CallResult> callFuture = session.call("com.arguments.add2", 2, 3);
+        CompletableFuture<CallResult> callFuture = node.session.call("com.arguments.add2", 2, 3);
 //        callFuture.thenAccept(callResult -> System.out.println(String.format(
         callFuture.thenAccept(callResult ->
                 Log.d("callResult", String.format("Call result: %s", callResult.results.get(0))));
 
-//        try {
-//            Log.v("Call result: %s", (String) callFuture.get().results.get(0));
-//        } catch (ExecutionException | InterruptedException e) {
-//            e.printStackTrace();
-//        }
     }
+    
 
     private void searchLocal() {
 

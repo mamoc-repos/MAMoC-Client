@@ -2,6 +2,7 @@ package uk.ac.st_andrews.cs.mamoc_client.Model;
 
 import android.util.Log;
 
+import io.crossbar.autobahn.wamp.Session;
 import io.crossbar.autobahn.websocket.WebSocketConnection;
 import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
 import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
@@ -13,10 +14,12 @@ public class CloudletNode extends MamocNode implements WebSocket, Comparable<Mam
 
     private String wsUri;
     public final IWebSocket cloudletConnection = new WebSocketConnection();
+    public Session session;
 
     public CloudletNode(String url, int i) {
         this.wsUri = url;
     //    connect();
+        session = new Session();
     }
 
     @Override

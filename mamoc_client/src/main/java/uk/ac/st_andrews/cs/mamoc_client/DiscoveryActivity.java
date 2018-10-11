@@ -20,7 +20,11 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.concurrent.CompletableFuture;
 
+import io.crossbar.autobahn.wamp.Client;
+import io.crossbar.autobahn.wamp.Session;
+import io.crossbar.autobahn.wamp.types.ExitInfo;
 import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
 import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
 import io.crossbar.autobahn.websocket.types.WebSocketOptions;
@@ -124,38 +128,46 @@ public class DiscoveryActivity extends AppCompatActivity {
 //            wsUri = "ws://" + wsUri;
 //        }
 
-        WebSocketOptions connectOptions = new WebSocketOptions();
-        connectOptions.setReconnectInterval(5000);
+        // Create a session object
+        // Add all onJoin listeners
 
-        try {
-            cloudlet.cloudletConnection.connect(wsUri, new WebSocketConnectionHandler(){
-            @Override
-            public void onOpen() {
-                Utils.alert(DiscoveryActivity.this, "Connected.");
-                cloudletBtn.setText("Status: Connected to " + wsUri);
-                cloudletBtn.setEnabled(false);
-                controller.addCloudletDevice(cloudlet);
-                cloudlet.send("hello");
-                savePrefs("cloudletIP", wsUri);
-                Log.d("connection: ", String.valueOf(cloudlet.cloudletConnection));
-            }
+        cloudlet.session.addOnConnectListener(this::onConnectCallback);
 
-            @Override
-            public void onMessage(String payload) {
-                Utils.alert(DiscoveryActivity.this, "Got echo: " + payload);
-            }
+        Client client = new Client(cloudlet.session, "ws://104.248.167.173:8080/ws", "realm1");
+        CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
 
-            @Override
-            public void onClose(int code, String reason) {
-                Utils.alert(DiscoveryActivity.this, "Connection lost.");
-                controller.removeCloudletDevice(cloudlet);
-                loadPrefs();
-                cloudletBtn.setEnabled(true);
-            }
-        }, connectOptions);
-    } catch (WebSocketException e) {
-        Log.d(TAG, e.toString());
-    }
+//        WebSocketOptions connectOptions = new WebSocketOptions();
+//        connectOptions.setReconnectInterval(5000);
+//
+//        try {
+//            cloudlet.cloudletConnection.connect(wsUri, new WebSocketConnectionHandler(){
+//            @Override
+//            public void onOpen() {
+//                Utils.alert(DiscoveryActivity.this, "Connected.");
+//                cloudletBtn.setText("Status: Connected to " + wsUri);
+//                cloudletBtn.setEnabled(false);
+//                controller.addCloudletDevice(cloudlet);
+//                cloudlet.send("hello");
+//                savePrefs("cloudletIP", wsUri);
+//                Log.d("connection: ", String.valueOf(cloudlet.cloudletConnection));
+//            }
+//
+//            @Override
+//            public void onMessage(String payload) {
+//                Utils.alert(DiscoveryActivity.this, "Got echo: " + payload);
+//            }
+//
+//            @Override
+//            public void onClose(int code, String reason) {
+//                Utils.alert(DiscoveryActivity.this, "Connection lost.");
+//                controller.removeCloudletDevice(cloudlet);
+//                loadPrefs();
+//                cloudletBtn.setEnabled(true);
+//            }
+//        }, connectOptions);
+//    } catch (WebSocketException e) {
+//        Log.d(TAG, e.toString());
+//    }
 
      //   if (cloudlet.isConnected()){
 //            cloudletBtn.setText("Connected to Cloudlet!");
@@ -165,6 +177,15 @@ public class DiscoveryActivity extends AppCompatActivity {
 //        client.end();
     }
 
+    private void onConnectCallback(Session session) {
+        Log.d("session", "Session connected, ID=" + session.getID());
+        Utils.alert(DiscoveryActivity.this, "Connected.");
+        cloudletBtn.setText("Status: Connected to " + "ws://104.248.167.173:8080/ws");
+        cloudletBtn.setEnabled(false);
+        controller.addCloudletDevice(cloudlet);
+        cloudlet.send("hello");
+        savePrefs("cloudletIP", "ws://104.248.167.173:8080/ws");
+    }
 
     @SuppressLint("StringFormatMatches")
     @Override
