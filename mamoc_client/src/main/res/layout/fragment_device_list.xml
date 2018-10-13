@@ -4,7 +4,7 @@
     android:layout_width="368dp"
     android:layout_height="551dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:name="uk.ac.standrews.cs.emap.DeviceFragment"
+    android:name="uk.ac.standrews.cs.mamoc.DeviceFragment"
     app:layoutManager="android.support.v7.widget.LinearLayoutManager"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

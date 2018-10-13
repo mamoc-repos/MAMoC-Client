@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">EMAP</string>
+    <string name="app_name">MAMoC</string>
+    <string name="local">Local</string>
+    <string name="edge">Edge</string>
+    <string name="cloud">Cloud</string>
+    <string name="mamoc">MAMoC</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
 </resources>

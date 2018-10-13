@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="uk.ac.standrews.cs.emap">
+    package="uk.ac.standrews.cs.mamoc">
 
     <uses-permission android:name="android.permission.INTERNET" android:required="true" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" android:required="true" />
@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="uk.ac.standrews.cs.emap.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,17 +34,25 @@
 
         <activity android:name="uk.ac.st_andrews.cs.mamoc_client.NSD_Activity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".SearchText.SearchActivity"
-            android:label="Search Text Demo"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Base"/>
 
         <service
             android:name="uk.ac.st_andrews.cs.mamoc_client.Communication.DataTransferService"
             android:enabled="true"/>
+
+        <activity android:name=".SearchText.SearchActivity"
+            android:label="Search Text Demo"
+            android:theme="@style/AppTheme.Base" />
+        <activity android:name=".Sorting.SortingActivity"
+            android:label="Sort Text Demo"
+            android:theme="@style/AppTheme.Base"/>
+        <activity android:name=".Mandelbrot.MandelbrotActivity"
+            android:label="Mandelbrot Demo"
+            android:theme="@style/AppTheme.Base"/>
+        <activity android:name=".NQueens.NQueensActivity"
+            android:label="NQueens Demo"
+            android:theme="@style/AppTheme.Base"/>
+
     </application>
-
-
 
 </manifest>

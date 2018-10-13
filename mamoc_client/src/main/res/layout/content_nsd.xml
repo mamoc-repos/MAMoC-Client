@@ -9,15 +9,6 @@
     tools:context=".NSD_Activity"
     tools:showIn="@layout/nsd_activity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:text="Logs"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-
     <FrameLayout
         android:id="@+id/deviceListHolder"
         android:layout_width="match_parent"

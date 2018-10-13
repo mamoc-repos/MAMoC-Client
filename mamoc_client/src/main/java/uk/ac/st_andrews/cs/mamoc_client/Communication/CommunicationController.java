@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.TreeSet;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
-import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.NearbyNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
@@ -17,7 +17,7 @@ public class CommunicationController {
     private static CommunicationController instance;
 
     private TreeSet<NearbyNode> nearbyDevices = new TreeSet<>();
-    private TreeSet<CloudletNode> cloudletDevices = new TreeSet<>();
+    private TreeSet<EdgeNode> edgeDevices = new TreeSet<>();
     private TreeSet<CloudNode> cloudDevices = new TreeSet<>();
 
     private boolean isConnectionListenerRunning = false;
@@ -93,16 +93,16 @@ public class CommunicationController {
         this.nearbyDevices = nearbyDevices;
     }
 
-    public TreeSet<CloudletNode> getCloudletDevices() {
-        return cloudletDevices;
+    public TreeSet<EdgeNode> getEdgeDevices() {
+        return edgeDevices;
     }
 
-    public void addCloudletDevice(CloudletNode cloudlet) {
-        this.cloudletDevices.add(cloudlet);
+    public void addEdgeDevice(EdgeNode edge) {
+        this.edgeDevices.add(edge);
     }
 
-    public void removeCloudletDevice(CloudletNode cloudlet){
-        this.cloudletDevices.remove(cloudlet);
+    public void removeEdgeDevice(EdgeNode edge){
+        this.edgeDevices.remove(edge);
     }
 
     public TreeSet<CloudNode> getCloudDevices() {

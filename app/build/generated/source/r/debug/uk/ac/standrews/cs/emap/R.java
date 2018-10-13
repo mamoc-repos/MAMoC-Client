@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package uk.ac.standrews.cs.emap;
+package uk.ac.standrews.cs.mamoc;
 
 public final class R {
   public static final class anim {
@@ -5544,35 +5544,35 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActionBar_background uk.ac.standrews.cs.emap:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_backgroundSplit uk.ac.standrews.cs.emap:backgroundSplit}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_backgroundStacked uk.ac.standrews.cs.emap:backgroundStacked}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetEnd uk.ac.standrews.cs.emap:contentInsetEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetEndWithActions uk.ac.standrews.cs.emap:contentInsetEndWithActions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetLeft uk.ac.standrews.cs.emap:contentInsetLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetRight uk.ac.standrews.cs.emap:contentInsetRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetStart uk.ac.standrews.cs.emap:contentInsetStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation uk.ac.standrews.cs.emap:contentInsetStartWithNavigation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_customNavigationLayout uk.ac.standrews.cs.emap:customNavigationLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_displayOptions uk.ac.standrews.cs.emap:displayOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_divider uk.ac.standrews.cs.emap:divider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_height uk.ac.standrews.cs.emap:height}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_hideOnContentScroll uk.ac.standrews.cs.emap:hideOnContentScroll}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_homeAsUpIndicator uk.ac.standrews.cs.emap:homeAsUpIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_homeLayout uk.ac.standrews.cs.emap:homeLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_icon uk.ac.standrews.cs.emap:icon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle uk.ac.standrews.cs.emap:indeterminateProgressStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_itemPadding uk.ac.standrews.cs.emap:itemPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_logo uk.ac.standrews.cs.emap:logo}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_navigationMode uk.ac.standrews.cs.emap:navigationMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_popupTheme uk.ac.standrews.cs.emap:popupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_progressBarPadding uk.ac.standrews.cs.emap:progressBarPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_progressBarStyle uk.ac.standrews.cs.emap:progressBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_subtitle uk.ac.standrews.cs.emap:subtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_subtitleTextStyle uk.ac.standrews.cs.emap:subtitleTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_title uk.ac.standrews.cs.emap:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_titleTextStyle uk.ac.standrews.cs.emap:titleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_background uk.ac.standrews.cs.mamoc:background}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_backgroundSplit uk.ac.standrews.cs.mamoc:backgroundSplit}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_backgroundStacked uk.ac.standrews.cs.mamoc:backgroundStacked}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetEnd uk.ac.standrews.cs.mamoc:contentInsetEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetEndWithActions uk.ac.standrews.cs.mamoc:contentInsetEndWithActions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetLeft uk.ac.standrews.cs.mamoc:contentInsetLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetRight uk.ac.standrews.cs.mamoc:contentInsetRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetStart uk.ac.standrews.cs.mamoc:contentInsetStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation uk.ac.standrews.cs.mamoc:contentInsetStartWithNavigation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_customNavigationLayout uk.ac.standrews.cs.mamoc:customNavigationLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_displayOptions uk.ac.standrews.cs.mamoc:displayOptions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_divider uk.ac.standrews.cs.mamoc:divider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_height uk.ac.standrews.cs.mamoc:height}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_hideOnContentScroll uk.ac.standrews.cs.mamoc:hideOnContentScroll}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_homeAsUpIndicator uk.ac.standrews.cs.mamoc:homeAsUpIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_homeLayout uk.ac.standrews.cs.mamoc:homeLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_icon uk.ac.standrews.cs.mamoc:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle uk.ac.standrews.cs.mamoc:indeterminateProgressStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_itemPadding uk.ac.standrews.cs.mamoc:itemPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_logo uk.ac.standrews.cs.mamoc:logo}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_navigationMode uk.ac.standrews.cs.mamoc:navigationMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_popupTheme uk.ac.standrews.cs.mamoc:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_progressBarPadding uk.ac.standrews.cs.mamoc:progressBarPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_progressBarStyle uk.ac.standrews.cs.mamoc:progressBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_subtitle uk.ac.standrews.cs.mamoc:subtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_subtitleTextStyle uk.ac.standrews.cs.mamoc:subtitleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_title uk.ac.standrews.cs.mamoc:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_titleTextStyle uk.ac.standrews.cs.mamoc:titleTextStyle}</code></td><td></td></tr>
      * </table>
      * @see #ActionBar_background
      * @see #ActionBar_backgroundSplit
@@ -5615,7 +5615,7 @@ public final class R {
         0x7f0301fe
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#background}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#background}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5623,11 +5623,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:background
+     * @attr name uk.ac.standrews.cs.mamoc:background
      */
     public static final int ActionBar_background=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundSplit}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundSplit}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5638,11 +5638,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundSplit
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundSplit
      */
     public static final int ActionBar_backgroundSplit=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundStacked}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundStacked}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5653,11 +5653,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundStacked
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundStacked
      */
     public static final int ActionBar_backgroundStacked=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetEnd}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5666,11 +5666,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetEnd
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetEnd
      */
     public static final int ActionBar_contentInsetEnd=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetEndWithActions}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetEndWithActions}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5679,11 +5679,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetEndWithActions
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetEndWithActions
      */
     public static final int ActionBar_contentInsetEndWithActions=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetLeft}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5692,11 +5692,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetLeft
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetLeft
      */
     public static final int ActionBar_contentInsetLeft=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetRight}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5705,11 +5705,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetRight
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetRight
      */
     public static final int ActionBar_contentInsetRight=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetStart}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5718,11 +5718,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetStart
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetStart
      */
     public static final int ActionBar_contentInsetStart=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetStartWithNavigation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetStartWithNavigation}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5731,11 +5731,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetStartWithNavigation
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetStartWithNavigation
      */
     public static final int ActionBar_contentInsetStartWithNavigation=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#customNavigationLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#customNavigationLayout}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5743,11 +5743,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:customNavigationLayout
+     * @attr name uk.ac.standrews.cs.mamoc:customNavigationLayout
      */
     public static final int ActionBar_customNavigationLayout=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#displayOptions}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#displayOptions}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -5765,11 +5765,11 @@ public final class R {
      * <tr><td>useLogo</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:displayOptions
+     * @attr name uk.ac.standrews.cs.mamoc:displayOptions
      */
     public static final int ActionBar_displayOptions=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#divider}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#divider}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5777,11 +5777,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:divider
+     * @attr name uk.ac.standrews.cs.mamoc:divider
      */
     public static final int ActionBar_divider=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5790,11 +5790,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int ActionBar_elevation=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#height}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#height}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5803,21 +5803,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:height
+     * @attr name uk.ac.standrews.cs.mamoc:height
      */
     public static final int ActionBar_height=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hideOnContentScroll}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hideOnContentScroll}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hideOnContentScroll
+     * @attr name uk.ac.standrews.cs.mamoc:hideOnContentScroll
      */
     public static final int ActionBar_hideOnContentScroll=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#homeAsUpIndicator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#homeAsUpIndicator}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5825,11 +5825,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:homeAsUpIndicator
+     * @attr name uk.ac.standrews.cs.mamoc:homeAsUpIndicator
      */
     public static final int ActionBar_homeAsUpIndicator=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#homeLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#homeLayout}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5837,11 +5837,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:homeLayout
+     * @attr name uk.ac.standrews.cs.mamoc:homeLayout
      */
     public static final int ActionBar_homeLayout=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#icon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#icon}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5849,11 +5849,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:icon
+     * @attr name uk.ac.standrews.cs.mamoc:icon
      */
     public static final int ActionBar_icon=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#indeterminateProgressStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#indeterminateProgressStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5861,11 +5861,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:indeterminateProgressStyle
+     * @attr name uk.ac.standrews.cs.mamoc:indeterminateProgressStyle
      */
     public static final int ActionBar_indeterminateProgressStyle=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemPadding}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5874,11 +5874,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:itemPadding
+     * @attr name uk.ac.standrews.cs.mamoc:itemPadding
      */
     public static final int ActionBar_itemPadding=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#logo}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#logo}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5886,11 +5886,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:logo
+     * @attr name uk.ac.standrews.cs.mamoc:logo
      */
     public static final int ActionBar_logo=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#navigationMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#navigationMode}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -5904,11 +5904,11 @@ public final class R {
      * <tr><td>tabMode</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:navigationMode
+     * @attr name uk.ac.standrews.cs.mamoc:navigationMode
      */
     public static final int ActionBar_navigationMode=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#popupTheme}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5916,11 +5916,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:popupTheme
+     * @attr name uk.ac.standrews.cs.mamoc:popupTheme
      */
     public static final int ActionBar_popupTheme=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#progressBarPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#progressBarPadding}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5929,11 +5929,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:progressBarPadding
+     * @attr name uk.ac.standrews.cs.mamoc:progressBarPadding
      */
     public static final int ActionBar_progressBarPadding=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#progressBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#progressBarStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5941,21 +5941,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:progressBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:progressBarStyle
      */
     public static final int ActionBar_progressBarStyle=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitle
+     * @attr name uk.ac.standrews.cs.mamoc:subtitle
      */
     public static final int ActionBar_subtitle=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitleTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitleTextStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5963,21 +5963,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitleTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:subtitleTextStyle
      */
     public static final int ActionBar_subtitleTextStyle=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#title}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#title}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:title
+     * @attr name uk.ac.standrews.cs.mamoc:title
      */
     public static final int ActionBar_title=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleTextStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5985,7 +5985,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:titleTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:titleTextStyle
      */
     public static final int ActionBar_titleTextStyle=28;
     /**
@@ -6067,12 +6067,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActionMode_background uk.ac.standrews.cs.emap:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_backgroundSplit uk.ac.standrews.cs.emap:backgroundSplit}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_closeItemLayout uk.ac.standrews.cs.emap:closeItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_height uk.ac.standrews.cs.emap:height}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_subtitleTextStyle uk.ac.standrews.cs.emap:subtitleTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_titleTextStyle uk.ac.standrews.cs.emap:titleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_background uk.ac.standrews.cs.mamoc:background}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_backgroundSplit uk.ac.standrews.cs.mamoc:backgroundSplit}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_closeItemLayout uk.ac.standrews.cs.mamoc:closeItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_height uk.ac.standrews.cs.mamoc:height}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_subtitleTextStyle uk.ac.standrews.cs.mamoc:subtitleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_titleTextStyle uk.ac.standrews.cs.mamoc:titleTextStyle}</code></td><td></td></tr>
      * </table>
      * @see #ActionMode_background
      * @see #ActionMode_backgroundSplit
@@ -6086,7 +6086,7 @@ public final class R {
         0x7f0301af, 0x7f0301fe
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#background}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#background}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6094,11 +6094,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:background
+     * @attr name uk.ac.standrews.cs.mamoc:background
      */
     public static final int ActionMode_background=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundSplit}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundSplit}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6109,11 +6109,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundSplit
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundSplit
      */
     public static final int ActionMode_backgroundSplit=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeItemLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeItemLayout}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6121,11 +6121,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeItemLayout
+     * @attr name uk.ac.standrews.cs.mamoc:closeItemLayout
      */
     public static final int ActionMode_closeItemLayout=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#height}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#height}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6134,11 +6134,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:height
+     * @attr name uk.ac.standrews.cs.mamoc:height
      */
     public static final int ActionMode_height=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitleTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitleTextStyle}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6146,11 +6146,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitleTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:subtitleTextStyle
      */
     public static final int ActionMode_subtitleTextStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleTextStyle}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6158,7 +6158,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:titleTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:titleTextStyle
      */
     public static final int ActionMode_titleTextStyle=5;
     /**
@@ -6168,8 +6168,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable uk.ac.standrews.cs.emap:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActivityChooserView_initialActivityCount uk.ac.standrews.cs.emap:initialActivityCount}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable uk.ac.standrews.cs.mamoc:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActivityChooserView_initialActivityCount uk.ac.standrews.cs.mamoc:initialActivityCount}</code></td><td></td></tr>
      * </table>
      * @see #ActivityChooserView_expandActivityOverflowButtonDrawable
      * @see #ActivityChooserView_initialActivityCount
@@ -6178,7 +6178,7 @@ public final class R {
         0x7f0300c1, 0x7f0300fe
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandActivityOverflowButtonDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandActivityOverflowButtonDrawable}
      * attribute's value can be found in the {@link #ActivityChooserView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6186,17 +6186,17 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:expandActivityOverflowButtonDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:expandActivityOverflowButtonDrawable
      */
     public static final int ActivityChooserView_expandActivityOverflowButtonDrawable=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#initialActivityCount}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#initialActivityCount}
      * attribute's value can be found in the {@link #ActivityChooserView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:initialActivityCount
+     * @attr name uk.ac.standrews.cs.mamoc:initialActivityCount
      */
     public static final int ActivityChooserView_initialActivityCount=1;
     /**
@@ -6207,13 +6207,13 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AlertDialog_android_layout android:layout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_buttonIconDimen uk.ac.standrews.cs.emap:buttonIconDimen}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout uk.ac.standrews.cs.emap:buttonPanelSideLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_listItemLayout uk.ac.standrews.cs.emap:listItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_listLayout uk.ac.standrews.cs.emap:listLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout uk.ac.standrews.cs.emap:multiChoiceItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_showTitle uk.ac.standrews.cs.emap:showTitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout uk.ac.standrews.cs.emap:singleChoiceItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_buttonIconDimen uk.ac.standrews.cs.mamoc:buttonIconDimen}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout uk.ac.standrews.cs.mamoc:buttonPanelSideLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_listItemLayout uk.ac.standrews.cs.mamoc:listItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_listLayout uk.ac.standrews.cs.mamoc:listLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout uk.ac.standrews.cs.mamoc:multiChoiceItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_showTitle uk.ac.standrews.cs.mamoc:showTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout uk.ac.standrews.cs.mamoc:singleChoiceItemLayout}</code></td><td></td></tr>
      * </table>
      * @see #AlertDialog_android_layout
      * @see #AlertDialog_buttonIconDimen
@@ -6241,7 +6241,7 @@ public final class R {
      */
     public static final int AlertDialog_android_layout=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonIconDimen}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonIconDimen}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6250,11 +6250,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonIconDimen
+     * @attr name uk.ac.standrews.cs.mamoc:buttonIconDimen
      */
     public static final int AlertDialog_buttonIconDimen=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonPanelSideLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonPanelSideLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6262,11 +6262,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonPanelSideLayout
+     * @attr name uk.ac.standrews.cs.mamoc:buttonPanelSideLayout
      */
     public static final int AlertDialog_buttonPanelSideLayout=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listItemLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6274,11 +6274,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listItemLayout
+     * @attr name uk.ac.standrews.cs.mamoc:listItemLayout
      */
     public static final int AlertDialog_listItemLayout=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6286,11 +6286,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listLayout
+     * @attr name uk.ac.standrews.cs.mamoc:listLayout
      */
     public static final int AlertDialog_listLayout=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#multiChoiceItemLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#multiChoiceItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6298,21 +6298,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:multiChoiceItemLayout
+     * @attr name uk.ac.standrews.cs.mamoc:multiChoiceItemLayout
      */
     public static final int AlertDialog_multiChoiceItemLayout=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showTitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showTitle}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:showTitle
+     * @attr name uk.ac.standrews.cs.mamoc:showTitle
      */
     public static final int AlertDialog_showTitle=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#singleChoiceItemLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#singleChoiceItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6320,7 +6320,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:singleChoiceItemLayout
+     * @attr name uk.ac.standrews.cs.mamoc:singleChoiceItemLayout
      */
     public static final int AlertDialog_singleChoiceItemLayout=7;
     /**
@@ -6522,9 +6522,9 @@ public final class R {
      * <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_touchscreenBlocksFocus android:touchscreenBlocksFocus}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_keyboardNavigationCluster android:keyboardNavigationCluster}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_expanded uk.ac.standrews.cs.emap:expanded}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_liftOnScroll uk.ac.standrews.cs.emap:liftOnScroll}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_expanded uk.ac.standrews.cs.mamoc:expanded}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_liftOnScroll uk.ac.standrews.cs.mamoc:liftOnScroll}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayout_android_background
      * @see #AppBarLayout_android_touchscreenBlocksFocus
@@ -6573,7 +6573,7 @@ public final class R {
      */
     public static final int AppBarLayout_android_keyboardNavigationCluster=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6582,27 +6582,27 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int AppBarLayout_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expanded}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expanded}
      * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:expanded
+     * @attr name uk.ac.standrews.cs.mamoc:expanded
      */
     public static final int AppBarLayout_expanded=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#liftOnScroll}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#liftOnScroll}
      * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:liftOnScroll
+     * @attr name uk.ac.standrews.cs.mamoc:liftOnScroll
      */
     public static final int AppBarLayout_liftOnScroll=5;
     /**
@@ -6612,10 +6612,10 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsed uk.ac.standrews.cs.emap:state_collapsed}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsible uk.ac.standrews.cs.emap:state_collapsible}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_liftable uk.ac.standrews.cs.emap:state_liftable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_lifted uk.ac.standrews.cs.emap:state_lifted}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsed uk.ac.standrews.cs.mamoc:state_collapsed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsible uk.ac.standrews.cs.mamoc:state_collapsible}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_liftable uk.ac.standrews.cs.mamoc:state_liftable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_lifted uk.ac.standrews.cs.mamoc:state_lifted}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayoutStates_state_collapsed
      * @see #AppBarLayoutStates_state_collapsible
@@ -6626,43 +6626,43 @@ public final class R {
         0x7f0301a2, 0x7f0301a3, 0x7f0301a4, 0x7f0301a5
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#state_collapsed}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#state_collapsed}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:state_collapsed
+     * @attr name uk.ac.standrews.cs.mamoc:state_collapsed
      */
     public static final int AppBarLayoutStates_state_collapsed=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#state_collapsible}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#state_collapsible}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:state_collapsible
+     * @attr name uk.ac.standrews.cs.mamoc:state_collapsible
      */
     public static final int AppBarLayoutStates_state_collapsible=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#state_liftable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#state_liftable}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:state_liftable
+     * @attr name uk.ac.standrews.cs.mamoc:state_liftable
      */
     public static final int AppBarLayoutStates_state_liftable=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#state_lifted}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#state_lifted}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:state_lifted
+     * @attr name uk.ac.standrews.cs.mamoc:state_lifted
      */
     public static final int AppBarLayoutStates_state_lifted=3;
     /**
@@ -6672,8 +6672,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags uk.ac.standrews.cs.emap:layout_scrollFlags}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator uk.ac.standrews.cs.emap:layout_scrollInterpolator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags uk.ac.standrews.cs.mamoc:layout_scrollFlags}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator uk.ac.standrews.cs.mamoc:layout_scrollInterpolator}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayout_Layout_layout_scrollFlags
      * @see #AppBarLayout_Layout_layout_scrollInterpolator
@@ -6682,7 +6682,7 @@ public final class R {
         0x7f03014c, 0x7f03014d
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_scrollFlags}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_scrollFlags}
      * attribute's value can be found in the {@link #AppBarLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -6699,11 +6699,11 @@ public final class R {
      * <tr><td>snapMargins</td><td>20</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_scrollFlags
+     * @attr name uk.ac.standrews.cs.mamoc:layout_scrollFlags
      */
     public static final int AppBarLayout_Layout_layout_scrollFlags=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_scrollInterpolator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_scrollInterpolator}
      * attribute's value can be found in the {@link #AppBarLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6711,7 +6711,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_scrollInterpolator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_scrollInterpolator
      */
     public static final int AppBarLayout_Layout_layout_scrollInterpolator=1;
     /**
@@ -6722,9 +6722,9 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatImageView_android_src android:src}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_srcCompat uk.ac.standrews.cs.emap:srcCompat}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_tint uk.ac.standrews.cs.emap:tint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_tintMode uk.ac.standrews.cs.emap:tintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_srcCompat uk.ac.standrews.cs.mamoc:srcCompat}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_tint uk.ac.standrews.cs.mamoc:tint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_tintMode uk.ac.standrews.cs.mamoc:tintMode}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatImageView_android_src
      * @see #AppCompatImageView_srcCompat
@@ -6750,7 +6750,7 @@ public final class R {
      */
     public static final int AppCompatImageView_android_src=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#srcCompat}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#srcCompat}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6758,22 +6758,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:srcCompat
+     * @attr name uk.ac.standrews.cs.mamoc:srcCompat
      */
     public static final int AppCompatImageView_srcCompat=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tint}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tint
+     * @attr name uk.ac.standrews.cs.mamoc:tint
      */
     public static final int AppCompatImageView_tint=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tintMode}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -6790,7 +6790,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tintMode
+     * @attr name uk.ac.standrews.cs.mamoc:tintMode
      */
     public static final int AppCompatImageView_tintMode=3;
     /**
@@ -6801,9 +6801,9 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatSeekBar_android_thumb android:thumb}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMark uk.ac.standrews.cs.emap:tickMark}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint uk.ac.standrews.cs.emap:tickMarkTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode uk.ac.standrews.cs.emap:tickMarkTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMark uk.ac.standrews.cs.mamoc:tickMark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint uk.ac.standrews.cs.mamoc:tickMarkTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode uk.ac.standrews.cs.mamoc:tickMarkTintMode}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatSeekBar_android_thumb
      * @see #AppCompatSeekBar_tickMark
@@ -6826,7 +6826,7 @@ public final class R {
      */
     public static final int AppCompatSeekBar_android_thumb=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tickMark}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tickMark}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6834,22 +6834,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tickMark
+     * @attr name uk.ac.standrews.cs.mamoc:tickMark
      */
     public static final int AppCompatSeekBar_tickMark=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tickMarkTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tickMarkTint}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tickMarkTint
+     * @attr name uk.ac.standrews.cs.mamoc:tickMarkTint
      */
     public static final int AppCompatSeekBar_tickMarkTint=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tickMarkTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tickMarkTintMode}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -6866,7 +6866,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tickMarkTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:tickMarkTintMode
      */
     public static final int AppCompatSeekBar_tickMarkTintMode=3;
     /**
@@ -7006,16 +7006,16 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatTextView_android_textAppearance android:textAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeMaxTextSize uk.ac.standrews.cs.emap:autoSizeMaxTextSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeMinTextSize uk.ac.standrews.cs.emap:autoSizeMinTextSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizePresetSizes uk.ac.standrews.cs.emap:autoSizePresetSizes}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeStepGranularity uk.ac.standrews.cs.emap:autoSizeStepGranularity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeTextType uk.ac.standrews.cs.emap:autoSizeTextType}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_firstBaselineToTopHeight uk.ac.standrews.cs.emap:firstBaselineToTopHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_fontFamily uk.ac.standrews.cs.emap:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_lastBaselineToBottomHeight uk.ac.standrews.cs.emap:lastBaselineToBottomHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_lineHeight uk.ac.standrews.cs.emap:lineHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_textAllCaps uk.ac.standrews.cs.emap:textAllCaps}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeMaxTextSize uk.ac.standrews.cs.mamoc:autoSizeMaxTextSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeMinTextSize uk.ac.standrews.cs.mamoc:autoSizeMinTextSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizePresetSizes uk.ac.standrews.cs.mamoc:autoSizePresetSizes}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeStepGranularity uk.ac.standrews.cs.mamoc:autoSizeStepGranularity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeTextType uk.ac.standrews.cs.mamoc:autoSizeTextType}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_firstBaselineToTopHeight uk.ac.standrews.cs.mamoc:firstBaselineToTopHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_fontFamily uk.ac.standrews.cs.mamoc:fontFamily}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_lastBaselineToBottomHeight uk.ac.standrews.cs.mamoc:lastBaselineToBottomHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_lineHeight uk.ac.standrews.cs.mamoc:lineHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_textAllCaps uk.ac.standrews.cs.mamoc:textAllCaps}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatTextView_android_textAppearance
      * @see #AppCompatTextView_autoSizeMaxTextSize
@@ -7047,7 +7047,7 @@ public final class R {
      */
     public static final int AppCompatTextView_android_textAppearance=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoSizeMaxTextSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoSizeMaxTextSize}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7056,11 +7056,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:autoSizeMaxTextSize
+     * @attr name uk.ac.standrews.cs.mamoc:autoSizeMaxTextSize
      */
     public static final int AppCompatTextView_autoSizeMaxTextSize=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoSizeMinTextSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoSizeMinTextSize}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7069,11 +7069,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:autoSizeMinTextSize
+     * @attr name uk.ac.standrews.cs.mamoc:autoSizeMinTextSize
      */
     public static final int AppCompatTextView_autoSizeMinTextSize=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoSizePresetSizes}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoSizePresetSizes}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7081,11 +7081,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:autoSizePresetSizes
+     * @attr name uk.ac.standrews.cs.mamoc:autoSizePresetSizes
      */
     public static final int AppCompatTextView_autoSizePresetSizes=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoSizeStepGranularity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoSizeStepGranularity}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7094,11 +7094,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:autoSizeStepGranularity
+     * @attr name uk.ac.standrews.cs.mamoc:autoSizeStepGranularity
      */
     public static final int AppCompatTextView_autoSizeStepGranularity=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoSizeTextType}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoSizeTextType}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -7111,11 +7111,11 @@ public final class R {
      * <tr><td>uniform</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:autoSizeTextType
+     * @attr name uk.ac.standrews.cs.mamoc:autoSizeTextType
      */
     public static final int AppCompatTextView_autoSizeTextType=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#firstBaselineToTopHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#firstBaselineToTopHeight}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7124,21 +7124,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:firstBaselineToTopHeight
+     * @attr name uk.ac.standrews.cs.mamoc:firstBaselineToTopHeight
      */
     public static final int AppCompatTextView_firstBaselineToTopHeight=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontFamily}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontFamily}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontFamily
+     * @attr name uk.ac.standrews.cs.mamoc:fontFamily
      */
     public static final int AppCompatTextView_fontFamily=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#lastBaselineToBottomHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#lastBaselineToBottomHeight}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7147,11 +7147,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:lastBaselineToBottomHeight
+     * @attr name uk.ac.standrews.cs.mamoc:lastBaselineToBottomHeight
      */
     public static final int AppCompatTextView_lastBaselineToBottomHeight=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#lineHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#lineHeight}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7160,11 +7160,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:lineHeight
+     * @attr name uk.ac.standrews.cs.mamoc:lineHeight
      */
     public static final int AppCompatTextView_lineHeight=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAllCaps}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAllCaps}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7174,7 +7174,7 @@ public final class R {
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAllCaps
+     * @attr name uk.ac.standrews.cs.mamoc:textAllCaps
      */
     public static final int AppCompatTextView_textAllCaps=10;
     /**
@@ -7186,125 +7186,125 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatTheme_android_windowIsFloating android:windowIsFloating}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppCompatTheme_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarDivider uk.ac.standrews.cs.emap:actionBarDivider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground uk.ac.standrews.cs.emap:actionBarItemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme uk.ac.standrews.cs.emap:actionBarPopupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarSize uk.ac.standrews.cs.emap:actionBarSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle uk.ac.standrews.cs.emap:actionBarSplitStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarStyle uk.ac.standrews.cs.emap:actionBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle uk.ac.standrews.cs.emap:actionBarTabBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle uk.ac.standrews.cs.emap:actionBarTabStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle uk.ac.standrews.cs.emap:actionBarTabTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTheme uk.ac.standrews.cs.emap:actionBarTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme uk.ac.standrews.cs.emap:actionBarWidgetTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionButtonStyle uk.ac.standrews.cs.emap:actionButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle uk.ac.standrews.cs.emap:actionDropDownStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance uk.ac.standrews.cs.emap:actionMenuTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor uk.ac.standrews.cs.emap:actionMenuTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeBackground uk.ac.standrews.cs.emap:actionModeBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle uk.ac.standrews.cs.emap:actionModeCloseButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable uk.ac.standrews.cs.emap:actionModeCloseDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable uk.ac.standrews.cs.emap:actionModeCopyDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable uk.ac.standrews.cs.emap:actionModeCutDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable uk.ac.standrews.cs.emap:actionModeFindDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable uk.ac.standrews.cs.emap:actionModePasteDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle uk.ac.standrews.cs.emap:actionModePopupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable uk.ac.standrews.cs.emap:actionModeSelectAllDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable uk.ac.standrews.cs.emap:actionModeShareDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground uk.ac.standrews.cs.emap:actionModeSplitBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeStyle uk.ac.standrews.cs.emap:actionModeStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable uk.ac.standrews.cs.emap:actionModeWebSearchDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle uk.ac.standrews.cs.emap:actionOverflowButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle uk.ac.standrews.cs.emap:actionOverflowMenuStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle uk.ac.standrews.cs.emap:activityChooserViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle uk.ac.standrews.cs.emap:alertDialogButtonGroupStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons uk.ac.standrews.cs.emap:alertDialogCenterButtons}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogStyle uk.ac.standrews.cs.emap:alertDialogStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogTheme uk.ac.standrews.cs.emap:alertDialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle uk.ac.standrews.cs.emap:autoCompleteTextViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle uk.ac.standrews.cs.emap:borderlessButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle uk.ac.standrews.cs.emap:buttonBarButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle uk.ac.standrews.cs.emap:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle uk.ac.standrews.cs.emap:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle uk.ac.standrews.cs.emap:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarStyle uk.ac.standrews.cs.emap:buttonBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonStyle uk.ac.standrews.cs.emap:buttonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall uk.ac.standrews.cs.emap:buttonStyleSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_checkboxStyle uk.ac.standrews.cs.emap:checkboxStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle uk.ac.standrews.cs.emap:checkedTextViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorAccent uk.ac.standrews.cs.emap:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating uk.ac.standrews.cs.emap:colorBackgroundFloating}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal uk.ac.standrews.cs.emap:colorButtonNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlActivated uk.ac.standrews.cs.emap:colorControlActivated}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight uk.ac.standrews.cs.emap:colorControlHighlight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlNormal uk.ac.standrews.cs.emap:colorControlNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorError uk.ac.standrews.cs.emap:colorError}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimary uk.ac.standrews.cs.emap:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark uk.ac.standrews.cs.emap:colorPrimaryDark}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal uk.ac.standrews.cs.emap:colorSwitchThumbNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_controlBackground uk.ac.standrews.cs.emap:controlBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dialogCornerRadius uk.ac.standrews.cs.emap:dialogCornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding uk.ac.standrews.cs.emap:dialogPreferredPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dialogTheme uk.ac.standrews.cs.emap:dialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dividerHorizontal uk.ac.standrews.cs.emap:dividerHorizontal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dividerVertical uk.ac.standrews.cs.emap:dividerVertical}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle uk.ac.standrews.cs.emap:dropDownListViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight uk.ac.standrews.cs.emap:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextBackground uk.ac.standrews.cs.emap:editTextBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextColor uk.ac.standrews.cs.emap:editTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextStyle uk.ac.standrews.cs.emap:editTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator uk.ac.standrews.cs.emap:homeAsUpIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle uk.ac.standrews.cs.emap:imageButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator uk.ac.standrews.cs.emap:listChoiceBackgroundIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog uk.ac.standrews.cs.emap:listDividerAlertDialog}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle uk.ac.standrews.cs.emap:listMenuViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle uk.ac.standrews.cs.emap:listPopupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight uk.ac.standrews.cs.emap:listPreferredItemHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge uk.ac.standrews.cs.emap:listPreferredItemHeightLarge}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall uk.ac.standrews.cs.emap:listPreferredItemHeightSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft uk.ac.standrews.cs.emap:listPreferredItemPaddingLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight uk.ac.standrews.cs.emap:listPreferredItemPaddingRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelBackground uk.ac.standrews.cs.emap:panelBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme uk.ac.standrews.cs.emap:panelMenuListTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth uk.ac.standrews.cs.emap:panelMenuListWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_popupMenuStyle uk.ac.standrews.cs.emap:popupMenuStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_popupWindowStyle uk.ac.standrews.cs.emap:popupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_radioButtonStyle uk.ac.standrews.cs.emap:radioButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyle uk.ac.standrews.cs.emap:ratingBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator uk.ac.standrews.cs.emap:ratingBarStyleIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall uk.ac.standrews.cs.emap:ratingBarStyleSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_searchViewStyle uk.ac.standrews.cs.emap:searchViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_seekBarStyle uk.ac.standrews.cs.emap:seekBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackground uk.ac.standrews.cs.emap:selectableItemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless uk.ac.standrews.cs.emap:selectableItemBackgroundBorderless}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle uk.ac.standrews.cs.emap:spinnerDropDownItemStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_spinnerStyle uk.ac.standrews.cs.emap:spinnerStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_switchStyle uk.ac.standrews.cs.emap:switchStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu uk.ac.standrews.cs.emap:textAppearanceLargePopupMenu}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem uk.ac.standrews.cs.emap:textAppearanceListItem}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSecondary uk.ac.standrews.cs.emap:textAppearanceListItemSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall uk.ac.standrews.cs.emap:textAppearanceListItemSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader uk.ac.standrews.cs.emap:textAppearancePopupMenuHeader}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle uk.ac.standrews.cs.emap:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle uk.ac.standrews.cs.emap:textAppearanceSearchResultTitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu uk.ac.standrews.cs.emap:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem uk.ac.standrews.cs.emap:textColorAlertDialogListItem}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl uk.ac.standrews.cs.emap:textColorSearchUrl}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle uk.ac.standrews.cs.emap:toolbarNavigationButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_toolbarStyle uk.ac.standrews.cs.emap:toolbarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_tooltipForegroundColor uk.ac.standrews.cs.emap:tooltipForegroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_tooltipFrameBackground uk.ac.standrews.cs.emap:tooltipFrameBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_viewInflaterClass uk.ac.standrews.cs.emap:viewInflaterClass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionBar uk.ac.standrews.cs.emap:windowActionBar}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay uk.ac.standrews.cs.emap:windowActionBarOverlay}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay uk.ac.standrews.cs.emap:windowActionModeOverlay}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor uk.ac.standrews.cs.emap:windowFixedHeightMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor uk.ac.standrews.cs.emap:windowFixedHeightMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor uk.ac.standrews.cs.emap:windowFixedWidthMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor uk.ac.standrews.cs.emap:windowFixedWidthMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor uk.ac.standrews.cs.emap:windowMinWidthMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor uk.ac.standrews.cs.emap:windowMinWidthMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowNoTitle uk.ac.standrews.cs.emap:windowNoTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarDivider uk.ac.standrews.cs.mamoc:actionBarDivider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground uk.ac.standrews.cs.mamoc:actionBarItemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme uk.ac.standrews.cs.mamoc:actionBarPopupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarSize uk.ac.standrews.cs.mamoc:actionBarSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle uk.ac.standrews.cs.mamoc:actionBarSplitStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarStyle uk.ac.standrews.cs.mamoc:actionBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle uk.ac.standrews.cs.mamoc:actionBarTabBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle uk.ac.standrews.cs.mamoc:actionBarTabStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle uk.ac.standrews.cs.mamoc:actionBarTabTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTheme uk.ac.standrews.cs.mamoc:actionBarTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme uk.ac.standrews.cs.mamoc:actionBarWidgetTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionButtonStyle uk.ac.standrews.cs.mamoc:actionButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle uk.ac.standrews.cs.mamoc:actionDropDownStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance uk.ac.standrews.cs.mamoc:actionMenuTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor uk.ac.standrews.cs.mamoc:actionMenuTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeBackground uk.ac.standrews.cs.mamoc:actionModeBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle uk.ac.standrews.cs.mamoc:actionModeCloseButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable uk.ac.standrews.cs.mamoc:actionModeCloseDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable uk.ac.standrews.cs.mamoc:actionModeCopyDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable uk.ac.standrews.cs.mamoc:actionModeCutDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable uk.ac.standrews.cs.mamoc:actionModeFindDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable uk.ac.standrews.cs.mamoc:actionModePasteDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle uk.ac.standrews.cs.mamoc:actionModePopupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable uk.ac.standrews.cs.mamoc:actionModeSelectAllDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable uk.ac.standrews.cs.mamoc:actionModeShareDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground uk.ac.standrews.cs.mamoc:actionModeSplitBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeStyle uk.ac.standrews.cs.mamoc:actionModeStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable uk.ac.standrews.cs.mamoc:actionModeWebSearchDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle uk.ac.standrews.cs.mamoc:actionOverflowButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle uk.ac.standrews.cs.mamoc:actionOverflowMenuStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle uk.ac.standrews.cs.mamoc:activityChooserViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle uk.ac.standrews.cs.mamoc:alertDialogButtonGroupStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons uk.ac.standrews.cs.mamoc:alertDialogCenterButtons}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogStyle uk.ac.standrews.cs.mamoc:alertDialogStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogTheme uk.ac.standrews.cs.mamoc:alertDialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle uk.ac.standrews.cs.mamoc:autoCompleteTextViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle uk.ac.standrews.cs.mamoc:borderlessButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle uk.ac.standrews.cs.mamoc:buttonBarButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle uk.ac.standrews.cs.mamoc:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle uk.ac.standrews.cs.mamoc:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle uk.ac.standrews.cs.mamoc:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarStyle uk.ac.standrews.cs.mamoc:buttonBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonStyle uk.ac.standrews.cs.mamoc:buttonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall uk.ac.standrews.cs.mamoc:buttonStyleSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_checkboxStyle uk.ac.standrews.cs.mamoc:checkboxStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle uk.ac.standrews.cs.mamoc:checkedTextViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorAccent uk.ac.standrews.cs.mamoc:colorAccent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating uk.ac.standrews.cs.mamoc:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal uk.ac.standrews.cs.mamoc:colorButtonNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlActivated uk.ac.standrews.cs.mamoc:colorControlActivated}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight uk.ac.standrews.cs.mamoc:colorControlHighlight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlNormal uk.ac.standrews.cs.mamoc:colorControlNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorError uk.ac.standrews.cs.mamoc:colorError}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimary uk.ac.standrews.cs.mamoc:colorPrimary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark uk.ac.standrews.cs.mamoc:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal uk.ac.standrews.cs.mamoc:colorSwitchThumbNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_controlBackground uk.ac.standrews.cs.mamoc:controlBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dialogCornerRadius uk.ac.standrews.cs.mamoc:dialogCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding uk.ac.standrews.cs.mamoc:dialogPreferredPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dialogTheme uk.ac.standrews.cs.mamoc:dialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dividerHorizontal uk.ac.standrews.cs.mamoc:dividerHorizontal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dividerVertical uk.ac.standrews.cs.mamoc:dividerVertical}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle uk.ac.standrews.cs.mamoc:dropDownListViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight uk.ac.standrews.cs.mamoc:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextBackground uk.ac.standrews.cs.mamoc:editTextBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextColor uk.ac.standrews.cs.mamoc:editTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextStyle uk.ac.standrews.cs.mamoc:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator uk.ac.standrews.cs.mamoc:homeAsUpIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle uk.ac.standrews.cs.mamoc:imageButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator uk.ac.standrews.cs.mamoc:listChoiceBackgroundIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog uk.ac.standrews.cs.mamoc:listDividerAlertDialog}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle uk.ac.standrews.cs.mamoc:listMenuViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle uk.ac.standrews.cs.mamoc:listPopupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight uk.ac.standrews.cs.mamoc:listPreferredItemHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge uk.ac.standrews.cs.mamoc:listPreferredItemHeightLarge}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall uk.ac.standrews.cs.mamoc:listPreferredItemHeightSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft uk.ac.standrews.cs.mamoc:listPreferredItemPaddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight uk.ac.standrews.cs.mamoc:listPreferredItemPaddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelBackground uk.ac.standrews.cs.mamoc:panelBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme uk.ac.standrews.cs.mamoc:panelMenuListTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth uk.ac.standrews.cs.mamoc:panelMenuListWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_popupMenuStyle uk.ac.standrews.cs.mamoc:popupMenuStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_popupWindowStyle uk.ac.standrews.cs.mamoc:popupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_radioButtonStyle uk.ac.standrews.cs.mamoc:radioButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyle uk.ac.standrews.cs.mamoc:ratingBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator uk.ac.standrews.cs.mamoc:ratingBarStyleIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall uk.ac.standrews.cs.mamoc:ratingBarStyleSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_searchViewStyle uk.ac.standrews.cs.mamoc:searchViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_seekBarStyle uk.ac.standrews.cs.mamoc:seekBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackground uk.ac.standrews.cs.mamoc:selectableItemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless uk.ac.standrews.cs.mamoc:selectableItemBackgroundBorderless}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle uk.ac.standrews.cs.mamoc:spinnerDropDownItemStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_spinnerStyle uk.ac.standrews.cs.mamoc:spinnerStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_switchStyle uk.ac.standrews.cs.mamoc:switchStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu uk.ac.standrews.cs.mamoc:textAppearanceLargePopupMenu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem uk.ac.standrews.cs.mamoc:textAppearanceListItem}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSecondary uk.ac.standrews.cs.mamoc:textAppearanceListItemSecondary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall uk.ac.standrews.cs.mamoc:textAppearanceListItemSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader uk.ac.standrews.cs.mamoc:textAppearancePopupMenuHeader}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle uk.ac.standrews.cs.mamoc:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle uk.ac.standrews.cs.mamoc:textAppearanceSearchResultTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu uk.ac.standrews.cs.mamoc:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem uk.ac.standrews.cs.mamoc:textColorAlertDialogListItem}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl uk.ac.standrews.cs.mamoc:textColorSearchUrl}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle uk.ac.standrews.cs.mamoc:toolbarNavigationButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_toolbarStyle uk.ac.standrews.cs.mamoc:toolbarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_tooltipForegroundColor uk.ac.standrews.cs.mamoc:tooltipForegroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_tooltipFrameBackground uk.ac.standrews.cs.mamoc:tooltipFrameBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_viewInflaterClass uk.ac.standrews.cs.mamoc:viewInflaterClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionBar uk.ac.standrews.cs.mamoc:windowActionBar}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay uk.ac.standrews.cs.mamoc:windowActionBarOverlay}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay uk.ac.standrews.cs.mamoc:windowActionModeOverlay}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor uk.ac.standrews.cs.mamoc:windowFixedHeightMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor uk.ac.standrews.cs.mamoc:windowFixedHeightMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor uk.ac.standrews.cs.mamoc:windowFixedWidthMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor uk.ac.standrews.cs.mamoc:windowFixedWidthMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor uk.ac.standrews.cs.mamoc:windowMinWidthMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor uk.ac.standrews.cs.mamoc:windowMinWidthMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowNoTitle uk.ac.standrews.cs.mamoc:windowNoTitle}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatTheme_android_windowIsFloating
      * @see #AppCompatTheme_android_windowAnimationStyle
@@ -7484,7 +7484,7 @@ public final class R {
      */
     public static final int AppCompatTheme_android_windowAnimationStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarDivider}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarDivider}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7492,11 +7492,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarDivider
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarDivider
      */
     public static final int AppCompatTheme_actionBarDivider=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarItemBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarItemBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7504,11 +7504,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarItemBackground
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarItemBackground
      */
     public static final int AppCompatTheme_actionBarItemBackground=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarPopupTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarPopupTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7516,11 +7516,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarPopupTheme
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarPopupTheme
      */
     public static final int AppCompatTheme_actionBarPopupTheme=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarSize}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7537,11 +7537,11 @@ public final class R {
      * <tr><td>wrap_content</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarSize
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarSize
      */
     public static final int AppCompatTheme_actionBarSize=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarSplitStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarSplitStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7549,11 +7549,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarSplitStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarSplitStyle
      */
     public static final int AppCompatTheme_actionBarSplitStyle=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7561,11 +7561,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarStyle
      */
     public static final int AppCompatTheme_actionBarStyle=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarTabBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarTabBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7573,11 +7573,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarTabBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarTabBarStyle
      */
     public static final int AppCompatTheme_actionBarTabBarStyle=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarTabStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarTabStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7585,11 +7585,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarTabStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarTabStyle
      */
     public static final int AppCompatTheme_actionBarTabStyle=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarTabTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarTabTextStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7597,11 +7597,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarTabTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarTabTextStyle
      */
     public static final int AppCompatTheme_actionBarTabTextStyle=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7609,11 +7609,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarTheme
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarTheme
      */
     public static final int AppCompatTheme_actionBarTheme=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionBarWidgetTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionBarWidgetTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7621,11 +7621,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionBarWidgetTheme
+     * @attr name uk.ac.standrews.cs.mamoc:actionBarWidgetTheme
      */
     public static final int AppCompatTheme_actionBarWidgetTheme=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7633,11 +7633,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionButtonStyle
      */
     public static final int AppCompatTheme_actionButtonStyle=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionDropDownStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionDropDownStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7645,11 +7645,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionDropDownStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionDropDownStyle
      */
     public static final int AppCompatTheme_actionDropDownStyle=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionMenuTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionMenuTextAppearance}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7657,11 +7657,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionMenuTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:actionMenuTextAppearance
      */
     public static final int AppCompatTheme_actionMenuTextAppearance=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionMenuTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionMenuTextColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7672,11 +7672,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionMenuTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:actionMenuTextColor
      */
     public static final int AppCompatTheme_actionMenuTextColor=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7684,11 +7684,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeBackground
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeBackground
      */
     public static final int AppCompatTheme_actionModeBackground=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeCloseButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeCloseButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7696,11 +7696,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeCloseButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeCloseButtonStyle
      */
     public static final int AppCompatTheme_actionModeCloseButtonStyle=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeCloseDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeCloseDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7708,11 +7708,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeCloseDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeCloseDrawable
      */
     public static final int AppCompatTheme_actionModeCloseDrawable=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeCopyDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeCopyDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7720,11 +7720,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeCopyDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeCopyDrawable
      */
     public static final int AppCompatTheme_actionModeCopyDrawable=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeCutDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeCutDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7732,11 +7732,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeCutDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeCutDrawable
      */
     public static final int AppCompatTheme_actionModeCutDrawable=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeFindDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeFindDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7744,11 +7744,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeFindDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeFindDrawable
      */
     public static final int AppCompatTheme_actionModeFindDrawable=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModePasteDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModePasteDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7756,11 +7756,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModePasteDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModePasteDrawable
      */
     public static final int AppCompatTheme_actionModePasteDrawable=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModePopupWindowStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModePopupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7768,11 +7768,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModePopupWindowStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionModePopupWindowStyle
      */
     public static final int AppCompatTheme_actionModePopupWindowStyle=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeSelectAllDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeSelectAllDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7780,11 +7780,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeSelectAllDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeSelectAllDrawable
      */
     public static final int AppCompatTheme_actionModeSelectAllDrawable=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeShareDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeShareDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7792,11 +7792,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeShareDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeShareDrawable
      */
     public static final int AppCompatTheme_actionModeShareDrawable=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeSplitBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeSplitBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7804,11 +7804,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeSplitBackground
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeSplitBackground
      */
     public static final int AppCompatTheme_actionModeSplitBackground=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7816,11 +7816,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeStyle
      */
     public static final int AppCompatTheme_actionModeStyle=28;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionModeWebSearchDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionModeWebSearchDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7828,11 +7828,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionModeWebSearchDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:actionModeWebSearchDrawable
      */
     public static final int AppCompatTheme_actionModeWebSearchDrawable=29;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionOverflowButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionOverflowButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7840,11 +7840,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionOverflowButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionOverflowButtonStyle
      */
     public static final int AppCompatTheme_actionOverflowButtonStyle=30;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionOverflowMenuStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionOverflowMenuStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7852,11 +7852,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionOverflowMenuStyle
+     * @attr name uk.ac.standrews.cs.mamoc:actionOverflowMenuStyle
      */
     public static final int AppCompatTheme_actionOverflowMenuStyle=31;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#activityChooserViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#activityChooserViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7864,11 +7864,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:activityChooserViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:activityChooserViewStyle
      */
     public static final int AppCompatTheme_activityChooserViewStyle=32;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alertDialogButtonGroupStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alertDialogButtonGroupStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7876,21 +7876,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:alertDialogButtonGroupStyle
+     * @attr name uk.ac.standrews.cs.mamoc:alertDialogButtonGroupStyle
      */
     public static final int AppCompatTheme_alertDialogButtonGroupStyle=33;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alertDialogCenterButtons}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alertDialogCenterButtons}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:alertDialogCenterButtons
+     * @attr name uk.ac.standrews.cs.mamoc:alertDialogCenterButtons
      */
     public static final int AppCompatTheme_alertDialogCenterButtons=34;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alertDialogStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alertDialogStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7898,11 +7898,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:alertDialogStyle
+     * @attr name uk.ac.standrews.cs.mamoc:alertDialogStyle
      */
     public static final int AppCompatTheme_alertDialogStyle=35;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alertDialogTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alertDialogTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7910,11 +7910,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:alertDialogTheme
+     * @attr name uk.ac.standrews.cs.mamoc:alertDialogTheme
      */
     public static final int AppCompatTheme_alertDialogTheme=36;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#autoCompleteTextViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#autoCompleteTextViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7922,11 +7922,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:autoCompleteTextViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:autoCompleteTextViewStyle
      */
     public static final int AppCompatTheme_autoCompleteTextViewStyle=37;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#borderlessButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#borderlessButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7934,11 +7934,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:borderlessButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:borderlessButtonStyle
      */
     public static final int AppCompatTheme_borderlessButtonStyle=38;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonBarButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonBarButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7946,11 +7946,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonBarButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonBarButtonStyle
      */
     public static final int AppCompatTheme_buttonBarButtonStyle=39;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonBarNegativeButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonBarNegativeButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7958,11 +7958,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonBarNegativeButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonBarNegativeButtonStyle
      */
     public static final int AppCompatTheme_buttonBarNegativeButtonStyle=40;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonBarNeutralButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonBarNeutralButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7970,11 +7970,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonBarNeutralButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonBarNeutralButtonStyle
      */
     public static final int AppCompatTheme_buttonBarNeutralButtonStyle=41;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonBarPositiveButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonBarPositiveButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7982,11 +7982,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonBarPositiveButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonBarPositiveButtonStyle
      */
     public static final int AppCompatTheme_buttonBarPositiveButtonStyle=42;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7994,11 +7994,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonBarStyle
      */
     public static final int AppCompatTheme_buttonBarStyle=43;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8006,11 +8006,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:buttonStyle
      */
     public static final int AppCompatTheme_buttonStyle=44;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonStyleSmall}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonStyleSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8018,11 +8018,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonStyleSmall
+     * @attr name uk.ac.standrews.cs.mamoc:buttonStyleSmall
      */
     public static final int AppCompatTheme_buttonStyleSmall=45;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkboxStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkboxStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8030,11 +8030,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkboxStyle
+     * @attr name uk.ac.standrews.cs.mamoc:checkboxStyle
      */
     public static final int AppCompatTheme_checkboxStyle=46;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkedTextViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkedTextViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8042,77 +8042,77 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkedTextViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:checkedTextViewStyle
      */
     public static final int AppCompatTheme_checkedTextViewStyle=47;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorAccent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorAccent}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorAccent
+     * @attr name uk.ac.standrews.cs.mamoc:colorAccent
      */
     public static final int AppCompatTheme_colorAccent=48;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorBackgroundFloating}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorBackgroundFloating}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorBackgroundFloating
+     * @attr name uk.ac.standrews.cs.mamoc:colorBackgroundFloating
      */
     public static final int AppCompatTheme_colorBackgroundFloating=49;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorButtonNormal}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorButtonNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorButtonNormal
+     * @attr name uk.ac.standrews.cs.mamoc:colorButtonNormal
      */
     public static final int AppCompatTheme_colorButtonNormal=50;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorControlActivated}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorControlActivated}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorControlActivated
+     * @attr name uk.ac.standrews.cs.mamoc:colorControlActivated
      */
     public static final int AppCompatTheme_colorControlActivated=51;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorControlHighlight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorControlHighlight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorControlHighlight
+     * @attr name uk.ac.standrews.cs.mamoc:colorControlHighlight
      */
     public static final int AppCompatTheme_colorControlHighlight=52;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorControlNormal}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorControlNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorControlNormal
+     * @attr name uk.ac.standrews.cs.mamoc:colorControlNormal
      */
     public static final int AppCompatTheme_colorControlNormal=53;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorError}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorError}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8123,44 +8123,44 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorError
+     * @attr name uk.ac.standrews.cs.mamoc:colorError
      */
     public static final int AppCompatTheme_colorError=54;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorPrimary}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorPrimary}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorPrimary
+     * @attr name uk.ac.standrews.cs.mamoc:colorPrimary
      */
     public static final int AppCompatTheme_colorPrimary=55;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorPrimaryDark}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorPrimaryDark}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorPrimaryDark
+     * @attr name uk.ac.standrews.cs.mamoc:colorPrimaryDark
      */
     public static final int AppCompatTheme_colorPrimaryDark=56;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorSwitchThumbNormal}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorSwitchThumbNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorSwitchThumbNormal
+     * @attr name uk.ac.standrews.cs.mamoc:colorSwitchThumbNormal
      */
     public static final int AppCompatTheme_colorSwitchThumbNormal=57;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#controlBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#controlBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8168,11 +8168,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:controlBackground
+     * @attr name uk.ac.standrews.cs.mamoc:controlBackground
      */
     public static final int AppCompatTheme_controlBackground=58;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dialogCornerRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dialogCornerRadius}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8181,11 +8181,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:dialogCornerRadius
+     * @attr name uk.ac.standrews.cs.mamoc:dialogCornerRadius
      */
     public static final int AppCompatTheme_dialogCornerRadius=59;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dialogPreferredPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dialogPreferredPadding}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8194,11 +8194,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:dialogPreferredPadding
+     * @attr name uk.ac.standrews.cs.mamoc:dialogPreferredPadding
      */
     public static final int AppCompatTheme_dialogPreferredPadding=60;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dialogTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dialogTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8206,11 +8206,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:dialogTheme
+     * @attr name uk.ac.standrews.cs.mamoc:dialogTheme
      */
     public static final int AppCompatTheme_dialogTheme=61;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dividerHorizontal}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dividerHorizontal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8218,11 +8218,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:dividerHorizontal
+     * @attr name uk.ac.standrews.cs.mamoc:dividerHorizontal
      */
     public static final int AppCompatTheme_dividerHorizontal=62;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dividerVertical}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dividerVertical}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8230,11 +8230,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:dividerVertical
+     * @attr name uk.ac.standrews.cs.mamoc:dividerVertical
      */
     public static final int AppCompatTheme_dividerVertical=63;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dropDownListViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dropDownListViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8242,11 +8242,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:dropDownListViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:dropDownListViewStyle
      */
     public static final int AppCompatTheme_dropDownListViewStyle=64;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dropdownListPreferredItemHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dropdownListPreferredItemHeight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8255,11 +8255,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:dropdownListPreferredItemHeight
+     * @attr name uk.ac.standrews.cs.mamoc:dropdownListPreferredItemHeight
      */
     public static final int AppCompatTheme_dropdownListPreferredItemHeight=65;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#editTextBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#editTextBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8267,11 +8267,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:editTextBackground
+     * @attr name uk.ac.standrews.cs.mamoc:editTextBackground
      */
     public static final int AppCompatTheme_editTextBackground=66;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#editTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#editTextColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8282,11 +8282,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:editTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:editTextColor
      */
     public static final int AppCompatTheme_editTextColor=67;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#editTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#editTextStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8294,11 +8294,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:editTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:editTextStyle
      */
     public static final int AppCompatTheme_editTextStyle=68;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#homeAsUpIndicator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#homeAsUpIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8306,11 +8306,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:homeAsUpIndicator
+     * @attr name uk.ac.standrews.cs.mamoc:homeAsUpIndicator
      */
     public static final int AppCompatTheme_homeAsUpIndicator=69;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#imageButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#imageButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8318,11 +8318,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:imageButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:imageButtonStyle
      */
     public static final int AppCompatTheme_imageButtonStyle=70;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listChoiceBackgroundIndicator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listChoiceBackgroundIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8330,11 +8330,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listChoiceBackgroundIndicator
+     * @attr name uk.ac.standrews.cs.mamoc:listChoiceBackgroundIndicator
      */
     public static final int AppCompatTheme_listChoiceBackgroundIndicator=71;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listDividerAlertDialog}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listDividerAlertDialog}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8342,11 +8342,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listDividerAlertDialog
+     * @attr name uk.ac.standrews.cs.mamoc:listDividerAlertDialog
      */
     public static final int AppCompatTheme_listDividerAlertDialog=72;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listMenuViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listMenuViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8354,11 +8354,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listMenuViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:listMenuViewStyle
      */
     public static final int AppCompatTheme_listMenuViewStyle=73;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPopupWindowStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPopupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8366,11 +8366,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:listPopupWindowStyle
+     * @attr name uk.ac.standrews.cs.mamoc:listPopupWindowStyle
      */
     public static final int AppCompatTheme_listPopupWindowStyle=74;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPreferredItemHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPreferredItemHeight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8379,11 +8379,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:listPreferredItemHeight
+     * @attr name uk.ac.standrews.cs.mamoc:listPreferredItemHeight
      */
     public static final int AppCompatTheme_listPreferredItemHeight=75;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPreferredItemHeightLarge}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPreferredItemHeightLarge}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8392,11 +8392,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:listPreferredItemHeightLarge
+     * @attr name uk.ac.standrews.cs.mamoc:listPreferredItemHeightLarge
      */
     public static final int AppCompatTheme_listPreferredItemHeightLarge=76;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPreferredItemHeightSmall}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPreferredItemHeightSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8405,11 +8405,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:listPreferredItemHeightSmall
+     * @attr name uk.ac.standrews.cs.mamoc:listPreferredItemHeightSmall
      */
     public static final int AppCompatTheme_listPreferredItemHeightSmall=77;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPreferredItemPaddingLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPreferredItemPaddingLeft}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8418,11 +8418,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:listPreferredItemPaddingLeft
+     * @attr name uk.ac.standrews.cs.mamoc:listPreferredItemPaddingLeft
      */
     public static final int AppCompatTheme_listPreferredItemPaddingLeft=78;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#listPreferredItemPaddingRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#listPreferredItemPaddingRight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8431,11 +8431,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:listPreferredItemPaddingRight
+     * @attr name uk.ac.standrews.cs.mamoc:listPreferredItemPaddingRight
      */
     public static final int AppCompatTheme_listPreferredItemPaddingRight=79;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#panelBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#panelBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8443,11 +8443,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:panelBackground
+     * @attr name uk.ac.standrews.cs.mamoc:panelBackground
      */
     public static final int AppCompatTheme_panelBackground=80;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#panelMenuListTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#panelMenuListTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8455,11 +8455,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:panelMenuListTheme
+     * @attr name uk.ac.standrews.cs.mamoc:panelMenuListTheme
      */
     public static final int AppCompatTheme_panelMenuListTheme=81;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#panelMenuListWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#panelMenuListWidth}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8468,11 +8468,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:panelMenuListWidth
+     * @attr name uk.ac.standrews.cs.mamoc:panelMenuListWidth
      */
     public static final int AppCompatTheme_panelMenuListWidth=82;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#popupMenuStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#popupMenuStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8480,11 +8480,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:popupMenuStyle
+     * @attr name uk.ac.standrews.cs.mamoc:popupMenuStyle
      */
     public static final int AppCompatTheme_popupMenuStyle=83;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#popupWindowStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#popupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8492,11 +8492,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:popupWindowStyle
+     * @attr name uk.ac.standrews.cs.mamoc:popupWindowStyle
      */
     public static final int AppCompatTheme_popupWindowStyle=84;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#radioButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#radioButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8504,11 +8504,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:radioButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:radioButtonStyle
      */
     public static final int AppCompatTheme_radioButtonStyle=85;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#ratingBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#ratingBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8516,11 +8516,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:ratingBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:ratingBarStyle
      */
     public static final int AppCompatTheme_ratingBarStyle=86;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#ratingBarStyleIndicator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#ratingBarStyleIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8528,11 +8528,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:ratingBarStyleIndicator
+     * @attr name uk.ac.standrews.cs.mamoc:ratingBarStyleIndicator
      */
     public static final int AppCompatTheme_ratingBarStyleIndicator=87;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#ratingBarStyleSmall}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#ratingBarStyleSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8540,11 +8540,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:ratingBarStyleSmall
+     * @attr name uk.ac.standrews.cs.mamoc:ratingBarStyleSmall
      */
     public static final int AppCompatTheme_ratingBarStyleSmall=88;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#searchViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#searchViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8552,11 +8552,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:searchViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:searchViewStyle
      */
     public static final int AppCompatTheme_searchViewStyle=89;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#seekBarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#seekBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8564,11 +8564,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:seekBarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:seekBarStyle
      */
     public static final int AppCompatTheme_seekBarStyle=90;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#selectableItemBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#selectableItemBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8576,11 +8576,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:selectableItemBackground
+     * @attr name uk.ac.standrews.cs.mamoc:selectableItemBackground
      */
     public static final int AppCompatTheme_selectableItemBackground=91;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#selectableItemBackgroundBorderless}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#selectableItemBackgroundBorderless}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8588,11 +8588,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:selectableItemBackgroundBorderless
+     * @attr name uk.ac.standrews.cs.mamoc:selectableItemBackgroundBorderless
      */
     public static final int AppCompatTheme_selectableItemBackgroundBorderless=92;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#spinnerDropDownItemStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#spinnerDropDownItemStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8600,11 +8600,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:spinnerDropDownItemStyle
+     * @attr name uk.ac.standrews.cs.mamoc:spinnerDropDownItemStyle
      */
     public static final int AppCompatTheme_spinnerDropDownItemStyle=93;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#spinnerStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#spinnerStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8612,11 +8612,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:spinnerStyle
+     * @attr name uk.ac.standrews.cs.mamoc:spinnerStyle
      */
     public static final int AppCompatTheme_spinnerStyle=94;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#switchStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#switchStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8624,11 +8624,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:switchStyle
+     * @attr name uk.ac.standrews.cs.mamoc:switchStyle
      */
     public static final int AppCompatTheme_switchStyle=95;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceLargePopupMenu}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceLargePopupMenu}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8636,11 +8636,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceLargePopupMenu
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceLargePopupMenu
      */
     public static final int AppCompatTheme_textAppearanceLargePopupMenu=96;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceListItem}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceListItem}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8648,11 +8648,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceListItem
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceListItem
      */
     public static final int AppCompatTheme_textAppearanceListItem=97;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceListItemSecondary}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceListItemSecondary}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8660,11 +8660,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceListItemSecondary
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceListItemSecondary
      */
     public static final int AppCompatTheme_textAppearanceListItemSecondary=98;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceListItemSmall}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceListItemSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8672,11 +8672,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceListItemSmall
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceListItemSmall
      */
     public static final int AppCompatTheme_textAppearanceListItemSmall=99;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearancePopupMenuHeader}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearancePopupMenuHeader}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8684,11 +8684,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearancePopupMenuHeader
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearancePopupMenuHeader
      */
     public static final int AppCompatTheme_textAppearancePopupMenuHeader=100;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceSearchResultSubtitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceSearchResultSubtitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8696,11 +8696,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceSearchResultSubtitle
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceSearchResultSubtitle
      */
     public static final int AppCompatTheme_textAppearanceSearchResultSubtitle=101;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceSearchResultTitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceSearchResultTitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8708,11 +8708,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceSearchResultTitle
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceSearchResultTitle
      */
     public static final int AppCompatTheme_textAppearanceSearchResultTitle=102;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceSmallPopupMenu}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceSmallPopupMenu}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8720,11 +8720,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceSmallPopupMenu
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceSmallPopupMenu
      */
     public static final int AppCompatTheme_textAppearanceSmallPopupMenu=103;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textColorAlertDialogListItem}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textColorAlertDialogListItem}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8735,11 +8735,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textColorAlertDialogListItem
+     * @attr name uk.ac.standrews.cs.mamoc:textColorAlertDialogListItem
      */
     public static final int AppCompatTheme_textColorAlertDialogListItem=104;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textColorSearchUrl}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textColorSearchUrl}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8750,11 +8750,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textColorSearchUrl
+     * @attr name uk.ac.standrews.cs.mamoc:textColorSearchUrl
      */
     public static final int AppCompatTheme_textColorSearchUrl=105;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#toolbarNavigationButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#toolbarNavigationButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8762,11 +8762,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:toolbarNavigationButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:toolbarNavigationButtonStyle
      */
     public static final int AppCompatTheme_toolbarNavigationButtonStyle=106;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#toolbarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#toolbarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8774,11 +8774,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:toolbarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:toolbarStyle
      */
     public static final int AppCompatTheme_toolbarStyle=107;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tooltipForegroundColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tooltipForegroundColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8789,11 +8789,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tooltipForegroundColor
+     * @attr name uk.ac.standrews.cs.mamoc:tooltipForegroundColor
      */
     public static final int AppCompatTheme_tooltipForegroundColor=108;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tooltipFrameBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tooltipFrameBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8801,51 +8801,51 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tooltipFrameBackground
+     * @attr name uk.ac.standrews.cs.mamoc:tooltipFrameBackground
      */
     public static final int AppCompatTheme_tooltipFrameBackground=109;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#viewInflaterClass}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#viewInflaterClass}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:viewInflaterClass
+     * @attr name uk.ac.standrews.cs.mamoc:viewInflaterClass
      */
     public static final int AppCompatTheme_viewInflaterClass=110;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowActionBar}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowActionBar}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:windowActionBar
+     * @attr name uk.ac.standrews.cs.mamoc:windowActionBar
      */
     public static final int AppCompatTheme_windowActionBar=111;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowActionBarOverlay}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowActionBarOverlay}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:windowActionBarOverlay
+     * @attr name uk.ac.standrews.cs.mamoc:windowActionBarOverlay
      */
     public static final int AppCompatTheme_windowActionBarOverlay=112;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowActionModeOverlay}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowActionModeOverlay}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:windowActionModeOverlay
+     * @attr name uk.ac.standrews.cs.mamoc:windowActionModeOverlay
      */
     public static final int AppCompatTheme_windowActionModeOverlay=113;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowFixedHeightMajor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowFixedHeightMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8858,11 +8858,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowFixedHeightMajor
+     * @attr name uk.ac.standrews.cs.mamoc:windowFixedHeightMajor
      */
     public static final int AppCompatTheme_windowFixedHeightMajor=114;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowFixedHeightMinor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowFixedHeightMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8875,11 +8875,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowFixedHeightMinor
+     * @attr name uk.ac.standrews.cs.mamoc:windowFixedHeightMinor
      */
     public static final int AppCompatTheme_windowFixedHeightMinor=115;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowFixedWidthMajor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowFixedWidthMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8892,11 +8892,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowFixedWidthMajor
+     * @attr name uk.ac.standrews.cs.mamoc:windowFixedWidthMajor
      */
     public static final int AppCompatTheme_windowFixedWidthMajor=116;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowFixedWidthMinor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowFixedWidthMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8909,11 +8909,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowFixedWidthMinor
+     * @attr name uk.ac.standrews.cs.mamoc:windowFixedWidthMinor
      */
     public static final int AppCompatTheme_windowFixedWidthMinor=117;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowMinWidthMajor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowMinWidthMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8926,11 +8926,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowMinWidthMajor
+     * @attr name uk.ac.standrews.cs.mamoc:windowMinWidthMajor
      */
     public static final int AppCompatTheme_windowMinWidthMajor=118;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowMinWidthMinor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowMinWidthMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8943,17 +8943,17 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:windowMinWidthMinor
+     * @attr name uk.ac.standrews.cs.mamoc:windowMinWidthMinor
      */
     public static final int AppCompatTheme_windowMinWidthMinor=119;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#windowNoTitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#windowNoTitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:windowNoTitle
+     * @attr name uk.ac.standrews.cs.mamoc:windowNoTitle
      */
     public static final int AppCompatTheme_windowNoTitle=120;
     /**
@@ -8963,12 +8963,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomAppBar_backgroundTint uk.ac.standrews.cs.emap:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomAppBar_fabAlignmentMode uk.ac.standrews.cs.emap:fabAlignmentMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomAppBar_fabCradleMargin uk.ac.standrews.cs.emap:fabCradleMargin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomAppBar_fabCradleRoundedCornerRadius uk.ac.standrews.cs.emap:fabCradleRoundedCornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomAppBar_fabCradleVerticalOffset uk.ac.standrews.cs.emap:fabCradleVerticalOffset}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomAppBar_hideOnScroll uk.ac.standrews.cs.emap:hideOnScroll}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_backgroundTint uk.ac.standrews.cs.mamoc:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_fabAlignmentMode uk.ac.standrews.cs.mamoc:fabAlignmentMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_fabCradleMargin uk.ac.standrews.cs.mamoc:fabCradleMargin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_fabCradleRoundedCornerRadius uk.ac.standrews.cs.mamoc:fabCradleRoundedCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_fabCradleVerticalOffset uk.ac.standrews.cs.mamoc:fabCradleVerticalOffset}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomAppBar_hideOnScroll uk.ac.standrews.cs.mamoc:hideOnScroll}</code></td><td></td></tr>
      * </table>
      * @see #BottomAppBar_backgroundTint
      * @see #BottomAppBar_fabAlignmentMode
@@ -8982,18 +8982,18 @@ public final class R {
         0x7f0300cd, 0x7f0300ec
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTint
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTint
      */
     public static final int BottomAppBar_backgroundTint=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabAlignmentMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabAlignmentMode}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9006,11 +9006,11 @@ public final class R {
      * <tr><td>end</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:fabAlignmentMode
+     * @attr name uk.ac.standrews.cs.mamoc:fabAlignmentMode
      */
     public static final int BottomAppBar_fabAlignmentMode=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabCradleMargin}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabCradleMargin}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9019,11 +9019,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:fabCradleMargin
+     * @attr name uk.ac.standrews.cs.mamoc:fabCradleMargin
      */
     public static final int BottomAppBar_fabCradleMargin=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabCradleRoundedCornerRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabCradleRoundedCornerRadius}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9032,11 +9032,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:fabCradleRoundedCornerRadius
+     * @attr name uk.ac.standrews.cs.mamoc:fabCradleRoundedCornerRadius
      */
     public static final int BottomAppBar_fabCradleRoundedCornerRadius=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabCradleVerticalOffset}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabCradleVerticalOffset}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9045,17 +9045,17 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:fabCradleVerticalOffset
+     * @attr name uk.ac.standrews.cs.mamoc:fabCradleVerticalOffset
      */
     public static final int BottomAppBar_fabCradleVerticalOffset=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hideOnScroll}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hideOnScroll}
      * attribute's value can be found in the {@link #BottomAppBar} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hideOnScroll
+     * @attr name uk.ac.standrews.cs.mamoc:hideOnScroll
      */
     public static final int BottomAppBar_hideOnScroll=5;
     /**
@@ -9065,16 +9065,16 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomNavigationView_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemBackground uk.ac.standrews.cs.emap:itemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemHorizontalTranslationEnabled uk.ac.standrews.cs.emap:itemHorizontalTranslationEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemIconSize uk.ac.standrews.cs.emap:itemIconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemIconTint uk.ac.standrews.cs.emap:itemIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemTextAppearanceActive uk.ac.standrews.cs.emap:itemTextAppearanceActive}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemTextAppearanceInactive uk.ac.standrews.cs.emap:itemTextAppearanceInactive}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemTextColor uk.ac.standrews.cs.emap:itemTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_labelVisibilityMode uk.ac.standrews.cs.emap:labelVisibilityMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_menu uk.ac.standrews.cs.emap:menu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemBackground uk.ac.standrews.cs.mamoc:itemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemHorizontalTranslationEnabled uk.ac.standrews.cs.mamoc:itemHorizontalTranslationEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemIconSize uk.ac.standrews.cs.mamoc:itemIconSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemIconTint uk.ac.standrews.cs.mamoc:itemIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemTextAppearanceActive uk.ac.standrews.cs.mamoc:itemTextAppearanceActive}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemTextAppearanceInactive uk.ac.standrews.cs.mamoc:itemTextAppearanceInactive}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemTextColor uk.ac.standrews.cs.mamoc:itemTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_labelVisibilityMode uk.ac.standrews.cs.mamoc:labelVisibilityMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_menu uk.ac.standrews.cs.mamoc:menu}</code></td><td></td></tr>
      * </table>
      * @see #BottomNavigationView_elevation
      * @see #BottomNavigationView_itemBackground
@@ -9093,7 +9093,7 @@ public final class R {
         0x7f03010e, 0x7f030164
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9102,11 +9102,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int BottomNavigationView_elevation=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemBackground}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9114,21 +9114,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemBackground
+     * @attr name uk.ac.standrews.cs.mamoc:itemBackground
      */
     public static final int BottomNavigationView_itemBackground=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemHorizontalTranslationEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemHorizontalTranslationEnabled}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemHorizontalTranslationEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:itemHorizontalTranslationEnabled
      */
     public static final int BottomNavigationView_itemHorizontalTranslationEnabled=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemIconSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemIconSize}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9137,22 +9137,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:itemIconSize
+     * @attr name uk.ac.standrews.cs.mamoc:itemIconSize
      */
     public static final int BottomNavigationView_itemIconSize=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemIconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemIconTint}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemIconTint
+     * @attr name uk.ac.standrews.cs.mamoc:itemIconTint
      */
     public static final int BottomNavigationView_itemIconTint=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemTextAppearanceActive}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemTextAppearanceActive}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9160,11 +9160,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemTextAppearanceActive
+     * @attr name uk.ac.standrews.cs.mamoc:itemTextAppearanceActive
      */
     public static final int BottomNavigationView_itemTextAppearanceActive=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemTextAppearanceInactive}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemTextAppearanceInactive}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9172,22 +9172,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemTextAppearanceInactive
+     * @attr name uk.ac.standrews.cs.mamoc:itemTextAppearanceInactive
      */
     public static final int BottomNavigationView_itemTextAppearanceInactive=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemTextColor}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:itemTextColor
      */
     public static final int BottomNavigationView_itemTextColor=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#labelVisibilityMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#labelVisibilityMode}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9202,11 +9202,11 @@ public final class R {
      * <tr><td>unlabeled</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:labelVisibilityMode
+     * @attr name uk.ac.standrews.cs.mamoc:labelVisibilityMode
      */
     public static final int BottomNavigationView_labelVisibilityMode=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#menu}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#menu}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9214,7 +9214,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:menu
+     * @attr name uk.ac.standrews.cs.mamoc:menu
      */
     public static final int BottomNavigationView_menu=9;
     /**
@@ -9224,10 +9224,10 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_fitToContents uk.ac.standrews.cs.emap:behavior_fitToContents}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable uk.ac.standrews.cs.emap:behavior_hideable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight uk.ac.standrews.cs.emap:behavior_peekHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed uk.ac.standrews.cs.emap:behavior_skipCollapsed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_fitToContents uk.ac.standrews.cs.mamoc:behavior_fitToContents}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable uk.ac.standrews.cs.mamoc:behavior_hideable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight uk.ac.standrews.cs.mamoc:behavior_peekHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed uk.ac.standrews.cs.mamoc:behavior_skipCollapsed}</code></td><td></td></tr>
      * </table>
      * @see #BottomSheetBehavior_Layout_behavior_fitToContents
      * @see #BottomSheetBehavior_Layout_behavior_hideable
@@ -9238,27 +9238,27 @@ public final class R {
         0x7f03003a, 0x7f03003b, 0x7f03003d, 0x7f03003e
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_fitToContents}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_fitToContents}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_fitToContents
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_fitToContents
      */
     public static final int BottomSheetBehavior_Layout_behavior_fitToContents=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_hideable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_hideable}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_hideable
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_hideable
      */
     public static final int BottomSheetBehavior_Layout_behavior_hideable=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_peekHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_peekHeight}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9275,17 +9275,17 @@ public final class R {
      * <tr><td>auto</td><td>ffffffff</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_peekHeight
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_peekHeight
      */
     public static final int BottomSheetBehavior_Layout_behavior_peekHeight=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_skipCollapsed}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_skipCollapsed}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_skipCollapsed
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_skipCollapsed
      */
     public static final int BottomSheetBehavior_Layout_behavior_skipCollapsed=3;
     /**
@@ -9295,7 +9295,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ButtonBarLayout_allowStacking uk.ac.standrews.cs.emap:allowStacking}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ButtonBarLayout_allowStacking uk.ac.standrews.cs.mamoc:allowStacking}</code></td><td></td></tr>
      * </table>
      * @see #ButtonBarLayout_allowStacking
      */
@@ -9303,13 +9303,13 @@ public final class R {
         0x7f030026
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#allowStacking}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#allowStacking}
      * attribute's value can be found in the {@link #ButtonBarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:allowStacking
+     * @attr name uk.ac.standrews.cs.mamoc:allowStacking
      */
     public static final int ButtonBarLayout_allowStacking=0;
     /**
@@ -9321,17 +9321,17 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CardView_android_minWidth android:minWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #CardView_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardBackgroundColor uk.ac.standrews.cs.emap:cardBackgroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardCornerRadius uk.ac.standrews.cs.emap:cardCornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardElevation uk.ac.standrews.cs.emap:cardElevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardMaxElevation uk.ac.standrews.cs.emap:cardMaxElevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap uk.ac.standrews.cs.emap:cardPreventCornerOverlap}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardUseCompatPadding uk.ac.standrews.cs.emap:cardUseCompatPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPadding uk.ac.standrews.cs.emap:contentPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingBottom uk.ac.standrews.cs.emap:contentPaddingBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingLeft uk.ac.standrews.cs.emap:contentPaddingLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingRight uk.ac.standrews.cs.emap:contentPaddingRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingTop uk.ac.standrews.cs.emap:contentPaddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardBackgroundColor uk.ac.standrews.cs.mamoc:cardBackgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardCornerRadius uk.ac.standrews.cs.mamoc:cardCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardElevation uk.ac.standrews.cs.mamoc:cardElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardMaxElevation uk.ac.standrews.cs.mamoc:cardMaxElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap uk.ac.standrews.cs.mamoc:cardPreventCornerOverlap}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardUseCompatPadding uk.ac.standrews.cs.mamoc:cardUseCompatPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPadding uk.ac.standrews.cs.mamoc:contentPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingBottom uk.ac.standrews.cs.mamoc:contentPaddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingLeft uk.ac.standrews.cs.mamoc:contentPaddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingRight uk.ac.standrews.cs.mamoc:contentPaddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingTop uk.ac.standrews.cs.mamoc:contentPaddingTop}</code></td><td></td></tr>
      * </table>
      * @see #CardView_android_minWidth
      * @see #CardView_android_minHeight
@@ -9380,18 +9380,18 @@ public final class R {
      */
     public static final int CardView_android_minHeight=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardBackgroundColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardBackgroundColor}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:cardBackgroundColor
+     * @attr name uk.ac.standrews.cs.mamoc:cardBackgroundColor
      */
     public static final int CardView_cardBackgroundColor=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardCornerRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardCornerRadius}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9400,11 +9400,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:cardCornerRadius
+     * @attr name uk.ac.standrews.cs.mamoc:cardCornerRadius
      */
     public static final int CardView_cardCornerRadius=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardElevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardElevation}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9413,11 +9413,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:cardElevation
+     * @attr name uk.ac.standrews.cs.mamoc:cardElevation
      */
     public static final int CardView_cardElevation=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardMaxElevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardMaxElevation}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9426,31 +9426,31 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:cardMaxElevation
+     * @attr name uk.ac.standrews.cs.mamoc:cardMaxElevation
      */
     public static final int CardView_cardMaxElevation=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardPreventCornerOverlap}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardPreventCornerOverlap}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:cardPreventCornerOverlap
+     * @attr name uk.ac.standrews.cs.mamoc:cardPreventCornerOverlap
      */
     public static final int CardView_cardPreventCornerOverlap=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cardUseCompatPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cardUseCompatPadding}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:cardUseCompatPadding
+     * @attr name uk.ac.standrews.cs.mamoc:cardUseCompatPadding
      */
     public static final int CardView_cardUseCompatPadding=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentPadding}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9459,11 +9459,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentPadding
+     * @attr name uk.ac.standrews.cs.mamoc:contentPadding
      */
     public static final int CardView_contentPadding=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentPaddingBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentPaddingBottom}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9472,11 +9472,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentPaddingBottom
+     * @attr name uk.ac.standrews.cs.mamoc:contentPaddingBottom
      */
     public static final int CardView_contentPaddingBottom=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentPaddingLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentPaddingLeft}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9485,11 +9485,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentPaddingLeft
+     * @attr name uk.ac.standrews.cs.mamoc:contentPaddingLeft
      */
     public static final int CardView_contentPaddingLeft=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentPaddingRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentPaddingRight}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9498,11 +9498,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentPaddingRight
+     * @attr name uk.ac.standrews.cs.mamoc:contentPaddingRight
      */
     public static final int CardView_contentPaddingRight=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentPaddingTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentPaddingTop}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9511,7 +9511,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentPaddingTop
+     * @attr name uk.ac.standrews.cs.mamoc:contentPaddingTop
      */
     public static final int CardView_contentPaddingTop=12;
     /**
@@ -9526,35 +9526,35 @@ public final class R {
      * <tr><td><code>{@link #Chip_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_android_text android:text}</code></td><td></td></tr>
      * <tr><td><code>{@link #Chip_android_checkable android:checkable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_checkedIcon uk.ac.standrews.cs.emap:checkedIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_checkedIconEnabled uk.ac.standrews.cs.emap:checkedIconEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_checkedIconVisible uk.ac.standrews.cs.emap:checkedIconVisible}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipBackgroundColor uk.ac.standrews.cs.emap:chipBackgroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipCornerRadius uk.ac.standrews.cs.emap:chipCornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipEndPadding uk.ac.standrews.cs.emap:chipEndPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipIcon uk.ac.standrews.cs.emap:chipIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipIconEnabled uk.ac.standrews.cs.emap:chipIconEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipIconSize uk.ac.standrews.cs.emap:chipIconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipIconTint uk.ac.standrews.cs.emap:chipIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipIconVisible uk.ac.standrews.cs.emap:chipIconVisible}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipMinHeight uk.ac.standrews.cs.emap:chipMinHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipStartPadding uk.ac.standrews.cs.emap:chipStartPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipStrokeColor uk.ac.standrews.cs.emap:chipStrokeColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_chipStrokeWidth uk.ac.standrews.cs.emap:chipStrokeWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIcon uk.ac.standrews.cs.emap:closeIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconEnabled uk.ac.standrews.cs.emap:closeIconEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconEndPadding uk.ac.standrews.cs.emap:closeIconEndPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconSize uk.ac.standrews.cs.emap:closeIconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconStartPadding uk.ac.standrews.cs.emap:closeIconStartPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconTint uk.ac.standrews.cs.emap:closeIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_closeIconVisible uk.ac.standrews.cs.emap:closeIconVisible}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_hideMotionSpec uk.ac.standrews.cs.emap:hideMotionSpec}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_iconEndPadding uk.ac.standrews.cs.emap:iconEndPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_iconStartPadding uk.ac.standrews.cs.emap:iconStartPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_rippleColor uk.ac.standrews.cs.emap:rippleColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_showMotionSpec uk.ac.standrews.cs.emap:showMotionSpec}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_textEndPadding uk.ac.standrews.cs.emap:textEndPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Chip_textStartPadding uk.ac.standrews.cs.emap:textStartPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_checkedIcon uk.ac.standrews.cs.mamoc:checkedIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_checkedIconEnabled uk.ac.standrews.cs.mamoc:checkedIconEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_checkedIconVisible uk.ac.standrews.cs.mamoc:checkedIconVisible}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipBackgroundColor uk.ac.standrews.cs.mamoc:chipBackgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipCornerRadius uk.ac.standrews.cs.mamoc:chipCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipEndPadding uk.ac.standrews.cs.mamoc:chipEndPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipIcon uk.ac.standrews.cs.mamoc:chipIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipIconEnabled uk.ac.standrews.cs.mamoc:chipIconEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipIconSize uk.ac.standrews.cs.mamoc:chipIconSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipIconTint uk.ac.standrews.cs.mamoc:chipIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipIconVisible uk.ac.standrews.cs.mamoc:chipIconVisible}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipMinHeight uk.ac.standrews.cs.mamoc:chipMinHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipStartPadding uk.ac.standrews.cs.mamoc:chipStartPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipStrokeColor uk.ac.standrews.cs.mamoc:chipStrokeColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_chipStrokeWidth uk.ac.standrews.cs.mamoc:chipStrokeWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIcon uk.ac.standrews.cs.mamoc:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconEnabled uk.ac.standrews.cs.mamoc:closeIconEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconEndPadding uk.ac.standrews.cs.mamoc:closeIconEndPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconSize uk.ac.standrews.cs.mamoc:closeIconSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconStartPadding uk.ac.standrews.cs.mamoc:closeIconStartPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconTint uk.ac.standrews.cs.mamoc:closeIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_closeIconVisible uk.ac.standrews.cs.mamoc:closeIconVisible}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_hideMotionSpec uk.ac.standrews.cs.mamoc:hideMotionSpec}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_iconEndPadding uk.ac.standrews.cs.mamoc:iconEndPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_iconStartPadding uk.ac.standrews.cs.mamoc:iconStartPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_rippleColor uk.ac.standrews.cs.mamoc:rippleColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_showMotionSpec uk.ac.standrews.cs.mamoc:showMotionSpec}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_textEndPadding uk.ac.standrews.cs.mamoc:textEndPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Chip_textStartPadding uk.ac.standrews.cs.mamoc:textStartPadding}</code></td><td></td></tr>
      * </table>
      * @see #Chip_android_textAppearance
      * @see #Chip_android_ellipsize
@@ -9668,7 +9668,7 @@ public final class R {
      */
     public static final int Chip_android_checkable=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkedIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkedIcon}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9676,42 +9676,42 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkedIcon
+     * @attr name uk.ac.standrews.cs.mamoc:checkedIcon
      */
     public static final int Chip_checkedIcon=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkedIconEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkedIconEnabled}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkedIconEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:checkedIconEnabled
      */
     public static final int Chip_checkedIconEnabled=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkedIconVisible}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkedIconVisible}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkedIconVisible
+     * @attr name uk.ac.standrews.cs.mamoc:checkedIconVisible
      */
     public static final int Chip_checkedIconVisible=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipBackgroundColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipBackgroundColor}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipBackgroundColor
+     * @attr name uk.ac.standrews.cs.mamoc:chipBackgroundColor
      */
     public static final int Chip_chipBackgroundColor=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipCornerRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipCornerRadius}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9720,11 +9720,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipCornerRadius
+     * @attr name uk.ac.standrews.cs.mamoc:chipCornerRadius
      */
     public static final int Chip_chipCornerRadius=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipEndPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipEndPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9733,11 +9733,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipEndPadding
+     * @attr name uk.ac.standrews.cs.mamoc:chipEndPadding
      */
     public static final int Chip_chipEndPadding=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipIcon}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9745,21 +9745,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipIcon
+     * @attr name uk.ac.standrews.cs.mamoc:chipIcon
      */
     public static final int Chip_chipIcon=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipIconEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipIconEnabled}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipIconEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:chipIconEnabled
      */
     public static final int Chip_chipIconEnabled=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipIconSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipIconSize}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9768,32 +9768,32 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipIconSize
+     * @attr name uk.ac.standrews.cs.mamoc:chipIconSize
      */
     public static final int Chip_chipIconSize=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipIconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipIconTint}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipIconTint
+     * @attr name uk.ac.standrews.cs.mamoc:chipIconTint
      */
     public static final int Chip_chipIconTint=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipIconVisible}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipIconVisible}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipIconVisible
+     * @attr name uk.ac.standrews.cs.mamoc:chipIconVisible
      */
     public static final int Chip_chipIconVisible=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipMinHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipMinHeight}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9802,11 +9802,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipMinHeight
+     * @attr name uk.ac.standrews.cs.mamoc:chipMinHeight
      */
     public static final int Chip_chipMinHeight=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipStartPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipStartPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9815,22 +9815,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipStartPadding
+     * @attr name uk.ac.standrews.cs.mamoc:chipStartPadding
      */
     public static final int Chip_chipStartPadding=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipStrokeColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipStrokeColor}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipStrokeColor
+     * @attr name uk.ac.standrews.cs.mamoc:chipStrokeColor
      */
     public static final int Chip_chipStrokeColor=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipStrokeWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipStrokeWidth}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9839,11 +9839,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipStrokeWidth
+     * @attr name uk.ac.standrews.cs.mamoc:chipStrokeWidth
      */
     public static final int Chip_chipStrokeWidth=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIcon}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9851,21 +9851,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIcon
+     * @attr name uk.ac.standrews.cs.mamoc:closeIcon
      */
     public static final int Chip_closeIcon=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconEnabled}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconEnabled
      */
     public static final int Chip_closeIconEnabled=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconEndPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconEndPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9874,11 +9874,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconEndPadding
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconEndPadding
      */
     public static final int Chip_closeIconEndPadding=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconSize}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9887,11 +9887,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconSize
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconSize
      */
     public static final int Chip_closeIconSize=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconStartPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconStartPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9900,32 +9900,32 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconStartPadding
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconStartPadding
      */
     public static final int Chip_closeIconStartPadding=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconTint}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconTint
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconTint
      */
     public static final int Chip_closeIconTint=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIconVisible}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIconVisible}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIconVisible
+     * @attr name uk.ac.standrews.cs.mamoc:closeIconVisible
      */
     public static final int Chip_closeIconVisible=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hideMotionSpec}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hideMotionSpec}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9933,11 +9933,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hideMotionSpec
+     * @attr name uk.ac.standrews.cs.mamoc:hideMotionSpec
      */
     public static final int Chip_hideMotionSpec=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconEndPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconEndPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9946,11 +9946,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:iconEndPadding
+     * @attr name uk.ac.standrews.cs.mamoc:iconEndPadding
      */
     public static final int Chip_iconEndPadding=28;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconStartPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconStartPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9959,22 +9959,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:iconStartPadding
+     * @attr name uk.ac.standrews.cs.mamoc:iconStartPadding
      */
     public static final int Chip_iconStartPadding=29;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#rippleColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#rippleColor}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:rippleColor
+     * @attr name uk.ac.standrews.cs.mamoc:rippleColor
      */
     public static final int Chip_rippleColor=30;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showMotionSpec}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showMotionSpec}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9982,11 +9982,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:showMotionSpec
+     * @attr name uk.ac.standrews.cs.mamoc:showMotionSpec
      */
     public static final int Chip_showMotionSpec=31;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textEndPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textEndPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9995,11 +9995,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:textEndPadding
+     * @attr name uk.ac.standrews.cs.mamoc:textEndPadding
      */
     public static final int Chip_textEndPadding=32;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textStartPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textStartPadding}
      * attribute's value can be found in the {@link #Chip} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10008,7 +10008,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:textStartPadding
+     * @attr name uk.ac.standrews.cs.mamoc:textStartPadding
      */
     public static final int Chip_textStartPadding=33;
     /**
@@ -10018,12 +10018,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ChipGroup_checkedChip uk.ac.standrews.cs.emap:checkedChip}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ChipGroup_chipSpacing uk.ac.standrews.cs.emap:chipSpacing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ChipGroup_chipSpacingHorizontal uk.ac.standrews.cs.emap:chipSpacingHorizontal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ChipGroup_chipSpacingVertical uk.ac.standrews.cs.emap:chipSpacingVertical}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ChipGroup_singleLine uk.ac.standrews.cs.emap:singleLine}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ChipGroup_singleSelection uk.ac.standrews.cs.emap:singleSelection}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_checkedChip uk.ac.standrews.cs.mamoc:checkedChip}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_chipSpacing uk.ac.standrews.cs.mamoc:chipSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_chipSpacingHorizontal uk.ac.standrews.cs.mamoc:chipSpacingHorizontal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_chipSpacingVertical uk.ac.standrews.cs.mamoc:chipSpacingVertical}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_singleLine uk.ac.standrews.cs.mamoc:singleLine}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ChipGroup_singleSelection uk.ac.standrews.cs.mamoc:singleSelection}</code></td><td></td></tr>
      * </table>
      * @see #ChipGroup_checkedChip
      * @see #ChipGroup_chipSpacing
@@ -10037,7 +10037,7 @@ public final class R {
         0x7f030196, 0x7f030197
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#checkedChip}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#checkedChip}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10045,11 +10045,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:checkedChip
+     * @attr name uk.ac.standrews.cs.mamoc:checkedChip
      */
     public static final int ChipGroup_checkedChip=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipSpacing}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipSpacing}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10058,11 +10058,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipSpacing
+     * @attr name uk.ac.standrews.cs.mamoc:chipSpacing
      */
     public static final int ChipGroup_chipSpacing=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipSpacingHorizontal}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipSpacingHorizontal}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10071,11 +10071,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipSpacingHorizontal
+     * @attr name uk.ac.standrews.cs.mamoc:chipSpacingHorizontal
      */
     public static final int ChipGroup_chipSpacingHorizontal=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipSpacingVertical}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipSpacingVertical}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10084,27 +10084,27 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:chipSpacingVertical
+     * @attr name uk.ac.standrews.cs.mamoc:chipSpacingVertical
      */
     public static final int ChipGroup_chipSpacingVertical=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#singleLine}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#singleLine}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:singleLine
+     * @attr name uk.ac.standrews.cs.mamoc:singleLine
      */
     public static final int ChipGroup_singleLine=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#singleSelection}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#singleSelection}
      * attribute's value can be found in the {@link #ChipGroup} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:singleSelection
+     * @attr name uk.ac.standrews.cs.mamoc:singleSelection
      */
     public static final int ChipGroup_singleSelection=5;
     /**
@@ -10114,22 +10114,22 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity uk.ac.standrews.cs.emap:collapsedTitleGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance uk.ac.standrews.cs.emap:collapsedTitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim uk.ac.standrews.cs.emap:contentScrim}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity uk.ac.standrews.cs.emap:expandedTitleGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin uk.ac.standrews.cs.emap:expandedTitleMargin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom uk.ac.standrews.cs.emap:expandedTitleMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd uk.ac.standrews.cs.emap:expandedTitleMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart uk.ac.standrews.cs.emap:expandedTitleMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop uk.ac.standrews.cs.emap:expandedTitleMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance uk.ac.standrews.cs.emap:expandedTitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration uk.ac.standrews.cs.emap:scrimAnimationDuration}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger uk.ac.standrews.cs.emap:scrimVisibleHeightTrigger}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim uk.ac.standrews.cs.emap:statusBarScrim}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_title uk.ac.standrews.cs.emap:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled uk.ac.standrews.cs.emap:titleEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId uk.ac.standrews.cs.emap:toolbarId}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity uk.ac.standrews.cs.mamoc:collapsedTitleGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance uk.ac.standrews.cs.mamoc:collapsedTitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim uk.ac.standrews.cs.mamoc:contentScrim}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity uk.ac.standrews.cs.mamoc:expandedTitleGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin uk.ac.standrews.cs.mamoc:expandedTitleMargin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom uk.ac.standrews.cs.mamoc:expandedTitleMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd uk.ac.standrews.cs.mamoc:expandedTitleMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart uk.ac.standrews.cs.mamoc:expandedTitleMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop uk.ac.standrews.cs.mamoc:expandedTitleMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance uk.ac.standrews.cs.mamoc:expandedTitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration uk.ac.standrews.cs.mamoc:scrimAnimationDuration}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger uk.ac.standrews.cs.mamoc:scrimVisibleHeightTrigger}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim uk.ac.standrews.cs.mamoc:statusBarScrim}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_title uk.ac.standrews.cs.mamoc:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled uk.ac.standrews.cs.mamoc:titleEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId uk.ac.standrews.cs.mamoc:toolbarId}</code></td><td></td></tr>
      * </table>
      * @see #CollapsingToolbarLayout_collapsedTitleGravity
      * @see #CollapsingToolbarLayout_collapsedTitleTextAppearance
@@ -10155,7 +10155,7 @@ public final class R {
         0x7f0301a7, 0x7f0301f4, 0x7f0301f5, 0x7f0301ff
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#collapsedTitleGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#collapsedTitleGravity}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -10176,11 +10176,11 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:collapsedTitleGravity
+     * @attr name uk.ac.standrews.cs.mamoc:collapsedTitleGravity
      */
     public static final int CollapsingToolbarLayout_collapsedTitleGravity=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#collapsedTitleTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#collapsedTitleTextAppearance}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10188,22 +10188,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:collapsedTitleTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:collapsedTitleTextAppearance
      */
     public static final int CollapsingToolbarLayout_collapsedTitleTextAppearance=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentScrim}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentScrim}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:contentScrim
+     * @attr name uk.ac.standrews.cs.mamoc:contentScrim
      */
     public static final int CollapsingToolbarLayout_contentScrim=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleGravity}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -10224,11 +10224,11 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleGravity
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleGravity
      */
     public static final int CollapsingToolbarLayout_expandedTitleGravity=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleMargin}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleMargin}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10237,11 +10237,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleMargin
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleMargin
      */
     public static final int CollapsingToolbarLayout_expandedTitleMargin=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleMarginBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleMarginBottom}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10250,11 +10250,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleMarginBottom
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleMarginBottom
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginBottom=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleMarginEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleMarginEnd}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10263,11 +10263,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleMarginEnd
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleMarginEnd
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginEnd=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleMarginStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleMarginStart}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10276,11 +10276,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleMarginStart
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleMarginStart
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginStart=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleMarginTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleMarginTop}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10289,11 +10289,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleMarginTop
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleMarginTop
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginTop=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#expandedTitleTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#expandedTitleTextAppearance}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10301,20 +10301,20 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:expandedTitleTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:expandedTitleTextAppearance
      */
     public static final int CollapsingToolbarLayout_expandedTitleTextAppearance=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#scrimAnimationDuration}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#scrimAnimationDuration}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:scrimAnimationDuration
+     * @attr name uk.ac.standrews.cs.mamoc:scrimAnimationDuration
      */
     public static final int CollapsingToolbarLayout_scrimAnimationDuration=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#scrimVisibleHeightTrigger}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#scrimVisibleHeightTrigger}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10323,42 +10323,42 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:scrimVisibleHeightTrigger
+     * @attr name uk.ac.standrews.cs.mamoc:scrimVisibleHeightTrigger
      */
     public static final int CollapsingToolbarLayout_scrimVisibleHeightTrigger=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#statusBarScrim}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#statusBarScrim}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:statusBarScrim
+     * @attr name uk.ac.standrews.cs.mamoc:statusBarScrim
      */
     public static final int CollapsingToolbarLayout_statusBarScrim=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#title}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#title}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:title
+     * @attr name uk.ac.standrews.cs.mamoc:title
      */
     public static final int CollapsingToolbarLayout_title=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleEnabled}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:titleEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:titleEnabled
      */
     public static final int CollapsingToolbarLayout_titleEnabled=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#toolbarId}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#toolbarId}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10366,7 +10366,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:toolbarId
+     * @attr name uk.ac.standrews.cs.mamoc:toolbarId
      */
     public static final int CollapsingToolbarLayout_toolbarId=15;
     /**
@@ -10376,8 +10376,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode uk.ac.standrews.cs.emap:layout_collapseMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier uk.ac.standrews.cs.emap:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode uk.ac.standrews.cs.mamoc:layout_collapseMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier uk.ac.standrews.cs.mamoc:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
      * </table>
      * @see #CollapsingToolbarLayout_Layout_layout_collapseMode
      * @see #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier
@@ -10386,7 +10386,7 @@ public final class R {
         0x7f030115, 0x7f030116
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_collapseMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_collapseMode}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10400,16 +10400,16 @@ public final class R {
      * <tr><td>pin</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_collapseMode
+     * @attr name uk.ac.standrews.cs.mamoc:layout_collapseMode
      */
     public static final int CollapsingToolbarLayout_Layout_layout_collapseMode=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_collapseParallaxMultiplier}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_collapseParallaxMultiplier}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_collapseParallaxMultiplier
+     * @attr name uk.ac.standrews.cs.mamoc:layout_collapseParallaxMultiplier
      */
     public static final int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier=1;
     /**
@@ -10421,7 +10421,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ColorStateListItem_alpha uk.ac.standrews.cs.emap:alpha}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_alpha uk.ac.standrews.cs.mamoc:alpha}</code></td><td></td></tr>
      * </table>
      * @see #ColorStateListItem_android_color
      * @see #ColorStateListItem_android_alpha
@@ -10451,12 +10451,12 @@ public final class R {
      */
     public static final int ColorStateListItem_android_alpha=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alpha}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alpha}
      * attribute's value can be found in the {@link #ColorStateListItem} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:alpha
+     * @attr name uk.ac.standrews.cs.mamoc:alpha
      */
     public static final int ColorStateListItem_alpha=2;
     /**
@@ -10467,8 +10467,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CompoundButton_android_button android:button}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CompoundButton_buttonTint uk.ac.standrews.cs.emap:buttonTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CompoundButton_buttonTintMode uk.ac.standrews.cs.emap:buttonTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CompoundButton_buttonTint uk.ac.standrews.cs.mamoc:buttonTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CompoundButton_buttonTintMode uk.ac.standrews.cs.mamoc:buttonTintMode}</code></td><td></td></tr>
      * </table>
      * @see #CompoundButton_android_button
      * @see #CompoundButton_buttonTint
@@ -10490,18 +10490,18 @@ public final class R {
      */
     public static final int CompoundButton_android_button=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonTint}
      * attribute's value can be found in the {@link #CompoundButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonTint
+     * @attr name uk.ac.standrews.cs.mamoc:buttonTint
      */
     public static final int CompoundButton_buttonTint=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonTintMode}
      * attribute's value can be found in the {@link #CompoundButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10518,7 +10518,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:buttonTintMode
      */
     public static final int CompoundButton_buttonTintMode=2;
     /**
@@ -10533,61 +10533,61 @@ public final class R {
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_maxHeight android:maxHeight}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_minWidth android:minWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_barrierAllowsGoneWidgets uk.ac.standrews.cs.emap:barrierAllowsGoneWidgets}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_barrierDirection uk.ac.standrews.cs.emap:barrierDirection}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_chainUseRtl uk.ac.standrews.cs.emap:chainUseRtl}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet uk.ac.standrews.cs.emap:constraintSet}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_constraint_referenced_ids uk.ac.standrews.cs.emap:constraint_referenced_ids}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constrainedHeight uk.ac.standrews.cs.emap:layout_constrainedHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constrainedWidth uk.ac.standrews.cs.emap:layout_constrainedWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator uk.ac.standrews.cs.emap:layout_constraintBaseline_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf uk.ac.standrews.cs.emap:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator uk.ac.standrews.cs.emap:layout_constraintBottom_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf uk.ac.standrews.cs.emap:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf uk.ac.standrews.cs.emap:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircle uk.ac.standrews.cs.emap:layout_constraintCircle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircleAngle uk.ac.standrews.cs.emap:layout_constraintCircleAngle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircleRadius uk.ac.standrews.cs.emap:layout_constraintCircleRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio uk.ac.standrews.cs.emap:layout_constraintDimensionRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf uk.ac.standrews.cs.emap:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf uk.ac.standrews.cs.emap:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin uk.ac.standrews.cs.emap:layout_constraintGuide_begin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end uk.ac.standrews.cs.emap:layout_constraintGuide_end}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent uk.ac.standrews.cs.emap:layout_constraintGuide_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default uk.ac.standrews.cs.emap:layout_constraintHeight_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max uk.ac.standrews.cs.emap:layout_constraintHeight_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min uk.ac.standrews.cs.emap:layout_constraintHeight_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_percent uk.ac.standrews.cs.emap:layout_constraintHeight_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias uk.ac.standrews.cs.emap:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle uk.ac.standrews.cs.emap:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight uk.ac.standrews.cs.emap:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator uk.ac.standrews.cs.emap:layout_constraintLeft_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf uk.ac.standrews.cs.emap:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf uk.ac.standrews.cs.emap:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator uk.ac.standrews.cs.emap:layout_constraintRight_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf uk.ac.standrews.cs.emap:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf uk.ac.standrews.cs.emap:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf uk.ac.standrews.cs.emap:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf uk.ac.standrews.cs.emap:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator uk.ac.standrews.cs.emap:layout_constraintTop_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf uk.ac.standrews.cs.emap:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf uk.ac.standrews.cs.emap:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias uk.ac.standrews.cs.emap:layout_constraintVertical_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle uk.ac.standrews.cs.emap:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight uk.ac.standrews.cs.emap:layout_constraintVertical_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default uk.ac.standrews.cs.emap:layout_constraintWidth_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max uk.ac.standrews.cs.emap:layout_constraintWidth_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min uk.ac.standrews.cs.emap:layout_constraintWidth_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_percent uk.ac.standrews.cs.emap:layout_constraintWidth_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX uk.ac.standrews.cs.emap:layout_editor_absoluteX}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY uk.ac.standrews.cs.emap:layout_editor_absoluteY}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom uk.ac.standrews.cs.emap:layout_goneMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd uk.ac.standrews.cs.emap:layout_goneMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft uk.ac.standrews.cs.emap:layout_goneMarginLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight uk.ac.standrews.cs.emap:layout_goneMarginRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart uk.ac.standrews.cs.emap:layout_goneMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop uk.ac.standrews.cs.emap:layout_goneMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel uk.ac.standrews.cs.emap:layout_optimizationLevel}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_barrierAllowsGoneWidgets uk.ac.standrews.cs.mamoc:barrierAllowsGoneWidgets}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_barrierDirection uk.ac.standrews.cs.mamoc:barrierDirection}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_chainUseRtl uk.ac.standrews.cs.mamoc:chainUseRtl}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet uk.ac.standrews.cs.mamoc:constraintSet}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_constraint_referenced_ids uk.ac.standrews.cs.mamoc:constraint_referenced_ids}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constrainedHeight uk.ac.standrews.cs.mamoc:layout_constrainedHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constrainedWidth uk.ac.standrews.cs.mamoc:layout_constrainedWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator uk.ac.standrews.cs.mamoc:layout_constraintBaseline_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf uk.ac.standrews.cs.mamoc:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator uk.ac.standrews.cs.mamoc:layout_constraintBottom_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf uk.ac.standrews.cs.mamoc:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf uk.ac.standrews.cs.mamoc:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircle uk.ac.standrews.cs.mamoc:layout_constraintCircle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircleAngle uk.ac.standrews.cs.mamoc:layout_constraintCircleAngle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintCircleRadius uk.ac.standrews.cs.mamoc:layout_constraintCircleRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio uk.ac.standrews.cs.mamoc:layout_constraintDimensionRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf uk.ac.standrews.cs.mamoc:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf uk.ac.standrews.cs.mamoc:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin uk.ac.standrews.cs.mamoc:layout_constraintGuide_begin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end uk.ac.standrews.cs.mamoc:layout_constraintGuide_end}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent uk.ac.standrews.cs.mamoc:layout_constraintGuide_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default uk.ac.standrews.cs.mamoc:layout_constraintHeight_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max uk.ac.standrews.cs.mamoc:layout_constraintHeight_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min uk.ac.standrews.cs.mamoc:layout_constraintHeight_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_percent uk.ac.standrews.cs.mamoc:layout_constraintHeight_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator uk.ac.standrews.cs.mamoc:layout_constraintLeft_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf uk.ac.standrews.cs.mamoc:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf uk.ac.standrews.cs.mamoc:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator uk.ac.standrews.cs.mamoc:layout_constraintRight_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf uk.ac.standrews.cs.mamoc:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf uk.ac.standrews.cs.mamoc:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf uk.ac.standrews.cs.mamoc:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf uk.ac.standrews.cs.mamoc:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator uk.ac.standrews.cs.mamoc:layout_constraintTop_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf uk.ac.standrews.cs.mamoc:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf uk.ac.standrews.cs.mamoc:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias uk.ac.standrews.cs.mamoc:layout_constraintVertical_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle uk.ac.standrews.cs.mamoc:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight uk.ac.standrews.cs.mamoc:layout_constraintVertical_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default uk.ac.standrews.cs.mamoc:layout_constraintWidth_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max uk.ac.standrews.cs.mamoc:layout_constraintWidth_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min uk.ac.standrews.cs.mamoc:layout_constraintWidth_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_percent uk.ac.standrews.cs.mamoc:layout_constraintWidth_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX uk.ac.standrews.cs.mamoc:layout_editor_absoluteX}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY uk.ac.standrews.cs.mamoc:layout_editor_absoluteY}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom uk.ac.standrews.cs.mamoc:layout_goneMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd uk.ac.standrews.cs.mamoc:layout_goneMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft uk.ac.standrews.cs.mamoc:layout_goneMarginLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight uk.ac.standrews.cs.mamoc:layout_goneMarginRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart uk.ac.standrews.cs.mamoc:layout_goneMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop uk.ac.standrews.cs.mamoc:layout_goneMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel uk.ac.standrews.cs.mamoc:layout_optimizationLevel}</code></td><td></td></tr>
      * </table>
      * @see #ConstraintLayout_Layout_android_orientation
      * @see #ConstraintLayout_Layout_android_maxWidth
@@ -10737,17 +10737,17 @@ public final class R {
      */
     public static final int ConstraintLayout_Layout_android_minHeight=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#barrierAllowsGoneWidgets}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#barrierAllowsGoneWidgets}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:barrierAllowsGoneWidgets
+     * @attr name uk.ac.standrews.cs.mamoc:barrierAllowsGoneWidgets
      */
     public static final int ConstraintLayout_Layout_barrierAllowsGoneWidgets=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#barrierDirection}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#barrierDirection}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10764,21 +10764,21 @@ public final class R {
      * <tr><td>top</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:barrierDirection
+     * @attr name uk.ac.standrews.cs.mamoc:barrierDirection
      */
     public static final int ConstraintLayout_Layout_barrierDirection=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chainUseRtl}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chainUseRtl}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chainUseRtl
+     * @attr name uk.ac.standrews.cs.mamoc:chainUseRtl
      */
     public static final int ConstraintLayout_Layout_chainUseRtl=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#constraintSet}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#constraintSet}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10786,50 +10786,50 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:constraintSet
+     * @attr name uk.ac.standrews.cs.mamoc:constraintSet
      */
     public static final int ConstraintLayout_Layout_constraintSet=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#constraint_referenced_ids}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#constraint_referenced_ids}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:constraint_referenced_ids
+     * @attr name uk.ac.standrews.cs.mamoc:constraint_referenced_ids
      */
     public static final int ConstraintLayout_Layout_constraint_referenced_ids=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constrainedHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constrainedHeight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constrainedHeight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constrainedHeight
      */
     public static final int ConstraintLayout_Layout_layout_constrainedHeight=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constrainedWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constrainedWidth}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constrainedWidth
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constrainedWidth
      */
     public static final int ConstraintLayout_Layout_layout_constrainedWidth=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBaseline_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBaseline_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBaseline_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBaseline_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintBaseline_creator=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBaseline_toBaselineOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBaseline_toBaselineOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10845,20 +10845,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBaseline_toBaselineOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBaseline_toBaselineOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_creator=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_toBottomOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10874,11 +10874,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_toBottomOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_toBottomOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_toBottomOf=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_toTopOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_toTopOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10894,11 +10894,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_toTopOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_toTopOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_toTopOf=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10906,20 +10906,20 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircle
      */
     public static final int ConstraintLayout_Layout_layout_constraintCircle=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircleAngle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircleAngle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircleAngle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircleAngle
      */
     public static final int ConstraintLayout_Layout_layout_constraintCircleAngle=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircleRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircleRadius}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10928,21 +10928,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircleRadius
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircleRadius
      */
     public static final int ConstraintLayout_Layout_layout_constraintCircleRadius=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintDimensionRatio}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintDimensionRatio}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintDimensionRatio
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintDimensionRatio
      */
     public static final int ConstraintLayout_Layout_layout_constraintDimensionRatio=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintEnd_toEndOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintEnd_toEndOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10958,11 +10958,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintEnd_toEndOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintEnd_toEndOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintEnd_toEndOf=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintEnd_toStartOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintEnd_toStartOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10978,11 +10978,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintEnd_toStartOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintEnd_toStartOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintEnd_toStartOf=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_begin}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_begin}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10991,11 +10991,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_begin
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_begin
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_begin=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_end}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_end}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11004,20 +11004,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_end
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_end
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_end=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_percent}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_percent
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_percent=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_default}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_default}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11031,11 +11031,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_default
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_default
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_default=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_max}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_max}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11052,11 +11052,11 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_max
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_max
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_max=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_min}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_min}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11073,29 +11073,29 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_min
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_min
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_min=28;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_percent}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_percent
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_percent=29;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_bias}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_bias}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_bias
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_bias
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_bias=30;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_chainStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_chainStyle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11109,29 +11109,29 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_chainStyle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_chainStyle
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle=31;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_weight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_weight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_weight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_weight
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_weight=32;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_creator=33;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_toLeftOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11147,11 +11147,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_toLeftOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_toLeftOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_toLeftOf=34;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_toRightOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_toRightOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11167,20 +11167,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_toRightOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_toRightOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_toRightOf=35;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_creator=36;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_toLeftOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11196,11 +11196,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_toLeftOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_toLeftOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_toLeftOf=37;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_toRightOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_toRightOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11216,11 +11216,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_toRightOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_toRightOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_toRightOf=38;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintStart_toEndOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintStart_toEndOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11236,11 +11236,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintStart_toEndOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintStart_toEndOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintStart_toEndOf=39;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintStart_toStartOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintStart_toStartOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11256,20 +11256,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintStart_toStartOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintStart_toStartOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintStart_toStartOf=40;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_creator=41;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_toBottomOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11285,11 +11285,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_toBottomOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_toBottomOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_toBottomOf=42;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_toTopOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_toTopOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11305,20 +11305,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_toTopOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_toTopOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_toTopOf=43;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_bias}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_bias}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_bias
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_bias
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_bias=44;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_chainStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_chainStyle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11332,20 +11332,20 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_chainStyle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_chainStyle
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_chainStyle=45;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_weight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_weight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_weight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_weight
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_weight=46;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_default}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_default}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11359,11 +11359,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_default
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_default
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_default=47;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_max}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_max}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11380,11 +11380,11 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_max
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_max
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_max=48;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_min}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_min}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11401,20 +11401,20 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_min
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_min
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_min=49;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_percent}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_percent
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_percent=50;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_editor_absoluteX}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_editor_absoluteX}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11423,11 +11423,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_editor_absoluteX
+     * @attr name uk.ac.standrews.cs.mamoc:layout_editor_absoluteX
      */
     public static final int ConstraintLayout_Layout_layout_editor_absoluteX=51;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_editor_absoluteY}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_editor_absoluteY}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11436,11 +11436,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_editor_absoluteY
+     * @attr name uk.ac.standrews.cs.mamoc:layout_editor_absoluteY
      */
     public static final int ConstraintLayout_Layout_layout_editor_absoluteY=52;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginBottom}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11449,11 +11449,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginBottom
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginBottom
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginBottom=53;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginEnd}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11462,11 +11462,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginEnd
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginEnd
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginEnd=54;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginLeft}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11475,11 +11475,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginLeft
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginLeft
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginLeft=55;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginRight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11488,11 +11488,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginRight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginRight
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginRight=56;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginStart}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11501,11 +11501,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginStart
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginStart
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginStart=57;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginTop}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11514,11 +11514,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginTop
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginTop
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginTop=58;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_optimizationLevel}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_optimizationLevel}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -11536,7 +11536,7 @@ public final class R {
      * <tr><td>standard</td><td>7</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_optimizationLevel
+     * @attr name uk.ac.standrews.cs.mamoc:layout_optimizationLevel
      */
     public static final int ConstraintLayout_Layout_layout_optimizationLevel=59;
     /**
@@ -11546,8 +11546,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ConstraintLayout_placeholder_content uk.ac.standrews.cs.emap:content}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_placeholder_emptyVisibility uk.ac.standrews.cs.emap:emptyVisibility}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_placeholder_content uk.ac.standrews.cs.mamoc:content}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_placeholder_emptyVisibility uk.ac.standrews.cs.mamoc:emptyVisibility}</code></td><td></td></tr>
      * </table>
      * @see #ConstraintLayout_placeholder_content
      * @see #ConstraintLayout_placeholder_emptyVisibility
@@ -11556,7 +11556,7 @@ public final class R {
         0x7f030095, 0x7f0300bc
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#content}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#content}
      * attribute's value can be found in the {@link #ConstraintLayout_placeholder} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11564,11 +11564,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:content
+     * @attr name uk.ac.standrews.cs.mamoc:content
      */
     public static final int ConstraintLayout_placeholder_content=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#emptyVisibility}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#emptyVisibility}
      * attribute's value can be found in the {@link #ConstraintLayout_placeholder} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11581,7 +11581,7 @@ public final class R {
      * <tr><td>invisible</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:emptyVisibility
+     * @attr name uk.ac.standrews.cs.mamoc:emptyVisibility
      */
     public static final int ConstraintLayout_placeholder_emptyVisibility=1;
     /**
@@ -11618,59 +11618,59 @@ public final class R {
      * <tr><td><code>{@link #ConstraintSet_android_layout_marginEnd android:layout_marginEnd}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintSet_android_translationZ android:translationZ}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintSet_android_elevation android:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_barrierAllowsGoneWidgets uk.ac.standrews.cs.emap:barrierAllowsGoneWidgets}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_barrierDirection uk.ac.standrews.cs.emap:barrierDirection}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_chainUseRtl uk.ac.standrews.cs.emap:chainUseRtl}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_constraint_referenced_ids uk.ac.standrews.cs.emap:constraint_referenced_ids}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constrainedHeight uk.ac.standrews.cs.emap:layout_constrainedHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constrainedWidth uk.ac.standrews.cs.emap:layout_constrainedWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator uk.ac.standrews.cs.emap:layout_constraintBaseline_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf uk.ac.standrews.cs.emap:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator uk.ac.standrews.cs.emap:layout_constraintBottom_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf uk.ac.standrews.cs.emap:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf uk.ac.standrews.cs.emap:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircle uk.ac.standrews.cs.emap:layout_constraintCircle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircleAngle uk.ac.standrews.cs.emap:layout_constraintCircleAngle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircleRadius uk.ac.standrews.cs.emap:layout_constraintCircleRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio uk.ac.standrews.cs.emap:layout_constraintDimensionRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf uk.ac.standrews.cs.emap:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf uk.ac.standrews.cs.emap:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin uk.ac.standrews.cs.emap:layout_constraintGuide_begin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end uk.ac.standrews.cs.emap:layout_constraintGuide_end}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent uk.ac.standrews.cs.emap:layout_constraintGuide_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default uk.ac.standrews.cs.emap:layout_constraintHeight_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max uk.ac.standrews.cs.emap:layout_constraintHeight_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min uk.ac.standrews.cs.emap:layout_constraintHeight_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_percent uk.ac.standrews.cs.emap:layout_constraintHeight_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias uk.ac.standrews.cs.emap:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle uk.ac.standrews.cs.emap:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight uk.ac.standrews.cs.emap:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator uk.ac.standrews.cs.emap:layout_constraintLeft_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf uk.ac.standrews.cs.emap:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf uk.ac.standrews.cs.emap:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator uk.ac.standrews.cs.emap:layout_constraintRight_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf uk.ac.standrews.cs.emap:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf uk.ac.standrews.cs.emap:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf uk.ac.standrews.cs.emap:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf uk.ac.standrews.cs.emap:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator uk.ac.standrews.cs.emap:layout_constraintTop_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf uk.ac.standrews.cs.emap:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf uk.ac.standrews.cs.emap:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias uk.ac.standrews.cs.emap:layout_constraintVertical_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle uk.ac.standrews.cs.emap:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight uk.ac.standrews.cs.emap:layout_constraintVertical_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default uk.ac.standrews.cs.emap:layout_constraintWidth_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max uk.ac.standrews.cs.emap:layout_constraintWidth_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min uk.ac.standrews.cs.emap:layout_constraintWidth_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_percent uk.ac.standrews.cs.emap:layout_constraintWidth_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX uk.ac.standrews.cs.emap:layout_editor_absoluteX}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY uk.ac.standrews.cs.emap:layout_editor_absoluteY}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom uk.ac.standrews.cs.emap:layout_goneMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd uk.ac.standrews.cs.emap:layout_goneMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft uk.ac.standrews.cs.emap:layout_goneMarginLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight uk.ac.standrews.cs.emap:layout_goneMarginRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart uk.ac.standrews.cs.emap:layout_goneMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop uk.ac.standrews.cs.emap:layout_goneMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_barrierAllowsGoneWidgets uk.ac.standrews.cs.mamoc:barrierAllowsGoneWidgets}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_barrierDirection uk.ac.standrews.cs.mamoc:barrierDirection}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_chainUseRtl uk.ac.standrews.cs.mamoc:chainUseRtl}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_constraint_referenced_ids uk.ac.standrews.cs.mamoc:constraint_referenced_ids}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constrainedHeight uk.ac.standrews.cs.mamoc:layout_constrainedHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constrainedWidth uk.ac.standrews.cs.mamoc:layout_constrainedWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator uk.ac.standrews.cs.mamoc:layout_constraintBaseline_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf uk.ac.standrews.cs.mamoc:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator uk.ac.standrews.cs.mamoc:layout_constraintBottom_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf uk.ac.standrews.cs.mamoc:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf uk.ac.standrews.cs.mamoc:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircle uk.ac.standrews.cs.mamoc:layout_constraintCircle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircleAngle uk.ac.standrews.cs.mamoc:layout_constraintCircleAngle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintCircleRadius uk.ac.standrews.cs.mamoc:layout_constraintCircleRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio uk.ac.standrews.cs.mamoc:layout_constraintDimensionRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf uk.ac.standrews.cs.mamoc:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf uk.ac.standrews.cs.mamoc:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin uk.ac.standrews.cs.mamoc:layout_constraintGuide_begin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end uk.ac.standrews.cs.mamoc:layout_constraintGuide_end}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent uk.ac.standrews.cs.mamoc:layout_constraintGuide_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default uk.ac.standrews.cs.mamoc:layout_constraintHeight_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max uk.ac.standrews.cs.mamoc:layout_constraintHeight_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min uk.ac.standrews.cs.mamoc:layout_constraintHeight_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_percent uk.ac.standrews.cs.mamoc:layout_constraintHeight_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator uk.ac.standrews.cs.mamoc:layout_constraintLeft_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf uk.ac.standrews.cs.mamoc:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf uk.ac.standrews.cs.mamoc:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator uk.ac.standrews.cs.mamoc:layout_constraintRight_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf uk.ac.standrews.cs.mamoc:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf uk.ac.standrews.cs.mamoc:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf uk.ac.standrews.cs.mamoc:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf uk.ac.standrews.cs.mamoc:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator uk.ac.standrews.cs.mamoc:layout_constraintTop_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf uk.ac.standrews.cs.mamoc:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf uk.ac.standrews.cs.mamoc:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias uk.ac.standrews.cs.mamoc:layout_constraintVertical_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle uk.ac.standrews.cs.mamoc:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight uk.ac.standrews.cs.mamoc:layout_constraintVertical_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default uk.ac.standrews.cs.mamoc:layout_constraintWidth_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max uk.ac.standrews.cs.mamoc:layout_constraintWidth_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min uk.ac.standrews.cs.mamoc:layout_constraintWidth_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_percent uk.ac.standrews.cs.mamoc:layout_constraintWidth_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX uk.ac.standrews.cs.mamoc:layout_editor_absoluteX}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY uk.ac.standrews.cs.mamoc:layout_editor_absoluteY}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom uk.ac.standrews.cs.mamoc:layout_goneMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd uk.ac.standrews.cs.mamoc:layout_goneMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft uk.ac.standrews.cs.mamoc:layout_goneMarginLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight uk.ac.standrews.cs.mamoc:layout_goneMarginRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart uk.ac.standrews.cs.mamoc:layout_goneMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop uk.ac.standrews.cs.mamoc:layout_goneMarginTop}</code></td><td></td></tr>
      * </table>
      * @see #ConstraintSet_android_orientation
      * @see #ConstraintSet_android_id
@@ -12131,17 +12131,17 @@ public final class R {
      */
     public static final int ConstraintSet_android_elevation=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#barrierAllowsGoneWidgets}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#barrierAllowsGoneWidgets}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:barrierAllowsGoneWidgets
+     * @attr name uk.ac.standrews.cs.mamoc:barrierAllowsGoneWidgets
      */
     public static final int ConstraintSet_barrierAllowsGoneWidgets=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#barrierDirection}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#barrierDirection}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12158,60 +12158,60 @@ public final class R {
      * <tr><td>top</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:barrierDirection
+     * @attr name uk.ac.standrews.cs.mamoc:barrierDirection
      */
     public static final int ConstraintSet_barrierDirection=28;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chainUseRtl}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chainUseRtl}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chainUseRtl
+     * @attr name uk.ac.standrews.cs.mamoc:chainUseRtl
      */
     public static final int ConstraintSet_chainUseRtl=29;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#constraint_referenced_ids}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#constraint_referenced_ids}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:constraint_referenced_ids
+     * @attr name uk.ac.standrews.cs.mamoc:constraint_referenced_ids
      */
     public static final int ConstraintSet_constraint_referenced_ids=30;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constrainedHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constrainedHeight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constrainedHeight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constrainedHeight
      */
     public static final int ConstraintSet_layout_constrainedHeight=31;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constrainedWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constrainedWidth}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constrainedWidth
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constrainedWidth
      */
     public static final int ConstraintSet_layout_constrainedWidth=32;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBaseline_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBaseline_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBaseline_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBaseline_creator
      */
     public static final int ConstraintSet_layout_constraintBaseline_creator=33;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBaseline_toBaselineOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBaseline_toBaselineOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12227,20 +12227,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBaseline_toBaselineOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBaseline_toBaselineOf
      */
     public static final int ConstraintSet_layout_constraintBaseline_toBaselineOf=34;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_creator
      */
     public static final int ConstraintSet_layout_constraintBottom_creator=35;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_toBottomOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12256,11 +12256,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_toBottomOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_toBottomOf
      */
     public static final int ConstraintSet_layout_constraintBottom_toBottomOf=36;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintBottom_toTopOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintBottom_toTopOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12276,11 +12276,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintBottom_toTopOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintBottom_toTopOf
      */
     public static final int ConstraintSet_layout_constraintBottom_toTopOf=37;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12288,20 +12288,20 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircle
      */
     public static final int ConstraintSet_layout_constraintCircle=38;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircleAngle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircleAngle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircleAngle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircleAngle
      */
     public static final int ConstraintSet_layout_constraintCircleAngle=39;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintCircleRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintCircleRadius}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12310,21 +12310,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintCircleRadius
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintCircleRadius
      */
     public static final int ConstraintSet_layout_constraintCircleRadius=40;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintDimensionRatio}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintDimensionRatio}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintDimensionRatio
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintDimensionRatio
      */
     public static final int ConstraintSet_layout_constraintDimensionRatio=41;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintEnd_toEndOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintEnd_toEndOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12340,11 +12340,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintEnd_toEndOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintEnd_toEndOf
      */
     public static final int ConstraintSet_layout_constraintEnd_toEndOf=42;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintEnd_toStartOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintEnd_toStartOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12360,11 +12360,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintEnd_toStartOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintEnd_toStartOf
      */
     public static final int ConstraintSet_layout_constraintEnd_toStartOf=43;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_begin}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_begin}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12373,11 +12373,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_begin
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_begin
      */
     public static final int ConstraintSet_layout_constraintGuide_begin=44;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_end}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_end}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12386,20 +12386,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_end
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_end
      */
     public static final int ConstraintSet_layout_constraintGuide_end=45;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintGuide_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintGuide_percent}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintGuide_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintGuide_percent
      */
     public static final int ConstraintSet_layout_constraintGuide_percent=46;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_default}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_default}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12413,11 +12413,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_default
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_default
      */
     public static final int ConstraintSet_layout_constraintHeight_default=47;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_max}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_max}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12434,11 +12434,11 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_max
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_max
      */
     public static final int ConstraintSet_layout_constraintHeight_max=48;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_min}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_min}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12455,29 +12455,29 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_min
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_min
      */
     public static final int ConstraintSet_layout_constraintHeight_min=49;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHeight_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHeight_percent}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHeight_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHeight_percent
      */
     public static final int ConstraintSet_layout_constraintHeight_percent=50;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_bias}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_bias}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_bias
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_bias
      */
     public static final int ConstraintSet_layout_constraintHorizontal_bias=51;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_chainStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_chainStyle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12491,29 +12491,29 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_chainStyle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_chainStyle
      */
     public static final int ConstraintSet_layout_constraintHorizontal_chainStyle=52;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintHorizontal_weight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintHorizontal_weight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintHorizontal_weight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintHorizontal_weight
      */
     public static final int ConstraintSet_layout_constraintHorizontal_weight=53;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_creator
      */
     public static final int ConstraintSet_layout_constraintLeft_creator=54;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_toLeftOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12529,11 +12529,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_toLeftOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_toLeftOf
      */
     public static final int ConstraintSet_layout_constraintLeft_toLeftOf=55;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintLeft_toRightOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintLeft_toRightOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12549,20 +12549,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintLeft_toRightOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintLeft_toRightOf
      */
     public static final int ConstraintSet_layout_constraintLeft_toRightOf=56;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_creator
      */
     public static final int ConstraintSet_layout_constraintRight_creator=57;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_toLeftOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12578,11 +12578,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_toLeftOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_toLeftOf
      */
     public static final int ConstraintSet_layout_constraintRight_toLeftOf=58;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintRight_toRightOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintRight_toRightOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12598,11 +12598,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintRight_toRightOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintRight_toRightOf
      */
     public static final int ConstraintSet_layout_constraintRight_toRightOf=59;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintStart_toEndOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintStart_toEndOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12618,11 +12618,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintStart_toEndOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintStart_toEndOf
      */
     public static final int ConstraintSet_layout_constraintStart_toEndOf=60;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintStart_toStartOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintStart_toStartOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12638,20 +12638,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintStart_toStartOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintStart_toStartOf
      */
     public static final int ConstraintSet_layout_constraintStart_toStartOf=61;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_creator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_creator
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_creator
      */
     public static final int ConstraintSet_layout_constraintTop_creator=62;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_toBottomOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12667,11 +12667,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_toBottomOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_toBottomOf
      */
     public static final int ConstraintSet_layout_constraintTop_toBottomOf=63;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintTop_toTopOf}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintTop_toTopOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12687,20 +12687,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintTop_toTopOf
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintTop_toTopOf
      */
     public static final int ConstraintSet_layout_constraintTop_toTopOf=64;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_bias}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_bias}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_bias
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_bias
      */
     public static final int ConstraintSet_layout_constraintVertical_bias=65;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_chainStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_chainStyle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12714,20 +12714,20 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_chainStyle
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_chainStyle
      */
     public static final int ConstraintSet_layout_constraintVertical_chainStyle=66;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintVertical_weight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintVertical_weight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintVertical_weight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintVertical_weight
      */
     public static final int ConstraintSet_layout_constraintVertical_weight=67;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_default}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_default}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12741,11 +12741,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_default
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_default
      */
     public static final int ConstraintSet_layout_constraintWidth_default=68;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_max}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_max}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12762,11 +12762,11 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_max
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_max
      */
     public static final int ConstraintSet_layout_constraintWidth_max=69;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_min}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_min}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12783,20 +12783,20 @@ public final class R {
      * <tr><td>wrap</td><td>fffffffe</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_min
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_min
      */
     public static final int ConstraintSet_layout_constraintWidth_min=70;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_constraintWidth_percent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_constraintWidth_percent}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_constraintWidth_percent
+     * @attr name uk.ac.standrews.cs.mamoc:layout_constraintWidth_percent
      */
     public static final int ConstraintSet_layout_constraintWidth_percent=71;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_editor_absoluteX}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_editor_absoluteX}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12805,11 +12805,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_editor_absoluteX
+     * @attr name uk.ac.standrews.cs.mamoc:layout_editor_absoluteX
      */
     public static final int ConstraintSet_layout_editor_absoluteX=72;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_editor_absoluteY}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_editor_absoluteY}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12818,11 +12818,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_editor_absoluteY
+     * @attr name uk.ac.standrews.cs.mamoc:layout_editor_absoluteY
      */
     public static final int ConstraintSet_layout_editor_absoluteY=73;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginBottom}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12831,11 +12831,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginBottom
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginBottom
      */
     public static final int ConstraintSet_layout_goneMarginBottom=74;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginEnd}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12844,11 +12844,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginEnd
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginEnd
      */
     public static final int ConstraintSet_layout_goneMarginEnd=75;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginLeft}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12857,11 +12857,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginLeft
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginLeft
      */
     public static final int ConstraintSet_layout_goneMarginLeft=76;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginRight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12870,11 +12870,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginRight
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginRight
      */
     public static final int ConstraintSet_layout_goneMarginRight=77;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginStart}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12883,11 +12883,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginStart
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginStart
      */
     public static final int ConstraintSet_layout_goneMarginStart=78;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_goneMarginTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_goneMarginTop}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12896,7 +12896,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_goneMarginTop
+     * @attr name uk.ac.standrews.cs.mamoc:layout_goneMarginTop
      */
     public static final int ConstraintSet_layout_goneMarginTop=79;
     /**
@@ -12906,8 +12906,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_keylines uk.ac.standrews.cs.emap:keylines}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground uk.ac.standrews.cs.emap:statusBarBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_keylines uk.ac.standrews.cs.mamoc:keylines}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground uk.ac.standrews.cs.mamoc:statusBarBackground}</code></td><td></td></tr>
      * </table>
      * @see #CoordinatorLayout_keylines
      * @see #CoordinatorLayout_statusBarBackground
@@ -12916,7 +12916,7 @@ public final class R {
         0x7f03010d, 0x7f0301a6
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#keylines}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#keylines}
      * attribute's value can be found in the {@link #CoordinatorLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12924,11 +12924,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:keylines
+     * @attr name uk.ac.standrews.cs.mamoc:keylines
      */
     public static final int CoordinatorLayout_keylines=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#statusBarBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#statusBarBackground}
      * attribute's value can be found in the {@link #CoordinatorLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12939,7 +12939,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:statusBarBackground
+     * @attr name uk.ac.standrews.cs.mamoc:statusBarBackground
      */
     public static final int CoordinatorLayout_statusBarBackground=1;
     /**
@@ -12950,12 +12950,12 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor uk.ac.standrews.cs.emap:layout_anchor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity uk.ac.standrews.cs.emap:layout_anchorGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior uk.ac.standrews.cs.emap:layout_behavior}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges uk.ac.standrews.cs.emap:layout_dodgeInsetEdges}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge uk.ac.standrews.cs.emap:layout_insetEdge}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline uk.ac.standrews.cs.emap:layout_keyline}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor uk.ac.standrews.cs.mamoc:layout_anchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity uk.ac.standrews.cs.mamoc:layout_anchorGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior uk.ac.standrews.cs.mamoc:layout_behavior}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges uk.ac.standrews.cs.mamoc:layout_dodgeInsetEdges}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge uk.ac.standrews.cs.mamoc:layout_insetEdge}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline uk.ac.standrews.cs.mamoc:layout_keyline}</code></td><td></td></tr>
      * </table>
      * @see #CoordinatorLayout_Layout_android_layout_gravity
      * @see #CoordinatorLayout_Layout_layout_anchor
@@ -12999,7 +12999,7 @@ public final class R {
      */
     public static final int CoordinatorLayout_Layout_android_layout_gravity=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_anchor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_anchor}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13007,11 +13007,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_anchor
+     * @attr name uk.ac.standrews.cs.mamoc:layout_anchor
      */
     public static final int CoordinatorLayout_Layout_layout_anchor=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_anchorGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_anchorGravity}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -13036,21 +13036,21 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_anchorGravity
+     * @attr name uk.ac.standrews.cs.mamoc:layout_anchorGravity
      */
     public static final int CoordinatorLayout_Layout_layout_anchorGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_behavior}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_behavior}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_behavior
+     * @attr name uk.ac.standrews.cs.mamoc:layout_behavior
      */
     public static final int CoordinatorLayout_Layout_layout_behavior=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_dodgeInsetEdges}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_dodgeInsetEdges}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -13069,11 +13069,11 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_dodgeInsetEdges
+     * @attr name uk.ac.standrews.cs.mamoc:layout_dodgeInsetEdges
      */
     public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_insetEdge}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_insetEdge}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13091,16 +13091,16 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_insetEdge
+     * @attr name uk.ac.standrews.cs.mamoc:layout_insetEdge
      */
     public static final int CoordinatorLayout_Layout_layout_insetEdge=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout_keyline}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout_keyline}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout_keyline
+     * @attr name uk.ac.standrews.cs.mamoc:layout_keyline
      */
     public static final int CoordinatorLayout_Layout_layout_keyline=6;
     /**
@@ -13110,8 +13110,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme uk.ac.standrews.cs.emap:bottomSheetDialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DesignTheme_bottomSheetStyle uk.ac.standrews.cs.emap:bottomSheetStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme uk.ac.standrews.cs.mamoc:bottomSheetDialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DesignTheme_bottomSheetStyle uk.ac.standrews.cs.mamoc:bottomSheetStyle}</code></td><td></td></tr>
      * </table>
      * @see #DesignTheme_bottomSheetDialogTheme
      * @see #DesignTheme_bottomSheetStyle
@@ -13120,7 +13120,7 @@ public final class R {
         0x7f030043, 0x7f030044
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#bottomSheetDialogTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#bottomSheetDialogTheme}
      * attribute's value can be found in the {@link #DesignTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13128,11 +13128,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:bottomSheetDialogTheme
+     * @attr name uk.ac.standrews.cs.mamoc:bottomSheetDialogTheme
      */
     public static final int DesignTheme_bottomSheetDialogTheme=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#bottomSheetStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#bottomSheetStyle}
      * attribute's value can be found in the {@link #DesignTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13140,7 +13140,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:bottomSheetStyle
+     * @attr name uk.ac.standrews.cs.mamoc:bottomSheetStyle
      */
     public static final int DesignTheme_bottomSheetStyle=1;
     /**
@@ -13150,14 +13150,14 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength uk.ac.standrews.cs.emap:arrowHeadLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength uk.ac.standrews.cs.emap:arrowShaftLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_barLength uk.ac.standrews.cs.emap:barLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_color uk.ac.standrews.cs.emap:color}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_drawableSize uk.ac.standrews.cs.emap:drawableSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars uk.ac.standrews.cs.emap:gapBetweenBars}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_spinBars uk.ac.standrews.cs.emap:spinBars}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_thickness uk.ac.standrews.cs.emap:thickness}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength uk.ac.standrews.cs.mamoc:arrowHeadLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength uk.ac.standrews.cs.mamoc:arrowShaftLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_barLength uk.ac.standrews.cs.mamoc:barLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_color uk.ac.standrews.cs.mamoc:color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_drawableSize uk.ac.standrews.cs.mamoc:drawableSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars uk.ac.standrews.cs.mamoc:gapBetweenBars}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_spinBars uk.ac.standrews.cs.mamoc:spinBars}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_thickness uk.ac.standrews.cs.mamoc:thickness}</code></td><td></td></tr>
      * </table>
      * @see #DrawerArrowToggle_arrowHeadLength
      * @see #DrawerArrowToggle_arrowShaftLength
@@ -13173,7 +13173,7 @@ public final class R {
         0x7f0300b4, 0x7f0300e3, 0x7f03019b, 0x7f0301eb
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#arrowHeadLength}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#arrowHeadLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13182,11 +13182,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:arrowHeadLength
+     * @attr name uk.ac.standrews.cs.mamoc:arrowHeadLength
      */
     public static final int DrawerArrowToggle_arrowHeadLength=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#arrowShaftLength}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#arrowShaftLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13195,11 +13195,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:arrowShaftLength
+     * @attr name uk.ac.standrews.cs.mamoc:arrowShaftLength
      */
     public static final int DrawerArrowToggle_arrowShaftLength=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#barLength}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#barLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13208,22 +13208,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:barLength
+     * @attr name uk.ac.standrews.cs.mamoc:barLength
      */
     public static final int DrawerArrowToggle_barLength=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#color}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#color}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:color
+     * @attr name uk.ac.standrews.cs.mamoc:color
      */
     public static final int DrawerArrowToggle_color=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#drawableSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#drawableSize}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13232,11 +13232,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:drawableSize
+     * @attr name uk.ac.standrews.cs.mamoc:drawableSize
      */
     public static final int DrawerArrowToggle_drawableSize=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#gapBetweenBars}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#gapBetweenBars}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13245,21 +13245,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:gapBetweenBars
+     * @attr name uk.ac.standrews.cs.mamoc:gapBetweenBars
      */
     public static final int DrawerArrowToggle_gapBetweenBars=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#spinBars}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#spinBars}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:spinBars
+     * @attr name uk.ac.standrews.cs.mamoc:spinBars
      */
     public static final int DrawerArrowToggle_spinBars=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#thickness}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#thickness}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13268,7 +13268,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:thickness
+     * @attr name uk.ac.standrews.cs.mamoc:thickness
      */
     public static final int DrawerArrowToggle_thickness=7;
     /**
@@ -13278,19 +13278,19 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTint uk.ac.standrews.cs.emap:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode uk.ac.standrews.cs.emap:backgroundTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_borderWidth uk.ac.standrews.cs.emap:borderWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_fabCustomSize uk.ac.standrews.cs.emap:fabCustomSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_fabSize uk.ac.standrews.cs.emap:fabSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_hideMotionSpec uk.ac.standrews.cs.emap:hideMotionSpec}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_hoveredFocusedTranslationZ uk.ac.standrews.cs.emap:hoveredFocusedTranslationZ}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_maxImageSize uk.ac.standrews.cs.emap:maxImageSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ uk.ac.standrews.cs.emap:pressedTranslationZ}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_rippleColor uk.ac.standrews.cs.emap:rippleColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_showMotionSpec uk.ac.standrews.cs.emap:showMotionSpec}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_useCompatPadding uk.ac.standrews.cs.emap:useCompatPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTint uk.ac.standrews.cs.mamoc:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode uk.ac.standrews.cs.mamoc:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_borderWidth uk.ac.standrews.cs.mamoc:borderWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fabCustomSize uk.ac.standrews.cs.mamoc:fabCustomSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fabSize uk.ac.standrews.cs.mamoc:fabSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_hideMotionSpec uk.ac.standrews.cs.mamoc:hideMotionSpec}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_hoveredFocusedTranslationZ uk.ac.standrews.cs.mamoc:hoveredFocusedTranslationZ}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_maxImageSize uk.ac.standrews.cs.mamoc:maxImageSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ uk.ac.standrews.cs.mamoc:pressedTranslationZ}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_rippleColor uk.ac.standrews.cs.mamoc:rippleColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_showMotionSpec uk.ac.standrews.cs.mamoc:showMotionSpec}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_useCompatPadding uk.ac.standrews.cs.mamoc:useCompatPadding}</code></td><td></td></tr>
      * </table>
      * @see #FloatingActionButton_backgroundTint
      * @see #FloatingActionButton_backgroundTintMode
@@ -13313,18 +13313,18 @@ public final class R {
         0x7f030209
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTint
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTint
      */
     public static final int FloatingActionButton_backgroundTint=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTintMode}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13341,11 +13341,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTintMode
      */
     public static final int FloatingActionButton_backgroundTintMode=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#borderWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#borderWidth}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13354,11 +13354,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:borderWidth
+     * @attr name uk.ac.standrews.cs.mamoc:borderWidth
      */
     public static final int FloatingActionButton_borderWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13367,11 +13367,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int FloatingActionButton_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabCustomSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabCustomSize}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13380,11 +13380,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:fabCustomSize
+     * @attr name uk.ac.standrews.cs.mamoc:fabCustomSize
      */
     public static final int FloatingActionButton_fabCustomSize=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fabSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fabSize}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13398,11 +13398,11 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:fabSize
+     * @attr name uk.ac.standrews.cs.mamoc:fabSize
      */
     public static final int FloatingActionButton_fabSize=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hideMotionSpec}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hideMotionSpec}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13410,11 +13410,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hideMotionSpec
+     * @attr name uk.ac.standrews.cs.mamoc:hideMotionSpec
      */
     public static final int FloatingActionButton_hideMotionSpec=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hoveredFocusedTranslationZ}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hoveredFocusedTranslationZ}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13423,11 +13423,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:hoveredFocusedTranslationZ
+     * @attr name uk.ac.standrews.cs.mamoc:hoveredFocusedTranslationZ
      */
     public static final int FloatingActionButton_hoveredFocusedTranslationZ=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#maxImageSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#maxImageSize}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13436,11 +13436,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:maxImageSize
+     * @attr name uk.ac.standrews.cs.mamoc:maxImageSize
      */
     public static final int FloatingActionButton_maxImageSize=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#pressedTranslationZ}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#pressedTranslationZ}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13449,22 +13449,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:pressedTranslationZ
+     * @attr name uk.ac.standrews.cs.mamoc:pressedTranslationZ
      */
     public static final int FloatingActionButton_pressedTranslationZ=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#rippleColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#rippleColor}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:rippleColor
+     * @attr name uk.ac.standrews.cs.mamoc:rippleColor
      */
     public static final int FloatingActionButton_rippleColor=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showMotionSpec}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showMotionSpec}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13472,17 +13472,17 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:showMotionSpec
+     * @attr name uk.ac.standrews.cs.mamoc:showMotionSpec
      */
     public static final int FloatingActionButton_showMotionSpec=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#useCompatPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#useCompatPadding}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:useCompatPadding
+     * @attr name uk.ac.standrews.cs.mamoc:useCompatPadding
      */
     public static final int FloatingActionButton_useCompatPadding=12;
     /**
@@ -13492,7 +13492,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide uk.ac.standrews.cs.emap:behavior_autoHide}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide uk.ac.standrews.cs.mamoc:behavior_autoHide}</code></td><td></td></tr>
      * </table>
      * @see #FloatingActionButton_Behavior_Layout_behavior_autoHide
      */
@@ -13500,13 +13500,13 @@ public final class R {
         0x7f030039
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_autoHide}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_autoHide}
      * attribute's value can be found in the {@link #FloatingActionButton_Behavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_autoHide
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_autoHide
      */
     public static final int FloatingActionButton_Behavior_Layout_behavior_autoHide=0;
     /**
@@ -13516,8 +13516,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FlowLayout_itemSpacing uk.ac.standrews.cs.emap:itemSpacing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FlowLayout_lineSpacing uk.ac.standrews.cs.emap:lineSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FlowLayout_itemSpacing uk.ac.standrews.cs.mamoc:itemSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FlowLayout_lineSpacing uk.ac.standrews.cs.mamoc:lineSpacing}</code></td><td></td></tr>
      * </table>
      * @see #FlowLayout_itemSpacing
      * @see #FlowLayout_lineSpacing
@@ -13526,7 +13526,7 @@ public final class R {
         0x7f030108, 0x7f030150
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemSpacing}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemSpacing}
      * attribute's value can be found in the {@link #FlowLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13535,11 +13535,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:itemSpacing
+     * @attr name uk.ac.standrews.cs.mamoc:itemSpacing
      */
     public static final int FlowLayout_itemSpacing=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#lineSpacing}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#lineSpacing}
      * attribute's value can be found in the {@link #FlowLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13548,7 +13548,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:lineSpacing
+     * @attr name uk.ac.standrews.cs.mamoc:lineSpacing
      */
     public static final int FlowLayout_lineSpacing=1;
     /**
@@ -13558,12 +13558,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority uk.ac.standrews.cs.emap:fontProviderAuthority}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts uk.ac.standrews.cs.emap:fontProviderCerts}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy uk.ac.standrews.cs.emap:fontProviderFetchStrategy}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout uk.ac.standrews.cs.emap:fontProviderFetchTimeout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage uk.ac.standrews.cs.emap:fontProviderPackage}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery uk.ac.standrews.cs.emap:fontProviderQuery}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority uk.ac.standrews.cs.mamoc:fontProviderAuthority}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts uk.ac.standrews.cs.mamoc:fontProviderCerts}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy uk.ac.standrews.cs.mamoc:fontProviderFetchStrategy}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout uk.ac.standrews.cs.mamoc:fontProviderFetchTimeout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage uk.ac.standrews.cs.mamoc:fontProviderPackage}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery uk.ac.standrews.cs.mamoc:fontProviderQuery}</code></td><td></td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -13577,17 +13577,17 @@ public final class R {
         0x7f0300dd, 0x7f0300de
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderAuthority}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderAuthority}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderAuthority
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderAuthority
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderCerts}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderCerts}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13595,11 +13595,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderCerts
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderCerts
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderFetchStrategy}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderFetchStrategy}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13612,11 +13612,11 @@ public final class R {
      * <tr><td>blocking</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderFetchStrategy
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderFetchStrategy
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderFetchTimeout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderFetchTimeout}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
@@ -13629,27 +13629,27 @@ public final class R {
      * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderFetchTimeout
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderFetchTimeout
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderPackage}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderPackage}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderPackage
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderPackage
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontProviderQuery}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontProviderQuery}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontProviderQuery
+     * @attr name uk.ac.standrews.cs.mamoc:fontProviderQuery
      */
     public static final int FontFamily_fontProviderQuery=5;
     /**
@@ -13664,11 +13664,11 @@ public final class R {
      * <tr><td><code>{@link #FontFamilyFont_android_fontStyle android:fontStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_ttcIndex android:ttcIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontVariationSettings android:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font uk.ac.standrews.cs.emap:font}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle uk.ac.standrews.cs.emap:fontStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings uk.ac.standrews.cs.emap:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight uk.ac.standrews.cs.emap:fontWeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_ttcIndex uk.ac.standrews.cs.emap:ttcIndex}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font uk.ac.standrews.cs.mamoc:font}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle uk.ac.standrews.cs.mamoc:fontStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings uk.ac.standrews.cs.mamoc:fontVariationSettings}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight uk.ac.standrews.cs.mamoc:fontWeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_ttcIndex uk.ac.standrews.cs.mamoc:ttcIndex}</code></td><td></td></tr>
      * </table>
      * @see #FontFamilyFont_android_font
      * @see #FontFamilyFont_android_fontWeight
@@ -13744,7 +13744,7 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontVariationSettings=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#font}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#font}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13752,11 +13752,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:font
+     * @attr name uk.ac.standrews.cs.mamoc:font
      */
     public static final int FontFamilyFont_font=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontStyle}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13769,35 +13769,35 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:fontStyle
+     * @attr name uk.ac.standrews.cs.mamoc:fontStyle
      */
     public static final int FontFamilyFont_fontStyle=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontVariationSettings}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontVariationSettings}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontVariationSettings
+     * @attr name uk.ac.standrews.cs.mamoc:fontVariationSettings
      */
     public static final int FontFamilyFont_fontVariationSettings=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontWeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontWeight}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fontWeight
+     * @attr name uk.ac.standrews.cs.mamoc:fontWeight
      */
     public static final int FontFamilyFont_fontWeight=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#ttcIndex}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#ttcIndex}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:ttcIndex
+     * @attr name uk.ac.standrews.cs.mamoc:ttcIndex
      */
     public static final int FontFamilyFont_ttcIndex=9;
     /**
@@ -13809,7 +13809,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ForegroundLinearLayout_android_foreground android:foreground}</code></td><td></td></tr>
      * <tr><td><code>{@link #ForegroundLinearLayout_android_foregroundGravity android:foregroundGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding uk.ac.standrews.cs.emap:foregroundInsidePadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding uk.ac.standrews.cs.mamoc:foregroundInsidePadding}</code></td><td></td></tr>
      * </table>
      * @see #ForegroundLinearLayout_android_foreground
      * @see #ForegroundLinearLayout_android_foregroundGravity
@@ -13861,13 +13861,13 @@ public final class R {
      */
     public static final int ForegroundLinearLayout_android_foregroundGravity=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#foregroundInsidePadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#foregroundInsidePadding}
      * attribute's value can be found in the {@link #ForegroundLinearLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:foregroundInsidePadding
+     * @attr name uk.ac.standrews.cs.mamoc:foregroundInsidePadding
      */
     public static final int ForegroundLinearLayout_foregroundInsidePadding=2;
     /**
@@ -14137,10 +14137,10 @@ public final class R {
      * <tr><td><code>{@link #LinearLayoutCompat_android_baselineAligned android:baselineAligned}</code></td><td></td></tr>
      * <tr><td><code>{@link #LinearLayoutCompat_android_baselineAlignedChildIndex android:baselineAlignedChildIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #LinearLayoutCompat_android_weightSum android:weightSum}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_divider uk.ac.standrews.cs.emap:divider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_dividerPadding uk.ac.standrews.cs.emap:dividerPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild uk.ac.standrews.cs.emap:measureWithLargestChild}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_showDividers uk.ac.standrews.cs.emap:showDividers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_divider uk.ac.standrews.cs.mamoc:divider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_dividerPadding uk.ac.standrews.cs.mamoc:dividerPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild uk.ac.standrews.cs.mamoc:measureWithLargestChild}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_showDividers uk.ac.standrews.cs.mamoc:showDividers}</code></td><td></td></tr>
      * </table>
      * @see #LinearLayoutCompat_android_gravity
      * @see #LinearLayoutCompat_android_orientation
@@ -14232,7 +14232,7 @@ public final class R {
      */
     public static final int LinearLayoutCompat_android_weightSum=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#divider}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#divider}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14240,11 +14240,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:divider
+     * @attr name uk.ac.standrews.cs.mamoc:divider
      */
     public static final int LinearLayoutCompat_divider=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#dividerPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#dividerPadding}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14253,21 +14253,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:dividerPadding
+     * @attr name uk.ac.standrews.cs.mamoc:dividerPadding
      */
     public static final int LinearLayoutCompat_dividerPadding=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#measureWithLargestChild}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#measureWithLargestChild}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:measureWithLargestChild
+     * @attr name uk.ac.standrews.cs.mamoc:measureWithLargestChild
      */
     public static final int LinearLayoutCompat_measureWithLargestChild=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showDividers}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showDividers}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -14282,7 +14282,7 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:showDividers
+     * @attr name uk.ac.standrews.cs.mamoc:showDividers
      */
     public static final int LinearLayoutCompat_showDividers=8;
     /**
@@ -14442,18 +14442,18 @@ public final class R {
      * <tr><td><code>{@link #MaterialButton_android_insetRight android:insetRight}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetTop android:insetTop}</code></td><td></td></tr>
      * <tr><td><code>{@link #MaterialButton_android_insetBottom android:insetBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTint uk.ac.standrews.cs.emap:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_backgroundTintMode uk.ac.standrews.cs.emap:backgroundTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_cornerRadius uk.ac.standrews.cs.emap:cornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_icon uk.ac.standrews.cs.emap:icon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconGravity uk.ac.standrews.cs.emap:iconGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconPadding uk.ac.standrews.cs.emap:iconPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconSize uk.ac.standrews.cs.emap:iconSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTint uk.ac.standrews.cs.emap:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_iconTintMode uk.ac.standrews.cs.emap:iconTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_rippleColor uk.ac.standrews.cs.emap:rippleColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_strokeColor uk.ac.standrews.cs.emap:strokeColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialButton_strokeWidth uk.ac.standrews.cs.emap:strokeWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTint uk.ac.standrews.cs.mamoc:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_backgroundTintMode uk.ac.standrews.cs.mamoc:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_cornerRadius uk.ac.standrews.cs.mamoc:cornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_icon uk.ac.standrews.cs.mamoc:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconGravity uk.ac.standrews.cs.mamoc:iconGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconPadding uk.ac.standrews.cs.mamoc:iconPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconSize uk.ac.standrews.cs.mamoc:iconSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTint uk.ac.standrews.cs.mamoc:iconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_iconTintMode uk.ac.standrews.cs.mamoc:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_rippleColor uk.ac.standrews.cs.mamoc:rippleColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_strokeColor uk.ac.standrews.cs.mamoc:strokeColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialButton_strokeWidth uk.ac.standrews.cs.mamoc:strokeWidth}</code></td><td></td></tr>
      * </table>
      * @see #MaterialButton_android_insetLeft
      * @see #MaterialButton_android_insetRight
@@ -14547,18 +14547,18 @@ public final class R {
      */
     public static final int MaterialButton_android_insetBottom=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTint
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTint
      */
     public static final int MaterialButton_backgroundTint=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTintMode}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -14575,11 +14575,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTintMode
      */
     public static final int MaterialButton_backgroundTintMode=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#cornerRadius}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#cornerRadius}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14588,11 +14588,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:cornerRadius
+     * @attr name uk.ac.standrews.cs.mamoc:cornerRadius
      */
     public static final int MaterialButton_cornerRadius=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#icon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#icon}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14600,11 +14600,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:icon
+     * @attr name uk.ac.standrews.cs.mamoc:icon
      */
     public static final int MaterialButton_icon=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconGravity}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -14617,11 +14617,11 @@ public final class R {
      * <tr><td>textStart</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:iconGravity
+     * @attr name uk.ac.standrews.cs.mamoc:iconGravity
      */
     public static final int MaterialButton_iconGravity=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconPadding}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14630,11 +14630,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:iconPadding
+     * @attr name uk.ac.standrews.cs.mamoc:iconPadding
      */
     public static final int MaterialButton_iconPadding=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconSize}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconSize}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14643,22 +14643,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:iconSize
+     * @attr name uk.ac.standrews.cs.mamoc:iconSize
      */
     public static final int MaterialButton_iconSize=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconTint}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:iconTint
+     * @attr name uk.ac.standrews.cs.mamoc:iconTint
      */
     public static final int MaterialButton_iconTint=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconTintMode}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -14675,33 +14675,33 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:iconTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:iconTintMode
      */
     public static final int MaterialButton_iconTintMode=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#rippleColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#rippleColor}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:rippleColor
+     * @attr name uk.ac.standrews.cs.mamoc:rippleColor
      */
     public static final int MaterialButton_rippleColor=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#strokeColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#strokeColor}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:strokeColor
+     * @attr name uk.ac.standrews.cs.mamoc:strokeColor
      */
     public static final int MaterialButton_strokeColor=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#strokeWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#strokeWidth}
      * attribute's value can be found in the {@link #MaterialButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14710,7 +14710,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:strokeWidth
+     * @attr name uk.ac.standrews.cs.mamoc:strokeWidth
      */
     public static final int MaterialButton_strokeWidth=15;
     /**
@@ -14720,8 +14720,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #MaterialCardView_strokeColor uk.ac.standrews.cs.emap:strokeColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialCardView_strokeWidth uk.ac.standrews.cs.emap:strokeWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialCardView_strokeColor uk.ac.standrews.cs.mamoc:strokeColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialCardView_strokeWidth uk.ac.standrews.cs.mamoc:strokeWidth}</code></td><td></td></tr>
      * </table>
      * @see #MaterialCardView_strokeColor
      * @see #MaterialCardView_strokeWidth
@@ -14730,18 +14730,18 @@ public final class R {
         0x7f0301a8, 0x7f0301a9
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#strokeColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#strokeColor}
      * attribute's value can be found in the {@link #MaterialCardView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:strokeColor
+     * @attr name uk.ac.standrews.cs.mamoc:strokeColor
      */
     public static final int MaterialCardView_strokeColor=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#strokeWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#strokeWidth}
      * attribute's value can be found in the {@link #MaterialCardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14750,7 +14750,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:strokeWidth
+     * @attr name uk.ac.standrews.cs.mamoc:strokeWidth
      */
     public static final int MaterialCardView_strokeWidth=1;
     /**
@@ -14760,38 +14760,38 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_bottomSheetDialogTheme uk.ac.standrews.cs.emap:bottomSheetDialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_bottomSheetStyle uk.ac.standrews.cs.emap:bottomSheetStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_chipGroupStyle uk.ac.standrews.cs.emap:chipGroupStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_chipStandaloneStyle uk.ac.standrews.cs.emap:chipStandaloneStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_chipStyle uk.ac.standrews.cs.emap:chipStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent uk.ac.standrews.cs.emap:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating uk.ac.standrews.cs.emap:colorBackgroundFloating}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary uk.ac.standrews.cs.emap:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark uk.ac.standrews.cs.emap:colorPrimaryDark}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_colorSecondary uk.ac.standrews.cs.emap:colorSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle uk.ac.standrews.cs.emap:editTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_floatingActionButtonStyle uk.ac.standrews.cs.emap:floatingActionButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_materialButtonStyle uk.ac.standrews.cs.emap:materialButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_materialCardViewStyle uk.ac.standrews.cs.emap:materialCardViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_navigationViewStyle uk.ac.standrews.cs.emap:navigationViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_scrimBackground uk.ac.standrews.cs.emap:scrimBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_snackbarButtonStyle uk.ac.standrews.cs.emap:snackbarButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_tabStyle uk.ac.standrews.cs.emap:tabStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceBody1 uk.ac.standrews.cs.emap:textAppearanceBody1}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceBody2 uk.ac.standrews.cs.emap:textAppearanceBody2}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceButton uk.ac.standrews.cs.emap:textAppearanceButton}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceCaption uk.ac.standrews.cs.emap:textAppearanceCaption}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline1 uk.ac.standrews.cs.emap:textAppearanceHeadline1}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline2 uk.ac.standrews.cs.emap:textAppearanceHeadline2}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline3 uk.ac.standrews.cs.emap:textAppearanceHeadline3}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline4 uk.ac.standrews.cs.emap:textAppearanceHeadline4}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline5 uk.ac.standrews.cs.emap:textAppearanceHeadline5}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline6 uk.ac.standrews.cs.emap:textAppearanceHeadline6}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceOverline uk.ac.standrews.cs.emap:textAppearanceOverline}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceSubtitle1 uk.ac.standrews.cs.emap:textAppearanceSubtitle1}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceSubtitle2 uk.ac.standrews.cs.emap:textAppearanceSubtitle2}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MaterialComponentsTheme_textInputStyle uk.ac.standrews.cs.emap:textInputStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_bottomSheetDialogTheme uk.ac.standrews.cs.mamoc:bottomSheetDialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_bottomSheetStyle uk.ac.standrews.cs.mamoc:bottomSheetStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_chipGroupStyle uk.ac.standrews.cs.mamoc:chipGroupStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_chipStandaloneStyle uk.ac.standrews.cs.mamoc:chipStandaloneStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_chipStyle uk.ac.standrews.cs.mamoc:chipStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorAccent uk.ac.standrews.cs.mamoc:colorAccent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorBackgroundFloating uk.ac.standrews.cs.mamoc:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimary uk.ac.standrews.cs.mamoc:colorPrimary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorPrimaryDark uk.ac.standrews.cs.mamoc:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_colorSecondary uk.ac.standrews.cs.mamoc:colorSecondary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_editTextStyle uk.ac.standrews.cs.mamoc:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_floatingActionButtonStyle uk.ac.standrews.cs.mamoc:floatingActionButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_materialButtonStyle uk.ac.standrews.cs.mamoc:materialButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_materialCardViewStyle uk.ac.standrews.cs.mamoc:materialCardViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_navigationViewStyle uk.ac.standrews.cs.mamoc:navigationViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_scrimBackground uk.ac.standrews.cs.mamoc:scrimBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_snackbarButtonStyle uk.ac.standrews.cs.mamoc:snackbarButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_tabStyle uk.ac.standrews.cs.mamoc:tabStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceBody1 uk.ac.standrews.cs.mamoc:textAppearanceBody1}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceBody2 uk.ac.standrews.cs.mamoc:textAppearanceBody2}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceButton uk.ac.standrews.cs.mamoc:textAppearanceButton}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceCaption uk.ac.standrews.cs.mamoc:textAppearanceCaption}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline1 uk.ac.standrews.cs.mamoc:textAppearanceHeadline1}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline2 uk.ac.standrews.cs.mamoc:textAppearanceHeadline2}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline3 uk.ac.standrews.cs.mamoc:textAppearanceHeadline3}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline4 uk.ac.standrews.cs.mamoc:textAppearanceHeadline4}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline5 uk.ac.standrews.cs.mamoc:textAppearanceHeadline5}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceHeadline6 uk.ac.standrews.cs.mamoc:textAppearanceHeadline6}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceOverline uk.ac.standrews.cs.mamoc:textAppearanceOverline}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceSubtitle1 uk.ac.standrews.cs.mamoc:textAppearanceSubtitle1}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textAppearanceSubtitle2 uk.ac.standrews.cs.mamoc:textAppearanceSubtitle2}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MaterialComponentsTheme_textInputStyle uk.ac.standrews.cs.mamoc:textInputStyle}</code></td><td></td></tr>
      * </table>
      * @see #MaterialComponentsTheme_bottomSheetDialogTheme
      * @see #MaterialComponentsTheme_bottomSheetStyle
@@ -14837,7 +14837,7 @@ public final class R {
         0x7f0301de, 0x7f0301e3, 0x7f0301e4, 0x7f0301e8
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#bottomSheetDialogTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#bottomSheetDialogTheme}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14845,11 +14845,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:bottomSheetDialogTheme
+     * @attr name uk.ac.standrews.cs.mamoc:bottomSheetDialogTheme
      */
     public static final int MaterialComponentsTheme_bottomSheetDialogTheme=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#bottomSheetStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#bottomSheetStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14857,11 +14857,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:bottomSheetStyle
+     * @attr name uk.ac.standrews.cs.mamoc:bottomSheetStyle
      */
     public static final int MaterialComponentsTheme_bottomSheetStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipGroupStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipGroupStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14869,11 +14869,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipGroupStyle
+     * @attr name uk.ac.standrews.cs.mamoc:chipGroupStyle
      */
     public static final int MaterialComponentsTheme_chipGroupStyle=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipStandaloneStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipStandaloneStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14881,11 +14881,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipStandaloneStyle
+     * @attr name uk.ac.standrews.cs.mamoc:chipStandaloneStyle
      */
     public static final int MaterialComponentsTheme_chipStandaloneStyle=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#chipStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#chipStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14893,66 +14893,66 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:chipStyle
+     * @attr name uk.ac.standrews.cs.mamoc:chipStyle
      */
     public static final int MaterialComponentsTheme_chipStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorAccent}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorAccent}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorAccent
+     * @attr name uk.ac.standrews.cs.mamoc:colorAccent
      */
     public static final int MaterialComponentsTheme_colorAccent=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorBackgroundFloating}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorBackgroundFloating}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorBackgroundFloating
+     * @attr name uk.ac.standrews.cs.mamoc:colorBackgroundFloating
      */
     public static final int MaterialComponentsTheme_colorBackgroundFloating=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorPrimary}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorPrimary}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorPrimary
+     * @attr name uk.ac.standrews.cs.mamoc:colorPrimary
      */
     public static final int MaterialComponentsTheme_colorPrimary=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorPrimaryDark}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorPrimaryDark}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorPrimaryDark
+     * @attr name uk.ac.standrews.cs.mamoc:colorPrimaryDark
      */
     public static final int MaterialComponentsTheme_colorPrimaryDark=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#colorSecondary}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#colorSecondary}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:colorSecondary
+     * @attr name uk.ac.standrews.cs.mamoc:colorSecondary
      */
     public static final int MaterialComponentsTheme_colorSecondary=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#editTextStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#editTextStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14960,11 +14960,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:editTextStyle
+     * @attr name uk.ac.standrews.cs.mamoc:editTextStyle
      */
     public static final int MaterialComponentsTheme_editTextStyle=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#floatingActionButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#floatingActionButtonStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14990,11 +14990,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name uk.ac.standrews.cs.emap:floatingActionButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:floatingActionButtonStyle
      */
     public static final int MaterialComponentsTheme_floatingActionButtonStyle=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#materialButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#materialButtonStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15002,11 +15002,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:materialButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:materialButtonStyle
      */
     public static final int MaterialComponentsTheme_materialButtonStyle=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#materialCardViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#materialCardViewStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15014,11 +15014,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:materialCardViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:materialCardViewStyle
      */
     public static final int MaterialComponentsTheme_materialCardViewStyle=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#navigationViewStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#navigationViewStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15026,11 +15026,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:navigationViewStyle
+     * @attr name uk.ac.standrews.cs.mamoc:navigationViewStyle
      */
     public static final int MaterialComponentsTheme_navigationViewStyle=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#scrimBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#scrimBackground}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15041,11 +15041,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:scrimBackground
+     * @attr name uk.ac.standrews.cs.mamoc:scrimBackground
      */
     public static final int MaterialComponentsTheme_scrimBackground=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#snackbarButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#snackbarButtonStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15053,11 +15053,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:snackbarButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:snackbarButtonStyle
      */
     public static final int MaterialComponentsTheme_snackbarButtonStyle=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15065,11 +15065,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabStyle
+     * @attr name uk.ac.standrews.cs.mamoc:tabStyle
      */
     public static final int MaterialComponentsTheme_tabStyle=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceBody1}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceBody1}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15077,11 +15077,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceBody1
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceBody1
      */
     public static final int MaterialComponentsTheme_textAppearanceBody1=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceBody2}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceBody2}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15089,11 +15089,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceBody2
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceBody2
      */
     public static final int MaterialComponentsTheme_textAppearanceBody2=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceButton}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceButton}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15101,11 +15101,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceButton
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceButton
      */
     public static final int MaterialComponentsTheme_textAppearanceButton=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceCaption}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceCaption}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15113,11 +15113,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceCaption
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceCaption
      */
     public static final int MaterialComponentsTheme_textAppearanceCaption=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline1}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline1}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15125,11 +15125,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline1
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline1
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline1=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline2}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline2}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15137,11 +15137,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline2
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline2
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline2=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline3}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline3}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15149,11 +15149,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline3
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline3
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline3=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline4}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline4}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15161,11 +15161,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline4
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline4
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline4=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline5}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline5}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15173,11 +15173,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline5
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline5
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline5=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceHeadline6}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceHeadline6}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15185,11 +15185,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceHeadline6
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceHeadline6
      */
     public static final int MaterialComponentsTheme_textAppearanceHeadline6=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceOverline}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceOverline}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15197,11 +15197,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceOverline
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceOverline
      */
     public static final int MaterialComponentsTheme_textAppearanceOverline=28;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceSubtitle1}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceSubtitle1}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15209,11 +15209,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceSubtitle1
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceSubtitle1
      */
     public static final int MaterialComponentsTheme_textAppearanceSubtitle1=29;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAppearanceSubtitle2}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAppearanceSubtitle2}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15221,11 +15221,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAppearanceSubtitle2
+     * @attr name uk.ac.standrews.cs.mamoc:textAppearanceSubtitle2
      */
     public static final int MaterialComponentsTheme_textAppearanceSubtitle2=30;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textInputStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textInputStyle}
      * attribute's value can be found in the {@link #MaterialComponentsTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15233,7 +15233,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textInputStyle
+     * @attr name uk.ac.standrews.cs.mamoc:textInputStyle
      */
     public static final int MaterialComponentsTheme_textInputStyle=31;
     /**
@@ -15359,16 +15359,16 @@ public final class R {
      * <tr><td><code>{@link #MenuItem_android_numericShortcut android:numericShortcut}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuItem_android_onClick android:onClick}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionLayout uk.ac.standrews.cs.emap:actionLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionProviderClass uk.ac.standrews.cs.emap:actionProviderClass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionViewClass uk.ac.standrews.cs.emap:actionViewClass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_alphabeticModifiers uk.ac.standrews.cs.emap:alphabeticModifiers}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_contentDescription uk.ac.standrews.cs.emap:contentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTint uk.ac.standrews.cs.emap:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTintMode uk.ac.standrews.cs.emap:iconTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_numericModifiers uk.ac.standrews.cs.emap:numericModifiers}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_showAsAction uk.ac.standrews.cs.emap:showAsAction}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_tooltipText uk.ac.standrews.cs.emap:tooltipText}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionLayout uk.ac.standrews.cs.mamoc:actionLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionProviderClass uk.ac.standrews.cs.mamoc:actionProviderClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionViewClass uk.ac.standrews.cs.mamoc:actionViewClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_alphabeticModifiers uk.ac.standrews.cs.mamoc:alphabeticModifiers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_contentDescription uk.ac.standrews.cs.mamoc:contentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTint uk.ac.standrews.cs.mamoc:iconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTintMode uk.ac.standrews.cs.mamoc:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_numericModifiers uk.ac.standrews.cs.mamoc:numericModifiers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_showAsAction uk.ac.standrews.cs.mamoc:showAsAction}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_tooltipText uk.ac.standrews.cs.mamoc:tooltipText}</code></td><td></td></tr>
      * </table>
      * @see #MenuItem_android_icon
      * @see #MenuItem_android_enabled
@@ -15545,7 +15545,7 @@ public final class R {
      */
     public static final int MenuItem_android_onClick=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionLayout}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15553,31 +15553,31 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:actionLayout
+     * @attr name uk.ac.standrews.cs.mamoc:actionLayout
      */
     public static final int MenuItem_actionLayout=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionProviderClass}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionProviderClass}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:actionProviderClass
+     * @attr name uk.ac.standrews.cs.mamoc:actionProviderClass
      */
     public static final int MenuItem_actionProviderClass=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#actionViewClass}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#actionViewClass}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:actionViewClass
+     * @attr name uk.ac.standrews.cs.mamoc:actionViewClass
      */
     public static final int MenuItem_actionViewClass=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#alphabeticModifiers}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#alphabeticModifiers}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -15594,32 +15594,32 @@ public final class R {
      * <tr><td>SYM</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:alphabeticModifiers
+     * @attr name uk.ac.standrews.cs.mamoc:alphabeticModifiers
      */
     public static final int MenuItem_alphabeticModifiers=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentDescription}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentDescription}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:contentDescription
+     * @attr name uk.ac.standrews.cs.mamoc:contentDescription
      */
     public static final int MenuItem_contentDescription=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconTint}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:iconTint
+     * @attr name uk.ac.standrews.cs.mamoc:iconTint
      */
     public static final int MenuItem_iconTint=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconTintMode}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -15636,11 +15636,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:iconTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:iconTintMode
      */
     public static final int MenuItem_iconTintMode=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#numericModifiers}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#numericModifiers}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -15657,11 +15657,11 @@ public final class R {
      * <tr><td>SYM</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:numericModifiers
+     * @attr name uk.ac.standrews.cs.mamoc:numericModifiers
      */
     public static final int MenuItem_numericModifiers=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showAsAction}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showAsAction}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -15677,17 +15677,17 @@ public final class R {
      * <tr><td>withText</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:showAsAction
+     * @attr name uk.ac.standrews.cs.mamoc:showAsAction
      */
     public static final int MenuItem_showAsAction=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tooltipText}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tooltipText}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:tooltipText
+     * @attr name uk.ac.standrews.cs.mamoc:tooltipText
      */
     public static final int MenuItem_tooltipText=22;
     /**
@@ -15704,8 +15704,8 @@ public final class R {
      * <tr><td><code>{@link #MenuView_android_headerBackground android:headerBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuView_android_itemBackground android:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha android:itemIconDisabledAlpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuView_preserveIconSpacing uk.ac.standrews.cs.emap:preserveIconSpacing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuView_subMenuArrow uk.ac.standrews.cs.emap:subMenuArrow}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuView_preserveIconSpacing uk.ac.standrews.cs.mamoc:preserveIconSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuView_subMenuArrow uk.ac.standrews.cs.mamoc:subMenuArrow}</code></td><td></td></tr>
      * </table>
      * @see #MenuView_android_windowAnimationStyle
      * @see #MenuView_android_itemTextAppearance
@@ -15810,17 +15810,17 @@ public final class R {
      */
     public static final int MenuView_android_itemIconDisabledAlpha=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#preserveIconSpacing}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#preserveIconSpacing}
      * attribute's value can be found in the {@link #MenuView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:preserveIconSpacing
+     * @attr name uk.ac.standrews.cs.mamoc:preserveIconSpacing
      */
     public static final int MenuView_preserveIconSpacing=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subMenuArrow}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subMenuArrow}
      * attribute's value can be found in the {@link #MenuView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15828,7 +15828,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:subMenuArrow
+     * @attr name uk.ac.standrews.cs.mamoc:subMenuArrow
      */
     public static final int MenuView_subMenuArrow=8;
     /**
@@ -15841,15 +15841,15 @@ public final class R {
      * <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_headerLayout uk.ac.standrews.cs.emap:headerLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemBackground uk.ac.standrews.cs.emap:itemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemHorizontalPadding uk.ac.standrews.cs.emap:itemHorizontalPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemIconPadding uk.ac.standrews.cs.emap:itemIconPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemIconTint uk.ac.standrews.cs.emap:itemIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemTextAppearance uk.ac.standrews.cs.emap:itemTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemTextColor uk.ac.standrews.cs.emap:itemTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_menu uk.ac.standrews.cs.emap:menu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_headerLayout uk.ac.standrews.cs.mamoc:headerLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemBackground uk.ac.standrews.cs.mamoc:itemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemHorizontalPadding uk.ac.standrews.cs.mamoc:itemHorizontalPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemIconPadding uk.ac.standrews.cs.mamoc:itemIconPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemIconTint uk.ac.standrews.cs.mamoc:itemIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemTextAppearance uk.ac.standrews.cs.mamoc:itemTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemTextColor uk.ac.standrews.cs.mamoc:itemTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_menu uk.ac.standrews.cs.mamoc:menu}</code></td><td></td></tr>
      * </table>
      * @see #NavigationView_android_background
      * @see #NavigationView_android_fitsSystemWindows
@@ -15908,7 +15908,7 @@ public final class R {
      */
     public static final int NavigationView_android_maxWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -15917,11 +15917,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int NavigationView_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#headerLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#headerLayout}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15929,11 +15929,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:headerLayout
+     * @attr name uk.ac.standrews.cs.mamoc:headerLayout
      */
     public static final int NavigationView_headerLayout=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemBackground}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15941,11 +15941,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemBackground
+     * @attr name uk.ac.standrews.cs.mamoc:itemBackground
      */
     public static final int NavigationView_itemBackground=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemHorizontalPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemHorizontalPadding}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -15954,11 +15954,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:itemHorizontalPadding
+     * @attr name uk.ac.standrews.cs.mamoc:itemHorizontalPadding
      */
     public static final int NavigationView_itemHorizontalPadding=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemIconPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemIconPadding}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -15967,22 +15967,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:itemIconPadding
+     * @attr name uk.ac.standrews.cs.mamoc:itemIconPadding
      */
     public static final int NavigationView_itemIconPadding=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemIconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemIconTint}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemIconTint
+     * @attr name uk.ac.standrews.cs.mamoc:itemIconTint
      */
     public static final int NavigationView_itemIconTint=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemTextAppearance}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15990,22 +15990,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:itemTextAppearance
      */
     public static final int NavigationView_itemTextAppearance=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#itemTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#itemTextColor}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:itemTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:itemTextColor
      */
     public static final int NavigationView_itemTextColor=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#menu}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#menu}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16013,7 +16013,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:menu
+     * @attr name uk.ac.standrews.cs.mamoc:menu
      */
     public static final int NavigationView_menu=11;
     /**
@@ -16025,7 +16025,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #PopupWindow_android_popupBackground android:popupBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #PopupWindow_android_popupAnimationStyle android:popupAnimationStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #PopupWindow_overlapAnchor uk.ac.standrews.cs.emap:overlapAnchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #PopupWindow_overlapAnchor uk.ac.standrews.cs.mamoc:overlapAnchor}</code></td><td></td></tr>
      * </table>
      * @see #PopupWindow_android_popupBackground
      * @see #PopupWindow_android_popupAnimationStyle
@@ -16062,13 +16062,13 @@ public final class R {
      */
     public static final int PopupWindow_android_popupAnimationStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#overlapAnchor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#overlapAnchor}
      * attribute's value can be found in the {@link #PopupWindow} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:overlapAnchor
+     * @attr name uk.ac.standrews.cs.mamoc:overlapAnchor
      */
     public static final int PopupWindow_overlapAnchor=2;
     /**
@@ -16078,7 +16078,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor uk.ac.standrews.cs.emap:state_above_anchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor uk.ac.standrews.cs.mamoc:state_above_anchor}</code></td><td></td></tr>
      * </table>
      * @see #PopupWindowBackgroundState_state_above_anchor
      */
@@ -16086,13 +16086,13 @@ public final class R {
         0x7f0301a1
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#state_above_anchor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#state_above_anchor}
      * attribute's value can be found in the {@link #PopupWindowBackgroundState} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:state_above_anchor
+     * @attr name uk.ac.standrews.cs.mamoc:state_above_anchor
      */
     public static final int PopupWindowBackgroundState_state_above_anchor=0;
     /**
@@ -16102,8 +16102,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons uk.ac.standrews.cs.emap:paddingBottomNoButtons}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecycleListView_paddingTopNoTitle uk.ac.standrews.cs.emap:paddingTopNoTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons uk.ac.standrews.cs.mamoc:paddingBottomNoButtons}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecycleListView_paddingTopNoTitle uk.ac.standrews.cs.mamoc:paddingTopNoTitle}</code></td><td></td></tr>
      * </table>
      * @see #RecycleListView_paddingBottomNoButtons
      * @see #RecycleListView_paddingTopNoTitle
@@ -16112,7 +16112,7 @@ public final class R {
         0x7f03016c, 0x7f03016f
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#paddingBottomNoButtons}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#paddingBottomNoButtons}
      * attribute's value can be found in the {@link #RecycleListView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -16121,11 +16121,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:paddingBottomNoButtons
+     * @attr name uk.ac.standrews.cs.mamoc:paddingBottomNoButtons
      */
     public static final int RecycleListView_paddingBottomNoButtons=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#paddingTopNoTitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#paddingTopNoTitle}
      * attribute's value can be found in the {@link #RecycleListView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -16134,7 +16134,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:paddingTopNoTitle
+     * @attr name uk.ac.standrews.cs.mamoc:paddingTopNoTitle
      */
     public static final int RecycleListView_paddingTopNoTitle=1;
     /**
@@ -16146,15 +16146,15 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #RecyclerView_android_orientation android:orientation}</code></td><td></td></tr>
      * <tr><td><code>{@link #RecyclerView_android_descendantFocusability android:descendantFocusability}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollEnabled uk.ac.standrews.cs.emap:fastScrollEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalThumbDrawable uk.ac.standrews.cs.emap:fastScrollHorizontalThumbDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalTrackDrawable uk.ac.standrews.cs.emap:fastScrollHorizontalTrackDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalThumbDrawable uk.ac.standrews.cs.emap:fastScrollVerticalThumbDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalTrackDrawable uk.ac.standrews.cs.emap:fastScrollVerticalTrackDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_layoutManager uk.ac.standrews.cs.emap:layoutManager}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_reverseLayout uk.ac.standrews.cs.emap:reverseLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_spanCount uk.ac.standrews.cs.emap:spanCount}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_stackFromEnd uk.ac.standrews.cs.emap:stackFromEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollEnabled uk.ac.standrews.cs.mamoc:fastScrollEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalThumbDrawable uk.ac.standrews.cs.mamoc:fastScrollHorizontalThumbDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalTrackDrawable uk.ac.standrews.cs.mamoc:fastScrollHorizontalTrackDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalThumbDrawable uk.ac.standrews.cs.mamoc:fastScrollVerticalThumbDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalTrackDrawable uk.ac.standrews.cs.mamoc:fastScrollVerticalTrackDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_layoutManager uk.ac.standrews.cs.mamoc:layoutManager}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_reverseLayout uk.ac.standrews.cs.mamoc:reverseLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_spanCount uk.ac.standrews.cs.mamoc:spanCount}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_stackFromEnd uk.ac.standrews.cs.mamoc:stackFromEnd}</code></td><td></td></tr>
      * </table>
      * @see #RecyclerView_android_orientation
      * @see #RecyclerView_android_descendantFocusability
@@ -16209,17 +16209,17 @@ public final class R {
      */
     public static final int RecyclerView_android_descendantFocusability=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fastScrollEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fastScrollEnabled}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fastScrollEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:fastScrollEnabled
      */
     public static final int RecyclerView_fastScrollEnabled=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fastScrollHorizontalThumbDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fastScrollHorizontalThumbDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16227,11 +16227,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fastScrollHorizontalThumbDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:fastScrollHorizontalThumbDrawable
      */
     public static final int RecyclerView_fastScrollHorizontalThumbDrawable=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fastScrollHorizontalTrackDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fastScrollHorizontalTrackDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16239,11 +16239,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fastScrollHorizontalTrackDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:fastScrollHorizontalTrackDrawable
      */
     public static final int RecyclerView_fastScrollHorizontalTrackDrawable=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fastScrollVerticalThumbDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fastScrollVerticalThumbDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16251,11 +16251,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fastScrollVerticalThumbDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:fastScrollVerticalThumbDrawable
      */
     public static final int RecyclerView_fastScrollVerticalThumbDrawable=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fastScrollVerticalTrackDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fastScrollVerticalTrackDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16263,46 +16263,46 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:fastScrollVerticalTrackDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:fastScrollVerticalTrackDrawable
      */
     public static final int RecyclerView_fastScrollVerticalTrackDrawable=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layoutManager}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layoutManager}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:layoutManager
+     * @attr name uk.ac.standrews.cs.mamoc:layoutManager
      */
     public static final int RecyclerView_layoutManager=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#reverseLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#reverseLayout}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:reverseLayout
+     * @attr name uk.ac.standrews.cs.mamoc:reverseLayout
      */
     public static final int RecyclerView_reverseLayout=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#spanCount}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#spanCount}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:spanCount
+     * @attr name uk.ac.standrews.cs.mamoc:spanCount
      */
     public static final int RecyclerView_spanCount=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#stackFromEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#stackFromEnd}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:stackFromEnd
+     * @attr name uk.ac.standrews.cs.mamoc:stackFromEnd
      */
     public static final int RecyclerView_stackFromEnd=10;
     /**
@@ -16312,7 +16312,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground uk.ac.standrews.cs.emap:insetForeground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground uk.ac.standrews.cs.mamoc:insetForeground}</code></td><td></td></tr>
      * </table>
      * @see #ScrimInsetsFrameLayout_insetForeground
      */
@@ -16320,7 +16320,7 @@ public final class R {
         0x7f0300ff
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#insetForeground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#insetForeground}
      * attribute's value can be found in the {@link #ScrimInsetsFrameLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16331,7 +16331,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:insetForeground
+     * @attr name uk.ac.standrews.cs.mamoc:insetForeground
      */
     public static final int ScrimInsetsFrameLayout_insetForeground=0;
     /**
@@ -16341,7 +16341,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop uk.ac.standrews.cs.emap:behavior_overlapTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop uk.ac.standrews.cs.mamoc:behavior_overlapTop}</code></td><td></td></tr>
      * </table>
      * @see #ScrollingViewBehavior_Layout_behavior_overlapTop
      */
@@ -16349,7 +16349,7 @@ public final class R {
         0x7f03003c
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#behavior_overlapTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#behavior_overlapTop}
      * attribute's value can be found in the {@link #ScrollingViewBehavior_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -16358,7 +16358,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:behavior_overlapTop
+     * @attr name uk.ac.standrews.cs.mamoc:behavior_overlapTop
      */
     public static final int ScrollingViewBehavior_Layout_behavior_overlapTop=0;
     /**
@@ -16372,19 +16372,19 @@ public final class R {
      * <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_closeIcon uk.ac.standrews.cs.emap:closeIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_commitIcon uk.ac.standrews.cs.emap:commitIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_defaultQueryHint uk.ac.standrews.cs.emap:defaultQueryHint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_goIcon uk.ac.standrews.cs.emap:goIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_iconifiedByDefault uk.ac.standrews.cs.emap:iconifiedByDefault}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_layout uk.ac.standrews.cs.emap:layout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_queryBackground uk.ac.standrews.cs.emap:queryBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_queryHint uk.ac.standrews.cs.emap:queryHint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_searchHintIcon uk.ac.standrews.cs.emap:searchHintIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_searchIcon uk.ac.standrews.cs.emap:searchIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_submitBackground uk.ac.standrews.cs.emap:submitBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_suggestionRowLayout uk.ac.standrews.cs.emap:suggestionRowLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_voiceIcon uk.ac.standrews.cs.emap:voiceIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_closeIcon uk.ac.standrews.cs.mamoc:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_commitIcon uk.ac.standrews.cs.mamoc:commitIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_defaultQueryHint uk.ac.standrews.cs.mamoc:defaultQueryHint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_goIcon uk.ac.standrews.cs.mamoc:goIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_iconifiedByDefault uk.ac.standrews.cs.mamoc:iconifiedByDefault}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_layout uk.ac.standrews.cs.mamoc:layout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_queryBackground uk.ac.standrews.cs.mamoc:queryBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_queryHint uk.ac.standrews.cs.mamoc:queryHint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_searchHintIcon uk.ac.standrews.cs.mamoc:searchHintIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_searchIcon uk.ac.standrews.cs.mamoc:searchIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_submitBackground uk.ac.standrews.cs.mamoc:submitBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_suggestionRowLayout uk.ac.standrews.cs.mamoc:suggestionRowLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_voiceIcon uk.ac.standrews.cs.mamoc:voiceIcon}</code></td><td></td></tr>
      * </table>
      * @see #SearchView_android_focusable
      * @see #SearchView_android_maxWidth
@@ -16522,7 +16522,7 @@ public final class R {
      */
     public static final int SearchView_android_imeOptions=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#closeIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#closeIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16530,11 +16530,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:closeIcon
+     * @attr name uk.ac.standrews.cs.mamoc:closeIcon
      */
     public static final int SearchView_closeIcon=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#commitIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#commitIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16542,21 +16542,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:commitIcon
+     * @attr name uk.ac.standrews.cs.mamoc:commitIcon
      */
     public static final int SearchView_commitIcon=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#defaultQueryHint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#defaultQueryHint}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:defaultQueryHint
+     * @attr name uk.ac.standrews.cs.mamoc:defaultQueryHint
      */
     public static final int SearchView_defaultQueryHint=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#goIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#goIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16564,21 +16564,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:goIcon
+     * @attr name uk.ac.standrews.cs.mamoc:goIcon
      */
     public static final int SearchView_goIcon=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#iconifiedByDefault}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#iconifiedByDefault}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:iconifiedByDefault
+     * @attr name uk.ac.standrews.cs.mamoc:iconifiedByDefault
      */
     public static final int SearchView_iconifiedByDefault=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#layout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#layout}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16586,11 +16586,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:layout
+     * @attr name uk.ac.standrews.cs.mamoc:layout
      */
     public static final int SearchView_layout=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#queryBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#queryBackground}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16598,21 +16598,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:queryBackground
+     * @attr name uk.ac.standrews.cs.mamoc:queryBackground
      */
     public static final int SearchView_queryBackground=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#queryHint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#queryHint}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:queryHint
+     * @attr name uk.ac.standrews.cs.mamoc:queryHint
      */
     public static final int SearchView_queryHint=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#searchHintIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#searchHintIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16620,11 +16620,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:searchHintIcon
+     * @attr name uk.ac.standrews.cs.mamoc:searchHintIcon
      */
     public static final int SearchView_searchHintIcon=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#searchIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#searchIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16632,11 +16632,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:searchIcon
+     * @attr name uk.ac.standrews.cs.mamoc:searchIcon
      */
     public static final int SearchView_searchIcon=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#submitBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#submitBackground}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16644,11 +16644,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:submitBackground
+     * @attr name uk.ac.standrews.cs.mamoc:submitBackground
      */
     public static final int SearchView_submitBackground=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#suggestionRowLayout}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#suggestionRowLayout}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16656,11 +16656,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:suggestionRowLayout
+     * @attr name uk.ac.standrews.cs.mamoc:suggestionRowLayout
      */
     public static final int SearchView_suggestionRowLayout=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#voiceIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#voiceIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16668,7 +16668,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:voiceIcon
+     * @attr name uk.ac.standrews.cs.mamoc:voiceIcon
      */
     public static final int SearchView_voiceIcon=16;
     /**
@@ -16678,8 +16678,8 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #Snackbar_snackbarButtonStyle uk.ac.standrews.cs.emap:snackbarButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Snackbar_snackbarStyle uk.ac.standrews.cs.emap:snackbarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Snackbar_snackbarButtonStyle uk.ac.standrews.cs.mamoc:snackbarButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Snackbar_snackbarStyle uk.ac.standrews.cs.mamoc:snackbarStyle}</code></td><td></td></tr>
      * </table>
      * @see #Snackbar_snackbarButtonStyle
      * @see #Snackbar_snackbarStyle
@@ -16688,7 +16688,7 @@ public final class R {
         0x7f030198, 0x7f030199
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#snackbarButtonStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#snackbarButtonStyle}
      * attribute's value can be found in the {@link #Snackbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16696,11 +16696,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:snackbarButtonStyle
+     * @attr name uk.ac.standrews.cs.mamoc:snackbarButtonStyle
      */
     public static final int Snackbar_snackbarButtonStyle=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#snackbarStyle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#snackbarStyle}
      * attribute's value can be found in the {@link #Snackbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16708,7 +16708,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:snackbarStyle
+     * @attr name uk.ac.standrews.cs.mamoc:snackbarStyle
      */
     public static final int Snackbar_snackbarStyle=1;
     /**
@@ -16719,8 +16719,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_elevation uk.ac.standrews.cs.emap:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth uk.ac.standrews.cs.emap:maxActionInlineWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_elevation uk.ac.standrews.cs.mamoc:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth uk.ac.standrews.cs.mamoc:maxActionInlineWidth}</code></td><td></td></tr>
      * </table>
      * @see #SnackbarLayout_android_maxWidth
      * @see #SnackbarLayout_elevation
@@ -16743,7 +16743,7 @@ public final class R {
      */
     public static final int SnackbarLayout_android_maxWidth=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#elevation}
      * attribute's value can be found in the {@link #SnackbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -16752,11 +16752,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:elevation
+     * @attr name uk.ac.standrews.cs.mamoc:elevation
      */
     public static final int SnackbarLayout_elevation=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#maxActionInlineWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#maxActionInlineWidth}
      * attribute's value can be found in the {@link #SnackbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -16765,7 +16765,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:maxActionInlineWidth
+     * @attr name uk.ac.standrews.cs.mamoc:maxActionInlineWidth
      */
     public static final int SnackbarLayout_maxActionInlineWidth=2;
     /**
@@ -16779,7 +16779,7 @@ public final class R {
      * <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #Spinner_android_prompt android:prompt}</code></td><td></td></tr>
      * <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Spinner_popupTheme uk.ac.standrews.cs.emap:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Spinner_popupTheme uk.ac.standrews.cs.mamoc:popupTheme}</code></td><td></td></tr>
      * </table>
      * @see #Spinner_android_entries
      * @see #Spinner_android_popupBackground
@@ -16854,7 +16854,7 @@ public final class R {
      */
     public static final int Spinner_android_dropDownWidth=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#popupTheme}
      * attribute's value can be found in the {@link #Spinner} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -16862,7 +16862,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:popupTheme
+     * @attr name uk.ac.standrews.cs.mamoc:popupTheme
      */
     public static final int Spinner_popupTheme=4;
     /**
@@ -16984,17 +16984,17 @@ public final class R {
      * <tr><td><code>{@link #SwitchCompat_android_textOn android:textOn}</code></td><td></td></tr>
      * <tr><td><code>{@link #SwitchCompat_android_textOff android:textOff}</code></td><td></td></tr>
      * <tr><td><code>{@link #SwitchCompat_android_thumb android:thumb}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_showText uk.ac.standrews.cs.emap:showText}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_splitTrack uk.ac.standrews.cs.emap:splitTrack}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchMinWidth uk.ac.standrews.cs.emap:switchMinWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchPadding uk.ac.standrews.cs.emap:switchPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchTextAppearance uk.ac.standrews.cs.emap:switchTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTextPadding uk.ac.standrews.cs.emap:thumbTextPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTint uk.ac.standrews.cs.emap:thumbTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTintMode uk.ac.standrews.cs.emap:thumbTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_track uk.ac.standrews.cs.emap:track}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_trackTint uk.ac.standrews.cs.emap:trackTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_trackTintMode uk.ac.standrews.cs.emap:trackTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_showText uk.ac.standrews.cs.mamoc:showText}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_splitTrack uk.ac.standrews.cs.mamoc:splitTrack}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchMinWidth uk.ac.standrews.cs.mamoc:switchMinWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchPadding uk.ac.standrews.cs.mamoc:switchPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchTextAppearance uk.ac.standrews.cs.mamoc:switchTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTextPadding uk.ac.standrews.cs.mamoc:thumbTextPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTint uk.ac.standrews.cs.mamoc:thumbTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTintMode uk.ac.standrews.cs.mamoc:thumbTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_track uk.ac.standrews.cs.mamoc:track}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_trackTint uk.ac.standrews.cs.mamoc:trackTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_trackTintMode uk.ac.standrews.cs.mamoc:trackTintMode}</code></td><td></td></tr>
      * </table>
      * @see #SwitchCompat_android_textOn
      * @see #SwitchCompat_android_textOff
@@ -17050,27 +17050,27 @@ public final class R {
      */
     public static final int SwitchCompat_android_thumb=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#showText}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#showText}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:showText
+     * @attr name uk.ac.standrews.cs.mamoc:showText
      */
     public static final int SwitchCompat_showText=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#splitTrack}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#splitTrack}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:splitTrack
+     * @attr name uk.ac.standrews.cs.mamoc:splitTrack
      */
     public static final int SwitchCompat_splitTrack=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#switchMinWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#switchMinWidth}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17079,11 +17079,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:switchMinWidth
+     * @attr name uk.ac.standrews.cs.mamoc:switchMinWidth
      */
     public static final int SwitchCompat_switchMinWidth=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#switchPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#switchPadding}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17092,11 +17092,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:switchPadding
+     * @attr name uk.ac.standrews.cs.mamoc:switchPadding
      */
     public static final int SwitchCompat_switchPadding=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#switchTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#switchTextAppearance}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17104,11 +17104,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:switchTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:switchTextAppearance
      */
     public static final int SwitchCompat_switchTextAppearance=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#thumbTextPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#thumbTextPadding}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17117,22 +17117,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:thumbTextPadding
+     * @attr name uk.ac.standrews.cs.mamoc:thumbTextPadding
      */
     public static final int SwitchCompat_thumbTextPadding=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#thumbTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#thumbTint}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:thumbTint
+     * @attr name uk.ac.standrews.cs.mamoc:thumbTint
      */
     public static final int SwitchCompat_thumbTint=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#thumbTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#thumbTintMode}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17149,11 +17149,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:thumbTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:thumbTintMode
      */
     public static final int SwitchCompat_thumbTintMode=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#track}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#track}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17161,22 +17161,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:track
+     * @attr name uk.ac.standrews.cs.mamoc:track
      */
     public static final int SwitchCompat_track=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#trackTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#trackTint}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:trackTint
+     * @attr name uk.ac.standrews.cs.mamoc:trackTint
      */
     public static final int SwitchCompat_trackTint=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#trackTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#trackTintMode}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17193,7 +17193,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:trackTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:trackTintMode
      */
     public static final int SwitchCompat_trackTintMode=13;
     /**
@@ -17255,31 +17255,31 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #TabLayout_tabBackground uk.ac.standrews.cs.emap:tabBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabContentStart uk.ac.standrews.cs.emap:tabContentStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabGravity uk.ac.standrews.cs.emap:tabGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIconTint uk.ac.standrews.cs.emap:tabIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIconTintMode uk.ac.standrews.cs.emap:tabIconTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicator uk.ac.standrews.cs.emap:tabIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorAnimationDuration uk.ac.standrews.cs.emap:tabIndicatorAnimationDuration}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorColor uk.ac.standrews.cs.emap:tabIndicatorColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorFullWidth uk.ac.standrews.cs.emap:tabIndicatorFullWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorGravity uk.ac.standrews.cs.emap:tabIndicatorGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorHeight uk.ac.standrews.cs.emap:tabIndicatorHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabInlineLabel uk.ac.standrews.cs.emap:tabInlineLabel}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMaxWidth uk.ac.standrews.cs.emap:tabMaxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMinWidth uk.ac.standrews.cs.emap:tabMinWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMode uk.ac.standrews.cs.emap:tabMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPadding uk.ac.standrews.cs.emap:tabPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingBottom uk.ac.standrews.cs.emap:tabPaddingBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingEnd uk.ac.standrews.cs.emap:tabPaddingEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingStart uk.ac.standrews.cs.emap:tabPaddingStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingTop uk.ac.standrews.cs.emap:tabPaddingTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabRippleColor uk.ac.standrews.cs.emap:tabRippleColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabSelectedTextColor uk.ac.standrews.cs.emap:tabSelectedTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabTextAppearance uk.ac.standrews.cs.emap:tabTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabTextColor uk.ac.standrews.cs.emap:tabTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabUnboundedRipple uk.ac.standrews.cs.emap:tabUnboundedRipple}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabBackground uk.ac.standrews.cs.mamoc:tabBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabContentStart uk.ac.standrews.cs.mamoc:tabContentStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabGravity uk.ac.standrews.cs.mamoc:tabGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIconTint uk.ac.standrews.cs.mamoc:tabIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIconTintMode uk.ac.standrews.cs.mamoc:tabIconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicator uk.ac.standrews.cs.mamoc:tabIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorAnimationDuration uk.ac.standrews.cs.mamoc:tabIndicatorAnimationDuration}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorColor uk.ac.standrews.cs.mamoc:tabIndicatorColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorFullWidth uk.ac.standrews.cs.mamoc:tabIndicatorFullWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorGravity uk.ac.standrews.cs.mamoc:tabIndicatorGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorHeight uk.ac.standrews.cs.mamoc:tabIndicatorHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabInlineLabel uk.ac.standrews.cs.mamoc:tabInlineLabel}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMaxWidth uk.ac.standrews.cs.mamoc:tabMaxWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMinWidth uk.ac.standrews.cs.mamoc:tabMinWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMode uk.ac.standrews.cs.mamoc:tabMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPadding uk.ac.standrews.cs.mamoc:tabPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingBottom uk.ac.standrews.cs.mamoc:tabPaddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingEnd uk.ac.standrews.cs.mamoc:tabPaddingEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingStart uk.ac.standrews.cs.mamoc:tabPaddingStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingTop uk.ac.standrews.cs.mamoc:tabPaddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabRippleColor uk.ac.standrews.cs.mamoc:tabRippleColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabSelectedTextColor uk.ac.standrews.cs.mamoc:tabSelectedTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabTextAppearance uk.ac.standrews.cs.mamoc:tabTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabTextColor uk.ac.standrews.cs.mamoc:tabTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabUnboundedRipple uk.ac.standrews.cs.mamoc:tabUnboundedRipple}</code></td><td></td></tr>
      * </table>
      * @see #TabLayout_tabBackground
      * @see #TabLayout_tabContentStart
@@ -17317,7 +17317,7 @@ public final class R {
         0x7f0301ce
       };
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabBackground}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabBackground}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17325,11 +17325,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabBackground
+     * @attr name uk.ac.standrews.cs.mamoc:tabBackground
      */
     public static final int TabLayout_tabBackground=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabContentStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabContentStart}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17338,11 +17338,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabContentStart
+     * @attr name uk.ac.standrews.cs.mamoc:tabContentStart
      */
     public static final int TabLayout_tabContentStart=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabGravity}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17355,22 +17355,22 @@ public final class R {
      * <tr><td>fill</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tabGravity
+     * @attr name uk.ac.standrews.cs.mamoc:tabGravity
      */
     public static final int TabLayout_tabGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIconTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIconTint}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIconTint
+     * @attr name uk.ac.standrews.cs.mamoc:tabIconTint
      */
     public static final int TabLayout_tabIconTint=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIconTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIconTintMode}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17387,11 +17387,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIconTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:tabIconTintMode
      */
     public static final int TabLayout_tabIconTintMode=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicator}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicator}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17399,41 +17399,41 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicator
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicator
      */
     public static final int TabLayout_tabIndicator=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicatorAnimationDuration}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicatorAnimationDuration}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicatorAnimationDuration
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicatorAnimationDuration
      */
     public static final int TabLayout_tabIndicatorAnimationDuration=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicatorColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicatorColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicatorColor
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicatorColor
      */
     public static final int TabLayout_tabIndicatorColor=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicatorFullWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicatorFullWidth}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicatorFullWidth
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicatorFullWidth
      */
     public static final int TabLayout_tabIndicatorFullWidth=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicatorGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicatorGravity}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17448,11 +17448,11 @@ public final class R {
      * <tr><td>top</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicatorGravity
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicatorGravity
      */
     public static final int TabLayout_tabIndicatorGravity=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabIndicatorHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabIndicatorHeight}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17461,21 +17461,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabIndicatorHeight
+     * @attr name uk.ac.standrews.cs.mamoc:tabIndicatorHeight
      */
     public static final int TabLayout_tabIndicatorHeight=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabInlineLabel}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabInlineLabel}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabInlineLabel
+     * @attr name uk.ac.standrews.cs.mamoc:tabInlineLabel
      */
     public static final int TabLayout_tabInlineLabel=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabMaxWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabMaxWidth}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17484,11 +17484,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabMaxWidth
+     * @attr name uk.ac.standrews.cs.mamoc:tabMaxWidth
      */
     public static final int TabLayout_tabMaxWidth=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabMinWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabMinWidth}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17497,11 +17497,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabMinWidth
+     * @attr name uk.ac.standrews.cs.mamoc:tabMinWidth
      */
     public static final int TabLayout_tabMinWidth=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabMode}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17514,11 +17514,11 @@ public final class R {
      * <tr><td>scrollable</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:tabMode
+     * @attr name uk.ac.standrews.cs.mamoc:tabMode
      */
     public static final int TabLayout_tabMode=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabPadding}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabPadding}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17527,11 +17527,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabPadding
+     * @attr name uk.ac.standrews.cs.mamoc:tabPadding
      */
     public static final int TabLayout_tabPadding=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabPaddingBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabPaddingBottom}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17540,11 +17540,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabPaddingBottom
+     * @attr name uk.ac.standrews.cs.mamoc:tabPaddingBottom
      */
     public static final int TabLayout_tabPaddingBottom=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabPaddingEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabPaddingEnd}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17553,11 +17553,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabPaddingEnd
+     * @attr name uk.ac.standrews.cs.mamoc:tabPaddingEnd
      */
     public static final int TabLayout_tabPaddingEnd=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabPaddingStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabPaddingStart}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17566,11 +17566,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabPaddingStart
+     * @attr name uk.ac.standrews.cs.mamoc:tabPaddingStart
      */
     public static final int TabLayout_tabPaddingStart=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabPaddingTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabPaddingTop}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17579,33 +17579,33 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:tabPaddingTop
+     * @attr name uk.ac.standrews.cs.mamoc:tabPaddingTop
      */
     public static final int TabLayout_tabPaddingTop=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabRippleColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabRippleColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabRippleColor
+     * @attr name uk.ac.standrews.cs.mamoc:tabRippleColor
      */
     public static final int TabLayout_tabRippleColor=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabSelectedTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabSelectedTextColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabSelectedTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:tabSelectedTextColor
      */
     public static final int TabLayout_tabSelectedTextColor=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabTextAppearance}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17613,28 +17613,28 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:tabTextAppearance
      */
     public static final int TabLayout_tabTextAppearance=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabTextColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:tabTextColor
      */
     public static final int TabLayout_tabTextColor=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#tabUnboundedRipple}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#tabUnboundedRipple}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:tabUnboundedRipple
+     * @attr name uk.ac.standrews.cs.mamoc:tabUnboundedRipple
      */
     public static final int TabLayout_tabUnboundedRipple=24;
     /**
@@ -17655,8 +17655,8 @@ public final class R {
      * <tr><td><code>{@link #TextAppearance_android_shadowDy android:shadowDy}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextAppearance_android_shadowRadius android:shadowRadius}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextAppearance_android_fontFamily android:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextAppearance_fontFamily uk.ac.standrews.cs.emap:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextAppearance_textAllCaps uk.ac.standrews.cs.emap:textAllCaps}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextAppearance_fontFamily uk.ac.standrews.cs.mamoc:fontFamily}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextAppearance_textAllCaps uk.ac.standrews.cs.mamoc:textAllCaps}</code></td><td></td></tr>
      * </table>
      * @see #TextAppearance_android_textSize
      * @see #TextAppearance_android_typeface
@@ -17822,17 +17822,17 @@ public final class R {
      */
     public static final int TextAppearance_android_fontFamily=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#fontFamily}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#fontFamily}
      * attribute's value can be found in the {@link #TextAppearance} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:fontFamily
+     * @attr name uk.ac.standrews.cs.mamoc:fontFamily
      */
     public static final int TextAppearance_fontFamily=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#textAllCaps}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#textAllCaps}
      * attribute's value can be found in the {@link #TextAppearance} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -17842,7 +17842,7 @@ public final class R {
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:textAllCaps
+     * @attr name uk.ac.standrews.cs.mamoc:textAllCaps
      */
     public static final int TextAppearance_textAllCaps=12;
     /**
@@ -17854,32 +17854,32 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #TextInputLayout_android_textColorHint android:textColorHint}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextInputLayout_android_hint android:hint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxBackgroundColor uk.ac.standrews.cs.emap:boxBackgroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxBackgroundMode uk.ac.standrews.cs.emap:boxBackgroundMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxCollapsedPaddingTop uk.ac.standrews.cs.emap:boxCollapsedPaddingTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusBottomEnd uk.ac.standrews.cs.emap:boxCornerRadiusBottomEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusBottomStart uk.ac.standrews.cs.emap:boxCornerRadiusBottomStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusTopEnd uk.ac.standrews.cs.emap:boxCornerRadiusTopEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusTopStart uk.ac.standrews.cs.emap:boxCornerRadiusTopStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxStrokeColor uk.ac.standrews.cs.emap:boxStrokeColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_boxStrokeWidth uk.ac.standrews.cs.emap:boxStrokeWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterEnabled uk.ac.standrews.cs.emap:counterEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterMaxLength uk.ac.standrews.cs.emap:counterMaxLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance uk.ac.standrews.cs.emap:counterOverflowTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterTextAppearance uk.ac.standrews.cs.emap:counterTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_errorEnabled uk.ac.standrews.cs.emap:errorEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_errorTextAppearance uk.ac.standrews.cs.emap:errorTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_helperText uk.ac.standrews.cs.emap:helperText}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_helperTextEnabled uk.ac.standrews.cs.emap:helperTextEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_helperTextTextAppearance uk.ac.standrews.cs.emap:helperTextTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled uk.ac.standrews.cs.emap:hintAnimationEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintEnabled uk.ac.standrews.cs.emap:hintEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintTextAppearance uk.ac.standrews.cs.emap:hintTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription uk.ac.standrews.cs.emap:passwordToggleContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable uk.ac.standrews.cs.emap:passwordToggleDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled uk.ac.standrews.cs.emap:passwordToggleEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleTint uk.ac.standrews.cs.emap:passwordToggleTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode uk.ac.standrews.cs.emap:passwordToggleTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxBackgroundColor uk.ac.standrews.cs.mamoc:boxBackgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxBackgroundMode uk.ac.standrews.cs.mamoc:boxBackgroundMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxCollapsedPaddingTop uk.ac.standrews.cs.mamoc:boxCollapsedPaddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusBottomEnd uk.ac.standrews.cs.mamoc:boxCornerRadiusBottomEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusBottomStart uk.ac.standrews.cs.mamoc:boxCornerRadiusBottomStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusTopEnd uk.ac.standrews.cs.mamoc:boxCornerRadiusTopEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxCornerRadiusTopStart uk.ac.standrews.cs.mamoc:boxCornerRadiusTopStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxStrokeColor uk.ac.standrews.cs.mamoc:boxStrokeColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_boxStrokeWidth uk.ac.standrews.cs.mamoc:boxStrokeWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterEnabled uk.ac.standrews.cs.mamoc:counterEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterMaxLength uk.ac.standrews.cs.mamoc:counterMaxLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance uk.ac.standrews.cs.mamoc:counterOverflowTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterTextAppearance uk.ac.standrews.cs.mamoc:counterTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_errorEnabled uk.ac.standrews.cs.mamoc:errorEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_errorTextAppearance uk.ac.standrews.cs.mamoc:errorTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_helperText uk.ac.standrews.cs.mamoc:helperText}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_helperTextEnabled uk.ac.standrews.cs.mamoc:helperTextEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_helperTextTextAppearance uk.ac.standrews.cs.mamoc:helperTextTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled uk.ac.standrews.cs.mamoc:hintAnimationEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintEnabled uk.ac.standrews.cs.mamoc:hintEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintTextAppearance uk.ac.standrews.cs.mamoc:hintTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription uk.ac.standrews.cs.mamoc:passwordToggleContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable uk.ac.standrews.cs.mamoc:passwordToggleDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled uk.ac.standrews.cs.mamoc:passwordToggleEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleTint uk.ac.standrews.cs.mamoc:passwordToggleTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode uk.ac.standrews.cs.mamoc:passwordToggleTintMode}</code></td><td></td></tr>
      * </table>
      * @see #TextInputLayout_android_textColorHint
      * @see #TextInputLayout_android_hint
@@ -17945,18 +17945,18 @@ public final class R {
      */
     public static final int TextInputLayout_android_hint=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxBackgroundColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxBackgroundColor}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:boxBackgroundColor
+     * @attr name uk.ac.standrews.cs.mamoc:boxBackgroundColor
      */
     public static final int TextInputLayout_boxBackgroundColor=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxBackgroundMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxBackgroundMode}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -17970,11 +17970,11 @@ public final class R {
      * <tr><td>outline</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:boxBackgroundMode
+     * @attr name uk.ac.standrews.cs.mamoc:boxBackgroundMode
      */
     public static final int TextInputLayout_boxBackgroundMode=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxCollapsedPaddingTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxCollapsedPaddingTop}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17983,11 +17983,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxCollapsedPaddingTop
+     * @attr name uk.ac.standrews.cs.mamoc:boxCollapsedPaddingTop
      */
     public static final int TextInputLayout_boxCollapsedPaddingTop=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxCornerRadiusBottomEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxCornerRadiusBottomEnd}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -17996,11 +17996,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxCornerRadiusBottomEnd
+     * @attr name uk.ac.standrews.cs.mamoc:boxCornerRadiusBottomEnd
      */
     public static final int TextInputLayout_boxCornerRadiusBottomEnd=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxCornerRadiusBottomStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxCornerRadiusBottomStart}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18009,11 +18009,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxCornerRadiusBottomStart
+     * @attr name uk.ac.standrews.cs.mamoc:boxCornerRadiusBottomStart
      */
     public static final int TextInputLayout_boxCornerRadiusBottomStart=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxCornerRadiusTopEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxCornerRadiusTopEnd}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18022,11 +18022,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxCornerRadiusTopEnd
+     * @attr name uk.ac.standrews.cs.mamoc:boxCornerRadiusTopEnd
      */
     public static final int TextInputLayout_boxCornerRadiusTopEnd=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxCornerRadiusTopStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxCornerRadiusTopStart}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18035,22 +18035,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxCornerRadiusTopStart
+     * @attr name uk.ac.standrews.cs.mamoc:boxCornerRadiusTopStart
      */
     public static final int TextInputLayout_boxCornerRadiusTopStart=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxStrokeColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxStrokeColor}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:boxStrokeColor
+     * @attr name uk.ac.standrews.cs.mamoc:boxStrokeColor
      */
     public static final int TextInputLayout_boxStrokeColor=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#boxStrokeWidth}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#boxStrokeWidth}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18059,30 +18059,30 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:boxStrokeWidth
+     * @attr name uk.ac.standrews.cs.mamoc:boxStrokeWidth
      */
     public static final int TextInputLayout_boxStrokeWidth=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#counterEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#counterEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:counterEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:counterEnabled
      */
     public static final int TextInputLayout_counterEnabled=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#counterMaxLength}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#counterMaxLength}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:counterMaxLength
+     * @attr name uk.ac.standrews.cs.mamoc:counterMaxLength
      */
     public static final int TextInputLayout_counterMaxLength=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#counterOverflowTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#counterOverflowTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18090,11 +18090,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:counterOverflowTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:counterOverflowTextAppearance
      */
     public static final int TextInputLayout_counterOverflowTextAppearance=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#counterTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#counterTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18102,21 +18102,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:counterTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:counterTextAppearance
      */
     public static final int TextInputLayout_counterTextAppearance=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#errorEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#errorEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:errorEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:errorEnabled
      */
     public static final int TextInputLayout_errorEnabled=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#errorTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#errorTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18124,31 +18124,31 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:errorTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:errorTextAppearance
      */
     public static final int TextInputLayout_errorTextAppearance=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#helperText}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#helperText}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:helperText
+     * @attr name uk.ac.standrews.cs.mamoc:helperText
      */
     public static final int TextInputLayout_helperText=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#helperTextEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#helperTextEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:helperTextEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:helperTextEnabled
      */
     public static final int TextInputLayout_helperTextEnabled=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#helperTextTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#helperTextTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18156,31 +18156,31 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:helperTextTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:helperTextTextAppearance
      */
     public static final int TextInputLayout_helperTextTextAppearance=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hintAnimationEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hintAnimationEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hintAnimationEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:hintAnimationEnabled
      */
     public static final int TextInputLayout_hintAnimationEnabled=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hintEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hintEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hintEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:hintEnabled
      */
     public static final int TextInputLayout_hintEnabled=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#hintTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#hintTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18188,21 +18188,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:hintTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:hintTextAppearance
      */
     public static final int TextInputLayout_hintTextAppearance=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#passwordToggleContentDescription}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#passwordToggleContentDescription}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:passwordToggleContentDescription
+     * @attr name uk.ac.standrews.cs.mamoc:passwordToggleContentDescription
      */
     public static final int TextInputLayout_passwordToggleContentDescription=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#passwordToggleDrawable}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#passwordToggleDrawable}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18210,32 +18210,32 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:passwordToggleDrawable
+     * @attr name uk.ac.standrews.cs.mamoc:passwordToggleDrawable
      */
     public static final int TextInputLayout_passwordToggleDrawable=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#passwordToggleEnabled}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#passwordToggleEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:passwordToggleEnabled
+     * @attr name uk.ac.standrews.cs.mamoc:passwordToggleEnabled
      */
     public static final int TextInputLayout_passwordToggleEnabled=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#passwordToggleTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#passwordToggleTint}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:passwordToggleTint
+     * @attr name uk.ac.standrews.cs.mamoc:passwordToggleTint
      */
     public static final int TextInputLayout_passwordToggleTint=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#passwordToggleTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#passwordToggleTintMode}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -18251,7 +18251,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:passwordToggleTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:passwordToggleTintMode
      */
     public static final int TextInputLayout_passwordToggleTintMode=27;
     /**
@@ -18262,8 +18262,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ThemeEnforcement_android_textAppearance android:textAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ThemeEnforcement_enforceMaterialTheme uk.ac.standrews.cs.emap:enforceMaterialTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ThemeEnforcement_enforceTextAppearance uk.ac.standrews.cs.emap:enforceTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ThemeEnforcement_enforceMaterialTheme uk.ac.standrews.cs.mamoc:enforceMaterialTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ThemeEnforcement_enforceTextAppearance uk.ac.standrews.cs.mamoc:enforceTextAppearance}</code></td><td></td></tr>
      * </table>
      * @see #ThemeEnforcement_android_textAppearance
      * @see #ThemeEnforcement_enforceMaterialTheme
@@ -18285,23 +18285,23 @@ public final class R {
      */
     public static final int ThemeEnforcement_android_textAppearance=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#enforceMaterialTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#enforceMaterialTheme}
      * attribute's value can be found in the {@link #ThemeEnforcement} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:enforceMaterialTheme
+     * @attr name uk.ac.standrews.cs.mamoc:enforceMaterialTheme
      */
     public static final int ThemeEnforcement_enforceMaterialTheme=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#enforceTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#enforceTextAppearance}
      * attribute's value can be found in the {@link #ThemeEnforcement} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:enforceTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:enforceTextAppearance
      */
     public static final int ThemeEnforcement_enforceTextAppearance=2;
     /**
@@ -18313,33 +18313,33 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #Toolbar_android_gravity android:gravity}</code></td><td></td></tr>
      * <tr><td><code>{@link #Toolbar_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_buttonGravity uk.ac.standrews.cs.emap:buttonGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_collapseContentDescription uk.ac.standrews.cs.emap:collapseContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_collapseIcon uk.ac.standrews.cs.emap:collapseIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetEnd uk.ac.standrews.cs.emap:contentInsetEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetEndWithActions uk.ac.standrews.cs.emap:contentInsetEndWithActions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetLeft uk.ac.standrews.cs.emap:contentInsetLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetRight uk.ac.standrews.cs.emap:contentInsetRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetStart uk.ac.standrews.cs.emap:contentInsetStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation uk.ac.standrews.cs.emap:contentInsetStartWithNavigation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_logo uk.ac.standrews.cs.emap:logo}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_logoDescription uk.ac.standrews.cs.emap:logoDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_maxButtonHeight uk.ac.standrews.cs.emap:maxButtonHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_navigationContentDescription uk.ac.standrews.cs.emap:navigationContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_navigationIcon uk.ac.standrews.cs.emap:navigationIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_popupTheme uk.ac.standrews.cs.emap:popupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitle uk.ac.standrews.cs.emap:subtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitleTextAppearance uk.ac.standrews.cs.emap:subtitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitleTextColor uk.ac.standrews.cs.emap:subtitleTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_title uk.ac.standrews.cs.emap:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMargin uk.ac.standrews.cs.emap:titleMargin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginBottom uk.ac.standrews.cs.emap:titleMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginEnd uk.ac.standrews.cs.emap:titleMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginStart uk.ac.standrews.cs.emap:titleMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginTop uk.ac.standrews.cs.emap:titleMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMargins uk.ac.standrews.cs.emap:titleMargins}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleTextAppearance uk.ac.standrews.cs.emap:titleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleTextColor uk.ac.standrews.cs.emap:titleTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_buttonGravity uk.ac.standrews.cs.mamoc:buttonGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_collapseContentDescription uk.ac.standrews.cs.mamoc:collapseContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_collapseIcon uk.ac.standrews.cs.mamoc:collapseIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetEnd uk.ac.standrews.cs.mamoc:contentInsetEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetEndWithActions uk.ac.standrews.cs.mamoc:contentInsetEndWithActions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetLeft uk.ac.standrews.cs.mamoc:contentInsetLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetRight uk.ac.standrews.cs.mamoc:contentInsetRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetStart uk.ac.standrews.cs.mamoc:contentInsetStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation uk.ac.standrews.cs.mamoc:contentInsetStartWithNavigation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_logo uk.ac.standrews.cs.mamoc:logo}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_logoDescription uk.ac.standrews.cs.mamoc:logoDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_maxButtonHeight uk.ac.standrews.cs.mamoc:maxButtonHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_navigationContentDescription uk.ac.standrews.cs.mamoc:navigationContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_navigationIcon uk.ac.standrews.cs.mamoc:navigationIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_popupTheme uk.ac.standrews.cs.mamoc:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitle uk.ac.standrews.cs.mamoc:subtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitleTextAppearance uk.ac.standrews.cs.mamoc:subtitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitleTextColor uk.ac.standrews.cs.mamoc:subtitleTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_title uk.ac.standrews.cs.mamoc:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMargin uk.ac.standrews.cs.mamoc:titleMargin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginBottom uk.ac.standrews.cs.mamoc:titleMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginEnd uk.ac.standrews.cs.mamoc:titleMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginStart uk.ac.standrews.cs.mamoc:titleMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginTop uk.ac.standrews.cs.mamoc:titleMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMargins uk.ac.standrews.cs.mamoc:titleMargins}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleTextAppearance uk.ac.standrews.cs.mamoc:titleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleTextColor uk.ac.standrews.cs.mamoc:titleTextColor}</code></td><td></td></tr>
      * </table>
      * @see #Toolbar_android_gravity
      * @see #Toolbar_android_minHeight
@@ -18424,7 +18424,7 @@ public final class R {
      */
     public static final int Toolbar_android_minHeight=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#buttonGravity}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#buttonGravity}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -18437,21 +18437,21 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:buttonGravity
+     * @attr name uk.ac.standrews.cs.mamoc:buttonGravity
      */
     public static final int Toolbar_buttonGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#collapseContentDescription}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#collapseContentDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:collapseContentDescription
+     * @attr name uk.ac.standrews.cs.mamoc:collapseContentDescription
      */
     public static final int Toolbar_collapseContentDescription=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#collapseIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#collapseIcon}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18459,11 +18459,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:collapseIcon
+     * @attr name uk.ac.standrews.cs.mamoc:collapseIcon
      */
     public static final int Toolbar_collapseIcon=4;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetEnd}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18472,11 +18472,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetEnd
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetEnd
      */
     public static final int Toolbar_contentInsetEnd=5;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetEndWithActions}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetEndWithActions}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18485,11 +18485,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetEndWithActions
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetEndWithActions
      */
     public static final int Toolbar_contentInsetEndWithActions=6;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetLeft}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetLeft}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18498,11 +18498,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetLeft
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetLeft
      */
     public static final int Toolbar_contentInsetLeft=7;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetRight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetRight}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18511,11 +18511,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetRight
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetRight
      */
     public static final int Toolbar_contentInsetRight=8;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetStart}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18524,11 +18524,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetStart
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetStart
      */
     public static final int Toolbar_contentInsetStart=9;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#contentInsetStartWithNavigation}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#contentInsetStartWithNavigation}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18537,11 +18537,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:contentInsetStartWithNavigation
+     * @attr name uk.ac.standrews.cs.mamoc:contentInsetStartWithNavigation
      */
     public static final int Toolbar_contentInsetStartWithNavigation=10;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#logo}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#logo}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18549,21 +18549,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:logo
+     * @attr name uk.ac.standrews.cs.mamoc:logo
      */
     public static final int Toolbar_logo=11;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#logoDescription}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#logoDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:logoDescription
+     * @attr name uk.ac.standrews.cs.mamoc:logoDescription
      */
     public static final int Toolbar_logoDescription=12;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#maxButtonHeight}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#maxButtonHeight}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18572,21 +18572,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:maxButtonHeight
+     * @attr name uk.ac.standrews.cs.mamoc:maxButtonHeight
      */
     public static final int Toolbar_maxButtonHeight=13;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#navigationContentDescription}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#navigationContentDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:navigationContentDescription
+     * @attr name uk.ac.standrews.cs.mamoc:navigationContentDescription
      */
     public static final int Toolbar_navigationContentDescription=14;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#navigationIcon}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#navigationIcon}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18594,11 +18594,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:navigationIcon
+     * @attr name uk.ac.standrews.cs.mamoc:navigationIcon
      */
     public static final int Toolbar_navigationIcon=15;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#popupTheme}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18606,21 +18606,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:popupTheme
+     * @attr name uk.ac.standrews.cs.mamoc:popupTheme
      */
     public static final int Toolbar_popupTheme=16;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitle}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitle}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitle
+     * @attr name uk.ac.standrews.cs.mamoc:subtitle
      */
     public static final int Toolbar_subtitle=17;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitleTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitleTextAppearance}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18628,32 +18628,32 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitleTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:subtitleTextAppearance
      */
     public static final int Toolbar_subtitleTextAppearance=18;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#subtitleTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#subtitleTextColor}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:subtitleTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:subtitleTextColor
      */
     public static final int Toolbar_subtitleTextColor=19;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#title}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#title}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name uk.ac.standrews.cs.emap:title
+     * @attr name uk.ac.standrews.cs.mamoc:title
      */
     public static final int Toolbar_title=20;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMargin}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMargin}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18662,11 +18662,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMargin
+     * @attr name uk.ac.standrews.cs.mamoc:titleMargin
      */
     public static final int Toolbar_titleMargin=21;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMarginBottom}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMarginBottom}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18675,11 +18675,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMarginBottom
+     * @attr name uk.ac.standrews.cs.mamoc:titleMarginBottom
      */
     public static final int Toolbar_titleMarginBottom=22;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMarginEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMarginEnd}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18688,11 +18688,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMarginEnd
+     * @attr name uk.ac.standrews.cs.mamoc:titleMarginEnd
      */
     public static final int Toolbar_titleMarginEnd=23;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMarginStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMarginStart}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18701,11 +18701,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMarginStart
+     * @attr name uk.ac.standrews.cs.mamoc:titleMarginStart
      */
     public static final int Toolbar_titleMarginStart=24;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMarginTop}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMarginTop}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18714,11 +18714,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMarginTop
+     * @attr name uk.ac.standrews.cs.mamoc:titleMarginTop
      */
     public static final int Toolbar_titleMarginTop=25;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleMargins}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleMargins}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18727,11 +18727,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:titleMargins
+     * @attr name uk.ac.standrews.cs.mamoc:titleMargins
      */
     public static final int Toolbar_titleMargins=26;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleTextAppearance}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleTextAppearance}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18739,18 +18739,18 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:titleTextAppearance
+     * @attr name uk.ac.standrews.cs.mamoc:titleTextAppearance
      */
     public static final int Toolbar_titleTextAppearance=27;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#titleTextColor}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#titleTextColor}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:titleTextColor
+     * @attr name uk.ac.standrews.cs.mamoc:titleTextColor
      */
     public static final int Toolbar_titleTextColor=28;
     /**
@@ -18762,9 +18762,9 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #View_android_theme android:theme}</code></td><td></td></tr>
      * <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_paddingEnd uk.ac.standrews.cs.emap:paddingEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_paddingStart uk.ac.standrews.cs.emap:paddingStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_theme uk.ac.standrews.cs.emap:theme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_paddingEnd uk.ac.standrews.cs.mamoc:paddingEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_paddingStart uk.ac.standrews.cs.mamoc:paddingStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_theme uk.ac.standrews.cs.mamoc:theme}</code></td><td></td></tr>
      * </table>
      * @see #View_android_theme
      * @see #View_android_focusable
@@ -18807,7 +18807,7 @@ public final class R {
      */
     public static final int View_android_focusable=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#paddingEnd}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#paddingEnd}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18816,11 +18816,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:paddingEnd
+     * @attr name uk.ac.standrews.cs.mamoc:paddingEnd
      */
     public static final int View_paddingEnd=2;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#paddingStart}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#paddingStart}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -18829,11 +18829,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name uk.ac.standrews.cs.emap:paddingStart
+     * @attr name uk.ac.standrews.cs.mamoc:paddingStart
      */
     public static final int View_paddingStart=3;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#theme}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#theme}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -18841,7 +18841,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:theme
+     * @attr name uk.ac.standrews.cs.mamoc:theme
      */
     public static final int View_theme=4;
     /**
@@ -18852,8 +18852,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint uk.ac.standrews.cs.emap:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode uk.ac.standrews.cs.emap:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint uk.ac.standrews.cs.mamoc:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode uk.ac.standrews.cs.mamoc:backgroundTintMode}</code></td><td></td></tr>
      * </table>
      * @see #ViewBackgroundHelper_android_background
      * @see #ViewBackgroundHelper_backgroundTint
@@ -18878,18 +18878,18 @@ public final class R {
      */
     public static final int ViewBackgroundHelper_android_background=0;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #ViewBackgroundHelper} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTint
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTint
      */
     public static final int ViewBackgroundHelper_backgroundTint=1;
     /**
-     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.emap.R.attr#backgroundTintMode}
+     * <p>This symbol is the offset where the {@link uk.ac.standrews.cs.mamoc.R.attr#backgroundTintMode}
      * attribute's value can be found in the {@link #ViewBackgroundHelper} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -18906,7 +18906,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name uk.ac.standrews.cs.emap:backgroundTintMode
+     * @attr name uk.ac.standrews.cs.mamoc:backgroundTintMode
      */
     public static final int ViewBackgroundHelper_backgroundTintMode=2;
     /**

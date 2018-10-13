@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -20,38 +19,39 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Collections;
 import java.util.Enumeration;
-import java.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletableFuture;
 
 import io.crossbar.autobahn.wamp.Client;
 import io.crossbar.autobahn.wamp.Session;
+import io.crossbar.autobahn.wamp.types.CloseDetails;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
 import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
 import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
 import io.crossbar.autobahn.websocket.types.WebSocketOptions;
+
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
-import uk.ac.st_andrews.cs.mamoc_client.Model.CloudletNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PHONE_ACCESS_PERM_REQ_CODE;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.REQUEST_CODE_ASK_PERMISSIONS;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.REQUEST_READ_PHONE_STATE;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.WRITE_PERMISSION;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.WRITE_PERM_REQ_CODE;
-import static uk.ac.st_andrews.cs.mamoc_client.Constants.cloudletIP;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.EDGE_IP;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.REALM_NAME;
 
 public class DiscoveryActivity extends AppCompatActivity {
 
     private final String TAG = "DiscoveryActivity";
 
     CommunicationController controller;
+    EdgeNode edge;
 
-    private Button discoverButton, cloudletBtn, cloudBtn;
+    private Button discoverButton, edgeBtn, cloudBtn;
 
-    private TextView listeningPort, cloudletTextView;
-    private Spinner cloudletSpinner;
-    ArrayAdapter<String> cloudletSpinnerAdapter;
-
-    CloudletNode cloudlet;
+    private TextView listeningPort, edgeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +67,7 @@ public class DiscoveryActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        checkWritePermissions();
-        logInterfaces();
-
         controller = CommunicationController.getInstance(this);
-
-        //new CommunicationController(this);
         controller.startConnectionListener();
 
         listeningPort = findViewById(R.id.ListenPort);
@@ -80,28 +75,24 @@ public class DiscoveryActivity extends AppCompatActivity {
         discoverButton = findViewById(R.id.discoverBtn);
         discoverButton.setOnClickListener(View -> startNSD());
 
-        cloudletBtn = findViewById(R.id.cloudletConnect);
-        cloudletTextView = findViewById(R.id.cloudletTextView);
+        edgeBtn = findViewById(R.id.edgeConnect);
+        edgeTextView = findViewById(R.id.edgeTextView);
         cloudBtn = findViewById(R.id.cloudConnect);
 
-        cloudletSpinner = findViewById(R.id.cloudletSpinner);
-        cloudletSpinnerAdapter = (ArrayAdapter<String>)cloudletSpinner.getAdapter();
-
-        loadPrefs();
-
-        cloudletBtn.setOnClickListener(view -> connectCloudlet());
+        edgeBtn.setOnClickListener(view -> connectEdge());
         cloudBtn.setOnClickListener(view -> connectCloud());
 
+        checkWritePermissions();
+        logInterfaces();
+        loadPrefs();
     }
 
     private void loadPrefs() {
-        String cloudletIP = Utils.getValue(this, "cloudletIP");
-        if (cloudletIP != null) {
-            cloudletTextView.setText(cloudletIP);
-            // TODO: fix this
-//            cloudletSpinnerAdapter.add(cloudletIP);
+        String enteredIP = Utils.getValue(this, "edgeIP");
+        if (enteredIP != null) {
+            edgeTextView.setText(enteredIP);
         } else {
-            cloudletTextView.setText(R.string.localhost);
+            edgeTextView.setText(EDGE_IP);
         }
     }
 
@@ -110,46 +101,41 @@ public class DiscoveryActivity extends AppCompatActivity {
     }
 
     private void connectCloud() {
-        cloudlet.send("{\"TextSearch\":\"hi\", \"start\":0, \"end\":0}");
+        edge.send("{\"TextSearch\":\"hi\", \"start\":0, \"end\":0}");
     }
 
-    private void connectCloudlet() {
+    private void connectEdge() {
 
-        Log.v("cloudlet", cloudletIP + "/connect");
+        edge = new EdgeNode(EDGE_IP, 8080);
 
-        cloudlet = new CloudletNode(cloudletIP, 8080);
-        cloudlet.setCpuFreq(5);
-
-        final String wsUri = cloudletTextView.getText().toString();
-                //"ws://192.168.0.12:9000";
-                //"ws://" + cloudletIP + "/connect";
+        final String wsUri = edgeTextView.getText().toString();
 
 //        if (!wsUri.startsWith("ws://") && !wsUri.startsWith("wss://")) {
 //            wsUri = "ws://" + wsUri;
 //        }
 
-        // Create a session object
         // Add all onJoin listeners
+        edge.session.addOnConnectListener(this::onConnectCallback);
+        edge.session.addOnLeaveListener(this::onLeaveCallback);
+        edge.session.addOnDisconnectListener(this::onDisconnectCallback);
 
-        cloudlet.session.addOnConnectListener(this::onConnectCallback);
-
-        Client client = new Client(cloudlet.session, "ws://104.248.167.173:8080/ws", "realm1");
+        Client client = new Client(edge.session, EDGE_IP, REALM_NAME);
         CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
 
 //        WebSocketOptions connectOptions = new WebSocketOptions();
 //        connectOptions.setReconnectInterval(5000);
 //
 //        try {
-//            cloudlet.cloudletConnection.connect(wsUri, new WebSocketConnectionHandler(){
+//            edge.edgeConnection.connect(wsUri, new WebSocketConnectionHandler(){
 //            @Override
 //            public void onOpen() {
 //                Utils.alert(DiscoveryActivity.this, "Connected.");
-//                cloudletBtn.setText("Status: Connected to " + wsUri);
-//                cloudletBtn.setEnabled(false);
-//                controller.addCloudletDevice(cloudlet);
-//                cloudlet.send("hello");
-//                savePrefs("cloudletIP", wsUri);
-//                Log.d("connection: ", String.valueOf(cloudlet.cloudletConnection));
+//                edgeBtn.setText("Status: Connected to " + wsUri);
+//                edgeBtn.setEnabled(false);
+//                controller.addEdgeDevice(edge);
+//                edge.send("hello");
+//                savePrefs("edgeIP", wsUri);
+//                Log.d("connection: ", String.valueOf(edge.edgeConnection));
 //            }
 //
 //            @Override
@@ -160,31 +146,42 @@ public class DiscoveryActivity extends AppCompatActivity {
 //            @Override
 //            public void onClose(int code, String reason) {
 //                Utils.alert(DiscoveryActivity.this, "Connection lost.");
-//                controller.removeCloudletDevice(cloudlet);
+//                controller.removeEdgeDevice(edge);
 //                loadPrefs();
-//                cloudletBtn.setEnabled(true);
+//                edgeBtn.setEnabled(true);
 //            }
 //        }, connectOptions);
 //    } catch (WebSocketException e) {
 //        Log.d(TAG, e.toString());
 //    }
 
-     //   if (cloudlet.isConnected()){
-//            cloudletBtn.setText("Connected to Cloudlet!");
-//            cloudletBtn.setEnabled(false);
+     //   if (edge.isConnected()){
+//            edgeBtn.setText("Connected to Edge!");
+//            edgeBtn.setEnabled(false);
      //   }
 //        client.send(new byte[] {(byte) 0xDE, (byte) 0xAD, (byte) 0xBE, (byte) 0xEF});
 //        client.end();
     }
 
     private void onConnectCallback(Session session) {
-        Log.d("session", "Session connected, ID=" + session.getID());
+        Log.d(TAG, "Session connected, ID=" + session.getID());
         Utils.alert(DiscoveryActivity.this, "Connected.");
-        cloudletBtn.setText("Status: Connected to " + "ws://104.248.167.173:8080/ws");
-        cloudletBtn.setEnabled(false);
-        controller.addCloudletDevice(cloudlet);
-        cloudlet.send("hello");
-        savePrefs("cloudletIP", "ws://104.248.167.173:8080/ws");
+        edgeBtn.setText("Status: Connected to " + EDGE_IP);
+        edgeBtn.setEnabled(false);
+        controller.addEdgeDevice(edge);
+        savePrefs("edgeIP", EDGE_IP);
+    }
+
+    private void onLeaveCallback(Session session, CloseDetails detail) {
+        Log.d(TAG, String.format("Left reason=%s, message=%s", detail.reason, detail.message));
+        Utils.alert(DiscoveryActivity.this, "Left.");
+        edgeBtn.setEnabled(true);
+    }
+
+    private void onDisconnectCallback(Session session, boolean wasClean) {
+        Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
+        Utils.alert(DiscoveryActivity.this, "Disconnected.");
+        edgeBtn.setEnabled(true);
     }
 
     @SuppressLint("StringFormatMatches")
@@ -208,10 +205,20 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (grantResults[0] == PackageManager.PERMISSION_DENIED){
-            Toast.makeText(this, "Please allow all the needed permissions", Toast.LENGTH_SHORT).show();
-            finish();
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                final int numOfRequest = grantResults.length;
+                final boolean isGranted = numOfRequest == 1
+                        && PackageManager.PERMISSION_GRANTED == grantResults[numOfRequest - 1];
+                if (isGranted) {
+                    // you are good to go
+                } else {
+                    Toast.makeText(this, "Please allow all the needed permissions", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 
@@ -225,7 +232,6 @@ public class DiscoveryActivity extends AppCompatActivity {
                 if (ni.isUp()) {
                     Log.v(TAG, "Display name: " + ni.getDisplayName());
                     Log.v(TAG, "name: " + ni.getName());
-//                    Log.v(TAG, "is it running? " + String.valueOf(ni.isUp()));
                     Enumeration<InetAddress> addresses = ni.getInetAddresses();
                     for (InetAddress singleNI : Collections.list(addresses)
                             ) {

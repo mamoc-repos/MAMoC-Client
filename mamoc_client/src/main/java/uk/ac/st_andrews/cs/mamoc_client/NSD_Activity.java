@@ -47,9 +47,6 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nsd_activity);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,11 +55,10 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
 
         progressBar = findViewById(R.id.progressBarNSD);
 
+        communicationController = CommunicationController.getInstance(this);
+
         String ip = Utils.getLocalIpAddress(this);
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
-
-//        communicationController = (CommunicationController) getApplicationContext();
-//        communicationController.startConnectionListener();
 
         checkWritePermission();
 
@@ -78,7 +74,6 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
             String title = String.format(getString(R.string.nsd_title_with_count), String
                     .valueOf(peerCount));
             getSupportActionBar().setTitle(title);
-
         }
     }
 
