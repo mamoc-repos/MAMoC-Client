@@ -56,13 +56,13 @@ public class MamocNode implements Serializable {
         this.port = port;
     }
 
-    public static MamocNode fromJSON(String deviceJSON) {
-        Gson gson = new Gson();
-        return gson.fromJson(deviceJSON, MamocNode.class);
-    }
-
-    @Override
-    public String toString() {
-        return (new Gson()).toJson(this);
-    }
+//    public static MamocNode fromJSON(String deviceJSON) {
+//        Gson gson = new Gson();
+//        return gson.fromJson(deviceJSON, MamocNode.class);
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return (new Gson()).toJson(this);
+//    }
 }

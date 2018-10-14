@@ -18,8 +18,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigInteger;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.nio.ByteOrder;
+import java.util.Collections;
+import java.util.List;
 
 public class Utils {
 
@@ -29,37 +33,37 @@ public class Utils {
         toast.show();
     }
 
-    public static String getLocalIpAddress(Context context)
-    {
-        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        String ip = getDottedDecimalIP(wm.getConnectionInfo().getIpAddress());
-        return ip;
-    }
+    /**
+     * Get IP address from first non-localhost interface
+     * @param useIPv4   true=return ipv4, false=return ipv6
+     * @return  address or empty string
+     */
+    public static String getIPAddress(boolean useIPv4) {
+        try {
+            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            for (NetworkInterface intf : interfaces) {
+                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
+                for (InetAddress addr : addrs) {
+                    if (!addr.isLoopbackAddress()) {
+                        String sAddr = addr.getHostAddress();
+                        boolean isIPv4 = sAddr.indexOf(':')<0;
 
-    public static String getDottedDecimalIP(int ipAddr) {
-
-        if (ByteOrder.nativeOrder().equals(ByteOrder.LITTLE_ENDIAN)) {
-            ipAddr = Integer.reverseBytes(ipAddr);
-        }
-
-        byte[] ipByteArray = BigInteger.valueOf(ipAddr).toByteArray();
-
-        //convert to dotted decimal notation:
-        String ipAddrStr = getDottedDecimalIP(ipByteArray);
-        return ipAddrStr;
-    }
-
-    public static String getDottedDecimalIP(byte[] ipAddr) {
-        //convert to dotted decimal notation:
-        String ipAddrStr = "";
-        for (int i = 0; i < ipAddr.length; i++) {
-            if (i > 0) {
-                ipAddrStr += ".";
+                        if (useIPv4) {
+                            if (isIPv4)
+                                return sAddr;
+                        } else {
+                            if (!isIPv4) {
+                                int delim = sAddr.indexOf('%'); // drop ip6 zone suffix
+                                return delim<0 ? sAddr.toUpperCase() : sAddr.substring(0, delim).toUpperCase();
+                            }
+                        }
+                    }
+                }
             }
-            ipAddrStr += ipAddr[i] & 0xFF;
-        }
-        return ipAddrStr;
+        } catch (Exception ignored) { } // for now eat exceptions
+        return "";
     }
+
 
     public static int getPort(Context context){
         int localPort = Utils.getInt(context, "localport");

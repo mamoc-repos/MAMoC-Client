@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
 public class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHolder> {
 
-    private final List<MamocNode> mDevices;
+    private final List<MobileNode> mDevices;
     private final PeerListFragment.OnListFragmentInteractionListener mListener;
 
-    public PeerListAdapter(List<MamocNode> devices, PeerListFragment.OnListFragmentInteractionListener
+    public PeerListAdapter(List<MobileNode> devices, PeerListFragment.OnListFragmentInteractionListener
             listener) {
         mDevices = devices;
         mListener = listener;
@@ -31,8 +31,7 @@ public class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.deviceDTO = mDevices.get(position);
-        holder.mContentView.setText(mDevices.get(position).getNodeName() + "-" + mDevices.get
-                (position).getIp());
+        holder.mContentView.setText(mDevices.get(position).getManufacturer() + " - " + mDevices.get(position).getIp());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,12 +53,12 @@ public class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mContentView;
-        public MamocNode deviceDTO;
+        public MobileNode deviceDTO;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mContentView = (TextView) view;//.findViewById(R.id.content);
+            mContentView = (TextView) view;
         }
 
         @Override

@@ -8,18 +8,18 @@ import android.util.Log;
 import android.widget.Toast;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.DataSender;
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.R;
 
 public class DialogUtils {
 
     public static final int CODE_PICK_IMAGE = 21;
 
-    public static AlertDialog getServiceSelectionDialog(final Activity activity, final MamocNode
+    public static AlertDialog getServiceSelectionDialog(final Activity activity, final MobileNode
             selectedDevice) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
         alertDialog.setTitle(selectedDevice.getNodeName());
-        String[] types = {"Send image", "Request"};
+        String[] types = {"Connect"};
         alertDialog.setItems(types, new DialogInterface.OnClickListener() {
 
             @Override
@@ -28,14 +28,14 @@ public class DialogUtils {
                 dialog.dismiss();
                 switch (which) {
                     case 0:
-                        Intent imagePicker = new Intent(Intent.ACTION_PICK);
-                        imagePicker.setType("image/*");
-                        activity.startActivityForResult(imagePicker, CODE_PICK_IMAGE);
-                        break;
-                    case 1:
+//                        Intent imagePicker = new Intent(Intent.ACTION_PICK);
+//                        imagePicker.setType("image/*");
+//                        activity.startActivityForResult(imagePicker, CODE_PICK_IMAGE);
+//                        break;
+//                    case 1:
                         DataSender.sendChatRequest(activity, selectedDevice.getIp
                                 (), selectedDevice.getPort());
-                        Toast.makeText(activity, "chat request sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, "Connection request sent", Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -45,7 +45,7 @@ public class DialogUtils {
         return (alertDialog.create());
     }
 
-    public static AlertDialog getChatRequestDialog(final Activity activity, final MamocNode requesterDevice) {
+    public static AlertDialog getChatRequestDialog(final Activity activity, final MobileNode requesterDevice) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
 
         String chatRequestTitle = activity.getString(R.string.chat_request_title);
@@ -82,7 +82,7 @@ public class DialogUtils {
         return (alertDialog.create());
     }
 
-    public static void openChatActivity(Activity activity, MamocNode device) {
+    public static void openChatActivity(Activity activity, MobileNode device) {
 //        Intent chatIntent = new Intent(activity, ChatActivity.class);
 //        chatIntent.putExtra(ChatActivity.KEY_CHAT_IP, device.getIp());
 //        chatIntent.putExtra(ChatActivity.KEY_CHAT_PORT, device.getPort());

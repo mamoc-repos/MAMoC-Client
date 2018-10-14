@@ -7,7 +7,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
 public class DataHandler {
     public static final String DEVICE_LIST_CHANGED = "device_list_updated";
@@ -23,7 +23,7 @@ public class DataHandler {
     private LocalBroadcastManager broadcaster;
     private DBAdapter dbAdapter = null;
 
-    public DataHandler(Context mContext, ITransferable data, String senderIP) {
+    public DataHandler(Context mContext, String senderIP, ITransferable data) {
         this.mContext = mContext;
         this.data = data;
         this.senderIP = senderIP;
@@ -44,7 +44,7 @@ public class DataHandler {
             case TransferConstants.CLIENT_DATA:
                 processPeerDeviceInfo();
                 DataSender.sendCurrentDeviceData(mContext, senderIP,
-                        dbAdapter.getDevice(senderIP).getPort(), false);
+                        dbAdapter.getMobileDevice(senderIP).getPort(), false);
                 break;
             case TransferConstants.CHAT_REQUEST_SENT:
                 processChatRequestReceipt();
@@ -74,9 +74,13 @@ public class DataHandler {
 
     private void processPeerDeviceInfo() {
         String deviceJSON = data.getData();
-        MamocNode device = MamocNode.fromJSON(deviceJSON);
+        Log.d("JSON", deviceJSON);
+        MobileNode device = MobileNode.fromJSON(deviceJSON);
+
+        Log.d("senderIP", senderIP);
+
         device.setIp(senderIP);
-        long rowid = dbAdapter.addDevice(device);
+        long rowid = dbAdapter.addMobileNode(device);
 
         if (rowid > 0) {
             Log.d("DXDX", Build.MANUFACTURER + " received: " + deviceJSON);
@@ -90,7 +94,7 @@ public class DataHandler {
 
     private void processChatRequestReceipt() {
         String chatRequesterDeviceJSON = data.getData();
-        MamocNode chatRequesterDevice = MamocNode.fromJSON(chatRequesterDeviceJSON);
+        MobileNode chatRequesterDevice = MobileNode.fromJSON(chatRequesterDeviceJSON);
         chatRequesterDevice.setIp(senderIP);
 
         Intent intent = new Intent(REQUEST_RECEIVED);
@@ -100,7 +104,7 @@ public class DataHandler {
 
     private void processChatRequestResponse(boolean isRequestAccepted) {
         String chatResponderDeviceJSON = data.getData();
-        MamocNode chatResponderDevice = MamocNode.fromJSON(chatResponderDeviceJSON);
+        MobileNode chatResponderDevice = MobileNode.fromJSON(chatResponderDeviceJSON);
         chatResponderDevice.setIp(senderIP);
 
         Intent intent = new Intent(RESPONSE_RECEIVED);

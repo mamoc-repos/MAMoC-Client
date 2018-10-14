@@ -18,7 +18,6 @@ public class EdgeNode extends MamocNode implements WebSocket, Comparable<MamocNo
 
     public EdgeNode(String url, int i) {
         this.wsUri = url;
-    //    connect();
         session = new Session();
     }
 

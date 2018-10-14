@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class DataSender {
     public static void sendCurrentDeviceData(Context context, String destIP, int destPort,
                                              boolean isRequest) {
-        MamocNode currentNode = new MamocNode();
+        MobileNode currentNode = new MobileNode(context);
         currentNode.setPort(Utils.getPort(context));
 
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
@@ -46,7 +46,7 @@ public class DataSender {
     }
 
     public static void sendChatRequest(Context context, String destIP, int destPort) {
-        MamocNode currentDevice = new MamocNode();
+        MobileNode currentDevice = new MobileNode(context);
         currentDevice.setPort(Utils.getPort(context));
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
         if (playerName != null) {
@@ -59,7 +59,7 @@ public class DataSender {
 
     public static void sendChatResponse(Context context, String destIP, int destPort, boolean
             isAccepted) {
-        MamocNode currentDevice = new MamocNode();
+        MobileNode currentDevice = new MobileNode(context);
         currentDevice.setPort(Utils.getPort(context));
         String playerName = Utils.getValue(context, TransferConstants.KEY_NODE_NAME);
         if (playerName != null) {

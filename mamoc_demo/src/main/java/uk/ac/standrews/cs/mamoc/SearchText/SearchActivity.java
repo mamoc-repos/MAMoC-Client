@@ -72,6 +72,13 @@ public class SearchActivity extends DemoBaseActivity {
         return R.layout.activity_search;
     }
 
+    /**
+     * * This method is called when
+     *  * <p>
+     *  *
+     *  *
+     * @param location
+     */
     private void searchText(ExecutionLocation location){
 
         if (fileSize == null){

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
+import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -31,8 +32,7 @@ public class ConnectionListener extends Thread {
     @Override
     public void run() {
         try {
-            Log.v("ConnListener", Build.MANUFACTURER + ": conn listener: " + mPort);
-
+            Log.d("DXDX", Build.MANUFACTURER + ": conn listener: " + mPort);
             mServer = new ServerSocket(mPort);
             mServer.setReuseAddress(true);
 
@@ -40,20 +40,25 @@ public class ConnectionListener extends Thread {
                 mServer.bind(new InetSocketAddress(mPort));
             }
 
-            Socket client = null;
+            Log.d("DDDD", "Inet4Address: " + Inet4Address.getLocalHost().getHostAddress());
 
-            while (acceptRequests){
-                client = mServer.accept();
-                handleData(client.getInetAddress().getHostAddress(), client.getInputStream());
+            Socket socket = null;
+            while (acceptRequests) {
+                // this is a blocking operation
+                socket = mServer.accept();
+                Log.d("DDDD", socket.getInetAddress().getHostAddress());
+                Log.d("DDDD", socket.getInetAddress().getHostName());
+                Log.d("DDDD", socket.getInetAddress().getCanonicalHostName());
+
+                handleData(socket.getInetAddress().getHostAddress(), socket.getInputStream());
             }
-
-            Log.v("ConnListener", "ConnListener Terminated");
-
-            client.close();
-            client = null;
+            Log.e("DXDX", Build.MANUFACTURER + ": Connection listener terminated. " +
+                    "acceptRequests: " + acceptRequests);
+            socket.close();
+            socket = null;
 
         } catch (IOException e) {
-            Log.v("ConnListener", Build.MANUFACTURER + ": ConnListener Exception: " + e.toString());
+            Log.e("DXDX", Build.MANUFACTURER + ": Connection listener EXCEPTION. " + e.toString());
             e.printStackTrace();
         }
     }
@@ -65,10 +70,9 @@ public class ConnectionListener extends Thread {
             oin = new ObjectInputStream(new ByteArrayInputStream(input));
             ITransferable transferObject = (ITransferable) oin.readObject();
 
-            new DataHandler(mContext, transferObject, hostAddress).process();
+            new DataHandler(mContext, hostAddress, transferObject).process();
 
             oin.close();
-            return;
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

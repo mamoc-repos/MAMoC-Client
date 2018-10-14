@@ -25,24 +25,33 @@ import android.net.nsd.NsdManager;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class NsdHelper {
+
     public static final String BROADCAST_TAG = "NSDBroadcast";
+    public static final String KEY_SERVICE_INFO = "serviceinfo";
 
     Context mContext;
+
     private LocalBroadcastManager broadcaster;
 
     NsdManager mNsdManager;
     NsdManager.ResolveListener mResolveListener;
     NsdManager.DiscoveryListener mDiscoveryListener;
     NsdManager.RegistrationListener mRegistrationListener;
-    public static final String SERVICE_TYPE = "_mamoc._tcp.";
+
+    public static final String SERVICE_TYPE = "_http._tcp";
+
     // There is an additional dot at the end of service name most probably by os, this is to
     // rectify that problem
     public static final String SERVICE_TYPE_PLUS_DOT = SERVICE_TYPE + ".";
 
-    public static final String TAG = "NsdHelper";
-    public String mServiceName = "MAMoC";
+    public static final String TAG = "NSDHelperDXDX: ";
+
+    private static final String DEFAULT_SERVICE_NAME = "MAMoC";
+    public String mServiceName = DEFAULT_SERVICE_NAME;
+
     NsdServiceInfo mService;
 
     public NsdHelper(Context context) {
@@ -58,7 +67,6 @@ public class NsdHelper {
 
     public void initializeDiscoveryListener() {
         mDiscoveryListener = new NsdManager.DiscoveryListener() {
-
             @Override
             public void onDiscoveryStarted(String regType) {
                 Log.d(TAG, "Service discovery started");
@@ -108,6 +116,7 @@ public class NsdHelper {
             }
         };
     }
+
     public void initializeResolveListener() {
         mResolveListener = new NsdManager.ResolveListener() {
             @Override
@@ -117,7 +126,7 @@ public class NsdHelper {
 
             @Override
             public void onServiceResolved(NsdServiceInfo serviceInfo) {
-                Log.e(TAG, "Resolve Succeeded. " + serviceInfo);
+                Log.v(TAG, "Resolve Succeeded. " + serviceInfo);
                 if (serviceInfo.getServiceName().equals(mServiceName)) {
                     Log.d(TAG, "Same IP.");
                     return;
@@ -125,21 +134,25 @@ public class NsdHelper {
                 mService = serviceInfo;
 
                 Intent intent = new Intent(BROADCAST_TAG);
+//                intent.putExtra(KEY_SERVICE_INFO, mService);
                 broadcaster.sendBroadcast(intent);
             }
         };
     }
+
     public void initializeRegistrationListener() {
         mRegistrationListener = new NsdManager.RegistrationListener() {
             @Override
             public void onServiceRegistered(NsdServiceInfo NsdServiceInfo) {
                 mServiceName = NsdServiceInfo.getServiceName();
-                Log.d(TAG, "Service registered: " + mServiceName);
+                Log.d(TAG, "Service registered: " + NsdServiceInfo);
+                Toast.makeText(mContext, "Registered: " + mServiceName, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRegistrationFailed(NsdServiceInfo arg0, int arg1) {
                 Log.d(TAG, "Service registration failed: " + arg1);
+                Toast.makeText(mContext, "Service registration failed", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -153,24 +166,26 @@ public class NsdHelper {
             }
         };
     }
+
     public void registerService(int port) {
         tearDown();  // Cancel any previous registration request
         initializeRegistrationListener();
-        NsdServiceInfo serviceInfo  = new NsdServiceInfo();
+        NsdServiceInfo serviceInfo = new NsdServiceInfo();
         serviceInfo.setPort(port);
         serviceInfo.setServiceName(mServiceName);
         serviceInfo.setServiceType(SERVICE_TYPE);
         Log.v(TAG, Build.MANUFACTURER + " registering service: " + port);
-
         mNsdManager.registerService(
                 serviceInfo, NsdManager.PROTOCOL_DNS_SD, mRegistrationListener);
     }
+
     public void discoverServices() {
         stopDiscovery();  // Cancel any existing discovery request
         initializeDiscoveryListener();
         mNsdManager.discoverServices(
                 SERVICE_TYPE, NsdManager.PROTOCOL_DNS_SD, mDiscoveryListener);
     }
+
     public void stopDiscovery() {
         if (mDiscoveryListener != null) {
             try {
@@ -180,9 +195,11 @@ public class NsdHelper {
             mDiscoveryListener = null;
         }
     }
+
     public NsdServiceInfo getChosenServiceInfo() {
         return mService;
     }
+
     public void tearDown() {
         if (mRegistrationListener != null) {
             try {

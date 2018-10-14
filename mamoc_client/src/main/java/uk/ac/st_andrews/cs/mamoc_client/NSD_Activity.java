@@ -14,7 +14,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +28,8 @@ import uk.ac.st_andrews.cs.mamoc_client.Communication.DataSender;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.NsdHelper;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.TransferConstants;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.DialogUtils;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
@@ -37,7 +37,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     NsdHelper nsdHelper;
     PeerListFragment deviceListFragment;
 
-    private MamocNode selectedNode;
+    private MobileNode selectedNode;
     CommunicationController communicationController = null;
 
     View progressBar;
@@ -57,7 +57,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
 
         communicationController = CommunicationController.getInstance(this);
 
-        String ip = Utils.getLocalIpAddress(this);
+        String ip = Utils.getIPAddress(true);
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
 
         checkWritePermission();
@@ -111,9 +111,9 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     public void advertiseService(View view) {
         nsdHelper.registerService(Utils.getPort(this));
 
-        Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getLocalIpAddress(this));
+        Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getIPAddress(true));
         Snackbar.make(view,
-                "Advertising on: " + Utils.getLocalIpAddress(this),
+                "Advertising on: " + Utils.getIPAddress(true),
                 Snackbar.LENGTH_LONG)
                 .show();
     }
@@ -137,7 +137,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         filter.addAction(DataHandler.RESPONSE_RECEIVED);
         LocalBroadcastManager.getInstance(NSD_Activity.this).registerReceiver(mamocReceiver,
                 filter);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(DataHandler
+        LocalBroadcastManager.getInstance(NSD_Activity.this).sendBroadcast(new Intent(DataHandler
                 .DEVICE_LIST_CHANGED));
     }
 
@@ -147,7 +147,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
         communicationController.stopConnectionListener();
         nsdHelper.tearDown();
         nsdHelper = null;
-        DBAdapter.getInstance(this).clearDatabase();
+    //    DBAdapter.getInstance(this).clearDatabase();
         super.onDestroy();
     }
 
@@ -170,8 +170,8 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                     DataSender.sendCurrentDeviceData(NSD_Activity.this, ipAddress, port, true);
                     break;
                 case DataHandler.DEVICE_LIST_CHANGED:
-                    ArrayList<MamocNode> devices = DBAdapter.getInstance(NSD_Activity.this)
-                            .getDeviceList();
+                    ArrayList<MobileNode> devices = DBAdapter.getInstance(NSD_Activity.this)
+                            .getMobileDevicesList();
                     int peerCount = (devices == null) ? 0 : devices.size();
                     Log.v("peercount:", String.valueOf(peerCount));
 
@@ -191,7 +191,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                     setToolBarTitle(peerCount);
                     break;
                 case DataHandler.REQUEST_RECEIVED:
-                    MamocNode chatRequesterDevice = (MamocNode) intent.getSerializableExtra(DataHandler
+                    MobileNode chatRequesterDevice = (MobileNode) intent.getSerializableExtra(DataHandler
                             .KEY_CHAT_REQUEST);
                     DialogUtils.getChatRequestDialog(NSD_Activity.this, chatRequesterDevice).show();
                     break;
@@ -201,7 +201,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                     if (!isChatRequestAccepted) {
                         Toast.makeText(NSD_Activity.this, "Request Rejected!", Toast.LENGTH_SHORT).show();
                     } else {
-                        MamocNode chatDevice = (MamocNode) intent.getSerializableExtra(DataHandler
+                        MobileNode chatDevice = (MobileNode) intent.getSerializableExtra(DataHandler
                                 .KEY_CHAT_REQUEST);
                         DialogUtils.openChatActivity(NSD_Activity.this, chatDevice);
                         Toast.makeText(NSD_Activity.this, "Request Accepted from:" + chatDevice.getNodeName(), Toast.LENGTH_SHORT).show();
@@ -247,10 +247,10 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     }
 
     @Override
-    public void onListFragmentInteraction(MamocNode node) {
-        Toast.makeText(this, "Trying to connect to: " + node.getNodeName(), Toast.LENGTH_SHORT).show();
+    public void onListFragmentInteraction(MobileNode node) {
+        Toast.makeText(this, "Trying to connect to: " + node.getIp(), Toast.LENGTH_SHORT).show();
         selectedNode = node;
-        DialogUtils.getServiceSelectionDialog(this, selectedNode);
+        DialogUtils.getServiceSelectionDialog(this, selectedNode).show();
     }
 
     @Override

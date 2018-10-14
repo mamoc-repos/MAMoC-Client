@@ -1,9 +1,12 @@
 package uk.ac.st_andrews.cs.mamoc_client;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -188,11 +191,18 @@ public class DiscoveryActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        DBAdapter.getInstance(DiscoveryActivity.this).clearDatabase();
+    //    DBAdapter.getInstance(DiscoveryActivity.this).clearDatabase();
         listeningPort.setText(String.format(getString(R.string.port_info), Utils.getPort(this)));
     }
 
     private void checkWritePermissions() {
+
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
+        }
+
         boolean isWriteGranted = Utils.checkPermission(WRITE_PERMISSION, this);
         if (!isWriteGranted){
             Utils.requestPermission(WRITE_PERMISSION, WRITE_PERM_REQ_CODE, this);

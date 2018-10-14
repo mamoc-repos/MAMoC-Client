@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
 public class PeerListFragment extends Fragment {
 
@@ -21,7 +21,7 @@ public class PeerListFragment extends Fragment {
 
     private OnListFragmentInteractionListener mListener;
 
-    private List<MamocNode> devices = null;
+    private List<MobileNode> devices = null;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,7 +44,7 @@ public class PeerListFragment extends Fragment {
         super.onCreate(savedInstanceState);
         devices = new ArrayList<>();
         if (getArguments() != null) {
-            devices = (List<MamocNode>) getArguments().getSerializable(ARG_DEVICE_LIST);
+            devices = (List<MobileNode>) getArguments().getSerializable(ARG_DEVICE_LIST);
         }
     }
 
@@ -83,7 +83,7 @@ public class PeerListFragment extends Fragment {
     }
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(MamocNode deviceDTO);
+        void onListFragmentInteraction(MobileNode deviceDTO);
     }
 }
 

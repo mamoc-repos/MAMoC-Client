@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -46,6 +45,12 @@ public abstract class DemoBaseActivity extends AppCompatActivity {
             supportActionBar.setDisplayShowHomeEnabled(true);
             supportActionBar.setTitle(title);
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     public void showProgressDialog() {

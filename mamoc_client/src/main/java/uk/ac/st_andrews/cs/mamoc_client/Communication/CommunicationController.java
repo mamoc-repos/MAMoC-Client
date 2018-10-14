@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
-import uk.ac.st_andrews.cs.mamoc_client.Model.NearbyNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class CommunicationController {
@@ -16,7 +16,7 @@ public class CommunicationController {
 
     private static CommunicationController instance;
 
-    private TreeSet<NearbyNode> nearbyDevices = new TreeSet<>();
+    private TreeSet<MobileNode> mobileDevices = new TreeSet<>();
     private TreeSet<EdgeNode> edgeDevices = new TreeSet<>();
     private TreeSet<CloudNode> cloudDevices = new TreeSet<>();
 
@@ -85,12 +85,12 @@ public class CommunicationController {
         return isConnectionListenerRunning;
     }
 
-    public TreeSet<NearbyNode> getNearbyDevices() {
-        return nearbyDevices;
+    public TreeSet<MobileNode> getMobileDevices() {
+        return mobileDevices;
     }
 
-    public void setNearbyDevices(TreeSet<NearbyNode> nearbyDevices) {
-        this.nearbyDevices = nearbyDevices;
+    public void setMobileDevices(TreeSet<MobileNode> mobileDevices) {
+        this.mobileDevices = mobileDevices;
     }
 
     public TreeSet<EdgeNode> getEdgeDevices() {
