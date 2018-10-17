@@ -15,17 +15,12 @@ import android.widget.Toolbar;
 public abstract class DemoBaseActivity extends AppCompatActivity {
 
     private ProgressDialog mProgressDialog;
-    protected Toolbar txtHeading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         onViewReady(savedInstanceState, getIntent());
-
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage("Loading");
-        mProgressDialog.setCancelable(false);
     }
 
     @CallSuper
@@ -54,6 +49,13 @@ public abstract class DemoBaseActivity extends AppCompatActivity {
     }
 
     public void showProgressDialog() {
+
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setMessage("Loading");
+            mProgressDialog.setCancelable(false);
+        }
+
         if (!mProgressDialog.isShowing()) {
             mProgressDialog.show();
         }

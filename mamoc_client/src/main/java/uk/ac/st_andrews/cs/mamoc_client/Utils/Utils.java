@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -13,19 +12,25 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.ServerSocket;
-import java.nio.ByteOrder;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Utils {
+
+    static final ArrayList<String> ignoredLibs = new ArrayList<>();
 
     public static void alert(Context context, String message) {
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
@@ -74,13 +79,13 @@ public class Utils {
         return localPort;
     }
 
-    public static int getNextFreePort() {
+    private static int getNextFreePort() {
         int localPort = -1;
         ServerSocket socket = null;
         try {
             socket = new ServerSocket(0);
             localPort = socket.getLocalPort();
-            if (socket != null && !socket.isClosed()){
+            if (!socket.isClosed()){
                 socket.close();
             }
         } catch (IOException e) {
@@ -180,7 +185,65 @@ public class Utils {
     public static void clearPreferences(Context cxt) {
         SharedPreferences.Editor prefsEditor = cxt.getSharedPreferences("kkd", Context
                 .MODE_PRIVATE).edit();
-        prefsEditor.clear().commit();
+        prefsEditor.clear().apply();
     }
 
+    public static String readFile(Context context, String fileName)
+    {
+        String path = context.getApplicationContext().getFilesDir().getAbsolutePath();
+        String myData = "";
+        File myExternalFile = new File(path + fileName);
+        try {
+            FileInputStream fis = new FileInputStream(myExternalFile);
+            DataInputStream in = new DataInputStream(fis);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+            String strLine;
+            while ((strLine = br.readLine()) != null) {
+                myData = myData + strLine + "\n";
+            }
+            br.close();
+            in.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return myData;
+    }
+
+    private static void loadIgnoredLibs(Context context) {
+        String ignoredList = "ignored.list";
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new InputStreamReader(context.getAssets().open(ignoredList)));
+            String mLine = reader.readLine().trim();
+            while (mLine != null) {
+                mLine = mLine.trim();
+                if (mLine.length() != 0) {
+                    ignoredLibs.add(StringUtils.toClassName(mLine));
+                }
+                mLine = reader.readLine();
+            }
+        } catch (IOException e) {
+            Log.d("ignored", e.getLocalizedMessage());
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    Log.d("ignored", e.getLocalizedMessage());
+
+                }
+            }
+        }
+    }
+
+    private static boolean isIgnored(String className) {
+        for (String ignoredClass : ignoredLibs) {
+            if (className.startsWith(ignoredClass)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

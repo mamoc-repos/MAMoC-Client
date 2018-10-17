@@ -80,7 +80,7 @@ public class DataHandler {
         Log.d("senderIP", senderIP);
 
         device.setIp(senderIP);
-        long rowid = dbAdapter.addMobileNode(device);
+        long rowid = dbAdapter.addMobileDevice(device);
 
         if (rowid > 0) {
             Log.d("DXDX", Build.MANUFACTURER + " received: " + deviceJSON);

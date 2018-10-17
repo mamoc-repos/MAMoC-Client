@@ -112,4 +112,8 @@ public class CommunicationController {
     public void setCloudDevices(TreeSet<CloudNode> cloudDevices) {
         this.cloudDevices = cloudDevices;
     }
+
+    public void runLocally(){
+
+    }
 }

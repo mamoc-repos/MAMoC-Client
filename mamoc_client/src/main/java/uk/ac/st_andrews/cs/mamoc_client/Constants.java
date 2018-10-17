@@ -9,6 +9,8 @@ public class Constants {
     public static String EDGE_IP = "ws://104.248.167.173:8080/ws";
     public static final String REALM_NAME = "realm1";
 
+    public static final String WAMP_LOOKUP = "wamp.registration.lookup";
+
     //"192.168.0.12:8080"
 
     public static final int PING = 11;

@@ -33,7 +33,7 @@ public class DBAdapter {
         return instance;
     }
 
-    public long addMobileNode(MobileNode device) {
+    public long addMobileDevice(MobileNode device) {
         if (device == null || device.getIp() == null || device.getPort() == 0) {
             return -1;
         }
