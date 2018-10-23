@@ -184,6 +184,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     private void onDisconnectCallback(Session session, boolean wasClean) {
         Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
         Utils.alert(DiscoveryActivity.this, "Disconnected.");
+        controller.removeEdgeDevice(edge);
         edgeBtn.setEnabled(true);
     }
 

@@ -1,12 +1,19 @@
 package uk.ac.st_andrews.cs.mamoc_client.Communication;
 
 import android.content.Context;
+import android.util.Log;
 
+import org.atteo.classindex.ClassIndex;
+
+import java.util.ArrayList;
 import java.util.TreeSet;
+import java.util.logging.Logger;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+import uk.ac.st_andrews.cs.mamoc_client.Model.Remote;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class CommunicationController {
@@ -22,10 +29,21 @@ public class CommunicationController {
 
     private boolean isConnectionListenerRunning = false;
 
-    public CommunicationController(Context context) {
+    private ArrayList<Class> offloadableClasses = new ArrayList<>();
+
+    private CommunicationController(Context context) {
         this.mContext = context;
         myPort = Utils.getPort(mContext);
         connListener = new ConnectionListener(mContext, myPort);
+        findOffloadableClasses();
+    }
+
+    private void findOffloadableClasses() {
+        Iterable<Class<?>> klasses = ClassIndex.getAnnotated(Offloadable.class);
+        for (Class<?> klass: klasses) {
+            offloadableClasses.add(klass);
+            Log.d("annotation", "new annotated class found: " + klass.getName());
+        }
     }
 
     public static CommunicationController getInstance(Context context) {
@@ -111,6 +129,10 @@ public class CommunicationController {
 
     public void setCloudDevices(TreeSet<CloudNode> cloudDevices) {
         this.cloudDevices = cloudDevices;
+    }
+
+    public ArrayList<Class> getOffloadableClasses() {
+        return offloadableClasses;
     }
 
     public void runLocally(){

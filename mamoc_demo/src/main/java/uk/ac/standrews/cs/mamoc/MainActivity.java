@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         mandelbrotDemo = findViewById(R.id.mandelbrotButton);
         mandelbrotDemo.setOnClickListener(view -> openMandelbrotDemo());
-
     }
 
     private void openDiscoveryActivity() {

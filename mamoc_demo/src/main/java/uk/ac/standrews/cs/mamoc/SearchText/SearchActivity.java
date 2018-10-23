@@ -112,7 +112,7 @@ public class SearchActivity extends DemoBaseActivity {
         showProgressDialog();
 
         KMP kmpSearch = new KMP();
-        int result = kmpSearch.searchKMP(fileContent, keyword);
+        int result = kmpSearch.run(fileContent, keyword);
 
         long endTime = System.nanoTime();
         long MethodDuration = (endTime - startTime);

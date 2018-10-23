@@ -1,7 +1,9 @@
 package uk.ac.standrews.cs.mamoc.SearchText;
 
-import java.util.ArrayList;
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+import static java.lang.Thread.dumpStack;
 
+@Offloadable
 public class KMP {
 
 //    private int[] build_pi(String str){
@@ -43,7 +45,7 @@ public class KMP {
 //        return matches;
 //    }
 
-    public int searchKMP(String txt, String pat) {
+    public int run(String txt, String pat) {
         int matches = 0;
         int M = pat.length();
         int N = txt.length();
@@ -116,5 +118,7 @@ public class KMP {
                 }
             }
         }
+
+        dumpStack();
     }
 }
