@@ -1,16 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MAMoC</string>
-    <string name="local">Local</string>
-    <string name="edge">Edge</string>
-    <string name="cloud">Cloud</string>
-    <string name="mamoc">MAMoC</string>
     <string name="small">Small</string>
     <string name="medium">Medium</string>
     <string name="large">Large</string>
-    <string name="title_activity_wear_main">WearMainActivity</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">Hello Square World!</string>
+    <string name="cloud">Public Cloud</string>
+    <string name="mamoc">MAMoC</string>
+    <string name="local">Local</string>
+    <string name="edge">Edge</string>
 </resources>

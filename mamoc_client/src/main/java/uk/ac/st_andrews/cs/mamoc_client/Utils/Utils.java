@@ -190,9 +190,9 @@ public class Utils {
 
     public static String readFile(Context context, String fileName)
     {
-        String path = context.getApplicationContext().getFilesDir().getAbsolutePath();
+    //    String path = context.getApplicationContext().getFilesDir().getAbsolutePath();
         String myData = "";
-        File myExternalFile = new File(path + fileName);
+        File myExternalFile = new File(fileName);
         try {
             FileInputStream fis = new FileInputStream(myExternalFile);
             DataInputStream in = new DataInputStream(fis);

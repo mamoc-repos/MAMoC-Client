@@ -1,5 +1,7 @@
 package jadx.core.codegen;
 
+import android.util.Log;
+
 import jadx.api.CodePosition;
 import jadx.core.dex.attributes.nodes.LineAttrNode;
 import jadx.core.utils.files.FileUtils;
@@ -278,6 +280,8 @@ public class CodeWriter {
 
 	public void save(File dir, String fileName) {
 		save(new File(dir, fileName));
+		Log.d("saving", fileName + " in " + dir.getAbsolutePath() );
+
 	}
 
 	public void save(File file) {

@@ -79,7 +79,7 @@ public final class JadxDecompiler {
         this(new JadxArgs());
     }
 
-    public JadxDecompiler(IJadxArgs jadxArgs) {
+    private JadxDecompiler(IJadxArgs jadxArgs) {
         this.args = jadxArgs;
         this.outDir = jadxArgs.getOutDir();
         reset();
@@ -91,7 +91,7 @@ public final class JadxDecompiler {
         init();
     }
 
-    void init() {
+    private void init() {
         if (outDir == null) {
             outDir = new JadxArgs().getOutDir();
         }
@@ -99,7 +99,7 @@ public final class JadxDecompiler {
         this.codeGen = new CodeGen(args);
     }
 
-    void reset() {
+    private void reset() {
         classes = null;
         resources = null;
         xmlParser = null;
@@ -136,21 +136,25 @@ public final class JadxDecompiler {
         parse();
     }
 
-    public void save() {
-        save(!args.isSkipSources(), !args.isSkipResources());
+//    public void save() {
+//        save(!args.isSkipSources(), !args.isSkipResources());
+//    }
+
+//    public void saveSources() {
+//        save(true, false);
+//    }
+
+    public void saveAnnotatedClassSources(ArrayList<String> classNames) {
+        save(classNames);
     }
 
-    public void saveSources() {
-        save(true, false);
-    }
+//    public void saveResources() {
+//        save(false, true);
+//    }
 
-    public void saveResources() {
-        save(false, true);
-    }
-
-    private void save(boolean saveSources, boolean saveResources) {
+    private void save(ArrayList<String> classNames) {
         try {
-            ExecutorService ex = getSaveExecutor(saveSources, saveResources);
+            ExecutorService ex = getSaveExecutor(classNames);
             ex.shutdown();
             ex.awaitTermination(1, TimeUnit.DAYS);
         } catch (InterruptedException e) {
@@ -158,11 +162,11 @@ public final class JadxDecompiler {
         }
     }
 
-    public ExecutorService getSaveExecutor() {
-        return getSaveExecutor(!args.isSkipSources(), !args.isSkipResources());
-    }
+//    public ExecutorService getSaveExecutor() {
+//        return getSaveExecutor(!args.isSkipSources(), !args.isSkipResources());
+//    }
 
-    private ExecutorService getSaveExecutor(boolean saveSources, final boolean saveResources) {
+    private ExecutorService getSaveExecutor(ArrayList<String> classNames) {
         if (root == null) {
             throw new JadxRuntimeException("No loaded files");
         }
@@ -171,25 +175,30 @@ public final class JadxDecompiler {
 
         LOG.info("processing ...");
         ExecutorService executor = Executors.newFixedThreadPool(threadsCount);
-        if (saveSources) {
-            for (final JavaClass cls : getClasses()) {
-                executor.execute(() -> {
 
-                    if (cls.getFullName().startsWith("uk.ac.standrews.cs.mamoc")) { // cls.getFullName().equals(fileName)
-                        Log.d("save:", cls.getFullName());
+        for (final JavaClass cls : getClasses()) {
+            executor.execute(() -> {
+
+                for (String className : classNames) {
+//                    Log.d("className:", className);
+//                    Log.d("dexClass:", cls.getFullName());
+
+                    if (cls.getFullName().equals(className)) {
+                        Log.d("saving annotated class:", cls.getFullName());
                         cls.decompile();
                         SaveCode.save(outDir, args, cls.getClassNode());
                     } else {
                         LOG.info("skipping", cls.getFullName());
                     }
-                });
-            }
+                }
+            });
         }
-        if (saveResources) {
-            for (final ResourceFile resourceFile : getResources()) {
-                executor.execute(new ResourcesSaver(outDir, resourceFile));
-            }
-        }
+
+//        if (saveResources) {
+//            for (final ResourceFile resourceFile : getResources()) {
+//                executor.execute(new ResourcesSaver(outDir, resourceFile));
+//            }
+//        }
         return executor;
     }
 
@@ -311,7 +320,7 @@ public final class JadxDecompiler {
         root.getErrorsCounter().printReport();
     }
 
-    void parse() throws DecodeException {
+    private void parse() throws DecodeException {
         reset();
         init();
 

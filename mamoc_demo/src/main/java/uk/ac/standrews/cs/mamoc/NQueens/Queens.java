@@ -1,5 +1,8 @@
 package uk.ac.standrews.cs.mamoc.NQueens;
 
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+
+@Offloadable
 public class Queens {
 
     public static void run(int N) {

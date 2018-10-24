@@ -2,6 +2,9 @@ package uk.ac.standrews.cs.mamoc.Mandelbrot;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+
+@Offloadable
 public class Mandelbrot {
 
     private static byte[][] out;
@@ -10,7 +13,6 @@ public class Mandelbrot {
     private static double[] Cib;
 
     public static void run(int N) throws InterruptedException {
-//        int N=6000;
 
         Crb = new double[N + 7];
         Cib = new double[N + 7];

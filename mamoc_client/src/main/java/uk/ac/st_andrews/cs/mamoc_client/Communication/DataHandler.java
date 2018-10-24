@@ -8,6 +8,7 @@ import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
 
 public class DataHandler {
     public static final String DEVICE_LIST_CHANGED = "device_list_updated";

@@ -1,8 +1,11 @@
 package uk.ac.standrews.cs.mamoc.Sorting;
 
+import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+
+@Offloadable
 public class MergeSort {
 
-    public static void mergeSort(String[] names) {
+    public static void run(String[] names) {
         if (names.length >= 2) {
             String[] left = new String[names.length / 2];
             String[] right = new String[names.length - names.length / 2];
@@ -15,8 +18,8 @@ public class MergeSort {
                 right[i] = names[i + names.length / 2];
             }
 
-            mergeSort(left);
-            mergeSort(right);
+            run(left);
+            run(right);
             merge(names, left, right);
         }
     }

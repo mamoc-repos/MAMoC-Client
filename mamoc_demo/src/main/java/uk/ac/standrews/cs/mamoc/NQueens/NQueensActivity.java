@@ -33,7 +33,7 @@ import static uk.ac.st_andrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
 
 public class NQueensActivity extends DemoBaseActivity {
 
-    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.nqueens";
+    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.nqueens.Queens";
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -110,7 +110,7 @@ public class NQueensActivity extends DemoBaseActivity {
         Log.d("edge:", String.valueOf(node.getCpuFreq()));
 
         if (node.session.isConnected()) {
-            Log.d("Sending", "trying to call search procedure");
+            Log.d("Sending", "trying to call nqueens procedure");
 
             // check if procedure is registered
             CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, RPC_NAME);
@@ -118,33 +118,28 @@ public class NQueensActivity extends DemoBaseActivity {
             registeredFuture.thenAccept(registrationResult -> {
                 if (registrationResult.results.get(0) == null) {
                     // Procedure not registered
-                    Log.d("NQUEENS", "not registered");
+                    Log.d("nqueens", "not registered");
                     Toast.makeText(this, RPC_NAME + " not registered", Toast.LENGTH_SHORT).show();
 
                     try {
-                        DexDecompiler decompiler = new DexDecompiler(this, "uk.ac.standrews.cs.mamoc.NQueens.Queens");
-                        decompiler.runDecompiler();
+                        String sourceCode = controller.fetchSourceCode(RPC_NAME);
 
-                        CompletableFuture<String> result = decompiler.fetchSourceCode();
-                        result.thenAccept(codeResult -> {
-                            CompletableFuture<Publication> publishFuture = node.session.publish(
-                                    "uk.standrews.cs.mamoc.android", codeResult);
-                            publishFuture.thenAccept(publishResult ->
-                                    Log.d("publishResult", String.format("publish: %s",
-                                            publishResult.publication)));
-                        });
-
+                        CompletableFuture<Publication> publishFuture = node.session.publish(
+                                "uk.standrews.cs.mamoc.android", sourceCode, N);
+                        publishFuture.thenAccept(publishResult ->
+                                Log.d("publishResult", String.format("publish: %s",
+                                        publishResult.publication))
+                        );
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
                 } else {
-                    // Call a remote procedure.
+                    // Call the remote procedure.
                     Log.d("callResult", String.format("RPC ID: %s",
                             registrationResult.results.get(0)));
 
                     CompletableFuture<CallResult> callFuture = node.session.call(
-                            RPC_NAME, N);
+                            RPC_NAME);
                     callFuture.thenAccept(callResult -> {
                         List<Object> results = (List) callResult.results.get(0);
                         Log.d("callResult", String.format("Took %s seconds",

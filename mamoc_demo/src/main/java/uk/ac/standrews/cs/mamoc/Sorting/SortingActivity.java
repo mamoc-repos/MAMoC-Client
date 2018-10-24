@@ -3,8 +3,6 @@ package uk.ac.standrews.cs.mamoc.Sorting;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -19,6 +17,7 @@ import java.util.TreeSet;
 
 import io.crossbar.autobahn.wamp.types.CallResult;
 // supporting Android API < 24
+import io.crossbar.autobahn.wamp.types.Publication;
 import java8.util.concurrent.CompletableFuture;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
@@ -27,7 +26,11 @@ import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
+
 public class SortingActivity extends DemoBaseActivity {
+
+    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.sorting.MergeSort";
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -85,7 +88,7 @@ public class SortingActivity extends DemoBaseActivity {
                 sortLocal();
                 break;
             case EDGE:
-                sortEdge();
+                runEdge();
                 break;
         }
     }
@@ -100,7 +103,7 @@ public class SortingActivity extends DemoBaseActivity {
         showProgressDialog();
 
         // merge sort
-        MergeSort.mergeSort(fileContentArray);
+        MergeSort.run(fileContentArray);
 
         long endTime = System.nanoTime();
         long MethodDuration = (endTime - startTime);
@@ -110,28 +113,55 @@ public class SortingActivity extends DemoBaseActivity {
         hideDialog();
     }
 
-    private void sortEdge() {
+    private void runEdge() {
 
         TreeSet<EdgeNode> edgeNodes = controller.getEdgeDevices();
         EdgeNode node = edgeNodes.first();
-        Log.d("edge:", String.valueOf(node.getCpuFreq()));
+//        Log.d("edge:", String.valueOf(node.getCpuFreq()));
 
         if (node.session.isConnected()) {
             Log.d("Sending", "trying to call search procedure");
 
-            // Call a remote procedure.
-            CompletableFuture<CallResult> callFuture = node.session.call(
-                    "uk.ac.standrews.cs.mamoc.sort",
-                    fileSize, keyword);
-            callFuture.thenAccept(callResult -> {
-                List<Object> results = (List) callResult.results.get(0);
-                Log.d("callResult", String.format("Took %s seconds",
-                        results.get(0)));
-                addLog((double) results.get(0));
+            // check if procedure is registered
+            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, RPC_NAME);
+
+            registeredFuture.thenAccept(registrationResult -> {
+                if (registrationResult.results.get(0) == null) {
+                    // Procedure not registered
+                    Log.d("Sort", "not registered");
+                    Toast.makeText(this, RPC_NAME + " not registered", Toast.LENGTH_SHORT).show();
+
+                    try {
+                        String sourceCode = controller.fetchSourceCode(RPC_NAME);
+                        CompletableFuture<Publication> publishFuture = node.session.publish(
+                                    "uk.standrews.cs.mamoc.android", sourceCode);
+                        publishFuture.thenAccept(publishResult ->
+                                    Log.d("publishResult", String.format("publish: %s",
+                                            publishResult.publication))
+                        );
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    // Call the remote procedure.
+                    Log.d("callResult", String.format("RPC ID: %s",
+                            registrationResult.results.get(0)));
+
+                    CompletableFuture<CallResult> callFuture = node.session.call(
+                            RPC_NAME);
+                    callFuture.thenAccept(callResult -> {
+                        List<Object> results = (List) callResult.results.get(0);
+                        Log.d("callResult", String.format("Took %s seconds",
+                                results.get(0)));
+                        addLog((double) results.get(0));
+                    });
+                }
             });
         } else {
             Toast.makeText(this, "Edge not connected!", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private String getContentFromTextFile(String file) {

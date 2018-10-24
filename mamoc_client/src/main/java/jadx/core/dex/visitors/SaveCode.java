@@ -1,5 +1,7 @@
 package jadx.core.dex.visitors;
 
+import android.util.Log;
+
 import jadx.api.IJadxArgs;
 import jadx.core.codegen.CodeWriter;
 import jadx.core.dex.nodes.ClassNode;

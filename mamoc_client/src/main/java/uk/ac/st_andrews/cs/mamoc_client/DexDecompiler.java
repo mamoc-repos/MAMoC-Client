@@ -15,44 +15,28 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.concurrent.ExecutionException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import jadx.api.JadxDecompiler;
-import java8.util.concurrent.CompletableFuture;
 
 public class DexDecompiler {
 
     private static final Logger LOG = LoggerFactory.getLogger(DexDecompiler.class);
 
-    private final int STACK_SIZE = Integer.valueOf(20 * 1024 * 1024);
+    private final int STACK_SIZE = 20 * 1024 * 1024;
     private ExceptionHandler exceptionHandler;
 
     private Context context;
-    private String fileName;
+    private ArrayList<String> classNames;
 
-    private CompletableFuture result;
-
-    public DexDecompiler(Context context, String fileName) {
+    public DexDecompiler(Context context, ArrayList<String> classNames) {
         this.context = context;
-        this.fileName = fileName;
+        this.classNames = classNames;
     }
 
     public void runDecompiler(){
         extractDexFiles();
-    }
-
-    public CompletableFuture<String> fetchSourceCode() {
-        try {
-            return (CompletableFuture<String>) result.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-        return null;
     }
 
     private void extractDexFiles() {
@@ -95,15 +79,21 @@ public class DexDecompiler {
                 JadxDecompiler jadx = new JadxDecompiler();
                 jadx.setOutputDir(getOutputDir(context));
                 jadx.loadFile(dexInputFile);
-                jadx.saveSources();
-//                result = jadx.getSourceCode(fileName);
+                jadx.saveAnnotatedClassSources(classNames);
+                // We don't need to decompile and save all the dexes
+//                jadx.saveSources();
             } catch (Exception | StackOverflowError e) {
                 Log.e("error", e.getLocalizedMessage());
                 javaError = true;
             }
 
             if (dexInputFile.exists() && dexInputFile.isFile()) {
-                dexInputFile.delete();
+                boolean dexDeleted = dexInputFile.delete();
+                if (dexDeleted) {
+                    LOG.info(dexInputFile.getName() + " successfully deleted");
+                } else{
+                    LOG.info("could not delete: " + dexInputFile.getName());
+                }
             }
         }, "Dex to Java Thread", STACK_SIZE);
 
@@ -133,11 +123,20 @@ public class DexDecompiler {
 
     private File getOutputDir(Context context){
 
-        String packageName = context.getPackageName();
+//        String packageName = context.getPackageName();
         String ExternalStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath();
 
+        String folder_main ="mamoc";
+
+        File f = new File(Environment.getExternalStorageDirectory(), folder_main);
+        if (!f.exists()) {
+            f.mkdirs();
+        }
+
+        Log.d("externalstorage", ExternalStoragePath);
+
         try{
-            return new File(ExternalStoragePath + "/" + packageName);
+            return new File(ExternalStoragePath  + "/" + folder_main);
         } catch (Throwable x) {
             LOG.error("could not create an output directory");
         }
