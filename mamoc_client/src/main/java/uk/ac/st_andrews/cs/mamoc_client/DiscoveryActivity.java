@@ -194,6 +194,13 @@ public class DiscoveryActivity extends AppCompatActivity {
         super.onResume();
     //    DBAdapter.getInstance(DiscoveryActivity.this).clearDatabase();
         listeningPort.setText(String.format(getString(R.string.port_info), Utils.getPort(this)));
+
+        if (edge != null && edge.session.isConnected()){
+            edgeBtn.setText("Status: Connected to " + EDGE_IP);
+            edgeBtn.setEnabled(false);
+        } else{
+            edgeBtn.setEnabled(true);
+        }
     }
 
     private void checkWritePermissions() {

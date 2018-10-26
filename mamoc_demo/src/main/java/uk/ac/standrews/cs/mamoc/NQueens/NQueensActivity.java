@@ -1,11 +1,7 @@
 package uk.ac.standrews.cs.mamoc.NQueens;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,10 +9,7 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.TreeSet;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
-import dalvik.system.DexClassLoader;
 import io.crossbar.autobahn.wamp.types.CallResult;
 // supporting Android API < 24
 import io.crossbar.autobahn.wamp.types.Publication;
@@ -24,9 +17,7 @@ import io.crossbar.autobahn.wamp.types.Subscription;
 import java8.util.concurrent.CompletableFuture;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.DexDecompiler;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
-import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
@@ -38,6 +29,8 @@ public class NQueensActivity extends DemoBaseActivity {
     private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.nqueens.Queens";
 
     long startSendingTime, endSendingTime;
+
+    private Subscription sub;
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -145,6 +138,8 @@ public class NQueensActivity extends DemoBaseActivity {
 
                             subFuture.whenComplete((subscription, throwable) -> {
                                 if (throwable == null) {
+
+                                    sub = subscription;
                                     // We have successfully subscribed.
                                     Log.d("subscription", "Subscribed to topic " + subscription.topic);
                                 } else {
@@ -179,8 +174,7 @@ public class NQueensActivity extends DemoBaseActivity {
                                 RPC_NAME);
                         callFuture.thenAccept(callResult -> {
                             List<Object> results = (List) callResult.results.get(0);
-                            Log.d("callResult", String.format("Took %s seconds",
-                                    results.get(0)));
+//                            Log.d("callResult", String.format("Took %s seconds", results.get(0)));
                             addLog((String) results.get(0), (double) results.get(1));
                         });
                     }
@@ -196,6 +190,7 @@ public class NQueensActivity extends DemoBaseActivity {
 
     public void onOffloadingResult(List<Object> results) {
         addLog((String) results.get(0), (double) results.get(1));
+        sub.unsubscribe();
     }
 
     private void addLog(String result, double duration) {
