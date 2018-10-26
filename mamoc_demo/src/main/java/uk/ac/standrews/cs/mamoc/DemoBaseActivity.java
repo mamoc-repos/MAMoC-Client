@@ -10,7 +10,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 public abstract class DemoBaseActivity extends AppCompatActivity {
 

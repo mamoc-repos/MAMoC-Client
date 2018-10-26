@@ -17,6 +17,8 @@ import java.util.TreeSet;
 
 import io.crossbar.autobahn.wamp.types.CallResult;
 // supporting Android API < 24
+import io.crossbar.autobahn.wamp.types.Publication;
+import io.crossbar.autobahn.wamp.types.Subscription;
 import java8.util.concurrent.CompletableFuture;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
@@ -25,7 +27,11 @@ import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
+
 public class SearchActivity extends DemoBaseActivity {
+
+    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.SearchText.KMP";
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -117,32 +123,94 @@ public class SearchActivity extends DemoBaseActivity {
         long endTime = System.nanoTime();
         long MethodDuration = (endTime - startTime);
 
-        addLog(result, (double) MethodDuration *1.0e-9);
+        addLog(String.valueOf(result), (double) MethodDuration *1.0e-9);
 
         hideDialog();
     }
 
     private void searchEdge(String keyword) {
 
+        // TODO: move the logic of running remotely into controller
+//        try{
+//            controller.runRemote(this, ExecutionLocation.EDGE, RPC_NAME, N);
+//        } catch (ExecutionException e){
+//            Log.e("runEdge", e.getLocalizedMessage());
+//            Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+//        }
+
         TreeSet<EdgeNode> edgeNodes = controller.getEdgeDevices();
-        EdgeNode node = edgeNodes.first();
-        Log.d("edge:", String.valueOf(node.getCpuFreq()));
+        if (!edgeNodes.isEmpty()) {
+            EdgeNode node = edgeNodes.first();
+            Log.d("edge:", String.valueOf(node.getCpuFreq()));
 
-        if (node.session.isConnected()) {
-            Log.d("Sending", "trying to call search procedure");
+            if (node.session.isConnected()) {
+                Log.d("Sending", "trying to call search procedure");
 
-            // Call a remote procedure.
-            CompletableFuture<CallResult> callFuture = node.session.call(
-                    "uk.ac.standrews.cs.mamoc.search",
-                    fileSize, keyword);
-            callFuture.thenAccept(callResult -> {
-                List<Object> results = (List) callResult.results.get(0);
-                Log.d("callResult", String.format("Found: %s in %s seconds",
-                        results.get(0), results.get(1)));
-                addLog((int) results.get(0), (double) results.get(1));
-            });
+                // check if procedure is registered
+                CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, RPC_NAME);
+
+                registeredFuture.thenAccept(registrationResult -> {
+                    if (registrationResult.results.get(0) == null) {
+                        // Procedure not registered
+                        Log.d("search", "not registered");
+                        Toast.makeText(this, RPC_NAME + " not registered", Toast.LENGTH_SHORT).show();
+
+                        try {
+
+                            // subscribe to the result of offloading
+                            CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                                    "uk.ac.standrews.cs.mamoc.offloadingresult",
+                                    this::onOffloadingResult);
+
+                            subFuture.whenComplete((subscription, throwable) -> {
+                                if (throwable == null) {
+                                    // We have successfully subscribed.
+                                    Log.d("subscription", "Subscribed to topic " + subscription.topic);
+                                } else {
+                                    // Something went bad.
+                                    throwable.printStackTrace();
+                                }
+                            });
+
+                            String sourceCode = controller.fetchSourceCode(RPC_NAME);
+
+                            // publish (offload) the source code
+                            CompletableFuture<Publication> pubFuture = node.session.publish(
+                                    "uk.ac.standrews.cs.mamoc.offloading",
+                                    "Android", RPC_NAME, sourceCode, keyword);
+                            pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                    "Published successfully"));
+                            // Shows we can separate out exception handling
+                            pubFuture.exceptionally(throwable -> {
+                                throwable.printStackTrace();
+                                return null;
+                            });
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        // Call the remote procedure.
+                        Log.d("callResult", String.format("RPC ID: %s",
+                                registrationResult.results.get(0)));
+
+                        CompletableFuture<CallResult> callFuture = node.session.call(
+                                RPC_NAME);
+                        callFuture.thenAccept(callResult -> {
+                            List<Object> results = (List) callResult.results.get(0);
+                            Log.d("callResult", String.format("Took %s seconds",
+                                    results.get(0)));
+                            addLog((String) results.get(0), (double) results.get(1));
+                        });
+                    }
+                });
+            } else {
+                Toast.makeText(this, "Edge is not connected!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
-            Toast.makeText(this, "Edge not connected!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No edge node exist", Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 
@@ -171,12 +239,16 @@ public class SearchActivity extends DemoBaseActivity {
         return sb.toString();
     }
 
-    private void addLog(int result, double duration) {
-        if (result == 0) {
-            searchOutput.append("no occurences found!\n");
-        } else {
+    public void onOffloadingResult(List<Object> results) {
+        addLog((String) results.get(0), (double) results.get(1));
+    }
+
+    private void addLog(String result, double duration) {
+//        if (result == 0) {
+//            searchOutput.append("no occurences found!\n");
+//        } else {
             searchOutput.append("Number of occurences: " + result + "\n");
             searchOutput.append("Execution took: " + duration  + " seconds.\n");
-        }
+//        }
     }
 }

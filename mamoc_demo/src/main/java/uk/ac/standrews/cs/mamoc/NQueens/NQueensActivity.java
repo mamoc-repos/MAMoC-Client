@@ -13,12 +13,14 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.TreeSet;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import dalvik.system.DexClassLoader;
 import io.crossbar.autobahn.wamp.types.CallResult;
 // supporting Android API < 24
 import io.crossbar.autobahn.wamp.types.Publication;
+import io.crossbar.autobahn.wamp.types.Subscription;
 import java8.util.concurrent.CompletableFuture;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
@@ -34,6 +36,8 @@ import static uk.ac.st_andrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
 public class NQueensActivity extends DemoBaseActivity {
 
     private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.nqueens.Queens";
+
+    long startSendingTime, endSendingTime;
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -90,6 +94,7 @@ public class NQueensActivity extends DemoBaseActivity {
     private void runLocal(int N) {
 
         long startTime = System.nanoTime();
+        startSendingTime = System.nanoTime();
 
         showProgressDialog();
 
@@ -98,62 +103,107 @@ public class NQueensActivity extends DemoBaseActivity {
         long endTime = System.nanoTime();
         long MethodDuration = (endTime - startTime);
 
-        addLog((double) MethodDuration * 1.0e-9);
+        addLog("nothing", (double) MethodDuration * 1.0e-9);
 
         hideDialog();
     }
 
     private void runEdge(int N) {
 
+        // TODO: move the logic of running remotely into controller
+//        try{
+//            controller.runRemote(this, ExecutionLocation.EDGE, RPC_NAME, N);
+//        } catch (ExecutionException e){
+//            Log.e("runEdge", e.getLocalizedMessage());
+//            Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+//        }
+
         TreeSet<EdgeNode> edgeNodes = controller.getEdgeDevices();
-        EdgeNode node = edgeNodes.first();
-        Log.d("edge:", String.valueOf(node.getCpuFreq()));
+        if (!edgeNodes.isEmpty()) {
+            EdgeNode node = edgeNodes.first();
+            Log.d("edge:", String.valueOf(node.getCpuFreq()));
 
-        if (node.session.isConnected()) {
-            Log.d("Sending", "trying to call nqueens procedure");
+            if (node.session.isConnected()) {
+                Log.d("Sending", "trying to call nqueens procedure");
 
-            // check if procedure is registered
-            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, RPC_NAME);
+                startSendingTime = System.nanoTime();
 
-            registeredFuture.thenAccept(registrationResult -> {
-                if (registrationResult.results.get(0) == null) {
-                    // Procedure not registered
-                    Log.d("nqueens", "not registered");
-                    Toast.makeText(this, RPC_NAME + " not registered", Toast.LENGTH_SHORT).show();
+                // check if procedure is registered
+                CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, RPC_NAME);
 
-                    try {
-                        String sourceCode = controller.fetchSourceCode(RPC_NAME);
+                registeredFuture.thenAccept(registrationResult -> {
+                    if (registrationResult.results.get(0) == null) {
+                        // Procedure not registered
+                        Log.d("nqueens", "not registered");
+                        Toast.makeText(this, RPC_NAME + " not registered", Toast.LENGTH_SHORT).show();
 
-                        CompletableFuture<Publication> publishFuture = node.session.publish(
-                                "uk.standrews.cs.mamoc.android", sourceCode, N);
-                        publishFuture.thenAccept(publishResult ->
-                                Log.d("publishResult", String.format("publish: %s",
-                                        publishResult.publication))
-                        );
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        try {
+                            // subscribe to the result of offloading
+                            CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                                    "uk.ac.standrews.cs.mamoc.offloadingresult",
+                                    this::onOffloadingResult);
+
+                            subFuture.whenComplete((subscription, throwable) -> {
+                                if (throwable == null) {
+                                    // We have successfully subscribed.
+                                    Log.d("subscription", "Subscribed to topic " + subscription.topic);
+                                } else {
+                                    // Something went bad.
+                                    throwable.printStackTrace();
+                                }
+                            });
+
+                            String sourceCode = controller.fetchSourceCode(RPC_NAME);
+
+                            // publish (offload) the source code
+                            CompletableFuture<Publication> pubFuture = node.session.publish(
+                                    "uk.ac.standrews.cs.mamoc.offloading",
+                                    "Android", RPC_NAME, sourceCode, N);
+                            pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                    "Published successfully"));
+                            // Shows we can separate out exception handling
+                            pubFuture.exceptionally(throwable -> {
+                                throwable.printStackTrace();
+                                return null;
+                            });
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        // Call the remote procedure.
+                        Log.d("callResult", String.format("RPC ID: %s",
+                                registrationResult.results.get(0)));
+
+                        CompletableFuture<CallResult> callFuture = node.session.call(
+                                RPC_NAME);
+                        callFuture.thenAccept(callResult -> {
+                            List<Object> results = (List) callResult.results.get(0);
+                            Log.d("callResult", String.format("Took %s seconds",
+                                    results.get(0)));
+                            addLog((String) results.get(0), (double) results.get(1));
+                        });
                     }
-                } else {
-                    // Call the remote procedure.
-                    Log.d("callResult", String.format("RPC ID: %s",
-                            registrationResult.results.get(0)));
+                });
+            } else {
+                Toast.makeText(this, "Edge is not connected!", Toast.LENGTH_SHORT).show();
+            }
 
-                    CompletableFuture<CallResult> callFuture = node.session.call(
-                            RPC_NAME);
-                    callFuture.thenAccept(callResult -> {
-                        List<Object> results = (List) callResult.results.get(0);
-                        Log.d("callResult", String.format("Took %s seconds",
-                                results.get(0)));
-                        addLog((double) results.get(0));
-                    });
-                }
-            });
         } else {
-            Toast.makeText(this, "Edge not connected!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No edge node exists", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void addLog(double duration) {
-        nqueensOutput.append("Execution took: " + duration + " seconds.\n");
+    public void onOffloadingResult(List<Object> results) {
+        addLog((String) results.get(0), (double) results.get(1));
+    }
+
+    private void addLog(String result, double duration) {
+        nqueensOutput.append("Execution returned " + result + " and took: " + duration + " seconds.\n");
+
+        endSendingTime = System.nanoTime();
+        double commOverhead = (double)(endSendingTime - startSendingTime) * 1.0e-9;
+        commOverhead -= duration;
+        nqueensOutput.append("Communication overhead: " + commOverhead + " seconds.\n");
     }
 }

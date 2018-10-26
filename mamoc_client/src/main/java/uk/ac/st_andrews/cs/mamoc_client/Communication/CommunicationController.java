@@ -19,7 +19,6 @@ import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class CommunicationController {
-    private final boolean AnnotatedClassesAreIndexed;
     private Context mContext;
     private int myPort;
     private ConnectionListener connListener;
@@ -42,8 +41,7 @@ public class CommunicationController {
         myPort = Utils.getPort(mContext);
         connListener = new ConnectionListener(mContext, myPort);
 
-        AnnotatedClassesAreIndexed = checkAnnotatedIndexing();
-        if (!AnnotatedClassesAreIndexed) {
+        if (!checkAnnotatedIndexing()) {
             findOffloadableClasses();
         }
     }

@@ -55,8 +55,7 @@ public class KMP {
         int lps[] = new int[M];
         int j = 0; // index for pat[]
 
-        // Preprocess the pattern (calculate lps[]
-        // array)
+        // Preprocess the pattern (calculate lps[] array)
         computeLPSArray(pat, M, lps);
 
         int i = 0; // index for txt[]
