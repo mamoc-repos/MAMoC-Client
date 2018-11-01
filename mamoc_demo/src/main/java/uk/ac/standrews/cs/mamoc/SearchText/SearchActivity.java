@@ -3,6 +3,7 @@ package uk.ac.standrews.cs.mamoc.SearchText;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -42,6 +43,7 @@ public class SearchActivity extends DemoBaseActivity {
 
         keywordTextView = findViewById(R.id.searchEditText);
         searchOutput = findViewById(R.id.sortOutput);
+        searchOutput.setMovementMethod(new ScrollingMovementMethod());
 
         radioGroup = findViewById(R.id.fileSizeRadioGroup);
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
@@ -133,6 +135,7 @@ public class SearchActivity extends DemoBaseActivity {
         searchOutput.append("Execution returned " + result + "\n");
         searchOutput.append("Execution Duration: " + executationDuration + "\n");
         searchOutput.append("Communication Overhead: " + commOverhead + "\n");
+        searchOutput.append("************************************************\n");
     }
 
     private String getContentFromTextFile(String file) {

@@ -37,8 +37,14 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
-    // for Completable Future backwards compatibility
-    implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.6.0'
+    /* The reason we are including autobahn source code is that it does not support API < 24 due to
+    Completable Future which is only available in JDK 8. We modify the CompletableFuture and other
+    classes with backwards compatible streamsupport-cfuture library
+    */
+
+    // for CompletableFuture backwards compatibility
+    implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.6.2'
+
     //ClassIndex for Annotation indexing
     implementation 'org.atteo.classindex:classindex:3.4'
 
@@ -48,11 +54,4 @@ dependencies {
 
 
     implementation project(':mamoc_client')
-
-    /* The reason we are including autobahn source code is that it does not support API < 24 due to
-    Completable Future which is only available in JDK 8. We modify the CompletableFuture and other
-    classes with backwards compatible streamsupport-cfuture library
-    */
-    implementation project(':autobahn')
-
 }

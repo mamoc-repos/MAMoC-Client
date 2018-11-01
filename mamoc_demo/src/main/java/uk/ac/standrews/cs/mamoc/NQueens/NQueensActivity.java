@@ -2,6 +2,7 @@ package uk.ac.standrews.cs.mamoc.NQueens;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ public class NQueensActivity extends DemoBaseActivity {
 
         nqueensOutput = findViewById(R.id.sortOutput);
         nOutput = findViewById(R.id.mandelBrotEditText);
+        nOutput.setMovementMethod(new ScrollingMovementMethod());
 
         localButton.setOnClickListener(view -> runQueens(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> runQueens(ExecutionLocation.EDGE));
@@ -99,5 +101,6 @@ public class NQueensActivity extends DemoBaseActivity {
         nqueensOutput.append("Execution returned " + result + "\n");
         nqueensOutput.append("Execution Duration: " + executationDuration + "\n");
         nqueensOutput.append("Communication Overhead: " + commOverhead + "\n");
+        nqueensOutput.append("************************************************\n");
     }
 }

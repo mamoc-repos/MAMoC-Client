@@ -1,1 +1,1 @@
-include ':mamoc_demo', ':mamoc_client', ':autobahn'
+include ':mamoc_demo', ':mamoc_client'

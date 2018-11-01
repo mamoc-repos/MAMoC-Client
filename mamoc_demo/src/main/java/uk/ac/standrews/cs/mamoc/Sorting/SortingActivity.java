@@ -119,6 +119,7 @@ public class SortingActivity extends DemoBaseActivity {
         sortOutput.append("Execution returned " + result + "\n");
         sortOutput.append("Execution Duration: " + executationDuration + "\n");
         sortOutput.append("Communication Overhead: " + commOverhead + "\n");
+        sortOutput.append("************************************************\n");
     }
 
     private String getContentFromTextFile(String file) {

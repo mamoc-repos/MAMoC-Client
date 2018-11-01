@@ -107,8 +107,6 @@ public class DBAdapter {
         return devices;
     }
 
-
-
     private boolean deviceExists(String ip) {
         Cursor cursor = db.query(DBHelper.TABLE_DEVICES, null, DBHelper.COL_DEV_IP + "=?", new
                 String[]{ip}, null, null, null);
