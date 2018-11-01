@@ -2,10 +2,16 @@ package uk.ac.standrews.cs.mamoc.Benchmark;
 
 import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 
+import uk.ac.standrews.cs.mamoc.Benchmark.Scimark2.*;
+
 @Offloadable
 public class Benchmark {
 
-    private static final int fft_size= 1024;
+    private static final int FFT_size= 1024;
+    private static final int SOR_size =100; // NxN grid
+    private static final int Sparse_size_M = 1000;
+    private static final int Sparse_size_nz = 5000;
+    private static final int LU_size = 100;
 
     public double run() {
 
@@ -13,7 +19,15 @@ public class Benchmark {
 
         double min_time = Constants.RESOLUTION_DEFAULT;
 
-        return measureFFT(fft_size, min_time, R);
+        double result1 = measureFFT(FFT_size, min_time, R);
+        double result2 = measureSOR(SOR_size, min_time, R);
+        double result3 = measureMonteCarlo(min_time, R);
+        double result4 = measureSparseMatmult(Sparse_size_M, Sparse_size_nz, min_time, R);
+        double result5 = measureLU(LU_size, min_time, R);
+
+        double resultAVG = (result1 + result2 + result3 + result4 + result5) /5;
+
+        return resultAVG;
     }
 
     private double measureFFT(int N, double mintime, Random R)
@@ -46,6 +60,157 @@ public class Benchmark {
             return 0.0;
 
         return FFT.num_flops(N)*cycles/ Q.read() * 1.0e-6;
+    }
+
+    public static double measureSOR(int N, double min_time, Random R)
+    {
+        double G[][] = RandomMatrix(N, N, R);
+
+        Stopwatch Q = new Stopwatch();
+        int cycles=1;
+        while(true)
+        {
+            Q.start();
+            SOR.execute(1.25, G, cycles);
+            Q.stop();
+            if (Q.read() >= min_time) break;
+
+            cycles *= 2;
+        }
+        // approx Mflops
+        return SOR.num_flops(N, N, cycles) / Q.read() * 1.0e-6;
+    }
+
+    public static double measureMonteCarlo(double min_time, Random R)
+    {
+        Stopwatch Q = new Stopwatch();
+
+        int cycles=1;
+        while(true)
+        {
+            Q.start();
+            MonteCarlo.integrate(cycles);
+            Q.stop();
+            if (Q.read() >= min_time) break;
+
+            cycles *= 2;
+        }
+        // approx Mflops
+        return MonteCarlo.num_flops(cycles) / Q.read() * 1.0e-6;
+    }
+
+
+    public static double measureSparseMatmult(int N, int nz,
+                                              double min_time, Random R)
+    {
+        // initialize vector multipliers and storage for result
+        // y = A*y;
+
+        double x[] = RandomVector(N, R);
+        double y[] = new double[N];
+
+        // initialize square sparse matrix
+        //
+        // for this test, we create a sparse matrix wit M/nz nonzeros
+        // per row, with spaced-out evenly between the begining of the
+        // row to the main diagonal.  Thus, the resulting pattern looks
+        // like
+        //             +-----------------+
+        //             +*                +
+        //             +***              +
+        //             +* * *            +
+        //             +** *  *          +
+        //             +**  *   *        +
+        //             +* *   *   *      +
+        //             +*  *   *    *    +
+        //             +*   *    *    *  +
+        //             +-----------------+
+        //
+        // (as best reproducible with integer artihmetic)
+        // Note that the first nr rows will have elements past
+        // the diagonal.
+
+        int nr = nz/N; 		// average number of nonzeros per row
+        int anz = nr *N;   // _actual_ number of nonzeros
+
+
+        double val[] = RandomVector(anz, R);
+        int col[] = new int[anz];
+        int row[] = new int[N+1];
+
+        row[0] = 0;
+        for (int r=0; r<N; r++)
+        {
+            // initialize elements for row r
+
+            int rowr = row[r];
+            row[r+1] = rowr + nr;
+            int step = r/ nr;
+            if (step < 1) step = 1;   // take at least unit steps
+
+
+            for (int i=0; i<nr; i++)
+                col[rowr+i] = i*step;
+
+        }
+
+        Stopwatch Q = new Stopwatch();
+
+        int cycles=1;
+        while(true)
+        {
+            Q.start();
+            SparseCompRow.matmult(y, val, row, col, x, cycles);
+            Q.stop();
+            if (Q.read() >= min_time) break;
+
+            cycles *= 2;
+        }
+        // approx Mflops
+        return SparseCompRow.num_flops(N, nz, cycles) / Q.read() * 1.0e-6;
+    }
+
+
+    public static double measureLU(int N, double min_time, Random R)
+    {
+        // compute approx Mlfops, or O if LU yields large errors
+
+        double A[][] = RandomMatrix(N, N,  R);
+        double lu[][] = new double[N][N];
+        int pivot[] = new int[N];
+
+        Stopwatch Q = new Stopwatch();
+
+        int cycles=1;
+        while(true)
+        {
+            Q.start();
+            for (int i=0; i<cycles; i++)
+            {
+                CopyMatrix(lu, A);
+                LU.factor(lu, pivot);
+            }
+            Q.stop();
+            if (Q.read() >= min_time) break;
+
+            cycles *= 2;
+        }
+
+
+        // verify that LU is correct
+        double b[] = RandomVector(N, R);
+        double x[] = NewVectorCopy(b);
+
+        LU.solve(lu, pivot, x);
+
+        final double EPS = 1.0e-12;
+        if ( normabs(b, matvec(A,x)) / N > EPS )
+            return 0.0;
+
+
+        // else return approx Mflops
+        //
+        return LU.num_flops(N) * cycles / Q.read() * 1.0e-6;
     }
 
     private static double[] NewVectorCopy(double x[])

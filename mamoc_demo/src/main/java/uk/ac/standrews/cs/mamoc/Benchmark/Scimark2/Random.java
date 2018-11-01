@@ -1,4 +1,4 @@
-package uk.ac.standrews.cs.mamoc.Benchmark;
+package uk.ac.standrews.cs.mamoc.Benchmark.Scimark2;
 
 /* Random.java based on Java Numerical Toolkit (JNT) Random.UniformSequence
 	class.  We do not use Java's own java.util.Random so that we can compare
