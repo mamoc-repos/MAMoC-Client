@@ -1,5 +1,12 @@
 package jadx.core.dex.regions.conditions;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 import jadx.core.dex.instructions.IfNode;
 import jadx.core.dex.instructions.IfOp;
 import jadx.core.dex.instructions.InsnType;
@@ -9,13 +16,6 @@ import jadx.core.dex.instructions.args.RegisterArg;
 import jadx.core.dex.nodes.BlockNode;
 import jadx.core.dex.nodes.InsnNode;
 import jadx.core.utils.exceptions.JadxRuntimeException;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 
 public final class IfCondition {
 
@@ -49,7 +49,7 @@ public final class IfCondition {
 		if (c.mode == Mode.COMPARE) {
 			this.args = Collections.emptyList();
 		} else {
-			this.args = new ArrayList<IfCondition>(c.args);
+			this.args = new ArrayList<>(c.args);
 		}
 	}
 
@@ -121,7 +121,7 @@ public final class IfCondition {
 			case AND:
 			case OR:
 				List<IfCondition> args = cond.getArgs();
-				List<IfCondition> newArgs = new ArrayList<IfCondition>(args.size());
+				List<IfCondition> newArgs = new ArrayList<>(args.size());
 				for (IfCondition arg : args) {
 					newArgs.add(invert(arg));
 				}
@@ -142,11 +142,10 @@ public final class IfCondition {
 			Compare c = cond.getCompare();
 			simplifyCmpOp(c);
 			if (c.getOp() == IfOp.EQ && c.getB().isLiteral() && c.getB().equals(LiteralArg.FALSE)) {
-				return not(new IfCondition(c.invert()));
+				cond = not(new IfCondition(c.invert()));
 			} else {
 				c.normalize();
 			}
-			return cond;
 		}
 		List<IfCondition> args = null;
 		for (int i = 0; i < cond.getArgs().size(); i++) {
@@ -154,7 +153,7 @@ public final class IfCondition {
 			IfCondition simpl = simplify(arg);
 			if (simpl != arg) {
 				if (args == null) {
-					args = new ArrayList<IfCondition>(cond.getArgs());
+					args = new ArrayList<>(cond.getArgs());
 				}
 				args.set(i, simpl);
 			}
@@ -206,7 +205,7 @@ public final class IfCondition {
 	}
 
 	public List<RegisterArg> getRegisterArgs() {
-		List<RegisterArg> list = new LinkedList<RegisterArg>();
+		List<RegisterArg> list = new LinkedList<>();
 		if (mode == Mode.COMPARE) {
 			compare.getInsn().getRegisterArgs(list);
 		} else {
@@ -225,7 +224,7 @@ public final class IfCondition {
 			case TERNARY:
 				return first() + " ? " + second() + " : " + third();
 			case NOT:
-				return "!" + first();
+				return "!(" + first() + ")";
 			case AND:
 			case OR:
 				String op = mode == Mode.OR ? " || " : " && ";

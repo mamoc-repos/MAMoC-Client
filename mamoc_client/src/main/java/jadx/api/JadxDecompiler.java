@@ -55,86 +55,86 @@ import java8.util.concurrent.CompletableFuture;
  * </code></pre>
  */
 public final class JadxDecompiler {
-    private static final Logger LOG = LoggerFactory.getLogger(JadxDecompiler.class);
+	private static final Logger LOG = LoggerFactory.getLogger(JadxDecompiler.class);
 
-    private final IJadxArgs args;
-    private final List<InputFile> inputFiles = new ArrayList<InputFile>();
+	private final IJadxArgs args;
+	private final List<InputFile> inputFiles = new ArrayList<InputFile>();
 
-    private File outDir;
+	private File outDir;
 
-    private RootNode root;
-    private List<IDexTreeVisitor> passes;
-    private CodeGen codeGen;
+	private RootNode root;
+	private List<IDexTreeVisitor> passes;
+	private CodeGen codeGen;
 
-    private List<JavaClass> classes;
-    private List<ResourceFile> resources;
+	private List<JavaClass> classes;
+	private List<ResourceFile> resources;
 
-    private BinaryXMLParser xmlParser;
+	private BinaryXMLParser xmlParser;
 
-    private Map<ClassNode, JavaClass> classesMap = new HashMap<ClassNode, JavaClass>();
-    private Map<MethodNode, JavaMethod> methodsMap = new HashMap<MethodNode, JavaMethod>();
-    private Map<FieldNode, JavaField> fieldsMap = new HashMap<FieldNode, JavaField>();
+	private Map<ClassNode, JavaClass> classesMap = new HashMap<ClassNode, JavaClass>();
+	private Map<MethodNode, JavaMethod> methodsMap = new HashMap<MethodNode, JavaMethod>();
+	private Map<FieldNode, JavaField> fieldsMap = new HashMap<FieldNode, JavaField>();
 
-    public JadxDecompiler() {
-        this(new JadxArgs());
-    }
+	public JadxDecompiler() {
+		this(new JadxArgs());
+	}
 
-    private JadxDecompiler(IJadxArgs jadxArgs) {
-        this.args = jadxArgs;
-        this.outDir = jadxArgs.getOutDir();
-        reset();
-        init();
-    }
+	private JadxDecompiler(IJadxArgs jadxArgs) {
+		this.args = jadxArgs;
+		this.outDir = jadxArgs.getOutDir();
+		reset();
+		init();
+	}
 
-    public void setOutputDir(File outDir) {
-        this.outDir = outDir;
-        init();
-    }
+	public void setOutputDir(File outDir) {
+		this.outDir = outDir;
+		init();
+	}
 
-    private void init() {
-        if (outDir == null) {
-            outDir = new JadxArgs().getOutDir();
-        }
-        this.passes = Jadx.getPassesList(args, outDir);
-        this.codeGen = new CodeGen(args);
-    }
+	private void init() {
+		if (outDir == null) {
+			outDir = new JadxArgs().getOutDir();
+		}
+		this.passes = Jadx.getPassesList(args, outDir);
+		this.codeGen = new CodeGen(args);
+	}
 
-    private void reset() {
-        classes = null;
-        resources = null;
-        xmlParser = null;
-        root = null;
-        passes = null;
-        codeGen = null;
-    }
+	private void reset() {
+		classes = null;
+		resources = null;
+		xmlParser = null;
+		root = null;
+		passes = null;
+		codeGen = null;
+	}
 
-    public static String getVersion() {
-        return Jadx.getVersion();
-    }
+	public static String getVersion() {
+		return Jadx.getVersion();
+	}
 
-    public void loadFile(File file) throws JadxException {
-        loadFiles(Collections.singletonList(file));
-    }
+	public void loadFile(File file) throws JadxException {
+		loadFiles(Collections.singletonList(file));
+	}
 
-    private void loadFiles(List<File> files) throws JadxException {
-        if (files.isEmpty()) {
-            throw new JadxException("Empty file list");
-        }
-        inputFiles.clear();
-        for (File file : files) {
-            try {
-                InputFile inputFile = new InputFile(file);
-                inputFiles.add(inputFile);
-                while (inputFile.nextDexIndex != -1) {
-                    inputFile = new InputFile(file, inputFile.nextDexIndex);
-                    inputFiles.add(inputFile);
-                }
-            } catch (IOException e) {
-                throw new JadxException("Error load file: " + file, e);
-            }
-        }
-        parse();
-    }
+	private void loadFiles(List<File> files) throws JadxException {
+		if (files.isEmpty()) {
+			throw new JadxException("Empty file list");
+		}
+		inputFiles.clear();
+		for (File file : files) {
+			try {
+				InputFile inputFile = new InputFile(file);
+				inputFiles.add(inputFile);
+				while (inputFile.nextDexIndex != -1) {
+					inputFile = new InputFile(file, inputFile.nextDexIndex);
+					inputFiles.add(inputFile);
+				}
+			} catch (IOException e) {
+				throw new JadxException("Error load file: " + file, e);
+			}
+		}
+		parse();
+	}
 
 //    public void save() {
 //        save(!args.isSkipSources(), !args.isSkipResources());
@@ -144,241 +144,242 @@ public final class JadxDecompiler {
 //        save(true, false);
 //    }
 
-    public void saveAnnotatedClassSources(ArrayList<String> classNames) {
-        save(classNames);
-    }
+	public void saveAnnotatedClassSources(ArrayList<String> classNames) {
+		save(classNames);
+	}
 
 //    public void saveResources() {
 //        save(false, true);
 //    }
 
-    private void save(ArrayList<String> classNames) {
-        try {
-            ExecutorService ex = getSaveExecutor(classNames);
-            ex.shutdown();
-            ex.awaitTermination(1, TimeUnit.DAYS);
-        } catch (InterruptedException e) {
-            throw new JadxRuntimeException("Save interrupted", e);
-        }
-    }
+	private void save(ArrayList<String> classNames) {
+		try {
+			ExecutorService ex = getSaveExecutor(classNames);
+			ex.shutdown();
+			ex.awaitTermination(1, TimeUnit.DAYS);
+		} catch (InterruptedException e) {
+			throw new JadxRuntimeException("Save interrupted", e);
+		}
+	}
 
 //    public ExecutorService getSaveExecutor() {
 //        return getSaveExecutor(!args.isSkipSources(), !args.isSkipResources());
 //    }
 
-    private ExecutorService getSaveExecutor(ArrayList<String> classNames) {
-        if (root == null) {
-            throw new JadxRuntimeException("No loaded files");
-        }
-        int threadsCount = args.getThreadsCount();
-        LOG.debug("processing threads count: {}", threadsCount);
+	private ExecutorService getSaveExecutor(ArrayList<String> classNames) {
+		if (root == null) {
+			throw new JadxRuntimeException("No loaded files");
+		}
+		int threadsCount = args.getThreadsCount();
+		LOG.debug("processing threads count: {}", threadsCount);
 
-        LOG.info("processing ...");
-        ExecutorService executor = Executors.newFixedThreadPool(threadsCount);
+		LOG.info("processing ...");
+		ExecutorService executor = Executors.newFixedThreadPool(threadsCount);
 
-        for (final JavaClass cls : getClasses()) {
-            executor.execute(() -> {
+		for (final JavaClass cls : getClasses()) {
+			executor.execute(() -> {
 
-                for (String className : classNames) {
+				for (String className : classNames) {
 //                    Log.d("className:", className);
 //                    Log.d("dexClass:", cls.getFullName());
 
-                    if (cls.getFullName().equals(className)) {
-                        Log.d("saving annotated class:", cls.getFullName());
-                        cls.decompile();
-                        SaveCode.save(outDir, args, cls.getClassNode());
-                    } else {
-                        LOG.info("skipping", cls.getFullName());
-                    }
-                }
-            });
-        }
+					if (cls.getFullName().equals(className)) {
+						Log.d("saving annotated class:", cls.getFullName());
+						cls.decompile();
+						SaveCode.save(outDir, args, cls.getClassNode());
+					}
+//					else {
+//						LOG.info("skipping", cls.getFullName());
+//					}
+				}
+			});
+		}
 
 //        if (saveResources) {
 //            for (final ResourceFile resourceFile : getResources()) {
 //                executor.execute(new ResourcesSaver(outDir, resourceFile));
 //            }
 //        }
-        return executor;
-    }
+		return executor;
+	}
 
-    public CompletableFuture<String> getSourceCode(String fileName) {
-        return runSourceCodeService(fileName);
-    }
+	public CompletableFuture<String> getSourceCode(String fileName) {
+		return runSourceCodeService(fileName);
+	}
 
-    private CompletableFuture<String> runSourceCodeService(String fileName) {
-        if (root == null) {
-            throw new JadxRuntimeException("No loaded files");
-        }
-        int threadsCount = args.getThreadsCount();
-        LOG.debug("processing threads count: {}", threadsCount);
+	private CompletableFuture<String> runSourceCodeService(String fileName) {
+		if (root == null) {
+			throw new JadxRuntimeException("No loaded files");
+		}
+		int threadsCount = args.getThreadsCount();
+		LOG.debug("processing threads count: {}", threadsCount);
 
-        LOG.info("processing source code service ...");
-        ExecutorService executor = Executors.newFixedThreadPool(threadsCount);
+		LOG.info("processing source code service ...");
+		ExecutorService executor = Executors.newFixedThreadPool(threadsCount);
 
-        final CompletableFuture<String> result = CompletableFuture.supplyAsync(() -> {
-            for (final JavaClass cls : getClasses()) {
+		final CompletableFuture<String> result = CompletableFuture.supplyAsync(() -> {
+			for (final JavaClass cls : getClasses()) {
 
-                Log.d("name: ", cls.getFullName());
+				Log.d("name: ", cls.getFullName());
 
-                if (cls.getFullName().startsWith("uk")) { // cls.getFullName().equals(fileName)
-                    LOG.info("getting code for ", cls.getFullName());
-                    cls.decompile();
-                    String code = cls.getCode();
+				if (cls.getFullName().startsWith("uk")) { // cls.getFullName().equals(fileName)
+					LOG.info("getting code for ", cls.getFullName());
+					cls.decompile();
+					String code = cls.getCode();
 
-                    try {
-                        executor.shutdown();
-                        executor.awaitTermination(1, TimeUnit.DAYS);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+					try {
+						executor.shutdown();
+						executor.awaitTermination(1, TimeUnit.DAYS);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 
-                    LOG.info("returning code: " + code);
-                    return code;
+					LOG.info("returning code: " + code);
+					return code;
 
-                } else {
-                    LOG.info("skipping", cls.getFullName());
-                }
-            }
+				} else {
+					LOG.info("skipping", cls.getFullName());
+				}
+			}
 
-            return null;
-        }, executor);
+			return null;
+		}, executor);
 
-        return result;
-    }
+		return result;
+	}
 
-    public List<JavaClass> getClasses() {
-        if (root == null) {
-            return Collections.emptyList();
-        }
-        if (classes == null) {
-            List<ClassNode> classNodeList = root.getClasses(false);
-            List<JavaClass> clsList = new ArrayList<JavaClass>(classNodeList.size());
-            classesMap.clear();
-            for (ClassNode classNode : classNodeList) {
-                JavaClass javaClass = new JavaClass(classNode, this);
-                clsList.add(javaClass);
-                classesMap.put(classNode, javaClass);
-            }
-            classes = Collections.unmodifiableList(clsList);
-        }
-        return classes;
-    }
+	public List<JavaClass> getClasses() {
+		if (root == null) {
+			return Collections.emptyList();
+		}
+		if (classes == null) {
+			List<ClassNode> classNodeList = root.getClasses(false);
+			List<JavaClass> clsList = new ArrayList<JavaClass>(classNodeList.size());
+			classesMap.clear();
+			for (ClassNode classNode : classNodeList) {
+				JavaClass javaClass = new JavaClass(classNode, this);
+				clsList.add(javaClass);
+				classesMap.put(classNode, javaClass);
+			}
+			classes = Collections.unmodifiableList(clsList);
+		}
+		return classes;
+	}
 
-    public List<ResourceFile> getResources() {
-        if (resources == null) {
-            if (root == null) {
-                return Collections.emptyList();
-            }
-            resources = new ResourcesLoader(this).load(inputFiles);
-        }
-        return resources;
-    }
+	public List<ResourceFile> getResources() {
+		if (resources == null) {
+			if (root == null) {
+				return Collections.emptyList();
+			}
+			resources = new ResourcesLoader(this).load(inputFiles);
+		}
+		return resources;
+	}
 
-    public List<JavaPackage> getPackages() {
-        List<JavaClass> classList = getClasses();
-        if (classList.isEmpty()) {
-            return Collections.emptyList();
-        }
-        Map<String, List<JavaClass>> map = new HashMap<String, List<JavaClass>>();
-        for (JavaClass javaClass : classList) {
-            String pkg = javaClass.getPackage();
-            List<JavaClass> clsList = map.get(pkg);
-            if (clsList == null) {
-                clsList = new ArrayList<JavaClass>();
-                map.put(pkg, clsList);
-            }
-            clsList.add(javaClass);
-        }
-        List<JavaPackage> packages = new ArrayList<JavaPackage>(map.size());
-        for (Map.Entry<String, List<JavaClass>> entry : map.entrySet()) {
-            packages.add(new JavaPackage(entry.getKey(), entry.getValue()));
-        }
-        Collections.sort(packages);
-        for (JavaPackage pkg : packages) {
-            Collections.sort(pkg.getClasses(), new Comparator<JavaClass>() {
-                @Override
-                public int compare(JavaClass o1, JavaClass o2) {
-                    return o1.getName().compareTo(o2.getName());
-                }
-            });
-        }
-        return Collections.unmodifiableList(packages);
-    }
+	public List<JavaPackage> getPackages() {
+		List<JavaClass> classList = getClasses();
+		if (classList.isEmpty()) {
+			return Collections.emptyList();
+		}
+		Map<String, List<JavaClass>> map = new HashMap<String, List<JavaClass>>();
+		for (JavaClass javaClass : classList) {
+			String pkg = javaClass.getPackage();
+			List<JavaClass> clsList = map.get(pkg);
+			if (clsList == null) {
+				clsList = new ArrayList<JavaClass>();
+				map.put(pkg, clsList);
+			}
+			clsList.add(javaClass);
+		}
+		List<JavaPackage> packages = new ArrayList<JavaPackage>(map.size());
+		for (Map.Entry<String, List<JavaClass>> entry : map.entrySet()) {
+			packages.add(new JavaPackage(entry.getKey(), entry.getValue()));
+		}
+		Collections.sort(packages);
+		for (JavaPackage pkg : packages) {
+			Collections.sort(pkg.getClasses(), new Comparator<JavaClass>() {
+				@Override
+				public int compare(JavaClass o1, JavaClass o2) {
+					return o1.getName().compareTo(o2.getName());
+				}
+			});
+		}
+		return Collections.unmodifiableList(packages);
+	}
 
-    public int getErrorsCount() {
-        if (root == null) {
-            return 0;
-        }
-        return root.getErrorsCounter().getErrorCount();
-    }
+	public int getErrorsCount() {
+		if (root == null) {
+			return 0;
+		}
+		return root.getErrorsCounter().getErrorCount();
+	}
 
-    public void printErrorsReport() {
-        if (root == null) {
-            return;
-        }
-        root.getErrorsCounter().printReport();
-    }
+	public void printErrorsReport() {
+		if (root == null) {
+			return;
+		}
+		root.getErrorsCounter().printReport();
+	}
 
-    private void parse() throws DecodeException {
-        reset();
-        init();
+	private void parse() throws DecodeException {
+		reset();
+		init();
 
-        root = new RootNode(args);
-        LOG.info("loading ...");
-        root.load(inputFiles);
+		root = new RootNode(args);
+		LOG.info("loading ...");
+		root.load(inputFiles);
 
-        root.initClassPath();
-        root.loadResources(getResources());
-        root.initAppResClass();
+		root.initClassPath();
+		root.loadResources(getResources());
+		root.initAppResClass();
 
-        initVisitors();
-    }
+		initVisitors();
+	}
 
-    private void initVisitors() {
-        for (IDexTreeVisitor pass : passes) {
-            try {
-                pass.init(root);
-            } catch (Exception e) {
-                LOG.error("Visitor init failed: {}", pass.getClass().getSimpleName(), e);
-            }
-        }
-    }
+	private void initVisitors() {
+		for (IDexTreeVisitor pass : passes) {
+			try {
+				pass.init(root);
+			} catch (Exception e) {
+				LOG.error("Visitor init failed: {}", pass.getClass().getSimpleName(), e);
+			}
+		}
+	}
 
-    void processClass(ClassNode cls) {
-        ProcessClass.process(cls, passes, codeGen);
-    }
+	void processClass(ClassNode cls) {
+		ProcessClass.process(cls, passes, codeGen);
+	}
 
-    RootNode getRoot() {
-        return root;
-    }
+	RootNode getRoot() {
+		return root;
+	}
 
-    synchronized BinaryXMLParser getXmlParser() {
-        if (xmlParser == null) {
-            xmlParser = new BinaryXMLParser(root);
-        }
-        return xmlParser;
-    }
+	synchronized BinaryXMLParser getXmlParser() {
+		if (xmlParser == null) {
+			xmlParser = new BinaryXMLParser(root);
+		}
+		return xmlParser;
+	}
 
-    Map<ClassNode, JavaClass> getClassesMap() {
-        return classesMap;
-    }
+	Map<ClassNode, JavaClass> getClassesMap() {
+		return classesMap;
+	}
 
-    Map<MethodNode, JavaMethod> getMethodsMap() {
-        return methodsMap;
-    }
+	Map<MethodNode, JavaMethod> getMethodsMap() {
+		return methodsMap;
+	}
 
-    Map<FieldNode, JavaField> getFieldsMap() {
-        return fieldsMap;
-    }
+	Map<FieldNode, JavaField> getFieldsMap() {
+		return fieldsMap;
+	}
 
-    public IJadxArgs getArgs() {
-        return args;
-    }
+	public IJadxArgs getArgs() {
+		return args;
+	}
 
-    @Override
-    public String toString() {
-        return "jadx decompiler " + getVersion();
-    }
+	@Override
+	public String toString() {
+		return "jadx decompiler " + getVersion();
+	}
 
 }

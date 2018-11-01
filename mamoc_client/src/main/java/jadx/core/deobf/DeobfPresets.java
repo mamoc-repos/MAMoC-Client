@@ -1,9 +1,5 @@
 package jadx.core.deobf;
 
-import jadx.core.dex.info.ClassInfo;
-import jadx.core.dex.info.FieldInfo;
-import jadx.core.dex.info.MethodInfo;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +12,10 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import jadx.core.dex.info.ClassInfo;
+import jadx.core.dex.info.FieldInfo;
+import jadx.core.dex.info.MethodInfo;
+
 class DeobfPresets {
 	private static final Logger LOG = LoggerFactory.getLogger(DeobfPresets.class);
 
@@ -24,9 +24,9 @@ class DeobfPresets {
 	private final Deobfuscator deobfuscator;
 	private final File deobfMapFile;
 
-	private final Map<String, String> clsPresetMap = new HashMap<String, String>();
-	private final Map<String, String> fldPresetMap = new HashMap<String, String>();
-	private final Map<String, String> mthPresetMap = new HashMap<String, String>();
+	private final Map<String, String> clsPresetMap = new HashMap<>();
+	private final Map<String, String> fldPresetMap = new HashMap<>();
+	private final Map<String, String> mthPresetMap = new HashMap<>();
 
 	public DeobfPresets(Deobfuscator deobfuscator, File deobfMapFile) {
 		this.deobfuscator = deobfuscator;
@@ -98,7 +98,7 @@ class DeobfPresets {
 	 * Saves DefaultDeobfuscator presets
 	 */
 	private void dumpMapping() throws IOException {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		// packages
 		for (PackageNode p : deobfuscator.getRootPackage().getInnerPackages()) {
 			for (PackageNode pp : p.getInnerPackages()) {

@@ -1,9 +1,5 @@
 package jadx.core.dex.attributes;
 
-import jadx.core.dex.attributes.annotations.Annotation;
-import jadx.core.dex.attributes.annotations.AnnotationsList;
-import jadx.core.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -11,6 +7,10 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import jadx.core.dex.attributes.annotations.Annotation;
+import jadx.core.dex.attributes.annotations.AnnotationsList;
+import jadx.core.utils.Utils;
 
 /**
  * Storage for different attribute types:
@@ -24,7 +24,7 @@ public class AttributeStorage {
 
 	public AttributeStorage() {
 		flags = EnumSet.noneOf(AFlag.class);
-		attributes = new IdentityHashMap<AType<?>, IAttribute>();
+		attributes = new IdentityHashMap<>();
 	}
 
 	public void add(AFlag flag) {
@@ -38,7 +38,7 @@ public class AttributeStorage {
 	public <T> void add(AType<AttrList<T>> type, T obj) {
 		AttrList<T> list = get(type);
 		if (list == null) {
-			list = new AttrList<T>(type);
+			list = new AttrList<>(type);
 			add(list);
 		}
 		list.getList().add(obj);
@@ -84,7 +84,7 @@ public class AttributeStorage {
 	}
 
 	public void remove(IAttribute attr) {
-		AType<?> type = attr.getType();
+		AType<? extends IAttribute> type = attr.getType();
 		IAttribute a = attributes.get(type);
 		if (a == attr) {
 			attributes.remove(type);
@@ -101,7 +101,7 @@ public class AttributeStorage {
 		if (size == 0) {
 			return Collections.emptyList();
 		}
-		List<String> list = new ArrayList<String>(size);
+		List<String> list = new ArrayList<>(size);
 		for (AFlag a : flags) {
 			list.add(a.toString());
 		}

@@ -52,8 +52,8 @@
             android:label="Sort Text Demo"
             android:theme="@style/AppTheme.Base" />
         <activity
-            android:name=".Mandelbrot.MandelbrotActivity"
-            android:label="Mandelbrot Demo"
+            android:name=".Linpack.LinpackActivity"
+            android:label="Linpack Demo"
             android:theme="@style/AppTheme.Base" />
         <activity
             android:name=".NQueens.NQueensActivity"

@@ -1,10 +1,11 @@
 package jadx.core.dex.regions;
 
-import jadx.core.dex.nodes.IContainer;
-import jadx.core.dex.nodes.IRegion;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import jadx.core.dex.nodes.IContainer;
+import jadx.core.dex.nodes.IRegion;
+import jadx.core.utils.Utils;
 
 public final class Region extends AbstractRegion {
 
@@ -12,7 +13,7 @@ public final class Region extends AbstractRegion {
 
 	public Region(IRegion parent) {
 		super(parent);
-		this.blocks = new ArrayList<IContainer>(1);
+		this.blocks = new ArrayList<>(1);
 	}
 
 	@Override
@@ -21,9 +22,7 @@ public final class Region extends AbstractRegion {
 	}
 
 	public void add(IContainer region) {
-		if (region instanceof AbstractRegion) {
-			((AbstractRegion) region).setParent(this);
-		}
+		updateParent(region, this);
 		blocks.add(region);
 	}
 
@@ -32,6 +31,7 @@ public final class Region extends AbstractRegion {
 		int i = blocks.indexOf(oldBlock);
 		if (i != -1) {
 			blocks.set(i, newBlock);
+			updateParent(newBlock, this);
 			return true;
 		}
 		return false;
@@ -40,15 +40,19 @@ public final class Region extends AbstractRegion {
 	@Override
 	public String baseString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(blocks.size());
-		for (IContainer cont : blocks) {
-			sb.append(cont.baseString());
+		int size = blocks.size();
+		sb.append('(');
+		sb.append(size);
+		if (size > 0) {
+			sb.append(':');
+			Utils.listToString(sb, blocks, "|", IContainer::baseString);
 		}
+		sb.append(')');
 		return sb.toString();
 	}
 
 	@Override
 	public String toString() {
-		return "R:" + baseString();
+		return "R" + baseString();
 	}
 }

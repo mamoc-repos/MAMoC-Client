@@ -2,7 +2,6 @@ package uk.ac.st_andrews.cs.mamoc_client.Communication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
@@ -27,7 +26,6 @@ public class DataSender {
             transferData = TransferModelGenerator.generateDeviceTransferModelRequest
                     (currentNode);
         }
-        Log.v("sendcurrentdevicedata", destIP + destPort + transferData);
 
         sendData(context, destIP, destPort, transferData);
     }

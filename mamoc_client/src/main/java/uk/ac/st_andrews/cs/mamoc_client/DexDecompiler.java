@@ -57,7 +57,7 @@ public class DexDecompiler {
 
         for (File file : apkFiles) {
             if (file.getName().endsWith("dex")) {
-                Log.d("DexFile", "Found Dex File:" + file.getName());
+//                Log.d("DexFile", "Found Dex File:" + file.getName());
                 dexFiles.add(file);
             }
         }

@@ -1,5 +1,12 @@
 package jadx.core.dex.nodes.parser;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.android.dex.Dex.Section;
+
 import jadx.core.dex.attributes.annotations.Annotation;
 import jadx.core.dex.attributes.annotations.Annotation.Visibility;
 import jadx.core.dex.attributes.annotations.AnnotationsList;
@@ -10,13 +17,6 @@ import jadx.core.dex.nodes.DexNode;
 import jadx.core.dex.nodes.FieldNode;
 import jadx.core.dex.nodes.MethodNode;
 import jadx.core.utils.exceptions.DecodeException;
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.android.dex.Dex.Section;
 
 public class AnnotationsParser {
 
@@ -79,7 +79,7 @@ public class AnnotationsParser {
 		if (size == 0) {
 			return AnnotationsList.EMPTY;
 		}
-		List<Annotation> list = new ArrayList<Annotation>(size);
+		List<Annotation> list = new ArrayList<>(size);
 		for (int i = 0; i < size; i++) {
 			Section anSection = dex.openSection(section.readInt());
 			Annotation a = readAnnotation(dex, anSection, true);
@@ -97,7 +97,7 @@ public class AnnotationsParser {
 		}
 		int typeIndex = s.readUleb128();
 		int size = s.readUleb128();
-		Map<String, Object> values = new LinkedHashMap<String, Object>(size);
+		Map<String, Object> values = new LinkedHashMap<>(size);
 		for (int i = 0; i < size; i++) {
 			String name = dex.getString(s.readUleb128());
 			values.put(name, parser.parseValue());

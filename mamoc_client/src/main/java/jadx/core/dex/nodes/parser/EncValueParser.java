@@ -1,15 +1,15 @@
 package jadx.core.dex.nodes.parser;
 
-import jadx.core.dex.info.FieldInfo;
-import jadx.core.dex.info.MethodInfo;
-import jadx.core.dex.nodes.DexNode;
-import jadx.core.utils.exceptions.DecodeException;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.android.dex.Dex.Section;
 import com.android.dex.Leb128;
+
+import jadx.core.dex.info.FieldInfo;
+import jadx.core.dex.info.MethodInfo;
+import jadx.core.dex.nodes.DexNode;
+import jadx.core.utils.exceptions.DecodeException;
 
 public class EncValueParser {
 
@@ -83,7 +83,7 @@ public class EncValueParser {
 
 			case ENCODED_ARRAY:
 				int count = Leb128.readUnsignedLeb128(in);
-				List<Object> values = new ArrayList<Object>(count);
+				List<Object> values = new ArrayList<>(count);
 				for (int i = 0; i < count; i++) {
 					values.add(parseValue());
 				}
@@ -91,8 +91,10 @@ public class EncValueParser {
 
 			case ENCODED_ANNOTATION:
 				return AnnotationsParser.readAnnotation(dex, in, false);
+
+			default:
+				throw new DecodeException("Unknown encoded value type: 0x" + Integer.toHexString(type));
 		}
-		throw new DecodeException("Unknown encoded value type: 0x" + Integer.toHexString(type));
 	}
 
 	private int parseUnsignedInt(int byteCount) {

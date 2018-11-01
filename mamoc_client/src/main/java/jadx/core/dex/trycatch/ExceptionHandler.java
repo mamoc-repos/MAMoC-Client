@@ -1,5 +1,8 @@
 package jadx.core.dex.trycatch;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jadx.core.Consts;
 import jadx.core.dex.info.ClassInfo;
 import jadx.core.dex.instructions.args.InsnArg;
@@ -7,16 +10,13 @@ import jadx.core.dex.nodes.BlockNode;
 import jadx.core.dex.nodes.IContainer;
 import jadx.core.utils.InsnUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ExceptionHandler {
 
 	private final ClassInfo catchType;
 	private final int handleOffset;
 
 	private BlockNode handlerBlock;
-	private final List<BlockNode> blocks = new ArrayList<BlockNode>();
+	private final List<BlockNode> blocks = new ArrayList<>();
 	private IContainer handlerRegion;
 	private InsnArg arg;
 
@@ -120,5 +120,4 @@ public class ExceptionHandler {
 		return (catchType == null ? "all"
 				: catchType.getShortName()) + " -> " + InsnUtils.formatOffset(handleOffset);
 	}
-
 }

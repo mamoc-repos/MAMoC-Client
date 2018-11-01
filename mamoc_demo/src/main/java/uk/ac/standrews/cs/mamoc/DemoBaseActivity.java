@@ -1,15 +1,22 @@
 package uk.ac.standrews.cs.mamoc;
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
+
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
 
 public abstract class DemoBaseActivity extends AppCompatActivity {
 
@@ -20,6 +27,9 @@ public abstract class DemoBaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         onViewReady(savedInstanceState, getIntent());
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter(OFFLOADING_RESULT_SUB));
     }
 
     @CallSuper
@@ -27,8 +37,27 @@ public abstract class DemoBaseActivity extends AppCompatActivity {
         //To be used by child activities
     }
 
+    protected BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            String result = intent.getStringExtra("result");
+            Double duration = intent.getDoubleExtra("duration", 0.0);
+            Double overhead = intent.getDoubleExtra("overhead", 0.0);
+
+            addLog(result, duration, overhead);
+        }
+    };
+
+    protected void addLog(String result, double executationDuration, double commOverhead) {
+        // to be implemented by each demo app
+        Log.d("DemoBaseActivity", "received offloading result in : " + executationDuration + " sec");
+    }
+
     @Override
     protected void onDestroy() {
+        // Unregister since the activity is about to be closed.
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
         super.onDestroy();
     }
 

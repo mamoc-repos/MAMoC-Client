@@ -1,19 +1,21 @@
 package jadx.core.xmlgen;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import jadx.core.codegen.CodeWriter;
 import jadx.core.xmlgen.entry.EntryConfig;
 import jadx.core.xmlgen.entry.RawNamedValue;
 import jadx.core.xmlgen.entry.RawValue;
 import jadx.core.xmlgen.entry.ResourceEntry;
 import jadx.core.xmlgen.entry.ValuesParser;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ResTableParser extends CommonBinaryParser {
 
@@ -65,12 +67,12 @@ public class ResTableParser extends CommonBinaryParser {
 		ResXmlGen resGen = new ResXmlGen(resStorage, vp);
 
 		ResContainer res = ResContainer.multiFile("res");
-		res.setContent(makeDump());
+		res.setContent(makeXmlDump());
 		res.getSubFiles().addAll(resGen.makeResourcesXml());
 		return res;
 	}
 
-	public CodeWriter makeDump() throws IOException {
+	public CodeWriter makeDump() {
 		CodeWriter writer = new CodeWriter();
 		writer.add("app package: ").add(resStorage.getAppPackage());
 		writer.startLine();
@@ -83,8 +85,32 @@ public class ResTableParser extends CommonBinaryParser {
 		return writer;
 	}
 
+	public CodeWriter makeXmlDump() {
+		CodeWriter writer = new CodeWriter();
+		writer.startLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+		writer.startLine("<resources>");
+		writer.incIndent();
+
+		Set<String> addedValues = new HashSet<>();
+		for (ResourceEntry ri : resStorage.getResources()) {
+			if (addedValues.add(ri.getTypeName() + "." + ri.getKeyName())) {
+				String format = String.format("<public type=\"%s\" name=\"%s\" id=\"%s\" />",
+						ri.getTypeName(), ri.getKeyName(), ri.getId());
+				writer.startLine(format);
+			}
+		}
+		writer.decIndent();
+		writer.startLine("</resources>");
+		writer.finish();
+		return writer;
+	}
+
 	public ResourceStorage getResStorage() {
 		return resStorage;
+	}
+
+	public String[] getStrings() {
+		return strings;
 	}
 
 	void decodeTableChunk() throws IOException {
@@ -136,9 +162,9 @@ public class ResTableParser extends CommonBinaryParser {
 		}
 
 		PackageChunk pkg = new PackageChunk(id, name, typeStrings, keyStrings);
-		if (id == 0x7F) {
-			resStorage.setAppPackage(name);
-		}
+		//if (id == 0x7F) {
+		resStorage.setAppPackage(name);
+		//}
 
 		while (is.getPos() < endPos) {
 			long chunkStart = is.getPos();
@@ -169,8 +195,10 @@ public class ResTableParser extends CommonBinaryParser {
 	}
 
 	private void parseTypeChunk(long start, PackageChunk pkg) throws IOException {
-		/*int headerSize = */ is.readInt16();
-		/*int size = */ is.readInt32();
+		/*int headerSize = */
+		is.readInt16();
+		/*int size = */
+		is.readInt32();
 
 		int id = is.readInt8();
 		is.checkInt8(0, "type chunk, res0");
@@ -211,7 +239,7 @@ public class ResTableParser extends CommonBinaryParser {
 			int parentRef = is.readInt32();
 			ri.setParentRef(parentRef);
 			int count = is.readInt32();
-			List<RawNamedValue> values = new ArrayList<RawNamedValue>(count);
+			List<RawNamedValue> values = new ArrayList<>(count);
 			for (int i = 0; i < count; i++) {
 				values.add(parseValueMap());
 			}
@@ -248,27 +276,107 @@ public class ResTableParser extends CommonBinaryParser {
 		int orientation = is.readInt8();
 		int touchscreen = is.readInt8();
 		int density = is.readInt16();
-		/*
+
+		if (density != 0) {
+			config.setDensity(parseDensity(density));
+		}
+
 		is.readInt8(); // keyboard
 		is.readInt8(); // navigation
 		is.readInt8(); // inputFlags
 		is.readInt8(); // inputPad0
 
-		is.readInt16(); // screenWidth
-		is.readInt16(); // screenHeight
+		int screenWidth = is.readInt16();
+		int screenHeight = is.readInt16();
 
-		is.readInt16(); // sdkVersion
-		is.readInt16(); // minorVersion
+		if (screenWidth != 0 && screenHeight != 0) {
+			config.setScreenSize(screenWidth + "x" + screenHeight);
+		}
 
-		is.readInt8(); // screenLayout
-		is.readInt8(); // uiMode
-		is.readInt16(); // smallestScreenWidthDp
+		int sdkVersion = is.readInt16();
 
-		is.readInt16(); // screenWidthDp
-		is.readInt16(); // screenHeightDp
-		*/
+		if (sdkVersion != 0) {
+			config.setSdkVersion("v" + sdkVersion);
+		}
+
+		int minorVersion = is.readInt16();
+
+		int screenLayout = is.readInt8();
+		int uiMode = is.readInt8();
+		int smallestScreenWidthDp = is.readInt16();
+
+		int screenWidthDp = is.readInt16();
+		int screenHeightDp = is.readInt16();
+
+		if (screenLayout != 0) {
+			config.setScreenLayout(parseScreenLayout(screenLayout));
+		}
+
+		if (smallestScreenWidthDp != 0) {
+			config.setSmallestScreenWidthDp("sw" + smallestScreenWidthDp + "dp");
+		}
+
+		if (orientation != 0) {
+			config.setOrientation(parseOrientation(orientation));
+		}
+
+		if (screenWidthDp != 0) {
+			config.setScreenWidthDp("w" + screenWidthDp + "dp");
+		}
+
+		if (screenHeightDp != 0) {
+			config.setScreenHeightDp("h" + screenHeightDp + "dp");
+		}
+
 		is.skipToPos(start + size, "Skip config parsing");
 		return config;
+	}
+
+	private String parseOrientation(int orientation) {
+		if (orientation == 1) {
+			return "port";
+		} else if (orientation == 2) {
+			return "land";
+		} else {
+			return "o" + orientation;
+		}
+	}
+
+	private String parseScreenLayout(int screenLayout) {
+		switch (screenLayout) {
+			case 1:
+				return "small";
+			case 2:
+				return "normal";
+			case 3:
+				return "large";
+			case 4:
+				return "xlarge";
+			case 64:
+				return "ldltr";
+			case 128:
+				return "ldrtl";
+			default:
+				return "sl" + screenLayout;
+		}
+	}
+
+	private String parseDensity(int density) {
+		if (density == 120) {
+			return "ldpi";
+		} else if (density == 160) {
+			return "mdpi";
+		} else if (density == 240) {
+			return "hdpi";
+		} else if (density == 320) {
+			return "xhdpi";
+		} else if (density == 480) {
+			return "xxhdpi";
+		} else if (density == 640) {
+			return "xxxhdpi";
+		} else {
+			return density + "dpi";
+		}
 	}
 
 	private String parseLocale() throws IOException {

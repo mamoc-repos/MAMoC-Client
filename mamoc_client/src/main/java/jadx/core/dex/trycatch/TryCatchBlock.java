@@ -1,5 +1,10 @@
 package jadx.core.dex.trycatch;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 import jadx.core.dex.attributes.AFlag;
 import jadx.core.dex.attributes.AType;
 import jadx.core.dex.info.ClassInfo;
@@ -8,11 +13,6 @@ import jadx.core.dex.nodes.InsnNode;
 import jadx.core.dex.nodes.MethodNode;
 import jadx.core.utils.BlockUtils;
 import jadx.core.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 
 public class TryCatchBlock {
 
@@ -23,8 +23,8 @@ public class TryCatchBlock {
 	private final CatchAttr attr;
 
 	public TryCatchBlock() {
-		handlers = new LinkedList<ExceptionHandler>();
-		insns = new ArrayList<InsnNode>();
+		handlers = new LinkedList<>();
+		insns = new ArrayList<>();
 		attr = new CatchAttr(this);
 	}
 
@@ -68,10 +68,9 @@ public class TryCatchBlock {
 			BlockUtils.skipPredSyntheticPaths(block);
 			block.add(AFlag.SKIP);
 			ExcHandlerAttr excHandlerAttr = block.get(AType.EXC_HANDLER);
-			if (excHandlerAttr != null) {
-				if (excHandlerAttr.getHandler().equals(handler)) {
-					block.remove(AType.EXC_HANDLER);
-				}
+			if (excHandlerAttr != null
+					&& excHandlerAttr.getHandler().equals(handler)) {
+				block.remove(AType.EXC_HANDLER);
 			}
 			SplitterBlockAttr splitter = handler.getHandlerBlock().get(AType.SPLITTER_BLOCK);
 			if (splitter != null) {

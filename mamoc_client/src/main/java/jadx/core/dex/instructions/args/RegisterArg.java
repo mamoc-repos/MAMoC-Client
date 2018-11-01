@@ -1,17 +1,18 @@
 package jadx.core.dex.instructions.args;
 
+import java.util.Objects;
+
+import org.jetbrains.annotations.NotNull;
+
 import jadx.core.dex.instructions.InsnType;
 import jadx.core.dex.instructions.PhiInsn;
 import jadx.core.dex.nodes.DexNode;
 import jadx.core.dex.nodes.InsnNode;
 import jadx.core.utils.InsnUtils;
 
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class RegisterArg extends InsnArg implements Named {
-	private static final Logger LOG = LoggerFactory.getLogger(RegisterArg.class);
+
+	public static final String THIS_ARG_NAME = "this";
 
 	protected final int regNum;
 	// not null after SSATransform pass
@@ -44,6 +45,9 @@ public class RegisterArg extends InsnArg implements Named {
 	}
 
 	public String getName() {
+		if (isThis()) {
+			return THIS_ARG_NAME;
+		}
 		if (sVar == null) {
 			return null;
 		}
@@ -51,7 +55,7 @@ public class RegisterArg extends InsnArg implements Named {
 	}
 
 	public void setName(String name) {
-		if (sVar != null) {
+		if (sVar != null && name != null) {
 			sVar.setName(name);
 		}
 	}
@@ -62,6 +66,21 @@ public class RegisterArg extends InsnArg implements Named {
 			return false;
 		}
 		return n.equals(((Named) arg).getName());
+	}
+
+	public void mergeName(InsnArg arg) {
+		if (arg instanceof Named) {
+			Named otherArg = (Named) arg;
+			String otherName = otherArg.getName();
+			String name = getName();
+			if (!Objects.equals(name, otherName)) {
+				if (name == null) {
+					setName(otherName);
+				} else if (otherName == null) {
+					otherArg.setName(name);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -102,22 +121,6 @@ public class RegisterArg extends InsnArg implements Named {
 		return InsnUtils.getConstValueByInsn(dex, parInsn);
 	}
 
-	@Override
-	public boolean isThis() {
-		if ("this".equals(getName())) {
-			return true;
-		}
-		// maybe it was moved from 'this' register
-		InsnNode ai = getAssignInsn();
-		if (ai != null && ai.getType() == InsnType.MOVE) {
-			InsnArg arg = ai.getArg(0);
-			if (arg != this) {
-				return arg.isThis();
-			}
-		}
-		return false;
-	}
-
 	public InsnNode getAssignInsn() {
 		if (sVar == null) {
 			return null;
@@ -143,7 +146,7 @@ public class RegisterArg extends InsnArg implements Named {
 
 	@Override
 	public int hashCode() {
-		return regNum * 31 + type.hashCode();
+		return regNum;
 	}
 
 	@Override
@@ -151,23 +154,13 @@ public class RegisterArg extends InsnArg implements Named {
 		if (this == obj) {
 			return true;
 		}
-		if (obj == null) {
-			return false;
-		}
 		if (!(obj instanceof RegisterArg)) {
 			return false;
 		}
 		RegisterArg other = (RegisterArg) obj;
-		if (regNum != other.regNum) {
-			return false;
-		}
-		if (!type.equals(other.type)) {
-			return false;
-		}
-		if (sVar != null && !sVar.equals(other.getSVar())) {
-			return false;
-		}
-		return true;
+		return regNum == other.regNum
+				&& type.equals(other.type)
+				&& Objects.equals(sVar, other.getSVar());
 	}
 
 	@Override
@@ -183,6 +176,9 @@ public class RegisterArg extends InsnArg implements Named {
 		}
 		sb.append(" ");
 		sb.append(type);
+		if (!isAttrStorageEmpty()) {
+			sb.append(' ').append(getAttributesString());
+		}
 		sb.append(")");
 		return sb.toString();
 	}

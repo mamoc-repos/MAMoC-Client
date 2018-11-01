@@ -8,9 +8,11 @@ import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
 
 public class DataHandler {
+
+    private final String TAG = "DataHandler";
+
     public static final String DEVICE_LIST_CHANGED = "device_list_updated";
     public static final String REQUEST_RECEIVED =  "request_received";
     public static final String RESPONSE_RECEIVED = "response_received";
@@ -84,9 +86,9 @@ public class DataHandler {
         long rowid = dbAdapter.addMobileDevice(device);
 
         if (rowid > 0) {
-            Log.d("DXDX", Build.MANUFACTURER + " received: " + deviceJSON);
+            Log.d(TAG, Build.MANUFACTURER + " received: " + deviceJSON);
         } else {
-            Log.e("DXDX", Build.MANUFACTURER + " can't save: " + deviceJSON);
+            Log.e(TAG, Build.MANUFACTURER + " can't save: " + deviceJSON);
         }
 
         Intent intent = new Intent(DEVICE_LIST_CHANGED);

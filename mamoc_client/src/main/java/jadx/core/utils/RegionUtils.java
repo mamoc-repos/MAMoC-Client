@@ -1,5 +1,10 @@
 package jadx.core.utils;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+
 import jadx.core.dex.attributes.AType;
 import jadx.core.dex.instructions.InsnType;
 import jadx.core.dex.nodes.BlockNode;
@@ -12,11 +17,6 @@ import jadx.core.dex.trycatch.CatchAttr;
 import jadx.core.dex.trycatch.ExceptionHandler;
 import jadx.core.dex.trycatch.TryCatchBlock;
 import jadx.core.utils.exceptions.JadxRuntimeException;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
 
 public class RegionUtils {
 
@@ -185,7 +185,7 @@ public class RegionUtils {
 		CatchAttr cb = region.get(AType.CATCH_BLOCK);
 		if (cb != null) {
 			TryCatchBlock tb = cb.getTryBlock();
-			List<IContainer> list = new ArrayList<IContainer>(tb.getHandlersCount());
+			List<IContainer> list = new ArrayList<>(tb.getHandlersCount());
 			for (ExceptionHandler eh : tb.getHandlers()) {
 				list.add(eh.getHandlerRegion());
 			}

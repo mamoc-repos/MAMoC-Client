@@ -33,6 +33,8 @@ public class AType<T extends IAttribute> {
 	public static final AType<AttrList<LoopInfo>> LOOP = new AType<AttrList<LoopInfo>>();
 	public static final AType<AttrList<EdgeInsnAttr>> EDGE_INSN = new AType<AttrList<EdgeInsnAttr>>();
 
+	public static final AType<AttrList<String>> COMMENTS = new AType<>();
+
 	public static final AType<ExcHandlerAttr> EXC_HANDLER = new AType<ExcHandlerAttr>();
 	public static final AType<CatchAttr> CATCH_BLOCK = new AType<CatchAttr>();
 	public static final AType<SplitterBlockAttr> SPLITTER_BLOCK = new AType<SplitterBlockAttr>();

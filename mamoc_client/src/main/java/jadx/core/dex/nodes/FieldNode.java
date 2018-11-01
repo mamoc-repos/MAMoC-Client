@@ -1,12 +1,12 @@
 package jadx.core.dex.nodes;
 
+import com.android.dex.ClassData.Field;
+
 import jadx.core.dex.attributes.nodes.LineAttrNode;
 import jadx.core.dex.info.AccessInfo;
 import jadx.core.dex.info.AccessInfo.AFType;
 import jadx.core.dex.info.FieldInfo;
 import jadx.core.dex.instructions.args.ArgType;
-
-import com.android.dex.ClassData.Field;
 
 public class FieldNode extends LineAttrNode {
 
@@ -17,10 +17,8 @@ public class FieldNode extends LineAttrNode {
 	private ArgType type; // store signature
 
 	public FieldNode(ClassNode cls, Field field) {
-		this.parent = cls;
-		this.fieldInfo = FieldInfo.fromDex(cls.dex(), field.getFieldIndex());
-		this.type = fieldInfo.getType();
-		this.accFlags = new AccessInfo(field.getAccessFlags(), AFType.FIELD);
+		this(cls, FieldInfo.fromDex(cls.dex(), field.getFieldIndex()),
+				field.getAccessFlags());
 	}
 
 	public FieldNode(ClassNode cls, FieldInfo fieldInfo, int accessFlags) {

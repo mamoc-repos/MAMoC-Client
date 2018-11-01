@@ -1,14 +1,14 @@
 package jadx.core.dex.attributes.nodes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jadx.core.dex.attributes.AType;
 import jadx.core.dex.attributes.IAttribute;
 import jadx.core.dex.info.FieldInfo;
 import jadx.core.dex.instructions.mods.ConstructorInsn;
 import jadx.core.dex.nodes.ClassNode;
 import jadx.core.dex.nodes.MethodNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EnumClassAttr implements IAttribute {
 
@@ -54,7 +54,7 @@ public class EnumClassAttr implements IAttribute {
 	private MethodNode staticMethod;
 
 	public EnumClassAttr(int fieldsCount) {
-		this.fields = new ArrayList<EnumField>(fieldsCount);
+		this.fields = new ArrayList<>(fieldsCount);
 	}
 
 	public List<EnumField> getFields() {
@@ -78,5 +78,4 @@ public class EnumClassAttr implements IAttribute {
 	public String toString() {
 		return "Enum fields: " + fields;
 	}
-
 }

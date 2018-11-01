@@ -1,9 +1,9 @@
 package jadx.core.dex.regions.conditions;
 
-import jadx.core.dex.nodes.BlockNode;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import jadx.core.dex.nodes.BlockNode;
 
 public final class IfInfo {
 	private final IfCondition condition;
@@ -16,7 +16,7 @@ public final class IfInfo {
 	private BlockNode ifBlock;
 
 	public IfInfo(IfCondition condition, BlockNode thenBlock, BlockNode elseBlock) {
-		this(condition, thenBlock, elseBlock, new HashSet<BlockNode>(), new HashSet<BlockNode>());
+		this(condition, thenBlock, elseBlock, new HashSet<>(), new HashSet<>());
 	}
 
 	public IfInfo(IfInfo info, BlockNode thenBlock, BlockNode elseBlock) {
@@ -24,7 +24,7 @@ public final class IfInfo {
 	}
 
 	private IfInfo(IfCondition condition, BlockNode thenBlock, BlockNode elseBlock,
-			Set<BlockNode> mergedBlocks, Set<BlockNode> skipBlocks) {
+	               Set<BlockNode> mergedBlocks, Set<BlockNode> skipBlocks) {
 		this.condition = condition;
 		this.thenBlock = thenBlock;
 		this.elseBlock = elseBlock;

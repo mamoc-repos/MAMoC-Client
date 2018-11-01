@@ -1,17 +1,16 @@
 package jadx.core.dex.instructions.args;
 
-import jadx.core.dex.attributes.AFlag;
-import jadx.core.dex.nodes.InsnNode;
-import jadx.core.utils.InsnUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.dx.io.instructions.DecodedInstruction;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.android.dx.io.instructions.DecodedInstruction;
+import jadx.core.dex.attributes.AFlag;
+import jadx.core.dex.nodes.InsnNode;
+import jadx.core.utils.InsnUtils;
 
 /**
  * Instruction argument,
@@ -101,7 +100,7 @@ public abstract class InsnArg extends Typed {
 	}
 
 	public static void updateParentInsn(InsnNode fromInsn, InsnNode toInsn) {
-		List<RegisterArg> args = new ArrayList<RegisterArg>();
+		List<RegisterArg> args = new ArrayList<>();
 		fromInsn.getRegisterArgs(args);
 		for (RegisterArg reg : args) {
 			reg.setParentInsn(toInsn);
@@ -141,7 +140,6 @@ public abstract class InsnArg extends Typed {
 	}
 
 	public boolean isThis() {
-		// must be implemented in RegisterArg and MthParameterArg
-		return false;
+		return contains(AFlag.THIS);
 	}
 }

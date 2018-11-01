@@ -1,12 +1,17 @@
 package uk.ac.standrews.cs.mamoc.NQueens;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 
 @Offloadable
 public class Queens {
 
-    public static void run(int N) {
-        int[] a = new int[N];
+    int n = 13;
+
+    public Queens(int N){
+        this.n = N;
+    }
+    public void run() {
+        int[] a = new int[n];
         enumerate(a, 0);
     }
 

@@ -11,7 +11,8 @@ public class Constants {
 
     public static final String WAMP_LOOKUP = "wamp.registration.lookup";
 
-    //"192.168.0.12:8080"
+    public static final String OFFLOADING_PUB = "uk.ac.standrews.cs.mamoc.offloading";
+    public static final String OFFLOADING_RESULT_SUB = "uk.ac.standrews.cs.mamoc.offloadingresult";
 
     public static final int PING = 11;
     public static final int PONG = 12;

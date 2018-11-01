@@ -1,17 +1,26 @@
 package jadx.core.xmlgen.entry;
 
-import jadx.core.xmlgen.ParserConstants;
-
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import jadx.core.xmlgen.ParserConstants;
+import jadx.core.xmlgen.ResTableParser;
+
 public class ValuesParser extends ParserConstants {
 	private static final Logger LOG = LoggerFactory.getLogger(ValuesParser.class);
+
+	private static String[] androidStrings;
+	private static Map<Integer, String> androidResMap;
 
 	private final String[] strings;
 	private final Map<Integer, String> resMap;
@@ -19,15 +28,32 @@ public class ValuesParser extends ParserConstants {
 	public ValuesParser(String[] strings, Map<Integer, String> resMap) {
 		this.strings = strings;
 		this.resMap = resMap;
+
+		if (androidStrings == null && androidResMap == null) {
+			try {
+				decodeAndroid();
+			} catch (Exception e) {
+				LOG.error("Failed to decode Android Resource file", e);
+			}
+		}
 	}
 
+	private static void decodeAndroid() throws IOException {
+		InputStream inputStream = new BufferedInputStream(ValuesParser.class.getResourceAsStream("/resources.arsc"));
+		ResTableParser androidParser = new ResTableParser();
+		androidParser.decode(inputStream);
+		androidStrings = androidParser.getStrings();
+		androidResMap = androidParser.getResStorage().getResourcesNames();
+	}
+
+	@Nullable
 	public String getValueString(ResourceEntry ri) {
 		RawValue simpleValue = ri.getSimpleValue();
 		if (simpleValue != null) {
 			return decodeValue(simpleValue);
 		}
 		List<RawNamedValue> namedValues = ri.getNamedValues();
-		List<String> strList = new ArrayList<String>(namedValues.size());
+		List<String> strList = new ArrayList<>(namedValues.size());
 		for (RawNamedValue value : namedValues) {
 			String nameStr = decodeNameRef(value.getNameRef());
 			String valueStr = decodeValue(value.getRawValue());
@@ -40,12 +66,14 @@ public class ValuesParser extends ParserConstants {
 		return strList.toString();
 	}
 
+	@Nullable
 	public String decodeValue(RawValue value) {
 		int dataType = value.getDataType();
 		int data = value.getData();
 		return decodeValue(dataType, data);
 	}
 
+	@Nullable
 	public String decodeValue(int dataType, int data) {
 		switch (dataType) {
 			case TYPE_NULL:
@@ -59,7 +87,7 @@ public class ValuesParser extends ParserConstants {
 			case TYPE_INT_BOOLEAN:
 				return data == 0 ? "false" : "true";
 			case TYPE_FLOAT:
-				return Float.toString(Float.intBitsToFloat(data));
+				return floatToString(Float.intBitsToFloat(data));
 
 			case TYPE_INT_COLOR_ARGB8:
 				return String.format("#%08x", data);
@@ -73,6 +101,13 @@ public class ValuesParser extends ParserConstants {
 			case TYPE_REFERENCE: {
 				String ri = resMap.get(data);
 				if (ri == null) {
+					String androidRi = androidResMap.get(data);
+					if (androidRi != null) {
+						return "@android:" + androidRi;
+					}
+					if (data == 0) {
+						return "0";
+					}
 					return "?unknown_ref: " + Integer.toHexString(data);
 				}
 				return "@" + ri;
@@ -81,6 +116,10 @@ public class ValuesParser extends ParserConstants {
 			case TYPE_ATTRIBUTE: {
 				String ri = resMap.get(data);
 				if (ri == null) {
+					String androidRi = androidResMap.get(data);
+					if (androidRi != null) {
+						return "?android:" + androidRi;
+					}
 					return "?unknown_attr_ref: " + Integer.toHexString(data);
 				}
 				return "?" + ri;
@@ -97,7 +136,7 @@ public class ValuesParser extends ParserConstants {
 		}
 	}
 
-	private String decodeNameRef(int nameRef) {
+	public String decodeNameRef(int nameRef) {
 		int ref = nameRef;
 		if (isResInternalId(nameRef)) {
 			ref = nameRef & ATTR_TYPE_ANY;
@@ -108,6 +147,11 @@ public class ValuesParser extends ParserConstants {
 		String ri = resMap.get(ref);
 		if (ri != null) {
 			return ri.replace('/', '.');
+		} else {
+			String androidRi = androidResMap.get(ref);
+			if (androidRi != null) {
+				return "android:" + androidRi.replace('/', '.');
+			}
 		}
 		return "?0x" + Integer.toHexString(nameRef);
 	}
@@ -159,14 +203,22 @@ public class ValuesParser extends ParserConstants {
 	}
 
 	private static String doubleToString(double value) {
-		if (value == Math.ceil(value)) {
+		if (Double.compare(value, Math.floor(value)) == 0
+				&& !Double.isInfinite(value)) {
 			return Integer.toString((int) value);
-		} else {
-			// remove trailing zeroes
-			NumberFormat f = NumberFormat.getInstance();
-			f.setMaximumFractionDigits(4);
-			f.setMinimumIntegerDigits(1);
-			return f.format(value);
 		}
+		// remove trailing zeroes
+		NumberFormat f = NumberFormat.getInstance(Locale.ROOT);
+		f.setMaximumFractionDigits(4);
+		f.setMinimumIntegerDigits(1);
+		return f.format(value);
+	}
+
+	private static String floatToString(float value) {
+		return doubleToString((double) value);
+	}
+
+	public static Map<Integer, String> getAndroidResMap() {
+		return androidResMap;
 	}
 }

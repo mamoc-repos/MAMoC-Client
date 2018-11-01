@@ -1,24 +1,39 @@
 package uk.ac.st_andrews.cs.mamoc_client.Communication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.atteo.classindex.ClassIndex;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
+import io.crossbar.autobahn.wamp.types.CallResult;
+import io.crossbar.autobahn.wamp.types.Publication;
+import io.crossbar.autobahn.wamp.types.Subscription;
+import java8.util.concurrent.CompletableFuture;
 import uk.ac.st_andrews.cs.mamoc_client.DexDecompiler;
 import uk.ac.st_andrews.cs.mamoc_client.ExceptionHandler;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
+import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
+import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
+
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.OFFLOADING_PUB;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
 
 public class CommunicationController {
+    private final String TAG = "CommunicationController";
+
     private Context mContext;
     private int myPort;
     private ConnectionListener connListener;
@@ -36,14 +51,18 @@ public class CommunicationController {
     private final int STACK_SIZE = 20 * 1024 * 1024;
     private ExceptionHandler exceptionHandler;
 
+    long startSendingTime, endSendingTime;
+
+    private Subscription sub;
+
     private CommunicationController(Context context) {
         this.mContext = context;
         myPort = Utils.getPort(mContext);
         connListener = new ConnectionListener(mContext, myPort);
 
-        if (!checkAnnotatedIndexing()) {
+//        if (!checkAnnotatedIndexing()) {
             findOffloadableClasses();
-        }
+//        }
     }
 
     private boolean checkAnnotatedIndexing() {
@@ -81,10 +100,8 @@ public class CommunicationController {
         decompiler.runDecompiler();
     }
 
-    public String fetchSourceCode(String className) {
+    private String fetchSourceCode(String className) {
         String ExternalStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath();
-
-//        Log.d("externalstorage", ExternalStoragePath);
 
         String[] sourceClassPaths = className.split("\\.");
 
@@ -92,27 +109,17 @@ public class CommunicationController {
 
         for (String path : sourceClassPaths) {
             sourceClass.append(path).append("/");
-//            Log.d("class", path);
         }
 
         sourceClass.deleteCharAt(sourceClass.length() - 1); // remove the extra / at the end
         sourceClass.append(".java");
 
-//        Log.d("sourceClass", sourceClass.toString());
-
         try {
             String fullPath = ExternalStoragePath + "/" + "mamoc" + "/" + sourceClass.toString();
-//            Log.d("fullpath", fullPath);
-
             File sourceFile = new File(fullPath);
-//            Log.d("outputdir", outputDir.getAbsolutePath());
-            //    File[] sourceFiles = outputDir.listFiles();
-            //    for (File sourceFile: sourceFiles) {
             Log.d("SourceFile", sourceFile.getAbsolutePath());
-            //    if (sourceFile.getName().equals()){
             return Utils.readFile(mContext, sourceFile.getAbsolutePath());
-            //    }
-//            }
+
         } catch (Throwable x) {
             Log.e("error", "could not fetch the output directory");
         }
@@ -159,7 +166,7 @@ public class CommunicationController {
         isConnectionListenerRunning = true;
     }
 
-    public void startConnectionListener(int port) {
+    private void startConnectionListener(int port) {
         myPort = port;
         startConnectionListener();
     }
@@ -209,7 +216,122 @@ public class CommunicationController {
         return offloadableClasses;
     }
 
-    public void runLocally() {
+    public void runLocal() {
 
+    }
+
+    public void runRemote(Context context, ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
+
+        switch (location) {
+            case EDGE:
+                runOnEdge(context, rpc_name, resource_name, params);
+                break;
+            case LOCAL:
+                runLocal();
+                break;
+        }
+    }
+
+    private void runOnEdge(Context context, String rpc_name, String resource_name, Object... params){
+        TreeSet<EdgeNode> edgeNodes = getEdgeDevices();
+        if (!edgeNodes.isEmpty()) {
+            EdgeNode node = edgeNodes.first();
+
+            if (node.session.isConnected()) {
+                Log.d(TAG, "trying to call " +  rpc_name + " procedure");
+
+                startSendingTime = System.nanoTime();
+                mContext = context;
+
+                // check if procedure is registered
+                CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
+
+                registeredFuture.thenAccept(registrationResult -> {
+                    if (registrationResult.results.get(0) == null) {
+                        // Procedure not registered
+                        Log.d(TAG, rpc_name + " not registered");
+                        Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
+
+                        try {
+                            // subscribe to the result of offloading
+                            CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                                    OFFLOADING_RESULT_SUB,
+                                    this::onOffloadingResult);
+
+                            subFuture.whenComplete((subscription, throwable) -> {
+                                if (throwable == null) {
+
+                                    mContext = context;
+                                    sub = subscription;
+                                    // We have successfully subscribed.
+                                    Log.d(TAG, "Subscribed to topic " + subscription.topic);
+                                } else {
+                                    // Something went bad.
+                                    throwable.printStackTrace();
+                                }
+                            });
+
+                            String sourceCode = fetchSourceCode(rpc_name);
+
+                            // publish (offload) the source code
+                            CompletableFuture<Publication> pubFuture = node.session.publish(
+                                    OFFLOADING_PUB,
+                                    "Android",
+                                    rpc_name,
+                                    sourceCode,
+                                    resource_name,
+                                    params);
+                            pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                    "Published successfully"));
+                            // Shows we can separate out exception handling
+                            pubFuture.exceptionally(throwable -> {
+                                throwable.printStackTrace();
+                                return null;
+                            });
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        // Call the remote procedure.
+                        Log.d(TAG, String.format("RPC ID: %s",
+                                registrationResult.results.get(0)));
+
+                        CompletableFuture<CallResult> callFuture = node.session.call(
+                                rpc_name);
+                        callFuture.thenAccept(callResult -> {
+                            List<Object> results = (List) callResult.results.get(0);
+
+                            broadcastResults(results);
+                        });
+                    }
+                });
+            } else {
+                Toast.makeText(context, "Edge is not connected!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void onOffloadingResult(List<Object> results) {
+        broadcastResults(results);
+        sub.unsubscribe();
+    }
+
+    private void broadcastResults(List<Object> results){
+        endSendingTime = System.nanoTime();
+        double commOverhead = (double)(endSendingTime - startSendingTime) * 1.0e-9;
+        commOverhead -=  (Double) results.get(1);
+
+        Log.d(TAG, "Broadcasting offloading result");
+        Intent intent = new Intent(OFFLOADING_RESULT_SUB);
+        intent.putExtra("result", (String) results.get(0));
+        intent.putExtra("duration", (Double) results.get(1));
+        intent.putExtra("overhead", commOverhead);
+
+        LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 }

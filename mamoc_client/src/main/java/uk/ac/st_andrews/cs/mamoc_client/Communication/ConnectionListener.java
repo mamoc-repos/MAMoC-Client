@@ -18,6 +18,8 @@ import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class ConnectionListener extends Thread {
 
+    private final String TAG = "ConnectionListener";
+    
     private Context mContext;
     private int mPort;
     private ServerSocket mServer;
@@ -40,15 +42,15 @@ public class ConnectionListener extends Thread {
                 mServer.bind(new InetSocketAddress(mPort));
             }
 
-            Log.d("DDDD", "Inet4Address: " + Inet4Address.getLocalHost().getHostAddress());
+            Log.d(TAG, "Inet4Address: " + Inet4Address.getLocalHost().getHostAddress());
 
             Socket socket = null;
             while (acceptRequests) {
                 // this is a blocking operation
                 socket = mServer.accept();
-                Log.d("DDDD", socket.getInetAddress().getHostAddress());
-                Log.d("DDDD", socket.getInetAddress().getHostName());
-                Log.d("DDDD", socket.getInetAddress().getCanonicalHostName());
+                Log.d(TAG, socket.getInetAddress().getHostAddress());
+                Log.d(TAG, socket.getInetAddress().getHostName());
+                Log.d(TAG, socket.getInetAddress().getCanonicalHostName());
 
                 handleData(socket.getInetAddress().getHostAddress(), socket.getInputStream());
             }

@@ -7,8 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import uk.ac.st_andrews.cs.mamoc_client.DiscoveryActivity;
-import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
-import uk.ac.standrews.cs.mamoc.Mandelbrot.MandelbrotActivity;
+import uk.ac.standrews.cs.mamoc.Linpack.LinpackActivity;
 import uk.ac.standrews.cs.mamoc.NQueens.NQueensActivity;
 import uk.ac.standrews.cs.mamoc.SearchText.SearchActivity;
 import uk.ac.standrews.cs.mamoc.Sorting.SortingActivity;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         nqueensDemo.setOnClickListener(view -> openNQueensDemo());
 
         mandelbrotDemo = findViewById(R.id.mandelbrotButton);
-        mandelbrotDemo.setOnClickListener(view -> openMandelbrotDemo());
+        mandelbrotDemo.setOnClickListener(view -> openLinpackDemo());
     }
 
     private void openDiscoveryActivity() {
@@ -59,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(nqueensIntent);
     }
 
-    private void openMandelbrotDemo(){
-        Intent mandelbrotIntent = new Intent(this, MandelbrotActivity.class);
+    private void openLinpackDemo(){
+        Intent mandelbrotIntent = new Intent(this, LinpackActivity.class);
         startActivity(mandelbrotIntent);
     }
 

@@ -22,7 +22,7 @@
         android:layout_width="218dp"
         android:layout_height="0dp"
         android:layout_marginBottom="95dp"
-        android:text="Mandelbrot"
+        android:text="Linpack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -18,6 +18,9 @@ import java.net.Socket;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 public class DataTransferService extends IntentService {
+
+    private final String TAG = "DataTransferService";
+
     private static final int SOCKET_TIMEOUT = 5000;
 
     public static final String ACTION_SEND_FILE = "SEND_FILE";
@@ -52,7 +55,7 @@ public class DataTransferService extends IntentService {
                 oos.close();
 
             } catch (IOException e) {
-                Log.e("DXDX", "Device: " + Build.MANUFACTURER);
+                Log.e(TAG, "Device: " + Build.MANUFACTURER);
                 e.printStackTrace();
             } finally {
                 if (socket != null) {
@@ -74,19 +77,19 @@ public class DataTransferService extends IntentService {
             try {
                 socket = new Socket(host, port);
 
-                Log.d("DDDDX", "Client socket - " + socket.isConnected());
+                Log.d(TAG, "Client socket - " + socket.isConnected());
                 OutputStream stream = socket.getOutputStream();
                 ContentResolver cr = context.getContentResolver();
                 InputStream is = null;
                 try {
                     is = cr.openInputStream(Uri.parse(fileUri));
                 } catch (FileNotFoundException e) {
-                    Log.d("DDDDX", e.toString());
+                    Log.d(TAG, e.toString());
                 }
                 Utils.copyFile(is, stream);
-                Log.d("DDDDX", "Client: Data written");
+                Log.d(TAG, "Client: Data written");
             } catch (IOException e) {
-                Log.e("DDDDX", e.getMessage());
+                Log.e(TAG, e.getMessage());
             } finally {
                 if (socket != null) {
                     if (socket.isConnected()) {

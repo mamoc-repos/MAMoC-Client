@@ -5,7 +5,10 @@ import jadx.api.JadxDecompiler;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
+import java.util.function.Function;
 
 public class Utils {
 
@@ -40,6 +43,19 @@ public class Utils {
 		}
 		return str.toString();
 	}
+
+    public static <T> void listToString(StringBuilder sb, Iterable<T> objects, String joiner, Function<T, String> toStr) {
+        if (objects == null) {
+            return;
+        }
+        Iterator<T> it = objects.iterator();
+        if (it.hasNext()) {
+            sb.append(toStr.apply(it.next()));
+        }
+        while (it.hasNext()) {
+            sb.append(joiner).append(toStr.apply(it.next()));
+        }
+    }
 
 	public static String arrayToString(Object[] array) {
 		if (array == null) {
@@ -98,5 +114,16 @@ public class Utils {
 
 	public static int compare(int x, int y) {
 		return x < y ? -1 : x == y ? 0 : 1;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> List<T> lockList(List<T> list) {
+		if (list.isEmpty()) {
+			return Collections.emptyList();
+		}
+		if (list.size() == 1) {
+			return Collections.singletonList(list.get(0));
+		}
+		return new ImmutableList<>(list);
 	}
 }

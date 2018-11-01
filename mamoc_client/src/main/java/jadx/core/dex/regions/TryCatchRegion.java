@@ -1,17 +1,17 @@
 package jadx.core.dex.regions;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import jadx.core.dex.nodes.IBranchRegion;
 import jadx.core.dex.nodes.IContainer;
 import jadx.core.dex.nodes.IRegion;
 import jadx.core.dex.trycatch.ExceptionHandler;
 import jadx.core.dex.trycatch.TryCatchBlock;
 import jadx.core.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 public final class TryCatchRegion extends AbstractRegion implements IBranchRegion {
 
@@ -28,7 +28,7 @@ public final class TryCatchRegion extends AbstractRegion implements IBranchRegio
 	public void setTryCatchBlock(TryCatchBlock tryCatchBlock) {
 		this.tryCatchBlock = tryCatchBlock;
 		int count = tryCatchBlock.getHandlersCount();
-		this.catchRegions = new LinkedHashMap<ExceptionHandler, IContainer>(count);
+		this.catchRegions = new LinkedHashMap<>(count);
 		for (ExceptionHandler handler : tryCatchBlock.getHandlers()) {
 			IContainer handlerRegion = handler.getHandlerRegion();
 			if (handlerRegion != null) {
@@ -63,7 +63,7 @@ public final class TryCatchRegion extends AbstractRegion implements IBranchRegio
 
 	@Override
 	public List<IContainer> getSubBlocks() {
-		List<IContainer> all = new ArrayList<IContainer>(2 + catchRegions.size());
+		List<IContainer> all = new ArrayList<>(2 + catchRegions.size());
 		all.add(tryRegion);
 		all.addAll(catchRegions.values());
 		if (finallyRegion != null) {

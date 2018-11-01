@@ -1,11 +1,5 @@
 package jadx.core.dex.nodes.parser;
 
-import jadx.core.Consts;
-import jadx.core.dex.attributes.IAttributeNode;
-import jadx.core.dex.attributes.annotations.Annotation;
-import jadx.core.dex.instructions.args.ArgType;
-import jadx.core.utils.exceptions.JadxRuntimeException;
-
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -14,6 +8,12 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jadx.core.Consts;
+import jadx.core.dex.attributes.IAttributeNode;
+import jadx.core.dex.attributes.annotations.Annotation;
+import jadx.core.dex.instructions.args.ArgType;
+import jadx.core.utils.exceptions.JadxRuntimeException;
 
 public class SignatureParser {
 
@@ -180,6 +180,9 @@ public class SignatureParser {
 				next();
 				// type parsing not completed, proceed to inner class
 				ArgType inner = consumeObjectType(true);
+				if (inner == null) {
+					throw new JadxRuntimeException("No inner type found: " + debugString());
+				}
 				return ArgType.genericInner(genericType, inner.getObject(), inner.getGenericTypes());
 			} else {
 				consume(';');
@@ -189,7 +192,7 @@ public class SignatureParser {
 	}
 
 	private ArgType[] consumeGenericArgs() {
-		List<ArgType> list = new LinkedList<ArgType>();
+		List<ArgType> list = new LinkedList<>();
 		ArgType type;
 		do {
 			if (lookAhead('*')) {
@@ -220,7 +223,7 @@ public class SignatureParser {
 		if (!lookAhead('<')) {
 			return Collections.emptyMap();
 		}
-		Map<ArgType, List<ArgType>> map = new LinkedHashMap<ArgType, List<ArgType>>(2);
+		Map<ArgType, List<ArgType>> map = new LinkedHashMap<>(2);
 		consume('<');
 		while (true) {
 			if (lookAhead('>') || next() == STOP_CHAR) {
@@ -251,7 +254,7 @@ public class SignatureParser {
 			ArgType argType = consumeType();
 			if (!argType.equals(ArgType.OBJECT)) {
 				if (types.isEmpty()) {
-					types = new LinkedList<ArgType>();
+					types = new LinkedList<>();
 				}
 				types.add(argType);
 			}
@@ -269,7 +272,7 @@ public class SignatureParser {
 			consume(')');
 			return Collections.emptyList();
 		}
-		List<ArgType> args = new LinkedList<ArgType>();
+		List<ArgType> args = new LinkedList<>();
 		do {
 			args.add(consumeType());
 		} while (!lookAhead(')'));
@@ -289,6 +292,9 @@ public class SignatureParser {
 	}
 
 	private String debugString() {
+		if (pos >= sign.length()) {
+			return sign;
+		}
 		return sign + " at position " + pos + " ('" + sign.charAt(pos) + "')";
 	}
 

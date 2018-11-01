@@ -1,54 +1,26 @@
 package uk.ac.standrews.cs.mamoc.SearchText;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.Offloadable;
-import static java.lang.Thread.dumpStack;
+import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
+import uk.ac.st_andrews.cs.mamoc_client.Annotation.Parallelizable;
+import uk.ac.st_andrews.cs.mamoc_client.Annotation.ResourceDependent;
 
 @Offloadable
+@Parallelizable
+@ResourceDependent
 public class KMP {
 
-//    private int[] build_pi(String str){
-//        int n = str.length();
-//        int[] pi = new int[n+1];
-//        int k = -1;
-//
-//        pi[0] = -1;
-//
-//        for (int i=0; i< n; i++){
-//            while (k>=0 && str.charAt(k) != str.charAt(i)){
-//                k = pi[k];
-//            }
-//            k += 1;
-//            pi[i+1] = k;
-//        }
-//
-//        return pi;
-//    }
-//
-//    public ArrayList<Integer> searchKMP(String text, String pattern ){
-//        ArrayList<Integer> matches = new ArrayList<Integer>();
-//        int n = text.length();
-//        int m = pattern.length();
-//
-//        int k = 0;
-//        int[] pi = build_pi(pattern);
-//
-//        for (int i=0; i<n ; i++){
-//            while (k >= 0 && (k == m || pattern.charAt(k) != text.charAt(i))){
-//                k = pi[k];
-//            }
-//            k += 1;
-//            if (k == m){
-//                matches.add( i-m + 1);
-//            }
-//        }
-//
-//        return matches;
-//    }
+    String content;
+    String pattern;
 
-    public int run(String txt, String pat) {
+    public KMP(String content, String pat) {
+        this.content = content;
+        this.pattern = pat;
+    }
+
+    public int run() {
         int matches = 0;
-        int M = pat.length();
-        int N = txt.length();
+        int M = pattern.length();
+        int N = content.length();
 
         // create lps[] that will hold the longest
         // prefix suffix values for pattern
@@ -56,23 +28,21 @@ public class KMP {
         int j = 0; // index for pat[]
 
         // Preprocess the pattern (calculate lps[] array)
-        computeLPSArray(pat, M, lps);
+        computeLPSArray(pattern, M, lps);
 
         int i = 0; // index for txt[]
         while (i < N) {
-            if (pat.charAt(j) == txt.charAt(i)) {
+            if (pattern.charAt(j) == content.charAt(i)) {
                 j++;
                 i++;
             }
             if (j == M) {
-//                System.out.println("Found pattern "
-//                        + "at index " + (i - j));
                 matches++;
                 j = lps[j - 1];
             }
 
             // mismatch after j matches
-            else if (i < N && pat.charAt(j) != txt.charAt(i)) {
+            else if (i < N && pattern.charAt(j) != content.charAt(i)) {
                 // Do not match lps[0..lps[j-1]] characters,
                 // they will match anyway
                 if (j != 0)
@@ -117,7 +87,5 @@ public class KMP {
                 }
             }
         }
-
-        dumpStack();
     }
 }
