@@ -1,4 +1,4 @@
-package uk.ac.standrews.cs.mamoc.Benchmark.Scimark2;
+package uk.ac.standrews.cs.mamoc.Benchmark;
 
 public class SparseCompRow
 {

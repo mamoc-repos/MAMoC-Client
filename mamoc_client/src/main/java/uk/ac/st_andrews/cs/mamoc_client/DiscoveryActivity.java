@@ -11,9 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,22 +26,21 @@ import io.crossbar.autobahn.wamp.Client;
 import io.crossbar.autobahn.wamp.Session;
 import io.crossbar.autobahn.wamp.types.CloseDetails;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
-import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
-import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
-import io.crossbar.autobahn.websocket.types.WebSocketOptions;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
+import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.CLOUD_IP;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.CLOUD_REALM_NAME;
+import static uk.ac.st_andrews.cs.mamoc_client.Constants.EDGE_REALM_NAME;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PHONE_ACCESS_PERM_REQ_CODE;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.REQUEST_CODE_ASK_PERMISSIONS;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.REQUEST_READ_PHONE_STATE;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.WRITE_PERMISSION;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.WRITE_PERM_REQ_CODE;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.EDGE_IP;
-import static uk.ac.st_andrews.cs.mamoc_client.Constants.REALM_NAME;
 
 public class DiscoveryActivity extends AppCompatActivity {
 
@@ -51,10 +48,11 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     CommunicationController controller;
     EdgeNode edge;
+    CloudNode cloud;
 
     private Button discoverButton, edgeBtn, cloudBtn;
 
-    private TextView listeningPort, edgeTextView;
+    private TextView listeningPort, edgeTextView, cloudTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +78,9 @@ public class DiscoveryActivity extends AppCompatActivity {
 
         edgeBtn = findViewById(R.id.edgeConnect);
         edgeTextView = findViewById(R.id.edgeTextView);
+
         cloudBtn = findViewById(R.id.cloudConnect);
+        cloudTextView = findViewById(R.id.cloudTextView);
 
         edgeBtn.setOnClickListener(view -> connectEdge());
         cloudBtn.setOnClickListener(view -> connectCloud());
@@ -91,20 +91,23 @@ public class DiscoveryActivity extends AppCompatActivity {
     }
 
     private void loadPrefs() {
-        String enteredIP = Utils.getValue(this, "edgeIP");
-        if (enteredIP != null) {
-            edgeTextView.setText(enteredIP);
+        String enteredEdgeIP = Utils.getValue(this, "edgeIP");
+        if (enteredEdgeIP != null) {
+            edgeTextView.setText(enteredEdgeIP);
         } else {
             edgeTextView.setText(EDGE_IP);
+        }
+
+        String enteredCloudIP = Utils.getValue(this, "cloudIP");
+        if (enteredCloudIP != null) {
+            cloudTextView.setText(enteredCloudIP);
+        } else {
+            cloudTextView.setText(CLOUD_IP);
         }
     }
 
     private void savePrefs(String key, String value) {
         Utils.save(this, key, value);
-    }
-
-    private void connectCloud() {
-        edge.send("{\"TextSearch\":\"hi\", \"start\":0, \"end\":0}");
     }
 
     private void connectEdge() {
@@ -118,55 +121,15 @@ public class DiscoveryActivity extends AppCompatActivity {
 //        }
 
         // Add all onJoin listeners
-        edge.session.addOnConnectListener(this::onConnectCallback);
-        edge.session.addOnLeaveListener(this::onLeaveCallback);
-        edge.session.addOnDisconnectListener(this::onDisconnectCallback);
+        edge.session.addOnConnectListener(this::onConnectCallbackEdge);
+        edge.session.addOnLeaveListener(this::onLeaveCallbackEdge);
+        edge.session.addOnDisconnectListener(this::onDisconnectCallbackEdge);
 
-        Client client = new Client(edge.session, EDGE_IP, REALM_NAME);
+        Client client = new Client(edge.session, EDGE_IP, EDGE_REALM_NAME);
         CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
-
-//        WebSocketOptions connectOptions = new WebSocketOptions();
-//        connectOptions.setReconnectInterval(5000);
-//
-//        try {
-//            edge.edgeConnection.connect(wsUri, new WebSocketConnectionHandler(){
-//            @Override
-//            public void onOpen() {
-//                Utils.alert(DiscoveryActivity.this, "Connected.");
-//                edgeBtn.setText("Status: Connected to " + wsUri);
-//                edgeBtn.setEnabled(false);
-//                controller.addEdgeDevice(edge);
-//                edge.send("hello");
-//                savePrefs("edgeIP", wsUri);
-//                Log.d("connection: ", String.valueOf(edge.edgeConnection));
-//            }
-//
-//            @Override
-//            public void onMessage(String payload) {
-//                Utils.alert(DiscoveryActivity.this, "Got echo: " + payload);
-//            }
-//
-//            @Override
-//            public void onClose(int code, String reason) {
-//                Utils.alert(DiscoveryActivity.this, "Connection lost.");
-//                controller.removeEdgeDevice(edge);
-//                loadPrefs();
-//                edgeBtn.setEnabled(true);
-//            }
-//        }, connectOptions);
-//    } catch (WebSocketException e) {
-//        Log.d(TAG, e.toString());
-//    }
-
-     //   if (edge.isConnected()){
-//            edgeBtn.setText("Connected to Edge!");
-//            edgeBtn.setEnabled(false);
-     //   }
-//        client.send(new byte[] {(byte) 0xDE, (byte) 0xAD, (byte) 0xBE, (byte) 0xEF});
-//        client.end();
     }
 
-    private void onConnectCallback(Session session) {
+    private void onConnectCallbackEdge(Session session) {
         Log.d(TAG, "Session connected, ID=" + session.getID());
         Utils.alert(DiscoveryActivity.this, "Connected.");
         edgeBtn.setText("Status: Connected to " + EDGE_IP);
@@ -175,17 +138,55 @@ public class DiscoveryActivity extends AppCompatActivity {
         savePrefs("edgeIP", EDGE_IP);
     }
 
-    private void onLeaveCallback(Session session, CloseDetails detail) {
+    private void onLeaveCallbackEdge(Session session, CloseDetails detail) {
         Log.d(TAG, String.format("Left reason=%s, message=%s", detail.reason, detail.message));
         Utils.alert(DiscoveryActivity.this, "Left.");
         edgeBtn.setEnabled(true);
     }
 
-    private void onDisconnectCallback(Session session, boolean wasClean) {
+    private void onDisconnectCallbackEdge(Session session, boolean wasClean) {
         Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
         Utils.alert(DiscoveryActivity.this, "Disconnected.");
         controller.removeEdgeDevice(edge);
         edgeBtn.setEnabled(true);
+    }
+
+    private void connectCloud() {
+
+        cloud = new CloudNode(CLOUD_IP, 8080);
+
+        final String wsUri = cloudTextView.getText().toString();
+
+        // Add all onJoin listeners
+        cloud.session.addOnConnectListener(this::onConnectCallbackCloud);
+        cloud.session.addOnLeaveListener(this::onLeaveCallbackCloud);
+        cloud.session.addOnDisconnectListener(this::onDisconnectCallbackCloud);
+
+        Client client = new Client(cloud.session, CLOUD_IP, CLOUD_REALM_NAME);
+        CompletableFuture<ExitInfo> exitInfoCompletableFuture = client.connect();
+
+    }
+
+    private void onConnectCallbackCloud(Session session) {
+        Log.d(TAG, "Session connected, ID=" + session.getID());
+        Utils.alert(DiscoveryActivity.this, "Connected.");
+        cloudBtn.setText("Status: Connected to " + CLOUD_IP);
+        cloudBtn.setEnabled(false);
+        controller.addCloudDevices(cloud);
+        savePrefs("cloudIP", CLOUD_IP);
+    }
+
+    private void onLeaveCallbackCloud(Session session, CloseDetails detail) {
+        Log.d(TAG, String.format("Left reason=%s, message=%s", detail.reason, detail.message));
+        Utils.alert(DiscoveryActivity.this, "Left.");
+        cloudBtn.setEnabled(true);
+    }
+
+    private void onDisconnectCallbackCloud(Session session, boolean wasClean) {
+        Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
+        Utils.alert(DiscoveryActivity.this, "Disconnected.");
+        controller.removeCloudDevice(cloud);
+        cloudBtn.setEnabled(true);
     }
 
     @SuppressLint("StringFormatMatches")
@@ -200,6 +201,13 @@ public class DiscoveryActivity extends AppCompatActivity {
             edgeBtn.setEnabled(false);
         } else{
             edgeBtn.setEnabled(true);
+        }
+
+        if (cloud != null && cloud.session.isConnected()){
+            cloudBtn.setText("Status: Connected to " + CLOUD_IP);
+            cloudBtn.setEnabled(false);
+        } else{
+            cloudBtn.setEnabled(true);
         }
     }
 
@@ -282,8 +290,5 @@ public class DiscoveryActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        if (mConnection.isConnected()) {
-//            mConnection.sendClose();
-//        }
     }
 }

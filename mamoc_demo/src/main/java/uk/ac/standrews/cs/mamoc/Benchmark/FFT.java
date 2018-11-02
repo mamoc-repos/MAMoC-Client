@@ -1,4 +1,4 @@
-package uk.ac.standrews.cs.mamoc.Benchmark.Scimark2;
+package uk.ac.standrews.cs.mamoc.Benchmark;
 
 /** Computes FFT's of complex, double precision data where n is an integer power of 2.
   * This appears to be slower than the Radix2 method,

@@ -58,6 +58,8 @@ public class SearchActivity extends DemoBaseActivity {
 
         localButton.setOnClickListener(view -> searchText(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> searchText(ExecutionLocation.EDGE));
+        cloudButton.setOnClickListener(View -> searchText(ExecutionLocation.REMOTE_CLOUD));
+        mamocButton.setOnClickListener(View -> searchText(ExecutionLocation.DYNAMIC));
 
         controller = CommunicationController.getInstance(this);
 
@@ -74,7 +76,7 @@ public class SearchActivity extends DemoBaseActivity {
      *  * <p>
      *  *
      *  *
-     * @param location
+     * @param location The location of execution of the method @ExecutionLocation
      */
     private void searchText(ExecutionLocation location){
 
@@ -92,15 +94,18 @@ public class SearchActivity extends DemoBaseActivity {
 
         switch (location){
             case LOCAL:
-                searchLocal(keyword);
+                runLocal(keyword);
                 break;
             case EDGE:
-                searchEdge(keyword);
+                runEdge(keyword);
+                break;
+            case REMOTE_CLOUD:
+                runCloud(keyword);
                 break;
         }
     }
 
-    private void searchLocal(String keyword) {
+    private void runLocal(String keyword) {
 
         long startTime = System.nanoTime();
 
@@ -118,12 +123,24 @@ public class SearchActivity extends DemoBaseActivity {
         hideDialog();
     }
 
-    private void searchEdge(String keyword) {
+    private void runEdge(String keyword) {
 
         String fileContent = getContentFromTextFile(fileSize + ".txt");
 
         try{
             controller.runRemote(this, ExecutionLocation.EDGE, RPC_NAME, fileSize, keyword);
+        } catch (Exception e){
+            Log.e("runEdge", e.getLocalizedMessage());
+            Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runCloud(String keyword) {
+
+        String fileContent = getContentFromTextFile(fileSize + ".txt");
+
+        try{
+            controller.runRemote(this, ExecutionLocation.REMOTE_CLOUD, RPC_NAME, fileSize, keyword);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();

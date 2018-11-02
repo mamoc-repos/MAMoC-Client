@@ -23,7 +23,6 @@ public class BenchmarkActivity extends DemoBaseActivity {
     private TextView benchmarkOutput;
 
     //variables
-    private int N;
     private CommunicationController controller;
 
     @Override
@@ -57,15 +56,15 @@ public class BenchmarkActivity extends DemoBaseActivity {
 
         switch (location){
             case LOCAL:
-                runLocal(N);
+                runLocal();
                 break;
             case EDGE:
-                runEdge(N);
+                runEdge();
                 break;
         }
     }
 
-    private void runLocal(int N) {
+    private void runLocal() {
         long startTime = System.nanoTime();
 
         double result = new Benchmark().run();
@@ -76,7 +75,7 @@ public class BenchmarkActivity extends DemoBaseActivity {
         addLog(String.valueOf(result), MethodDuration * 1.0e-9, 0);
     }
 
-    private void runEdge(int N) {
+    private void runEdge() {
 
         try{
             controller.runRemote(BenchmarkActivity.this, ExecutionLocation.EDGE, RPC_NAME, "None");

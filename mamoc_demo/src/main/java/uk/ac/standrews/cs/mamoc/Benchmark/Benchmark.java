@@ -2,53 +2,47 @@ package uk.ac.standrews.cs.mamoc.Benchmark;
 
 import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 
-import uk.ac.standrews.cs.mamoc.Benchmark.Scimark2.*;
-
 @Offloadable
 public class Benchmark {
 
-    private static final int FFT_size= 1024;
-    private static final int SOR_size =100; // NxN grid
-    private static final int Sparse_size_M = 1000;
-    private static final int Sparse_size_nz = 5000;
-    private static final int LU_size = 100;
+    private static final int FFT_SIZE = 1024;
+    private static final int SOR_SIZE = 100; // NxN grid
+    private static final int SIZE_M = 100;
+    private static final int SIZE_NZ = 500;
+    private static final int LU_SIZE = 100;
+
+    private static final double MIN_TIME = 2.0;
+    private static final int RANDOM_SEED = 101010;
 
     public double run() {
 
-        Random R = new Random(Constants.RANDOM_SEED);
+        Random R = new Random(RANDOM_SEED);
 
-        double min_time = Constants.RESOLUTION_DEFAULT;
+        double fftResult = measureFFT(FFT_SIZE, R);
+        double sorResult = measureSOR(SOR_SIZE, R);
+        double montecarloResult = measureMonteCarlo(R);
+        double sparseResult = measureSparseMat(SIZE_M, SIZE_NZ, R);
+        double luResult = measureLU(LU_SIZE, R);
 
-        double result1 = measureFFT(FFT_size, min_time, R);
-        double result2 = measureSOR(SOR_size, min_time, R);
-        double result3 = measureMonteCarlo(min_time, R);
-        double result4 = measureSparseMatmult(Sparse_size_M, Sparse_size_nz, min_time, R);
-        double result5 = measureLU(LU_size, min_time, R);
-
-        double resultAVG = (result1 + result2 + result3 + result4 + result5) /5;
-
-        return resultAVG;
+        return (fftResult + sorResult + montecarloResult + sparseResult + luResult) / 5.0;
     }
 
-    private double measureFFT(int N, double mintime, Random R)
-    {
+    private double measureFFT(int N, Random R) {
         // initialize FFT data as complex (N real/img pairs)
 
-        double x[] = RandomVector(2*N, R);
-        double oldx[] = NewVectorCopy(x);
+        double x[] = RandomVector(2 * N, R);
+
         long cycles = 1;
         Stopwatch Q = new Stopwatch();
 
-        while(true)
-        {
+        while (true) {
             Q.start();
-            for (int i=0; i<cycles; i++)
-            {
-                FFT.transform(x);	// forward transform
-                FFT.inverse(x);		// backward transform
+            for (int i = 0; i < cycles; i++) {
+                FFT.transform(x);    // forward transform
+                FFT.inverse(x);        // backward transform
             }
             Q.stop();
-            if (Q.read() >= mintime)
+            if (Q.read() >= MIN_TIME)
                 break;
 
             cycles *= 2;
@@ -56,24 +50,22 @@ public class Benchmark {
         // approx Mflops
 
         final double EPS = 1.0e-10;
-        if ( FFT.test(x) / N > EPS )
+        if (FFT.test(x) / N > EPS)
             return 0.0;
 
-        return FFT.num_flops(N)*cycles/ Q.read() * 1.0e-6;
+        return FFT.num_flops(N) * cycles / Q.read() * 1.0e-6;
     }
 
-    public static double measureSOR(int N, double min_time, Random R)
-    {
+    private static double measureSOR(int N, Random R) {
         double G[][] = RandomMatrix(N, N, R);
 
         Stopwatch Q = new Stopwatch();
-        int cycles=1;
-        while(true)
-        {
+        int cycles = 1;
+        while (true) {
             Q.start();
             SOR.execute(1.25, G, cycles);
             Q.stop();
-            if (Q.read() >= min_time) break;
+            if (Q.read() >= MIN_TIME) break;
 
             cycles *= 2;
         }
@@ -81,17 +73,15 @@ public class Benchmark {
         return SOR.num_flops(N, N, cycles) / Q.read() * 1.0e-6;
     }
 
-    public static double measureMonteCarlo(double min_time, Random R)
-    {
+    private static double measureMonteCarlo(Random R) {
         Stopwatch Q = new Stopwatch();
 
-        int cycles=1;
-        while(true)
-        {
+        int cycles = 1;
+        while (true) {
             Q.start();
             MonteCarlo.integrate(cycles);
             Q.stop();
-            if (Q.read() >= min_time) break;
+            if (Q.read() >= MIN_TIME) break;
 
             cycles *= 2;
         }
@@ -100,9 +90,7 @@ public class Benchmark {
     }
 
 
-    public static double measureSparseMatmult(int N, int nz,
-                                              double min_time, Random R)
-    {
+    private static double measureSparseMat(int N, int nz, Random R) {
         // initialize vector multipliers and storage for result
         // y = A*y;
 
@@ -130,72 +118,64 @@ public class Benchmark {
         // Note that the first nr rows will have elements past
         // the diagonal.
 
-        int nr = nz/N; 		// average number of nonzeros per row
-        int anz = nr *N;   // _actual_ number of nonzeros
-
+        int nr = nz / N;        // average number of nonzeros per row
+        int anz = nr * N;   // _actual_ number of nonzeros
 
         double val[] = RandomVector(anz, R);
         int col[] = new int[anz];
-        int row[] = new int[N+1];
+        int row[] = new int[N + 1];
 
         row[0] = 0;
-        for (int r=0; r<N; r++)
-        {
-            // initialize elements for row r
+        int step;
+        int cycles = 1;
 
+        for (int r = 0; r < N; r++) {
             int rowr = row[r];
-            row[r+1] = rowr + nr;
-            int step = r/ nr;
+            row[r + 1] = rowr + nr;
+            step = r / nr;
             if (step < 1) step = 1;   // take at least unit steps
 
-
-            for (int i=0; i<nr; i++)
-                col[rowr+i] = i*step;
-
+            for (int i = 0; i < nr; i++)
+                col[rowr + i] = i * step;
         }
 
         Stopwatch Q = new Stopwatch();
 
-        int cycles=1;
-        while(true)
-        {
+        while (true) {
             Q.start();
             SparseCompRow.matmult(y, val, row, col, x, cycles);
             Q.stop();
-            if (Q.read() >= min_time) break;
+            if (Q.read() >= MIN_TIME) break;
 
             cycles *= 2;
         }
+
         // approx Mflops
         return SparseCompRow.num_flops(N, nz, cycles) / Q.read() * 1.0e-6;
     }
 
 
-    public static double measureLU(int N, double min_time, Random R)
-    {
+    private static double measureLU(int N, Random R) {
         // compute approx Mlfops, or O if LU yields large errors
 
-        double A[][] = RandomMatrix(N, N,  R);
+        double A[][] = RandomMatrix(N, N, R);
         double lu[][] = new double[N][N];
         int pivot[] = new int[N];
 
         Stopwatch Q = new Stopwatch();
 
-        int cycles=1;
-        while(true)
-        {
+        int cycles = 1;
+        while (true) {
             Q.start();
-            for (int i=0; i<cycles; i++)
-            {
+            for (int i = 0; i < cycles; i++) {
                 CopyMatrix(lu, A);
                 LU.factor(lu, pivot);
             }
             Q.stop();
-            if (Q.read() >= min_time) break;
+            if (Q.read() >= MIN_TIME) break;
 
             cycles *= 2;
         }
-
 
         // verify that LU is correct
         double b[] = RandomVector(N, R);
@@ -204,7 +184,7 @@ public class Benchmark {
         LU.solve(lu, pivot, x);
 
         final double EPS = 1.0e-12;
-        if ( normabs(b, matvec(A,x)) / N > EPS )
+        if (normabs(b, matvec(A, x)) / N > EPS)
             return 0.0;
 
 
@@ -213,81 +193,72 @@ public class Benchmark {
         return LU.num_flops(N) * cycles / Q.read() * 1.0e-6;
     }
 
-    private static double[] NewVectorCopy(double x[])
-    {
+    private static double[] NewVectorCopy(double x[]) {
         int N = x.length;
 
         double y[] = new double[N];
-        for (int i=0; i<N; i++)
+        for (int i = 0; i < N; i++)
             y[i] = x[i];
 
         return y;
     }
 
-    private static void CopyVector(double B[], double A[])
-    {
+    private static void CopyVector(double B[], double A[]) {
         int N = A.length;
 
-        for (int i=0; i<N; i++)
+        for (int i = 0; i < N; i++)
             B[i] = A[i];
     }
 
 
-    private static double normabs(double x[], double y[])
-    {
+    private static double normabs(double x[], double y[]) {
         int N = x.length;
         double sum = 0.0;
 
-        for (int i=0; i<N; i++)
-            sum += Math.abs(x[i]-y[i]);
+        for (int i = 0; i < N; i++)
+            sum += Math.abs(x[i] - y[i]);
 
         return sum;
     }
 
-    private static void CopyMatrix(double B[][], double A[][])
-    {
+    private static void CopyMatrix(double B[][], double A[][]) {
         int M = A.length;
         int N = A[0].length;
 
-        int remainder = N & 3;		 // N mod 4;
+        int remainder = N & 3;         // N mod 4;
 
-        for (int i=0; i<M; i++)
-        {
+        for (int i = 0; i < M; i++) {
             double Bi[] = B[i];
             double Ai[] = A[i];
-            for (int j=0; j<remainder; j++)
+            for (int j = 0; j < remainder; j++)
                 Bi[j] = Ai[j];
-            for (int j=remainder; j<N; j+=4)
-            {
+            for (int j = remainder; j < N; j += 4) {
                 Bi[j] = Ai[j];
-                Bi[j+1] = Ai[j+1];
-                Bi[j+2] = Ai[j+2];
-                Bi[j+3] = Ai[j+3];
+                Bi[j + 1] = Ai[j + 1];
+                Bi[j + 2] = Ai[j + 2];
+                Bi[j + 3] = Ai[j + 3];
             }
         }
     }
 
-    private static double[][] RandomMatrix(int M, int N, Random R)
-    {
+    private static double[][] RandomMatrix(int M, int N, Random R) {
         double A[][] = new double[M][N];
 
-        for (int i=0; i<N; i++)
-            for (int j=0; j<N; j++)
+        for (int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++)
                 A[i][j] = R.nextDouble();
         return A;
     }
 
-    private static double[] RandomVector(int N, Random R)
-    {
+    private static double[] RandomVector(int N, Random R) {
         double A[] = new double[N];
 
-        for (int i=0; i<N; i++)
+        for (int i = 0; i < N; i++)
             A[i] = R.nextDouble();
         return A;
     }
 
-    private static double[] matvec(double A[][], double x[])
-    {
+    private static double[] matvec(double A[][], double x[]) {
         int N = x.length;
         double y[] = new double[N];
 
@@ -296,16 +267,14 @@ public class Benchmark {
         return y;
     }
 
-    private static void matvec(double A[][], double x[], double y[])
-    {
+    private static void matvec(double A[][], double x[], double y[]) {
         int M = A.length;
         int N = A[0].length;
 
-        for (int i=0; i<M; i++)
-        {
+        for (int i = 0; i < M; i++) {
             double sum = 0.0;
             double Ai[] = A[i];
-            for (int j=0; j<N; j++)
+            for (int j = 0; j < N; j++)
                 sum += Ai[j] * x[j];
 
             y[i] = sum;

@@ -22,6 +22,7 @@ import uk.ac.st_andrews.cs.mamoc_client.DexDecompiler;
 import uk.ac.st_andrews.cs.mamoc_client.ExceptionHandler;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
@@ -208,8 +209,10 @@ public class CommunicationController {
         return cloudDevices;
     }
 
-    public void setCloudDevices(TreeSet<CloudNode> cloudDevices) {
-        this.cloudDevices = cloudDevices;
+    public void addCloudDevices(CloudNode cloud) { this.cloudDevices.add(cloud); }
+
+    public void removeCloudDevice(CloudNode cloud) {
+        this.cloudDevices.remove(cloud);
     }
 
     public ArrayList<Class> getOffloadableClasses() {
@@ -229,6 +232,9 @@ public class CommunicationController {
             case LOCAL:
                 runLocal();
                 break;
+            case REMOTE_CLOUD:
+                runOnCloud(context, rpc_name, resource_name, params);
+                break;
         }
     }
 
@@ -237,83 +243,175 @@ public class CommunicationController {
         if (!edgeNodes.isEmpty()) {
             EdgeNode node = edgeNodes.first();
 
-            if (node.session.isConnected()) {
-                Log.d(TAG, "trying to call " +  rpc_name + " procedure");
-
-                startSendingTime = System.nanoTime();
-                mContext = context;
-
-                // check if procedure is registered
-                CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
-
-                registeredFuture.thenAccept(registrationResult -> {
-                    if (registrationResult.results.get(0) == null) {
-                        // Procedure not registered
-                        Log.d(TAG, rpc_name + " not registered");
-                        Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
-
-                        try {
-                            // subscribe to the result of offloading
-                            CompletableFuture<Subscription> subFuture = node.session.subscribe(
-                                    OFFLOADING_RESULT_SUB,
-                                    this::onOffloadingResult);
-
-                            subFuture.whenComplete((subscription, throwable) -> {
-                                if (throwable == null) {
-
-                                    mContext = context;
-                                    sub = subscription;
-                                    // We have successfully subscribed.
-                                    Log.d(TAG, "Subscribed to topic " + subscription.topic);
-                                } else {
-                                    // Something went bad.
-                                    throwable.printStackTrace();
-                                }
-                            });
-
-                            String sourceCode = fetchSourceCode(rpc_name);
-
-                            // publish (offload) the source code
-                            CompletableFuture<Publication> pubFuture = node.session.publish(
-                                    OFFLOADING_PUB,
-                                    "Android",
-                                    rpc_name,
-                                    sourceCode,
-                                    resource_name,
-                                    params);
-                            pubFuture.thenAccept(publication -> Log.d("publishResult",
-                                    "Published successfully"));
-                            // Shows we can separate out exception handling
-                            pubFuture.exceptionally(throwable -> {
-                                throwable.printStackTrace();
-                                return null;
-                            });
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        // Call the remote procedure.
-                        Log.d(TAG, String.format("RPC ID: %s",
-                                registrationResult.results.get(0)));
-
-                        CompletableFuture<CallResult> callFuture = node.session.call(
-                                rpc_name);
-                        callFuture.thenAccept(callResult -> {
-                            List<Object> results = (List) callResult.results.get(0);
-
-                            broadcastResults(results);
-                        });
-                    }
-                });
-            } else {
-                Toast.makeText(context, "Edge is not connected!", Toast.LENGTH_SHORT).show();
-            }
+            runRemotely(context, node, rpc_name, resource_name, params);
 
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    private void runOnCloud(Context context, String rpc_name, String resource_name, Object... params){
+        TreeSet<CloudNode> cloudNodes = getCloudDevices();
+        if (!cloudNodes.isEmpty()) {
+            CloudNode node = cloudNodes.first();
+
+            runRemotely(context, node, rpc_name, resource_name, params);
+
+        } else {
+            Toast.makeText(context, "No cloud node exists", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runRemotely(Context context, EdgeNode node, String rpc_name, String resource_name, Object[] params){
+
+        if (node.session.isConnected()) {
+            Log.d(TAG, "trying to call " +  rpc_name + " procedure");
+
+            startSendingTime = System.nanoTime();
+            mContext = context;
+
+            // check if procedure is registered
+            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
+
+            registeredFuture.thenAccept(registrationResult -> {
+                if (registrationResult.results.get(0) == null) {
+                    // Procedure not registered
+                    Log.d(TAG, rpc_name + " not registered");
+                    Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
+
+                    try {
+                        // subscribe to the result of offloading
+                        CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                                OFFLOADING_RESULT_SUB,
+                                this::onOffloadingResult);
+
+                        subFuture.whenComplete((subscription, throwable) -> {
+                            if (throwable == null) {
+
+                                mContext = context;
+                                sub = subscription;
+                                // We have successfully subscribed.
+                                Log.d(TAG, "Subscribed to topic " + subscription.topic);
+                            } else {
+                                // Something went bad.
+                                throwable.printStackTrace();
+                            }
+                        });
+
+                        String sourceCode = fetchSourceCode(rpc_name);
+
+                        // publish (offload) the source code
+                        CompletableFuture<Publication> pubFuture = node.session.publish(
+                                OFFLOADING_PUB,
+                                "Android",
+                                rpc_name,
+                                sourceCode,
+                                resource_name,
+                                params);
+                        pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                "Published successfully"));
+                        // Shows we can separate out exception handling
+                        pubFuture.exceptionally(throwable -> {
+                            throwable.printStackTrace();
+                            return null;
+                        });
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    // Call the remote procedure.
+                    Log.d(TAG, String.format("RPC ID: %s",
+                            registrationResult.results.get(0)));
+
+                    CompletableFuture<CallResult> callFuture = node.session.call(
+                            rpc_name);
+                    callFuture.thenAccept(callResult -> {
+                        List<Object> results = (List) callResult.results.get(0);
+
+                        broadcastResults(results);
+                    });
+                }
+            });
+        } else {
+            Toast.makeText(context, "Edge is not connected!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runRemotely(Context context, CloudNode node, String rpc_name, String resource_name, Object[] params){
+
+        if (node.session.isConnected()) {
+            Log.d(TAG, "trying to call " +  rpc_name + " procedure");
+
+            startSendingTime = System.nanoTime();
+            mContext = context;
+
+            // check if procedure is registered
+            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
+
+            registeredFuture.thenAccept(registrationResult -> {
+                if (registrationResult.results.get(0) == null) {
+                    // Procedure not registered
+                    Log.d(TAG, rpc_name + " not registered");
+                    Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
+
+                    try {
+                        // subscribe to the result of offloading
+                        CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                                OFFLOADING_RESULT_SUB,
+                                this::onOffloadingResult);
+
+                        subFuture.whenComplete((subscription, throwable) -> {
+                            if (throwable == null) {
+
+                                mContext = context;
+                                sub = subscription;
+                                // We have successfully subscribed.
+                                Log.d(TAG, "Subscribed to topic " + subscription.topic);
+                            } else {
+                                // Something went bad.
+                                throwable.printStackTrace();
+                            }
+                        });
+
+                        String sourceCode = fetchSourceCode(rpc_name);
+
+                        // publish (offload) the source code
+                        CompletableFuture<Publication> pubFuture = node.session.publish(
+                                OFFLOADING_PUB,
+                                "Android",
+                                rpc_name,
+                                sourceCode,
+                                resource_name,
+                                params);
+                        pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                "Published successfully"));
+                        // Shows we can separate out exception handling
+                        pubFuture.exceptionally(throwable -> {
+                            throwable.printStackTrace();
+                            return null;
+                        });
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    // Call the remote procedure.
+                    Log.d(TAG, String.format("RPC ID: %s",
+                            registrationResult.results.get(0)));
+
+                    CompletableFuture<CallResult> callFuture = node.session.call(
+                            rpc_name);
+                    callFuture.thenAccept(callResult -> {
+                        List<Object> results = (List) callResult.results.get(0);
+
+                        broadcastResults(results);
+                    });
+                }
+            });
+        } else {
+            Toast.makeText(context, "Edge is not connected!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void onOffloadingResult(List<Object> results) {
