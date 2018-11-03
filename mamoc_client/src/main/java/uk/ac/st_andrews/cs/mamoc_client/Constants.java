@@ -6,10 +6,10 @@ public class Constants {
 
     public static final String DB_NAME = "mamoc.db";
 
-    public static String EDGE_IP = "ws://192.168.0.12:8080/ws";
+    public static final String EDGE_IP = "ws://192.168.0.12:8080/ws";
     public static final String EDGE_REALM_NAME = "mamoc_realm";
 
-    public static String CLOUD_IP = "ws://104.248.167.173:8080/ws";
+    public static final String CLOUD_IP = "ws://104.248.167.173:8080/ws";
     public static final String CLOUD_REALM_NAME = "mamoc_realm";
 
     public static final String WAMP_LOOKUP = "wamp.registration.lookup";
