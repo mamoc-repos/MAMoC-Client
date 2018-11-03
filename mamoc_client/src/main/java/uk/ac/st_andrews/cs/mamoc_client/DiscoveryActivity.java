@@ -193,7 +193,6 @@ public class DiscoveryActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    //    DBAdapter.getInstance(DiscoveryActivity.this).clearDatabase();
         listeningPort.setText(String.format(getString(R.string.port_info), Utils.getPort(this)));
 
         if (edge != null && edge.session.isConnected()){
