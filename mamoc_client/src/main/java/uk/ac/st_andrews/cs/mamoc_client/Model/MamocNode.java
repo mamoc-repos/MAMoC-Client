@@ -15,6 +15,7 @@ public class MamocNode implements Serializable {
     private int numberOfCPUs;
     private int cpuFreq;
     private long memoryMB;
+    private int OffloadingScore;
 
     public long getJoinedDate() { return joinedDate; }
 
@@ -54,6 +55,14 @@ public class MamocNode implements Serializable {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public int getOffloadingScore() {
+        return OffloadingScore;
+    }
+
+    public void setOffloadingScore(int offloadingScore) {
+        OffloadingScore = offloadingScore;
     }
 
 //    public static MamocNode fromJSON(String deviceJSON) {

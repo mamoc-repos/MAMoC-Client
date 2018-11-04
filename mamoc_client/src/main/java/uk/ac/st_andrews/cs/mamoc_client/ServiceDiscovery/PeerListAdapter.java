@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client;
+package uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.R;
 
 public class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHolder> {
 
@@ -31,16 +32,13 @@ public class PeerListAdapter extends RecyclerView.Adapter<PeerListAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.deviceDTO = mDevices.get(position);
-        holder.mContentView.setText(mDevices.get(position).getManufacturer() + " - " + mDevices.get(position).getIp());
+        holder.mContentView.setText(mDevices.get(position).getDeviceID() + " - " + mDevices.get(position).getIp());
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.deviceDTO);
-                }
+        holder.mView.setOnClickListener(v -> {
+            if (null != mListener) {
+                // Notify the active callbacks interface (the activity, if the
+                // fragment is attached to one) that an item has been selected.
+                mListener.onListFragmentInteraction(holder.deviceDTO);
             }
         });
     }

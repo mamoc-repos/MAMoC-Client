@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client;
+package uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.R;
 
 public class PeerListFragment extends Fragment {
 

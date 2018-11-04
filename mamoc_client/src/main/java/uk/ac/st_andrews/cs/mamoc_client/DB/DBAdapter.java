@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
+import static uk.ac.st_andrews.cs.mamoc_client.DB.DBHelper.TABLE_MOBILE_DEVICES;
+
 public class DBAdapter {
     private static DBAdapter instance;
     private static Object lockObject = new Object();
@@ -46,13 +48,10 @@ public class DBAdapter {
         values.put(DBHelper.COL_DEV_JOINED, device.getJoinedDate());
         values.put(DBHelper.COL_DEV_BATTERY_LEVEL, device.getBatteryLevel());
         values.put(DBHelper.COL_DEV_BATTERY_STATE, device.getBatteryState().name());
-        values.put(DBHelper.COL_DEV_MODEL, device.getManufacturer());
-        values.put(DBHelper.COL_DEV_PORT, device.getPort());
-        values.put(DBHelper.COL_DEV_VERSION, device.getOsVersion());
+        values.put(DBHelper.COL_OFFLOADING_SCORE, device.getOffloadingScore());
 
         if (!deviceExists(device.getIp())) {
-            long rowId = db.insert(DBHelper.TABLE_DEVICES, null, values);
-            return rowId;
+            return db.insert(TABLE_MOBILE_DEVICES, null, values);
         }
 
         return -1;
@@ -61,7 +60,7 @@ public class DBAdapter {
     public ArrayList<MobileNode> getMobileDevicesList() {
         ArrayList<MobileNode> devices = null;
 
-        Cursor cursor = db.query(DBHelper.TABLE_DEVICES, null, null, null, null, null,
+        Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, null, null, null, null,
                 DBHelper.COL_DEV_ID);
 
         if (cursor != null) {
@@ -78,9 +77,7 @@ public class DBAdapter {
         int joinedIndex = cursor.getColumnIndex(DBHelper.COL_DEV_JOINED);
         int blIndex = cursor.getColumnIndex(DBHelper.COL_DEV_BATTERY_LEVEL);
         int bsIndex = cursor.getColumnIndex(DBHelper.COL_DEV_BATTERY_STATE);
-        int modelIndex = cursor.getColumnIndex(DBHelper.COL_DEV_MODEL);
-        int portIndex = cursor.getColumnIndex(DBHelper.COL_DEV_PORT);
-        int versionIndex = cursor.getColumnIndex(DBHelper.COL_DEV_VERSION);
+        int osIndex = cursor.getColumnIndex(DBHelper.COL_OFFLOADING_SCORE);
 
         while (cursor.moveToNext()) {
             MobileNode device = new MobileNode(context);
@@ -93,9 +90,7 @@ public class DBAdapter {
             device.setJoinedDate(Long.parseLong(cursor.getString(joinedIndex)));
             device.setBatteryLevel(Integer.parseInt(cursor.getString(blIndex)));
             device.setBatteryState(cursor.getString(bsIndex));
-            device.setPort(cursor.getInt(portIndex));
-            device.setOsVersion(cursor.getString(versionIndex));
-            device.setManufacturer(cursor.getString(modelIndex));
+            device.setOffloadingScore(cursor.getInt(osIndex));
 
             devices.add(device);
         }
@@ -108,19 +103,19 @@ public class DBAdapter {
     }
 
     private boolean deviceExists(String ip) {
-        Cursor cursor = db.query(DBHelper.TABLE_DEVICES, null, DBHelper.COL_DEV_IP + "=?", new
+        Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, DBHelper.COL_DEV_IP + "=?", new
                 String[]{ip}, null, null, null);
 
         return (cursor.getCount() > 0);
     }
 
     public int clearDatabase() {
-        int rowsAffected = db.delete(DBHelper.TABLE_DEVICES, null, null);
+        int rowsAffected = db.delete(TABLE_MOBILE_DEVICES, null, null);
         return rowsAffected;
     }
 
     public boolean removeDevice(String ip) {
-        int rowsAffected = db.delete(DBHelper.TABLE_DEVICES, DBHelper.COL_DEV_IP + "=?"
+        int rowsAffected = db.delete(TABLE_MOBILE_DEVICES, DBHelper.COL_DEV_IP + "=?"
                 , new String[]{ip});
         return (rowsAffected > 0);
     }
@@ -128,7 +123,7 @@ public class DBAdapter {
     public MobileNode getMobileDevice(String senderIP) {
         MobileNode device = null;
 
-        Cursor cursor = db.query(DBHelper.TABLE_DEVICES, null, DBHelper.COL_DEV_IP + "=?",
+        Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, DBHelper.COL_DEV_IP + "=?",
                 new String[]{senderIP}, null, null, DBHelper.COL_DEV_ID);
 
         if (cursor != null) {
@@ -145,9 +140,7 @@ public class DBAdapter {
         int joinedIndex = cursor.getColumnIndex(DBHelper.COL_DEV_JOINED);
         int blIndex = cursor.getColumnIndex(DBHelper.COL_DEV_BATTERY_LEVEL);
         int bsIndex = cursor.getColumnIndex(DBHelper.COL_DEV_BATTERY_STATE);
-        int modelIndex = cursor.getColumnIndex(DBHelper.COL_DEV_MODEL);
-        int portIndex = cursor.getColumnIndex(DBHelper.COL_DEV_PORT);
-        int versionIndex = cursor.getColumnIndex(DBHelper.COL_DEV_VERSION);
+        int osIndex = cursor.getColumnIndex(DBHelper.COL_OFFLOADING_SCORE);
 
         while (cursor.moveToNext()) {
             device.setIp(cursor.getString(ipIndex));
@@ -158,9 +151,7 @@ public class DBAdapter {
             device.setJoinedDate(Long.parseLong(cursor.getString(joinedIndex)));
             device.setBatteryLevel(Integer.parseInt(cursor.getString(blIndex)));
             device.setBatteryState(cursor.getString(bsIndex));
-            device.setPort(cursor.getInt(portIndex));
-            device.setOsVersion(cursor.getString(versionIndex));
-            device.setManufacturer(cursor.getString(modelIndex));
+            device.setOffloadingScore(cursor.getInt(osIndex));
         }
 
         if (!cursor.isClosed()) {

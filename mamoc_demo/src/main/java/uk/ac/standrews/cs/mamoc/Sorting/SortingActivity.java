@@ -14,8 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
+import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
+import uk.ac.st_andrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
@@ -30,7 +30,7 @@ public class SortingActivity extends DemoBaseActivity {
 
     //variables
     private String fileSize;
-    private CommunicationController controller;
+    private MamocFramework mamocFramework;
 
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
@@ -58,7 +58,8 @@ public class SortingActivity extends DemoBaseActivity {
         localButton.setOnClickListener(view -> sortText(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> sortText(ExecutionLocation.EDGE));
 
-        controller = CommunicationController.getInstance(this);
+        mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         showBackArrow("Sorting Demo");
     }
@@ -107,7 +108,7 @@ public class SortingActivity extends DemoBaseActivity {
     private void runEdge() {
 
         try{
-            controller.runRemote(this, ExecutionLocation.EDGE, RPC_NAME, fileSize);
+            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, fileSize);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();

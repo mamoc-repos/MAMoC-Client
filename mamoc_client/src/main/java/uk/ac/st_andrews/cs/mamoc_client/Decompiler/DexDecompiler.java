@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client;
+package uk.ac.st_andrews.cs.mamoc_client.Decompiler;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -19,6 +19,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import jadx.api.JadxDecompiler;
+import uk.ac.st_andrews.cs.mamoc_client.Execution.ExceptionHandler;
 
 public class DexDecompiler {
 

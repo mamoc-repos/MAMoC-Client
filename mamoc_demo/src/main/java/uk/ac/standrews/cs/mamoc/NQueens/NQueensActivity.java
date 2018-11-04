@@ -9,7 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
+import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
+import uk.ac.st_andrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
@@ -23,13 +24,14 @@ public class NQueensActivity extends DemoBaseActivity {
 
     //variables
     private int N;
-    private CommunicationController controller;
+    private MamocFramework mamocFramework;
 
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
 
-        controller = CommunicationController.getInstance(this);
+        mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         localButton = findViewById(R.id.buttonLocal);
         edgeButton = findViewById(R.id.buttonEdge);
@@ -42,6 +44,7 @@ public class NQueensActivity extends DemoBaseActivity {
 
         localButton.setOnClickListener(view -> runQueens(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> runQueens(ExecutionLocation.EDGE));
+        cloudButton.setOnClickListener(view -> runQueens(ExecutionLocation.PUBLIC_CLOUD));
 
         showBackArrow("NQueens Demo");
     }
@@ -67,6 +70,9 @@ public class NQueensActivity extends DemoBaseActivity {
             case EDGE:
                 runEdge(N);
                 break;
+            case PUBLIC_CLOUD:
+                runCloud(N);
+                break;
         }
     }
 
@@ -87,12 +93,20 @@ public class NQueensActivity extends DemoBaseActivity {
     }
 
     private void runEdge(int N) {
-
         try{
-            controller.runRemote(NQueensActivity.this, ExecutionLocation.EDGE, RPC_NAME, "None", N);
+            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, "None", N);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runCloud(int N) {
+        try{
+            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, RPC_NAME, "None", N);
+        } catch (Exception e){
+            Log.e("runCloud", e.getLocalizedMessage());
+            Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
         }
     }
 

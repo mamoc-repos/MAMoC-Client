@@ -14,8 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.st_andrews.cs.mamoc_client.profilers.ExecutionLocation;
+import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
+import uk.ac.st_andrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
@@ -30,7 +30,7 @@ public class SearchActivity extends DemoBaseActivity {
 
     //variables
     private String keyword, fileSize;
-    private CommunicationController controller;
+    private MamocFramework mamocFramework;
 
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
@@ -58,10 +58,11 @@ public class SearchActivity extends DemoBaseActivity {
 
         localButton.setOnClickListener(view -> searchText(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> searchText(ExecutionLocation.EDGE));
-        cloudButton.setOnClickListener(View -> searchText(ExecutionLocation.REMOTE_CLOUD));
+        cloudButton.setOnClickListener(View -> searchText(ExecutionLocation.PUBLIC_CLOUD));
         mamocButton.setOnClickListener(View -> searchText(ExecutionLocation.DYNAMIC));
 
-        controller = CommunicationController.getInstance(this);
+        mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         showBackArrow("Searching Demo");
     }
@@ -99,7 +100,7 @@ public class SearchActivity extends DemoBaseActivity {
             case EDGE:
                 runEdge(keyword);
                 break;
-            case REMOTE_CLOUD:
+            case PUBLIC_CLOUD:
                 runCloud(keyword);
                 break;
         }
@@ -128,7 +129,7 @@ public class SearchActivity extends DemoBaseActivity {
         String fileContent = getContentFromTextFile(fileSize + ".txt");
 
         try{
-            controller.runRemote(this, ExecutionLocation.EDGE, RPC_NAME, fileSize, keyword);
+            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, fileSize, keyword);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
@@ -140,10 +141,10 @@ public class SearchActivity extends DemoBaseActivity {
         String fileContent = getContentFromTextFile(fileSize + ".txt");
 
         try{
-            controller.runRemote(this, ExecutionLocation.REMOTE_CLOUD, RPC_NAME, fileSize, keyword);
+            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, RPC_NAME, fileSize, keyword);
         } catch (Exception e){
-            Log.e("runEdge", e.getLocalizedMessage());
-            Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+            Log.e("runCloud", e.getLocalizedMessage());
+            Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
         }
     }
 

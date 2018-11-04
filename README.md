@@ -3,7 +3,8 @@
 This is a mobile computation offloading framework that offloads the compute-intensive tasks in mobile devices to more powerful
 surrogates (edge devices and remote cloud instances). 
 
-##Server component installation
+
+## Server component installation
 
 In order to allow offloading from mobile devices to servers, we need to first setup the servers. 
 
@@ -24,13 +25,15 @@ docker run --rm -it --name "mamoc-server" --network="host" -p 8080:8080 dawan/ma
 If you want to get the source code of the server and host it on bare metal. Navigate to [`MAMoC-Server`](https://github.com/dawand/MAMoC-Server) 
 for setting up the router and the server components.
 
+
 ## Dex Decompiler
 
 We have performed some modifications to [Jadx Decompiler](https://github.com/skylot/jadx) to make it callable within our framework. 
 We decompile all the classes and methods which are annotated with @Offloadable to allow them to be offloaded to external resource providers.
  
 
-##Demo apps
+
+## Demo apps
 
 We are using the following tasks to demonstrate the usage of our framework:
 
@@ -51,7 +54,8 @@ we need to send the file over hence it is annotated with @ResourceDependent.
 
 ## Scimark 2.0 Benchmarks
 
-##License
+
+## License
 
 
 

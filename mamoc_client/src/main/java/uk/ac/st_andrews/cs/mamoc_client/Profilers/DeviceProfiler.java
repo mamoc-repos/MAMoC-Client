@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client.profilers;
+package uk.ac.st_andrews.cs.mamoc_client.Profilers;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

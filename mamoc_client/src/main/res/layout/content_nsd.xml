@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".NSD_Activity"
+    tools:context=".ServiceDiscovery.NSD_Activity"
     tools:showIn="@layout/nsd_activity">
 
     <FrameLayout
@@ -25,7 +25,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="uk.ac.st_andrews.cs.mamoc_client.PeerListFragment"
+            android:name="uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.PeerListFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

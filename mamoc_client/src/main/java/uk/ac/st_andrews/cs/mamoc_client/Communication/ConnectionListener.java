@@ -34,7 +34,7 @@ public class ConnectionListener extends Thread {
     @Override
     public void run() {
         try {
-            Log.d("DXDX", Build.MANUFACTURER + ": conn listener: " + mPort);
+            Log.d(TAG, Build.MANUFACTURER + ": conn listener: " + mPort);
             mServer = new ServerSocket(mPort);
             mServer.setReuseAddress(true);
 
@@ -54,13 +54,13 @@ public class ConnectionListener extends Thread {
 
                 handleData(socket.getInetAddress().getHostAddress(), socket.getInputStream());
             }
-            Log.e("DXDX", Build.MANUFACTURER + ": Connection listener terminated. " +
+            Log.e(TAG, Build.MANUFACTURER + ": Connection listener terminated. " +
                     "acceptRequests: " + acceptRequests);
             socket.close();
             socket = null;
 
         } catch (IOException e) {
-            Log.e("DXDX", Build.MANUFACTURER + ": Connection listener EXCEPTION. " + e.toString());
+            Log.e(TAG, Build.MANUFACTURER + ": Connection listener EXCEPTION. " + e.toString());
             e.printStackTrace();
         }
     }

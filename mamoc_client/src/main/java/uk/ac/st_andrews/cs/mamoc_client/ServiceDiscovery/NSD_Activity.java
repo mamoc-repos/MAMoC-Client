@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client;
+package uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -27,9 +27,10 @@ import uk.ac.st_andrews.cs.mamoc_client.Communication.DataHandler;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.DataSender;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.NsdHelper;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.TransferConstants;
+import uk.ac.st_andrews.cs.mamoc_client.Constants;
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.st_andrews.cs.mamoc_client.R;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.DialogUtils;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 

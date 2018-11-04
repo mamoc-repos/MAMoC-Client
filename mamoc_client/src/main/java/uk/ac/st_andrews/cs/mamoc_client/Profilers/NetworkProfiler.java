@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client.profilers;
+package uk.ac.st_andrews.cs.mamoc_client.Profilers;
 
 import android.Manifest;
 import android.content.Context;
@@ -29,7 +29,7 @@ import static uk.ac.st_andrews.cs.mamoc_client.Constants.PONG;
 
 public class NetworkProfiler {
 
-    public static final String TAG = "DeviceProfiler";
+    public static final String TAG = "NetworkProfiler";
 
     private final Context context;
 
@@ -168,7 +168,7 @@ public class NetworkProfiler {
                     result = NetworkType.UNKNOWN;
                 } else if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI
                         || activeNetwork.getType() == ConnectivityManager.TYPE_WIMAX) {
-                    result = NetworkType.WIFI_WIFIMAX;
+                    result = NetworkType.WIFI;
                 } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
                     TelephonyManager manager =
                             (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -179,14 +179,6 @@ public class NetworkProfiler {
                             // Unknown
                             case TelephonyManager.NETWORK_TYPE_UNKNOWN:
                                 result = NetworkType.CELLULAR_UNKNOWN;
-                                break;
-                            // Cellular Data 2G
-                            case TelephonyManager.NETWORK_TYPE_EDGE:
-                            case TelephonyManager.NETWORK_TYPE_GPRS:
-                            case TelephonyManager.NETWORK_TYPE_CDMA:
-                            case TelephonyManager.NETWORK_TYPE_IDEN:
-                            case TelephonyManager.NETWORK_TYPE_1xRTT:
-                                result = NetworkType.CELLULAR_2G;
                                 break;
                             // Cellular Data 3G
                             case TelephonyManager.NETWORK_TYPE_UMTS:
@@ -202,10 +194,6 @@ public class NetworkProfiler {
                             // Cellular Data 4G
                             case TelephonyManager.NETWORK_TYPE_LTE:
                                 result = NetworkType.CELLULAR_4G;
-                                break;
-                            // Cellular Data Unknown Generation
-                            default:
-                                result = NetworkType.CELLULAR_UNIDENTIFIED_GEN;
                                 break;
                         }
                     }

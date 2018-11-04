@@ -1,6 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client.profilers;
-
-import android.util.Log;
+package uk.ac.st_andrews.cs.mamoc_client.Profilers;
 
 public class Profiler {
     public static final String TAG = "profiler";

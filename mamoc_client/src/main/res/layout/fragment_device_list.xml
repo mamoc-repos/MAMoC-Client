@@ -12,5 +12,5 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="uk.ac.st_andrews.cs.mamoc_client.PeerListFragment"
+    tools:context="uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.PeerListFragment"
     tools:listitem="@layout/fragment_device" />

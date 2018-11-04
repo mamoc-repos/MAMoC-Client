@@ -2,7 +2,6 @@ package uk.ac.st_andrews.cs.mamoc_client.Model;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -10,14 +9,13 @@ import com.google.gson.JsonSyntaxException;
 import java.util.Date;
 
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
-import uk.ac.st_andrews.cs.mamoc_client.profilers.BatteryState;
-import uk.ac.st_andrews.cs.mamoc_client.profilers.DeviceProfiler;
+import uk.ac.st_andrews.cs.mamoc_client.Profilers.BatteryState;
+import uk.ac.st_andrews.cs.mamoc_client.Profilers.DeviceProfiler;
 
 public class MobileNode extends MamocNode{
 
     private String deviceID;
     private String osVersion;
-
     private String manufacturer;
     private int batteryLevel;
     private BatteryState batteryState;
@@ -44,22 +42,6 @@ public class MobileNode extends MamocNode{
 
     public void setDeviceID(String deviceID) {
         this.deviceID = deviceID;
-    }
-
-    public String getOsVersion() {
-        return osVersion;
-    }
-
-    public void setOsVersion(String osVersion) {
-        this.osVersion = osVersion;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
     }
 
     public int getBatteryLevel() {

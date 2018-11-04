@@ -1,6 +1,9 @@
 package uk.ac.st_andrews.cs.mamoc_client;
 
 import android.Manifest;
+import android.os.Environment;
+
+import java.io.File;
 
 public class Constants {
 
@@ -25,4 +28,9 @@ public class Constants {
     public static final String REQUEST_READ_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
     public static final int PHONE_ACCESS_PERM_REQ_CODE = 20;
     public static final int REQUEST_CODE_ASK_PERMISSIONS = 0;
+
+//    private static final String SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath();
+//    public static final String MAMOC_FOLDER = SDCARD + File.separator + "mamoc";
+//    public static final String DB_FILE = MAMOC_FOLDER + File.separator + "db-";
+
 }

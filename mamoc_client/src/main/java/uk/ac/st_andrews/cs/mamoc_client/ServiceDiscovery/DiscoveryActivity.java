@@ -1,4 +1,4 @@
-package uk.ac.st_andrews.cs.mamoc_client;
+package uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -30,6 +30,7 @@ import io.crossbar.autobahn.wamp.types.ExitInfo;
 import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.st_andrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.EdgeNode;
+import uk.ac.st_andrews.cs.mamoc_client.R;
 import uk.ac.st_andrews.cs.mamoc_client.Utils.Utils;
 
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.CLOUD_IP;

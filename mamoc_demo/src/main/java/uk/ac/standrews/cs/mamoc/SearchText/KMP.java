@@ -1,12 +1,8 @@
 package uk.ac.standrews.cs.mamoc.SearchText;
 
 import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
-import uk.ac.st_andrews.cs.mamoc_client.Annotation.Parallelizable;
-import uk.ac.st_andrews.cs.mamoc_client.Annotation.ResourceDependent;
 
-@Offloadable
-@Parallelizable
-@ResourceDependent
+@Offloadable(resourceDependent = true, parallelizable = true)
 public class KMP {
 
     String content;
