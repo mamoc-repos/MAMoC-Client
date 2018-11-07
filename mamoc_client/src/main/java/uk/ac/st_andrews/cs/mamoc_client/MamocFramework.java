@@ -38,15 +38,16 @@ public class MamocFramework {
         this.mContext = context;
     }
 
-    public void start(){
+    public void start() {
         commController = CommunicationController.getInstance(mContext);
         execController = ExecutionController.getInstance(mContext);
         decisionEngine = DecisionEngine.getInstance(mContext);
 
-        //        if (!checkAnnotatedIndexing()) {
-        findOffloadableClasses();
-        //        }
+        if (!checkAnnotatedIndexing()) {
+            findOffloadableClasses();
+        }
     }
+
     public static MamocFramework getInstance(Context context) {
         if (instance == null) {
             synchronized (MamocFramework.class) {
@@ -124,7 +125,7 @@ public class MamocFramework {
         return null;
     }
 
-    public void execute(ExecutionLocation location, String rpc_name, String resource_name, Object... params){
+    public void execute(ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
         execController.runRemote(mContext, location, rpc_name, resource_name, params);
     }
 }

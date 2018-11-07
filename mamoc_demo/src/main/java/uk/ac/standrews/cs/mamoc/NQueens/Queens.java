@@ -5,11 +5,12 @@ import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 @Offloadable
 public class Queens {
 
-    int n = 13;
+    int n;
 
     public Queens(int N){
         this.n = N;
     }
+
     public void run() {
         int[] a = new int[n];
         enumerate(a, 0);

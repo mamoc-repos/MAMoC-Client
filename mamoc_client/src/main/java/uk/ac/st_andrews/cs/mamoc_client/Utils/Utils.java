@@ -1,11 +1,13 @@
 package uk.ac.st_andrews.cs.mamoc_client.Utils;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.Build;
+import android.support.annotation.RequiresPermission;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -43,6 +45,9 @@ public class Utils {
      * @param useIPv4   true=return ipv4, false=return ipv6
      * @return  address or empty string
      */
+    @RequiresPermission(allOf = {
+            Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.INTERNET
+    })
     public static String getIPAddress(boolean useIPv4) {
         try {
             List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());

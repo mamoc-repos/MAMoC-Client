@@ -24,9 +24,11 @@ public class DecisionEngine {
         return instance;
     }
 
+
     public ExecutionLocation makeDecision(String taskName, Boolean isParallel){
 
-        // check if method has previously been offloaded
+
+        // check if task has previously been offloaded
 
         // if exists
             // take average execution speed and energy consumption

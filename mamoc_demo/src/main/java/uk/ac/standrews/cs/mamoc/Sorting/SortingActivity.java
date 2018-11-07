@@ -59,7 +59,6 @@ public class SortingActivity extends DemoBaseActivity {
         edgeButton.setOnClickListener(view -> sortText(ExecutionLocation.EDGE));
 
         mamocFramework = MamocFramework.getInstance(this);
-        mamocFramework.start();
 
         showBackArrow("Sorting Demo");
     }

@@ -89,9 +89,7 @@ public class ExecutionController {
         TreeSet<EdgeNode> edgeNodes = MamocFramework.getInstance(context).commController.getEdgeDevices();
         if (!edgeNodes.isEmpty()) {
             EdgeNode node = edgeNodes.first();
-
             runRemotely(context, node, rpc_name, resource_name, params);
-
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
         }
@@ -101,9 +99,7 @@ public class ExecutionController {
         TreeSet<CloudNode> cloudNodes = MamocFramework.getInstance(context).commController.getCloudDevices();
         if (!cloudNodes.isEmpty()) {
             CloudNode node = cloudNodes.first();
-
             runRemotely(context, node, rpc_name, resource_name, params);
-
         } else {
             Toast.makeText(context, "No cloud node exists", Toast.LENGTH_SHORT).show();
         }

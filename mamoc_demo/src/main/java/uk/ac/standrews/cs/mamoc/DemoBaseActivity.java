@@ -16,10 +16,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
+
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
 
 public abstract class DemoBaseActivity extends AppCompatActivity {
 
+    private MamocFramework mamocFramework;
     private ProgressDialog mProgressDialog;
 
     @Override
@@ -27,6 +30,9 @@ public abstract class DemoBaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         onViewReady(savedInstanceState, getIntent());
+
+        mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
                 new IntentFilter(OFFLOADING_RESULT_SUB));

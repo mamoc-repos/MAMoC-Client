@@ -42,48 +42,21 @@ public class DeviceProfiler {
         return device_unique_id;
     }
 
-    public int getNumCpuCores() {
-        try {
-            // Get directory containing CPU info
-            File dir = new File("/sys/devices/system/cpu/");
-            // Filter to only list the devices we care about
-            File[] files = dir.listFiles(new FileFilter() {
-                @Override
-                public boolean accept(File file) {
-                    // Check if filename is "cpu", followed by a single digit number
-                    if (Pattern.matches("cpu[0-9]+", file.getName())) {
-                        return true;
-                    }
-                    return false;
-                }
-            });
-            // Return the number of cores (virtual CPU devices)
-            return files.length;
-        } catch (Exception e) {
-            // Default to return 1 core
-            Log.e(TAG, "Failed to count number of cores, defaulting to 1", e);
-            return 1;
-        }
-    }
-
-    @SuppressLint("StringFormatInvalid")
-    public List<String> getCpuCurFreq(Context mContext) {
-        List<String> result = new ArrayList<>();
+    public double getTotalCpuFreq(Context mContext) {
+        double result = 0;
         int mCpuCoreNumber = getNumCpuCores();
         BufferedReader br = null;
 
         try {
             for (int i = 0; i < mCpuCoreNumber; i++) {
-                final String path = "/sys/devices/system/cpu/cpu" + i + "/cpufreq/scaling_cur_freq";
+                final String path = "/sys/devices/system/cpu/cpu" + i + "/cpufreq/cpuinfo_max_freq";
                 File mFile = new File(path);
                 if (mFile.exists()) {
                     br = new BufferedReader(new FileReader(path));
                     String line = br.readLine();
                     if (line != null) {
-                        result.add(String.format(mContext.getResources().getString(R.string.cpu_cur_freq), i, line));
+                        result += Double.parseDouble(line);
                     }
-                } else {
-                    result.add(String.format(mContext.getResources().getString(R.string.cpu_stopped), i));
                 }
                 br.close();
             }
@@ -100,6 +73,22 @@ public class DeviceProfiler {
         }
 
         return result;
+    }
+
+    public int getNumCpuCores() {
+        try {
+            File dir = new File("/sys/devices/system/cpu/");
+            File[] files = dir.listFiles(file -> {
+                if (Pattern.matches("cpu[0-9]+", file.getName())) {
+                    return true;
+                }
+                return false;
+            });
+            return files.length;
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to count number of cores, defaulting to 1", e);
+            return 1;
+        }
     }
 
     public final int getBatteryPercentage() {

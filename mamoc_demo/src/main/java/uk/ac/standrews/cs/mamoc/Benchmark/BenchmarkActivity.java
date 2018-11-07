@@ -31,7 +31,6 @@ public class BenchmarkActivity extends DemoBaseActivity {
         super.onViewReady(savedInstanceState, intent);
 
         mamocFramework = MamocFramework.getInstance(this);
-        mamocFramework.start();
 
         localButton = findViewById(R.id.buttonLocal);
         edgeButton = findViewById(R.id.buttonEdge);

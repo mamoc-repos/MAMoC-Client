@@ -1,5 +1,7 @@
 package jadx.core;
 
+import android.os.Build;
+
 import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
@@ -48,6 +50,12 @@ public final class ProcessClass {
 	}
 
 	private static void processDependencies(ClassNode cls, List<IDexTreeVisitor> passes) {
-		cls.getDependencies().forEach(depCls -> process(depCls, passes, null));
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			cls.getDependencies().forEach(depCls -> process(depCls, passes, null));
+		} else {
+			for (ClassNode depCls: cls.getDependencies()){
+				process(depCls, passes, null);
+			}
+		}
 	}
 }

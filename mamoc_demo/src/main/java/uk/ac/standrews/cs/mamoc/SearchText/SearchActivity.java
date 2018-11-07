@@ -62,7 +62,6 @@ public class SearchActivity extends DemoBaseActivity {
         mamocButton.setOnClickListener(View -> searchText(ExecutionLocation.DYNAMIC));
 
         mamocFramework = MamocFramework.getInstance(this);
-        mamocFramework.start();
 
         showBackArrow("Searching Demo");
     }

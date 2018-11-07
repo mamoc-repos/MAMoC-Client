@@ -1,5 +1,7 @@
 package jadx.api;
 
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -111,7 +113,19 @@ public final class JavaClass implements JavaNode {
 					rootDecompiler.getMethodsMap().put(m, javaMethod);
 				}
 			}
-			mths.sort(Comparator.comparing(JavaMethod::getName));
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+				mths.sort(Comparator.comparing(JavaMethod::getName));
+			} else{
+
+                Collections.sort(mths, (t1, t2) -> {
+                        int res = String.CASE_INSENSITIVE_ORDER.compare(t1.getName(), t2.getName());
+                        if (res == 0) {
+                            res = t1.getName().compareTo(t2.getName());
+                        }
+                        return res;
+
+                });
+			}
 			this.methods = Collections.unmodifiableList(mths);
 		}
 	}

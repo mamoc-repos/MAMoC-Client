@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.WifiManager;
 import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -14,15 +13,10 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.Inet4Address;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.NetworkInterface;
 import java.net.Socket;
-import java.net.SocketException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
+
+import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PING;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PONG;
@@ -41,7 +35,7 @@ public class NetworkProfiler {
         this.context = context;
     }
 
-    public static void measureRtt(String serverIp, int serverPort) {
+    public int measureRtt(String serverIp, int serverPort) {
         Socket clientSocket = new Socket();
         try {
             clientSocket.connect(new InetSocketAddress(serverIp, serverPort), 1000);
@@ -50,7 +44,7 @@ public class NetworkProfiler {
                  InputStream is = clientSocket.getInputStream();
                  DataInputStream dis = new DataInputStream(is)) {
 
-                rttPing(is, os);
+                return rttPing(is, os);
             } catch (IOException e) {
                 Log.w(TAG, "Could not connect with server for measuring the RTT: " + e);
             }
@@ -63,17 +57,11 @@ public class NetworkProfiler {
                 Log.d(TAG, "Could not close socket on RTT measuring: " + e);
             }
         }
+
+        return -1;
     }
 
-    /**
-     * Doing a few pings on a given connection to measure how big the RTT is between the client and
-     * the remote machine
-     *
-     * @param in
-     * @param out
-     * @return
-     */
-    private static int rttPing(InputStream in, OutputStream out) {
+    private int rttPing(InputStream in, OutputStream out) {
         Log.d(TAG, "Pinging");
         int tRtt = 0;
         int response;
@@ -102,62 +90,11 @@ public class NetworkProfiler {
         return rtt;
     }
 
-    public final boolean isWifiEnabled() {
-        boolean wifiState = false;
-
-        WifiManager wifiManager =
-                (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        if (wifiManager != null) {
-            wifiState = wifiManager.isWifiEnabled();
-        }
-        return wifiState;
-    }
-
     @RequiresPermission(allOf = {
             Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.INTERNET
     })
-    public final boolean isNetworkAvailable() {
-        if (hasPermission(context, Manifest.permission.INTERNET)
-                && hasPermission(context, Manifest.permission.ACCESS_NETWORK_STATE)) {
-            ConnectivityManager cm = (ConnectivityManager) context.getApplicationContext()
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (cm != null) {
-                NetworkInfo netInfo = cm.getActiveNetworkInfo();
-                return netInfo != null && netInfo.isConnected();
-            }
-        }
-        return false;
-    }
-
-    public final String getIPv4Address() {
-        String result = null;
-        try {
-            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
-            for (NetworkInterface intf : interfaces) {
-                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
-                for (InetAddress addr : addrs) {
-                    if (!addr.isLoopbackAddress()) {
-                        String sAddr = addr.getHostAddress().toUpperCase(Locale.getDefault());
-                        boolean isIPv4 = addr instanceof Inet4Address;
-                        if (isIPv4) {
-                            result = sAddr;
-                        }
-                    }
-                }
-            }
-        } catch (SocketException e) {
-                Log.e("network", e.getLocalizedMessage());
-        }
-
-        return result;
-    }
-
-    @RequiresPermission(allOf = {
-            Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.INTERNET
-    })
-    @NetworkType
-    public final int getNetworkType() {
-        int result = NetworkType.UNKNOWN;
+    public final NetworkType getNetworkType() {
+        NetworkType result = NetworkType.UNKNOWN;
         if (hasPermission(context, Manifest.permission.ACCESS_NETWORK_STATE)) {
             ConnectivityManager cm =
                     (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -15,7 +15,7 @@ package uk.ac.standrews.cs.mamoc.Benchmark;
 
 public class FFT {
 
-  public static final double num_flops(int N)
+  static double num_flops(int N)
   {
 	 double Nd = (double) N;
 	 double logN = (double) log2(N);
@@ -29,7 +29,7 @@ public class FFT {
     transform_internal(data, -1); }
 
   /** Compute Inverse Fast Fourier Transform of (complex) data, in place.*/
-  public static void inverse (double data[]) {
+  static void inverse(double data[]) {
     transform_internal(data, +1);
     // Normalize
     int nd=data.length;
@@ -56,35 +56,16 @@ public class FFT {
       diff += d*d; }
     return Math.sqrt(diff/nd); }
 
-  /** Make a random array of n (complex) elements. */
-  public static double[] makeRandom(int n){
-    int nd = 2*n;
-    double data[] = new double[nd];
-    for(int i=0; i<nd; i++)
-      data[i]= Math.random();
-    return data; }
-
-  /** Simple Test routine. */
-  public static void main(String args[]){
-    if (args.length == 0) {
-      int n = 1024;
-      System.out.println("n="+n+" => RMS Error="+test(makeRandom(n)));
-    }
-    for(int i=0; i<args.length; i++) {
-      int n = Integer.parseInt(args[i]);
-      System.out.println("n="+n+" => RMS Error="+test(makeRandom(n)));
-    }
-  }
   /* ______________________________________________________________________ */
 
-  protected static int log2 (int n){
+  private static int log2(int n){
     int log = 0;
     for(int k=1; k < n; k *= 2, log++);
     if (n != (1 << log))
       throw new Error("FFT: Data length is not a power of 2!: "+n);
     return log; }
 
-  protected static void transform_internal (double data[], int direction) {
+  private static void transform_internal(double data[], int direction) {
 	if (data.length == 0) return;
 	int n = data.length/2;
     if (n == 1) return;         // Identity operation!
@@ -147,7 +128,7 @@ public class FFT {
   }
 
 
-  protected static void bitreverse(double data[]) {
+  private static void bitreverse(double data[]) {
     /* This is the Goldrader bit-reversal algorithm */
     int n=data.length/2;
 	int nm1 = n-1;
