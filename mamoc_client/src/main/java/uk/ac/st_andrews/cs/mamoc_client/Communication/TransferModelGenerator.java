@@ -15,13 +15,13 @@ class TransferModelGenerator {
     }
 
     static ITransferable generateChatRequestModel(MobileNode device) {
-        return new TransferModel(TransferConstants.CHAT_REQUEST_SENT, TransferConstants.TYPE_REQUEST,
+        return new TransferModel(TransferConstants.REQUEST_SENT, TransferConstants.TYPE_REQUEST,
                 device.toString());
     }
 
     static ITransferable generateChatResponseModel(MobileNode device, boolean isChatRequestAccepted) {
-        int reqCode = isChatRequestAccepted ? TransferConstants.CHAT_REQUEST_ACCEPTED :
-                TransferConstants.CHAT_REQUEST_REJECTED;
+        int reqCode = isChatRequestAccepted ? TransferConstants.REQUEST_ACCEPTED :
+                TransferConstants.REQUEST_REJECTED;
         return new TransferModel(reqCode, TransferConstants.TYPE_RESPONSE, device.toString());
     }
 }

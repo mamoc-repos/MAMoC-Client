@@ -13,15 +13,15 @@ class DBHelper extends SQLiteOpenHelper {
 
     // offload table columns
     static final String TABLE_OFFLOAD = "offloads";
-    static final String OFFLOAD_ID = "offload_id";
-    static final String COL_APP_NAME = "app_name";
-    static final String COL_TASK_NAME = "task_name";
-    static final String COL_EXEC_LOCATION = "execution_location";
-    static final String COL_NETWORK_TYPE = "network_type";
-    static final String COL_EXECUTION_TIME = "execution_time";
-    static final String COL_COMMUNICATION_OVERHEAD = "communication_overhead";
-    static final String COL_RTT_SPEED = "rtt_speed";
-    static final String COL_OFFLOAD_DATE = "offload_date";
+    static final String OFFLOAD_ID = "offloadid";
+    static final String COL_APP_NAME = "appname";
+    static final String COL_TASK_NAME = "taskname";
+    static final String COL_EXEC_LOCATION = "executionlocation";
+    static final String COL_NETWORK_TYPE = "networktype";
+    static final String COL_EXECUTION_TIME = "executiontime";
+    static final String COL_COMMUNICATION_OVERHEAD = "communicationoverhead";
+    static final String COL_RTT_SPEED = "rttspeed";
+    static final String COL_OFFLOAD_DATE = "offloaddate";
 
     private static final String CREATE_OFFLOAD_TABLE = "CREATE TABLE " + TABLE_OFFLOAD + "("
             + OFFLOAD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -36,17 +36,17 @@ class DBHelper extends SQLiteOpenHelper {
             + ");";
 
     // Mobile devices table columns
-    static final String TABLE_MOBILE_DEVICES = "mobile_devices";
-    static final String COL_DEV_ID = "device_id";
-    static final String COL_DEV_NAME = "device_name";
-    static final String COL_DEV_IP = "ip_address";
-    static final String COL_DEV_CPU_FREQ = "cpu_freq";
-    static final String COL_DEV_CPU_NUM = "cpu_num";
+    static final String TABLE_MOBILE_DEVICES = "mobiledevices";
+    static final String COL_DEV_ID = "deviceid";
+    static final String COL_DEV_NAME = "devicename";
+    static final String COL_DEV_IP = "ipaddress";
+    static final String COL_DEV_CPU_FREQ = "cpufreq";
+    static final String COL_DEV_CPU_NUM = "cpunum";
     static final String COL_DEV_MEMORY = "memory";
     static final String COL_DEV_JOINED = "joined";
-    static final String COL_DEV_BATTERY_LEVEL = "battery_level";
-    static final String COL_DEV_BATTERY_STATE = "battery_state";
-    static final String COL_OFFLOADING_SCORE = "offloading_score";
+    static final String COL_DEV_BATTERY_LEVEL = "batterylevel";
+    static final String COL_DEV_BATTERY_STATE = "batterystate";
+    static final String COL_OFFLOADING_SCORE = "offloadingscore";
 
     private static final String CREATE_MOBILE_DEVICE_TABLE = "CREATE TABLE " + TABLE_MOBILE_DEVICES + "("
             + COL_DEV_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "

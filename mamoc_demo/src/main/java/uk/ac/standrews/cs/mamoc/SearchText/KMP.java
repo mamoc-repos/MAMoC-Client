@@ -5,12 +5,11 @@ import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
 @Offloadable(resourceDependent = true, parallelizable = true)
 public class KMP {
 
-    String content;
-    String pattern;
+    String content, pattern;
 
-    public KMP(String content, String pat) {
+    public KMP(String content, String pattern) {
         this.content = content;
-        this.pattern = pat;
+        this.pattern = pattern;
     }
 
     public int run() {

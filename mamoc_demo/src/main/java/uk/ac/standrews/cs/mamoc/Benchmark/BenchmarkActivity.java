@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import uk.ac.st_andrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
 import uk.ac.st_andrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
@@ -94,21 +92,17 @@ public class BenchmarkActivity extends DemoBaseActivity {
         benchmarkOutput.append("************************************************\n");
     }
 
-//    private void runSimulation(){
-//        int[] baseArray = {7, 25, 15, 4, 1, 10, 14, 24, 2, 22, 5, 23, 11, 18,
-//                20, 13, 6, 17, 3, 19, 16, 9, 12, 8, 21};
-//
-//        double res =0.0;
-//        for(int i=0;i<baseArray.length;i++) {
-//            long startTime = System.nanoTime();
-//
-//            res = new Benchmark(baseArray[i] * 10).run();
-//
-//            long endTime = System.nanoTime();
-//            long MethodDuration = (endTime - startTime);
-//
-//            addLog(String.valueOf(res), MethodDuration * 1.0e-9, 0);
-//        }
-//
-//    }
+    private void runSimulation(){
+
+        for(int i=0;i<3;i++) {
+            long startTime = System.nanoTime();
+
+            double res = new Benchmark().run();
+
+            long endTime = System.nanoTime();
+            long MethodDuration = (endTime - startTime);
+
+            addLog(String.valueOf(res), MethodDuration * 1.0e-9, 0);
+        }
+    }
 }

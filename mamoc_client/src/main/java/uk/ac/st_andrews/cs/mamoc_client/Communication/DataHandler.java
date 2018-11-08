@@ -7,6 +7,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import uk.ac.st_andrews.cs.mamoc_client.DB.DBAdapter;
+import uk.ac.st_andrews.cs.mamoc_client.Model.MamocNode;
 import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
 
 public class DataHandler {
@@ -17,8 +18,8 @@ public class DataHandler {
     public static final String REQUEST_RECEIVED =  "request_received";
     public static final String RESPONSE_RECEIVED = "response_received";
 
-    public static final String KEY_CHAT_REQUEST = "chat_requester_or_responder";
-    public static final String KEY_IS_CHAT_REQUEST_ACCEPTED = "is_chat_request_Accespter";
+    public static final String KEY_REQUEST = "_requester_or_responder";
+    public static final String KEY_IS_REQUEST_ACCEPTED = "is__request_Accespter";
 
     private Context mContext;
     private ITransferable data;
@@ -49,8 +50,8 @@ public class DataHandler {
                 DataSender.sendCurrentDeviceData(mContext, senderIP,
                         dbAdapter.getMobileDevice(senderIP).getPort(), false);
                 break;
-            case TransferConstants.CHAT_REQUEST_SENT:
-                processChatRequestReceipt();
+            case TransferConstants.REQUEST_SENT:
+                processRequestReceipt();
             default:
                 break;
         }
@@ -61,14 +62,14 @@ public class DataHandler {
             case TransferConstants.CLIENT_DATA:
                 processPeerDeviceInfo();
                 break;
-            case TransferConstants.CHAT_DATA:
-                processChatData();
+            case TransferConstants.DATA:
+                processData();
                 break;
-            case TransferConstants.CHAT_REQUEST_ACCEPTED:
-                processChatRequestResponse(true);
+            case TransferConstants.REQUEST_ACCEPTED:
+                processRequestResponse(true);
                 break;
-            case TransferConstants.CHAT_REQUEST_REJECTED:
-                processChatRequestResponse(false);
+            case TransferConstants.REQUEST_REJECTED:
+                processRequestResponse(false);
                 break;
             default:
                 break;
@@ -95,36 +96,38 @@ public class DataHandler {
         broadcaster.sendBroadcast(intent);
     }
 
-    private void processChatRequestReceipt() {
-        String chatRequesterDeviceJSON = data.getData();
-        MobileNode chatRequesterDevice = MobileNode.fromJSON(chatRequesterDeviceJSON);
-        chatRequesterDevice.setIp(senderIP);
+    private void processRequestReceipt() {
+        String RequesterDeviceJSON = data.getData();
+        MobileNode RequesterDevice = MobileNode.fromJSON(RequesterDeviceJSON);
+        RequesterDevice.setIp(senderIP);
 
         Intent intent = new Intent(REQUEST_RECEIVED);
-        intent.putExtra(KEY_CHAT_REQUEST, chatRequesterDevice);
+        intent.putExtra(KEY_REQUEST, RequesterDevice);
         broadcaster.sendBroadcast(intent);
     }
 
-    private void processChatRequestResponse(boolean isRequestAccepted) {
-        String chatResponderDeviceJSON = data.getData();
-        MobileNode chatResponderDevice = MobileNode.fromJSON(chatResponderDeviceJSON);
-        chatResponderDevice.setIp(senderIP);
+    private void processRequestResponse(boolean isRequestAccepted) {
+        String ResponderDeviceJSON = data.getData();
+        MobileNode ResponderDevice = MobileNode.fromJSON(ResponderDeviceJSON);
+        ResponderDevice.setIp(senderIP);
 
         Intent intent = new Intent(RESPONSE_RECEIVED);
-        intent.putExtra(KEY_CHAT_REQUEST, chatResponderDevice);
-        intent.putExtra(KEY_IS_CHAT_REQUEST_ACCEPTED, isRequestAccepted);
+        intent.putExtra(KEY_REQUEST, ResponderDevice);
+        intent.putExtra(KEY_IS_REQUEST_ACCEPTED, isRequestAccepted);
         broadcaster.sendBroadcast(intent);
     }
 
-    private void processChatData() {
-//        String chatJSON = data.getData();
-//        ChatDTO chatObject = ChatDTO.fromJSON(chatJSON);
-//        chatObject.setFromIP(senderIP);
-//        //Save in db if needed here
-//        Intent chatReceivedIntent = new Intent(ChatActivity.ACTION_CHAT_RECEIVED);
-//        chatReceivedIntent.putExtra(ChatActivity.KEY_CHAT_DATA, chatObject);
-//        broadcaster.sendBroadcast(chatReceivedIntent);
-    }
+    private void processData() {
+        String JSON = data.getData();
+        MamocNode object = MobileNode.fromJSON(JSON);
+        object.setIp(senderIP);
 
+        //Save in db if needed here
+
+
+//        Intent ReceivedIntent = new Intent(Activity.ACTION_RECEIVED);
+//        ReceivedIntent.putExtra(Activity.KEY_DATA, Object);
+//        broadcaster.sendBroadcast(ReceivedIntent);
+    }
 
 }

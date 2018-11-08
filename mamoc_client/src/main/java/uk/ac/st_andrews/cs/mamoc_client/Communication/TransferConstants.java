@@ -9,8 +9,14 @@ public interface TransferConstants {
 
     int CLIENT_DATA = 3001;
 
-    int CHAT_DATA = 3004;
-    int CHAT_REQUEST_SENT = 3011;
-    int CHAT_REQUEST_ACCEPTED = 3012;
-    int CHAT_REQUEST_REJECTED = 3013;
+    int DATA = 3004;
+    int REQUEST_SENT = 3011;
+    int REQUEST_ACCEPTED = 3012;
+    int REQUEST_REJECTED = 3013;
+
+    String KEY_BUDDY_NAME = "buddyname";
+    String KEY_PORT_NUMBER = "portnumber";
+    String KEY_DEVICE_STATUS = "devicestatus";
+    String KEY_USER_NAME = "username";
+    String KEY_WIFI_IP = "wifiip";
 }

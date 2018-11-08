@@ -16,8 +16,6 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-import uk.ac.st_andrews.cs.mamoc_client.Model.MobileNode;
-
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PING;
 import static uk.ac.st_andrews.cs.mamoc_client.Constants.PONG;
 

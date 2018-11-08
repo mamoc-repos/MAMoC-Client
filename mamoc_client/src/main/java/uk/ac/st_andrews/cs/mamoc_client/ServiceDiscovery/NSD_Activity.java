@@ -193,17 +193,17 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
                     break;
                 case DataHandler.REQUEST_RECEIVED:
                     MobileNode chatRequesterDevice = (MobileNode) intent.getSerializableExtra(DataHandler
-                            .KEY_CHAT_REQUEST);
+                            .KEY_REQUEST);
                     DialogUtils.getChatRequestDialog(NSD_Activity.this, chatRequesterDevice).show();
                     break;
                 case DataHandler.RESPONSE_RECEIVED:
                     boolean isChatRequestAccepted = intent.getBooleanExtra(DataHandler
-                            .KEY_IS_CHAT_REQUEST_ACCEPTED, false);
+                            .KEY_IS_REQUEST_ACCEPTED, false);
                     if (!isChatRequestAccepted) {
                         Toast.makeText(NSD_Activity.this, "Request Rejected!", Toast.LENGTH_SHORT).show();
                     } else {
                         MobileNode chatDevice = (MobileNode) intent.getSerializableExtra(DataHandler
-                                .KEY_CHAT_REQUEST);
+                                .KEY_REQUEST);
                         DialogUtils.openChatActivity(NSD_Activity.this, chatDevice);
                         Toast.makeText(NSD_Activity.this, "Request Accepted from:" + chatDevice.getNodeName(), Toast.LENGTH_SHORT).show();
                     }
