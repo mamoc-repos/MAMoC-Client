@@ -15,10 +15,10 @@ You can run the following commands in the terminal of your server machine:
 
 ```
 docker pull dawan/mamoc_router
-docker run -it -d --name "mamoc-router" dawan/mamoc_router
+docker run -it -d --name "mamoc-router" -p 8080:8080 dawan/mamoc_router
 
 docker pull dawan/mamoc_server
-docker run --rm -it --name "mamoc-server" --network="host" -p 8080:8080 dawan/mamoc_server
+docker run --rm -it --name "mamoc-server" --network="host" dawan/mamoc_server
 
 ```
 

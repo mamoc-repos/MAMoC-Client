@@ -33,15 +33,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.DiscoveryActivity"
+            android:name="uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.DiscoveryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.NSD_Activity"
+            android:name="uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.NSD_Activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Base" />
 
         <service
-            android:name="uk.ac.st_andrews.cs.mamoc_client.Communication.DataTransferService"
+            android:name="uk.ac.standrews.cs.mamoc_client.Communication.DataTransferService"
             android:enabled="true" />
 
         <activity

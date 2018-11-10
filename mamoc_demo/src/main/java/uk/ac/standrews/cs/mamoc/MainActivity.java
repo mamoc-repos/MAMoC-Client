@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.DiscoveryActivity;
+import uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.DiscoveryActivity;
 import uk.ac.standrews.cs.mamoc.Benchmark.BenchmarkActivity;
 import uk.ac.standrews.cs.mamoc.NQueens.NQueensActivity;
 import uk.ac.standrews.cs.mamoc.SearchText.SearchActivity;

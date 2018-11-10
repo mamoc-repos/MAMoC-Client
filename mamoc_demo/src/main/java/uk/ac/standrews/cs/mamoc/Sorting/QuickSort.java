@@ -1,6 +1,6 @@
 package uk.ac.standrews.cs.mamoc.Sorting;
 
-import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
+import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
 
 @Offloadable
 public class QuickSort {

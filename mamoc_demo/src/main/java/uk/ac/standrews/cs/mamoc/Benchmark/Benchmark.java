@@ -1,30 +1,30 @@
 package uk.ac.standrews.cs.mamoc.Benchmark;
 
-import uk.ac.st_andrews.cs.mamoc_client.Annotation.Offloadable;
+import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
 
 @Offloadable
 public class Benchmark {
 
     private static final int FFT_SIZE = 1024;
     private static final int SOR_SIZE = 100; // NxN grid
-    private static final int SIZE_M = 100;
-    private static final int SIZE_NZ = 500;
+//    private static final int SIZE_M = 100;
+//    private static final int SIZE_NZ = 500;
     private static final int LU_SIZE = 100;
 
     private static final double MIN_TIME = 2.0;
     private static final int RANDOM_SEED = 101010;
 
-    public double run() {
+    Random R = new Random(RANDOM_SEED);
 
-        Random R = new Random(RANDOM_SEED);
+    public double run() {
 
         double fftResult = measureFFT(FFT_SIZE, R);
         double sorResult = measureSOR(SOR_SIZE, R);
         double montecarloResult = measureMonteCarlo(R);
-        double sparseResult = measureSparseMat(SIZE_M, SIZE_NZ, R);
+//        double sparseResult = measureSparseMat(SIZE_M, SIZE_NZ, R);
         double luResult = measureLU(LU_SIZE, R);
 
-        return (fftResult + sorResult + montecarloResult + sparseResult + luResult) / 5.0;
+        return (fftResult + sorResult + montecarloResult+ luResult) / 4.0; // + sparseResult
     }
 
     private double measureFFT(int N, Random R) {

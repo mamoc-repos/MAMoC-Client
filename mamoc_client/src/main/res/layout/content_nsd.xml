@@ -25,7 +25,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="uk.ac.st_andrews.cs.mamoc_client.ServiceDiscovery.PeerListFragment"
+            android:name="uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.PeerListFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

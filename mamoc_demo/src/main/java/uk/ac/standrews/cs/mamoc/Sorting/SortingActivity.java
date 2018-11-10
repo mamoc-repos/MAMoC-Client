@@ -14,8 +14,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
-import uk.ac.st_andrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.MamocFramework;
+import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
@@ -57,6 +57,7 @@ public class SortingActivity extends DemoBaseActivity {
 
         localButton.setOnClickListener(view -> sortText(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> sortText(ExecutionLocation.EDGE));
+        cloudButton.setOnClickListener(view -> sortText(ExecutionLocation.PUBLIC_CLOUD));
 
         mamocFramework = MamocFramework.getInstance(this);
 
@@ -81,6 +82,9 @@ public class SortingActivity extends DemoBaseActivity {
                 break;
             case EDGE:
                 runEdge();
+                break;
+            case PUBLIC_CLOUD:
+                runCloud();
                 break;
         }
     }
@@ -111,6 +115,15 @@ public class SortingActivity extends DemoBaseActivity {
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runCloud() {
+        try{
+            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, RPC_NAME, fileSize);
+        } catch (Exception e){
+            Log.e("runCloud", e.getLocalizedMessage());
+            Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -16,9 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import uk.ac.st_andrews.cs.mamoc_client.MamocFramework;
+import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 
-import static uk.ac.st_andrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
+import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
 
 public abstract class DemoBaseActivity extends AppCompatActivity {
 
