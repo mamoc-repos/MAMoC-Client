@@ -8,7 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.standrews.cs.mamoc_client.Model.OffloadedTask;
+import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
+import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
+import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
 import static uk.ac.standrews.cs.mamoc_client.DB.DBHelper.TABLE_MOBILE_DEVICES;
 import static uk.ac.standrews.cs.mamoc_client.DB.DBHelper.TABLE_OFFLOAD;
@@ -37,7 +40,7 @@ public class DBAdapter {
         return instance;
     }
 
-    public long addTaskOffload(OffloadedTask task){
+    public long addRemoteExecution(RemoteExecution task){
 
         if (task == null) { return -1; }
 
@@ -49,10 +52,48 @@ public class DBAdapter {
         values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().getValue());
         values.put(DBHelper.COL_RTT_SPEED, task.getRttSpeed());
         values.put(DBHelper.COL_OFFLOAD_DATE, task.getOffloadedDate());
+        values.put(DBHelper.COL_OFFLOAD_COMPLETE, task.isCompleted());
 
         return db.insert(TABLE_OFFLOAD, null, values);
     }
 
+    public ArrayList<RemoteExecution> getRemoteExecutions(String taskName){
+        ArrayList<RemoteExecution> remoteExecutions = null;
+
+        Cursor cursor = db.rawQuery("select * from " + TABLE_OFFLOAD,null);
+
+        int nameIndex = cursor.getColumnIndex(DBHelper.COL_TASK_NAME);
+        int locationIndex = cursor.getColumnIndex(DBHelper.COL_EXEC_LOCATION);
+        int networkTypeIndex = cursor.getColumnIndex(DBHelper.COL_NETWORK_TYPE);
+        int execTimeIndex = cursor.getColumnIndex(DBHelper.COL_EXECUTION_TIME);
+        int commIndex = cursor.getColumnIndex(DBHelper.COL_COMMUNICATION_OVERHEAD);
+        int rttIndex = cursor.getColumnIndex(DBHelper.COL_RTT_SPEED);
+        int offDateIndex = cursor.getColumnIndex(DBHelper.COL_OFFLOAD_DATE);
+        int completedIndex = cursor.getColumnIndex(DBHelper.COL_OFFLOAD_COMPLETE);
+
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndex(DBHelper.COL_TASK_NAME));
+            if (name.equalsIgnoreCase(taskName)) {
+                RemoteExecution remote = new RemoteExecution();
+                remote.setTaskName(cursor.getString(nameIndex));
+                remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
+                remote.setNetworkType(NetworkType.valueOf(cursor.getString(networkTypeIndex)));
+                remote.setExecutionTime(cursor.getDouble(execTimeIndex));
+                remote.setCommOverhead(cursor.getDouble(commIndex));
+                remote.setRttSpeed(cursor.getLong(rttIndex));
+                remote.setOffloadedDate(cursor.getLong(offDateIndex));
+                remote.setOffloadedDate(cursor.getInt(completedIndex));
+
+                remoteExecutions.add(remote);
+            }
+        }
+
+        if (!cursor.isClosed()) {
+            cursor.close();
+        }
+
+        return remoteExecutions;
+    }
 
     public long addMobileDevice(MobileNode device) {
         if (device == null || device.getIp() == null || device.getPort() == 0) {
@@ -107,12 +148,12 @@ public class DBAdapter {
         while (cursor.moveToNext()) {
             device.setIp(cursor.getString(ipIndex));
             device.setDeviceID(cursor.getString(idIndex));
-            device.setCpuFreq(Integer.parseInt(cursor.getString(cpuFreqIndex)));
-            device.setNumberOfCPUs(Integer.parseInt(cursor.getString(cpuNumIndex)));
-            device.setMemoryMB(Long.parseLong(cursor.getString(memIndex)));
-            device.setJoinedDate(Long.parseLong(cursor.getString(joinedIndex)));
+            device.setCpuFreq(cursor.getInt(cpuFreqIndex));
+            device.setNumberOfCPUs(cursor.getInt(cpuNumIndex));
+            device.setMemoryMB(cursor.getLong(memIndex));
+            device.setJoinedDate(cursor.getLong(joinedIndex));
             device.setBatteryLevel(Integer.parseInt(cursor.getString(blIndex)));
-            device.setBatteryState(cursor.getString(bsIndex));
+            device.setBatteryState(BatteryState.valueOf(cursor.getString(bsIndex)));
             device.setOffloadingScore(cursor.getInt(osIndex));
         }
 
@@ -126,8 +167,8 @@ public class DBAdapter {
     public ArrayList<MobileNode> getMobileDevicesList() {
         ArrayList<MobileNode> devices = null;
 
-        Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, null, null, null, null,
-                DBHelper.COL_DEV_ID);
+        Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, null, null,
+                null, null, DBHelper.COL_DEV_ID);
 
         if (cursor != null) {
             devices = new ArrayList<>();
@@ -155,7 +196,7 @@ public class DBAdapter {
             device.setMemoryMB(Long.parseLong(cursor.getString(memIndex)));
             device.setJoinedDate(Long.parseLong(cursor.getString(joinedIndex)));
             device.setBatteryLevel(Integer.parseInt(cursor.getString(blIndex)));
-            device.setBatteryState(cursor.getString(bsIndex));
+            device.setBatteryState(BatteryState.valueOf(cursor.getString(bsIndex)));
             device.setOffloadingScore(cursor.getInt(osIndex));
 
             devices.add(device);

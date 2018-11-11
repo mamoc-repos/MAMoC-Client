@@ -15,7 +15,10 @@ import uk.ac.standrews.cs.mamoc_client.Decompiler.DexDecompiler;
 import uk.ac.standrews.cs.mamoc_client.Execution.DecisionEngine;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExceptionHandler;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionController;
+import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
+import uk.ac.standrews.cs.mamoc_client.Profilers.DeviceProfiler;
 import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkProfiler;
 import uk.ac.standrews.cs.mamoc_client.Utils.Utils;
 
 public class MamocFramework {
@@ -27,7 +30,12 @@ public class MamocFramework {
     public ExecutionController execController;
     public DecisionEngine decisionEngine;
 
+    public DeviceProfiler deviceProfiler;
+    public NetworkProfiler networkProfiler;
+
     private ArrayList<Class> offloadableClasses = new ArrayList<>();
+
+    private MobileNode selfNode;
 
     private static MamocFramework instance;
 
@@ -43,10 +51,24 @@ public class MamocFramework {
         execController = ExecutionController.getInstance(mContext);
         decisionEngine = DecisionEngine.getInstance(mContext);
 
+        deviceProfiler = new DeviceProfiler(mContext);
+        networkProfiler = new NetworkProfiler(mContext);
         // TODO: find a better mechanism for reindexing the changed annotated classes
         if (!checkAnnotatedIndexing()) {
             findOffloadableClasses();
         }
+
+        createSelfNode(mContext);
+    }
+
+    private void createSelfNode(Context context) {
+        selfNode = new MobileNode(context);
+        selfNode.setNodeName("SelfNode");
+//        selfNode.setDeviceID(deviceProfiler.getDeviceID(context));
+        selfNode.setBatteryLevel(deviceProfiler.getBatteryLevel());
+        selfNode.setBatteryState(deviceProfiler.isDeviceCharging());
+        selfNode.setCpuFreq((int)deviceProfiler.getTotalCpuFreq(context));
+        selfNode.setMemoryMB(deviceProfiler.getTotalMemory());
     }
 
     public static MamocFramework getInstance(Context context) {
@@ -128,5 +150,9 @@ public class MamocFramework {
 
     public void execute(ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
         execController.runRemote(mContext, location, rpc_name, resource_name, params);
+    }
+
+    public MobileNode getSelfNode(){
+        return selfNode;
     }
 }

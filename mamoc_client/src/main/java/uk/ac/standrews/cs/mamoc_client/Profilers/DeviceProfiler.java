@@ -30,14 +30,14 @@ public class DeviceProfiler {
         this.context = context;
     }
 
-    @SuppressLint({"HardwareIds", "MissingPermission"})
-    public String getDeviceID(Context context){
-        TelephonyManager mngr = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
-        String IMEI = mngr.getDeviceId();
-        String device_unique_id = Settings.Secure.getString(context.getContentResolver(),
-                Settings.Secure.ANDROID_ID);
-        return device_unique_id;
-    }
+//    @SuppressLint({"HardwareIds", "MissingPermission"})
+//    public String getDeviceID(Context context){
+//        TelephonyManager mngr = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
+//        String IMEI = mngr.getDeviceId();
+//        String device_unique_id = Settings.Secure.getString(context.getContentResolver(),
+//                Settings.Secure.ANDROID_ID);
+//        return device_unique_id;
+//    }
 
     public double getTotalCpuFreq(Context mContext) {
         double result = 0;
@@ -88,7 +88,7 @@ public class DeviceProfiler {
         }
     }
 
-    public final int getBatteryPercentage() {
+    public final int getBatteryLevel() {
         int percentage = 0;
         Intent batteryStatus = getBatteryStatusIntent();
         if (batteryStatus != null) {

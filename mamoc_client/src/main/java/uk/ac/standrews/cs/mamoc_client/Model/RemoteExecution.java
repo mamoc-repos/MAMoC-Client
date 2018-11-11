@@ -3,25 +3,19 @@ package uk.ac.standrews.cs.mamoc_client.Model;
 import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
-public class OffloadedTask {
+public class RemoteExecution {
 
     private String taskName;
     private ExecutionLocation execLocation;
     private NetworkType networkType;
-    private long executionTime;
-    private long commOverhead;
+    private double executionTime;
+    private double commOverhead;
     private long rttSpeed;
     private long offloadedDate;
+    private boolean completed;
 
-    public OffloadedTask(String taskName, ExecutionLocation execLocation, NetworkType networkType,
-                         long executionTime, long commOverhead, long rttSpeed, long offloadedDate) {
-        this.taskName = taskName;
-        this.execLocation = execLocation;
-        this.networkType = networkType;
-        this.executionTime = executionTime;
-        this.commOverhead = commOverhead;
-        this.rttSpeed = rttSpeed;
-        this.offloadedDate = offloadedDate;
+    public RemoteExecution(){
+
     }
 
     public String getTaskName() {
@@ -48,19 +42,19 @@ public class OffloadedTask {
         this.networkType = networkType;
     }
 
-    public long getExecutionTime() {
+    public double getExecutionTime() {
         return executionTime;
     }
 
-    public void setExecutionTime(long executionTime) {
+    public void setExecutionTime(double executionTime) {
         this.executionTime = executionTime;
     }
 
-    public long getCommOverhead() {
+    public double getCommOverhead() {
         return commOverhead;
     }
 
-    public void setCommOverhead(long commOverhead) {
+    public void setCommOverhead(double commOverhead) {
         this.commOverhead = commOverhead;
     }
 
@@ -79,4 +73,8 @@ public class OffloadedTask {
     public void setOffloadedDate(long offloadedDate) {
         this.offloadedDate = offloadedDate;
     }
+
+    public boolean isCompleted() { return completed; }
+
+    public void setCompleted(boolean completed) { this.completed = completed; }
 }

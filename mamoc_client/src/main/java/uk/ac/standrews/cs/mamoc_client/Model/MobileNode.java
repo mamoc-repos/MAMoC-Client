@@ -23,13 +23,13 @@ public class MobileNode extends MamocNode{
     public MobileNode(Context context) {
         DeviceProfiler deviceProfiler = new DeviceProfiler(context);
 
-        this.deviceID = deviceProfiler.getDeviceID(context);
+//        this.deviceID = deviceProfiler.getDeviceID(context);
         this.osVersion = Build.VERSION.RELEASE;
         this.manufacturer = Build.MANUFACTURER;
-        this.batteryLevel = deviceProfiler.getBatteryPercentage();
+        this.batteryLevel = deviceProfiler.getBatteryLevel();
         this.batteryState = deviceProfiler.isDeviceCharging();
 
-        super.setNodeName(deviceProfiler.getDeviceID(context));
+//        super.setNodeName(deviceProfiler.getDeviceID(context));
         super.setNumberOfCPUs(deviceProfiler.getNumCpuCores());
         super.setMemoryMB(deviceProfiler.getTotalMemory());
         super.setJoinedDate(new Date().getTime());
@@ -56,8 +56,8 @@ public class MobileNode extends MamocNode{
         return batteryState;
     }
 
-    public void setBatteryState(String state) {
-        this.batteryState = BatteryState.valueOf(state);
+    public void setBatteryState(BatteryState state) {
+        this.batteryState = state;
     }
 
     public static MobileNode fromJSON(String deviceJSON) {

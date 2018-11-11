@@ -13,10 +13,14 @@ import io.crossbar.autobahn.wamp.types.CallResult;
 import io.crossbar.autobahn.wamp.types.Publication;
 import io.crossbar.autobahn.wamp.types.Subscription;
 import java8.util.concurrent.CompletableFuture;
+import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
+import uk.ac.standrews.cs.mamoc_client.Model.LocalExecution;
+import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
 import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkProfiler;
 
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_PUB;
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
@@ -29,12 +33,19 @@ public class ExecutionController {
     private Context mContext;
 
     private static ExecutionController instance;
+    private NetworkProfiler netProfiler;
+    private DBAdapter dbAdapter;
 
     private Subscription sub;
     long startSendingTime, endSendingTime;
 
+    RemoteExecution remote;
+    LocalExecution local;
+
     private ExecutionController(Context context) {
         this.mContext = context;
+        netProfiler = new NetworkProfiler(context);
+        dbAdapter = DBAdapter.getInstance(context);
     }
 
     public static ExecutionController getInstance(Context context) {
@@ -48,31 +59,37 @@ public class ExecutionController {
         return instance;
     }
 
-    public void runLocal() {
-
+    public void runLocal(Context context, String rpc_name, String resource_name, Object... params) {
+        local = new LocalExecution();
     }
 
     public void runRemote(Context context, ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
 
+        remote = new RemoteExecution();
+        remote.setTaskName(rpc_name);
+        remote.setNetworkType(netProfiler.getNetworkType());
+        remote.setOffloadedDate(System.nanoTime());
+
         switch (location) {
-//            case LOCAL:
-//                runLocal();
-//                break;
 
             case D2D:
                 runNearby();
+                remote.setExecLocation(ExecutionLocation.D2D);
                 break;
 
             case EDGE:
                 runOnEdge(context, rpc_name, resource_name, params);
+                remote.setExecLocation(ExecutionLocation.EDGE);
                 break;
 
             case PUBLIC_CLOUD:
                 runOnCloud(context, rpc_name, resource_name, params);
+                remote.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
                 break;
 
             case DYNAMIC:
                 runDynamically(context, rpc_name, resource_name, params);
+                remote.setExecLocation(ExecutionLocation.DYNAMIC);
                 break;
         }
     }
@@ -82,13 +99,14 @@ public class ExecutionController {
     }
 
     private void runNearby() {
-
+        // TODO: Java Reflect dynamic call to class on connected mobile nodes
     }
 
     private void runOnEdge(Context context, String rpc_name, String resource_name, Object... params){
         TreeSet<EdgeNode> edgeNodes = MamocFramework.getInstance(context).commController.getEdgeDevices();
         if (!edgeNodes.isEmpty()) {
-            EdgeNode node = edgeNodes.first();
+            EdgeNode node = edgeNodes.first(); // for now we assume we are connected to one edge device
+            remote.setRttSpeed(netProfiler.measureRtt(node.getIp(), node.getPort()));
             runRemotely(context, node, rpc_name, resource_name, params);
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
@@ -137,6 +155,7 @@ public class ExecutionController {
                             } else {
                                 // Something went bad.
                                 throwable.printStackTrace();
+                                addExecutionEntry(false);
                             }
                         });
 
@@ -157,11 +176,13 @@ public class ExecutionController {
                         // Shows we can separate out exception handling
                         pubFuture.exceptionally(throwable -> {
                             throwable.printStackTrace();
+                            addExecutionEntry(false);
                             return null;
                         });
 
                     } catch (Exception e) {
                         e.printStackTrace();
+                        addExecutionEntry(false);
                     }
                 } else {
                     // Call the remote procedure.
@@ -268,8 +289,14 @@ public class ExecutionController {
     private void broadcastResults(List<Object> results){
         double commOverhead = (double)(endSendingTime - startSendingTime) * 1.0e-9;
         Log.d(TAG, String.valueOf(commOverhead));
+        double executionTime = (Double) results.get(1);
+        commOverhead -= executionTime;
 
-        commOverhead -=  (Double) results.get(1);
+        remote.setExecutionTime(executionTime);
+        remote.setCommOverhead(commOverhead);
+
+        // insert successful remote execution to DB
+        addExecutionEntry(true);
 
         Log.d(TAG, String.valueOf(commOverhead));
 
@@ -280,5 +307,11 @@ public class ExecutionController {
         intent.putExtra("overhead", commOverhead);
 
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
+    }
+
+    private void addExecutionEntry(boolean completed){
+        remote.setCompleted(completed);
+        dbAdapter.addRemoteExecution(remote);
+        remote = null;
     }
 }
