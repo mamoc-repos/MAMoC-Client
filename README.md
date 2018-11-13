@@ -42,20 +42,11 @@ We are using the following tasks to demonstrate the usage of our framework:
 This allows a user to enter a keyword and select a file size from (small, medium, and large) to find the occurrences of the word in the file . 
 [Knuth-Morris-Pratt](https://www.nayuki.io/page/knuth-morris-pratt-string-matching) string searching algorithm is used. 
 
-This is an example of an embarrassingly parallel task since it can be independently run on multiple nodes hence it 
-is annotated with @Parallelizable annotation. The external node that performs a full or partial search needs access to the text file so 
-we need to send the file over hence it is annotated with @ResourceDependent.
-
 ### Quick Sort
-
+QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
 
 ### NQueens
-
-
-## Scimark 2.0 Benchmarks
-
-
-## License
+The eight queens puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other.
 
 
 

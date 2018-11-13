@@ -33,6 +33,8 @@ public class ExecutionController {
     private Context mContext;
 
     private static ExecutionController instance;
+
+    private MamocFramework framework;
     private NetworkProfiler netProfiler;
     private DBAdapter dbAdapter;
 
@@ -44,7 +46,8 @@ public class ExecutionController {
 
     private ExecutionController(Context context) {
         this.mContext = context;
-        netProfiler = new NetworkProfiler(context);
+        framework = MamocFramework.getInstance(context);
+        netProfiler = framework.networkProfiler;
         dbAdapter = DBAdapter.getInstance(context);
     }
 
@@ -95,7 +98,7 @@ public class ExecutionController {
     }
 
     private void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
-        MamocFramework.getInstance(context).decisionEngine.makeDecision(rpc_name, false);
+        ExecutionLocation location = framework.decisionEngine.makeDecision(rpc_name, false);
     }
 
     private void runNearby() {

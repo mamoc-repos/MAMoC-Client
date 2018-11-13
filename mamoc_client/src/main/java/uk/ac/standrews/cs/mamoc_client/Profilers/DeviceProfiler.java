@@ -17,14 +17,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-import uk.ac.standrews.cs.mamoc_client.R;
 
 public class DeviceProfiler {
     public static final String TAG = "DeviceProfiler";
 
     private final Context context;
-
-    public static int batteryLevel;
 
     public DeviceProfiler(Context context) {
         this.context = context;
