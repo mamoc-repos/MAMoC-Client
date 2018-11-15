@@ -89,16 +89,18 @@ public class ExecutionController {
                 runOnCloud(context, rpc_name, resource_name, params);
                 remote.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
                 break;
-
-            case DYNAMIC:
-                runDynamically(context, rpc_name, resource_name, params);
-                remote.setExecLocation(ExecutionLocation.DYNAMIC);
-                break;
         }
     }
 
-    private void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
+    public void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
+
         ExecutionLocation location = framework.decisionEngine.makeDecision(rpc_name, false);
+
+        if (location == ExecutionLocation.LOCAL) {
+            runLocal(context, rpc_name, resource_name, params);
+        } else {
+            runRemote(context, location, rpc_name, resource_name, params);
+        }
     }
 
     private void runNearby() {

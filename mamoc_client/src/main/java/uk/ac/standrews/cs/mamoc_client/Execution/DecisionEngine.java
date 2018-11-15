@@ -64,7 +64,7 @@ public class DecisionEngine {
     }
 
 
-    public ExecutionLocation makeDecision(String taskName, Boolean isParallel) {
+    ExecutionLocation makeDecision(String taskName, Boolean isParallel) {
 
         MobileNode selfNode = MamocFramework.getInstance(mContext).getSelfNode();
 
@@ -109,7 +109,7 @@ public class DecisionEngine {
     }
 
 
-    public double calculateOffloadingScore(MamocNode node) {
+    private double calculateOffloadingScore(MamocNode node) {
 
         double cpuWeight = 0, memWeight = 0, rttWeight = 0, batteryWeight = 0;
         ArrayList<double[]> bbt = new ArrayList<>();
@@ -154,7 +154,7 @@ public class DecisionEngine {
         return calculateAHP(array);
     }
 
-    public MamocNode getNodeWithMaxOffloadingScore() {
+    private MamocNode getNodeWithMaxOffloadingScore() {
         MobileNode selfNode = framework.getSelfNode();
         TreeSet<MobileNode> mobileNodes = framework.commController.getMobileDevices();
         TreeSet<EdgeNode> edgeNodes = framework.commController.getEdgeDevices();
@@ -187,7 +187,7 @@ public class DecisionEngine {
 
     }
 
-    public double calculateAHP(double[][] bbt){
+    private double calculateAHP(double[][] bbt){
 
         int dim = bbt.length;
         EigenDecomposition evd2;

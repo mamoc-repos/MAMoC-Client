@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
@@ -56,11 +55,12 @@ public class NQueensActivity extends DemoBaseActivity {
     private void runQueens(ExecutionLocation location) {
 
         if (nOutput.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Please enter N size", Toast.LENGTH_SHORT).show();
-            return;
+        //    Toast.makeText(this, "Please enter N size", Toast.LENGTH_SHORT).show();
+        //    return;
+            N = 13;
+        } else {
+            N = Integer.parseInt(nOutput.getText().toString());
         }
-
-        N = Integer.parseInt(nOutput.getText().toString());
 
         switch (location) {
             case LOCAL:
@@ -72,6 +72,8 @@ public class NQueensActivity extends DemoBaseActivity {
             case PUBLIC_CLOUD:
                 runCloud(N);
                 break;
+            case DYNAMIC:
+                runDynamically(N);
         }
     }
 
@@ -86,7 +88,7 @@ public class NQueensActivity extends DemoBaseActivity {
         long endTime = System.nanoTime();
         long MethodDuration = (endTime - startTime);
 
-        addLog("nothing", (double) MethodDuration * 1.0e-9, 0);
+        addLog("", (double) MethodDuration * 1.0e-9, 0);
 
         hideDialog();
     }
@@ -107,6 +109,16 @@ public class NQueensActivity extends DemoBaseActivity {
             Log.e("runCloud", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    private void runDynamically(int N) {
+        try{
+            mamocFramework.execute(ExecutionLocation.DYNAMIC, RPC_NAME, "None", N);
+        } catch (Exception e){
+            Log.e("Mamoc", e.getLocalizedMessage());
+        }
+
     }
 
     @Override

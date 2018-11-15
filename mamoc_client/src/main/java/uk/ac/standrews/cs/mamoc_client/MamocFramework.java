@@ -149,7 +149,11 @@ public class MamocFramework {
     }
 
     public void execute(ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
-        execController.runRemote(mContext, location, rpc_name, resource_name, params);
+        if (location == ExecutionLocation.DYNAMIC){
+            execController.runDynamically(mContext, rpc_name, resource_name, params);
+        } else {
+            execController.runRemote(mContext, location, rpc_name, resource_name, params);
+        }
     }
 
     public MobileNode getSelfNode(){

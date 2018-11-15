@@ -1,7 +1,5 @@
 package jadx.api;
 
-import android.content.Intent;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import org.slf4j.Logger;
@@ -15,10 +13,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import jadx.core.Jadx;
@@ -136,21 +132,9 @@ public final class JadxDecompiler {
 		parse();
 	}
 
-//    public void save() {
-//        save(!args.isSkipSources(), !args.isSkipResources());
-//    }
-
-//    public void saveSources() {
-//        save(true, false);
-//    }
-
 	public void saveAnnotatedClassSources(ArrayList<String> classNames) {
 		save(classNames);
 	}
-
-//    public void saveResources() {
-//        save(false, true);
-//    }
 
 	private void save(ArrayList<String> classNames) {
 		try {
@@ -161,10 +145,6 @@ public final class JadxDecompiler {
 			throw new JadxRuntimeException("Save interrupted", e);
 		}
 	}
-
-//    public ExecutorService getSaveExecutor() {
-//        return getSaveExecutor(!args.isSkipSources(), !args.isSkipResources());
-//    }
 
 	private ExecutorService getSaveExecutor(ArrayList<String> classNames) {
 		if (root == null) {
@@ -195,11 +175,6 @@ public final class JadxDecompiler {
 			});
 		}
 
-//        if (saveResources) {
-//            for (final ResourceFile resourceFile : getResources()) {
-//                executor.execute(new ResourcesSaver(outDir, resourceFile));
-//            }
-//        }
 		return executor;
 	}
 

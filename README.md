@@ -26,16 +26,7 @@ If you want to get the source code of the server and host it on bare metal. Navi
 for setting up the router and the server components.
 
 
-## Dex Decompiler
-
-We have performed some modifications to [Jadx Decompiler](https://github.com/skylot/jadx) to make it callable within our framework. 
-We decompile all the classes and methods which are annotated with @Offloadable to allow them to be offloaded to external resource providers.
- 
-
-
-## Demo apps
-
-We are using the following tasks to demonstrate the usage of our framework:
+## Examples
 
 ### Text Search
 
@@ -49,4 +40,20 @@ QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and pa
 The eight queens puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other.
 
 
+## Third party libraries
+
+### Dex Decompiling
+
+We have performed some modifications to [Jadx Decompiler](https://github.com/skylot/jadx) to make it callable within our framework. 
+We decompile all the classes and methods which are annotated with 
+[@Offloadable](mamoc_client/src/main/java/uk/ac/standrews/cs/mamoc_client/Annotation/Offloadable.java) to allow them to be offloaded to external resource providers.
+ 
+### Annotation Indexing
+We use Annotation Indexing from [classindex](https://github.com/atteo/classindex) library to index all the classes annotated with
+[@Offloadable](mamoc_client/src/main/java/uk/ac/standrews/cs/mamoc_client/Annotation/Offloadable.java) annotation.
+
+### Web Application Messaging Protocol
+We use [crossbar + autobahn](https://github.com/crossbario/autobahn-java) to manage the Remote Procedure Calls and Publish/Subscribe events. 
+The reason we have included the source code of the library is its incompatibility with Android API < 24. 
+We have used [streamsupport](https://github.com/streamsupport/streamsupport) to get the necessary functional interfaces used in Autobahn for older Android versions. 
 
