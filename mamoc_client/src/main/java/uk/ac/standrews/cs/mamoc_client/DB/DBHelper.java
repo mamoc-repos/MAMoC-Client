@@ -3,6 +3,7 @@ package uk.ac.standrews.cs.mamoc_client.DB;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import uk.ac.standrews.cs.mamoc_client.Constants;
 
@@ -24,7 +25,7 @@ class DBHelper extends SQLiteOpenHelper {
     static final String COL_OFFLOAD_DATE = "offloaddate";
     static final String COL_OFFLOAD_COMPLETE = "completed";
 
-    private static final String CREATE_OFFLOAD_TABLE = "CREATE TABLE " + TABLE_OFFLOAD + "("
+    private static final String CREATE_OFFLOAD_TABLE = "CREATE TABLE if not exists " + TABLE_OFFLOAD + "("
             + OFFLOAD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_APP_NAME + " TEXT NOT NULL, "
             + COL_TASK_NAME + " TEXT NOT NULL, "
@@ -50,7 +51,7 @@ class DBHelper extends SQLiteOpenHelper {
     static final String COL_DEV_BATTERY_STATE = "batterystate";
     static final String COL_OFFLOADING_SCORE = "offloadingscore";
 
-    private static final String CREATE_MOBILE_DEVICE_TABLE = "CREATE TABLE " + TABLE_MOBILE_DEVICES + "("
+    private static final String CREATE_MOBILE_DEVICE_TABLE = "CREATE TABLE if not exists " + TABLE_MOBILE_DEVICES + "("
             + COL_DEV_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_DEV_NAME + " TEXT NOT NULL, "
             + COL_DEV_IP + " TEXT NOT NULL, "
@@ -66,12 +67,15 @@ class DBHelper extends SQLiteOpenHelper {
 
     DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
+        getWritableDatabase().execSQL(CREATE_OFFLOAD_TABLE);
+        getWritableDatabase().execSQL(CREATE_MOBILE_DEVICE_TABLE);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(CREATE_OFFLOAD_TABLE);
-        sqLiteDatabase.execSQL(CREATE_MOBILE_DEVICE_TABLE);
+    public void onCreate(SQLiteDatabase db) {
+        Log.d("DBHelper", "creating tables");
+        db.execSQL(CREATE_OFFLOAD_TABLE);
+        db.execSQL(CREATE_MOBILE_DEVICE_TABLE);
     }
 
     @Override

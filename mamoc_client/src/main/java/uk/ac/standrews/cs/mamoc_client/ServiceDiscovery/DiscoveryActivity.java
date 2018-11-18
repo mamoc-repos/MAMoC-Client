@@ -28,6 +28,7 @@ import io.crossbar.autobahn.wamp.types.CloseDetails;
 import io.crossbar.autobahn.wamp.types.ExitInfo;
 
 import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
+import uk.ac.standrews.cs.mamoc_client.Constants;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.standrews.cs.mamoc_client.R;
@@ -217,19 +218,10 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     private void checkWritePermissions() {
 
-        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
-        }
-
-        boolean isWriteGranted = Utils.checkPermission(WRITE_PERMISSION, this);
-        if (!isWriteGranted){
-            Utils.requestPermission(WRITE_PERMISSION, WRITE_PERM_REQ_CODE, this);
-        }
-        boolean isStateGranted = Utils.checkPermission(REQUEST_READ_PHONE_STATE, this);
-        if (!isStateGranted){
-            Utils.requestPermission(REQUEST_READ_PHONE_STATE, PHONE_ACCESS_PERM_REQ_CODE, this);
+        boolean isGranted = Utils.checkPermission(Constants.WRITE_PERMISSION, this);
+        if (!isGranted) {
+            Utils.requestPermission(Constants.WRITE_PERMISSION, Constants
+                    .WRITE_PERM_REQ_CODE, this);
         }
     }
 

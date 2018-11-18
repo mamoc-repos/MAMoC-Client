@@ -6,7 +6,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
@@ -14,9 +13,6 @@ import uk.ac.standrews.cs.mamoc_client.Model.MamocNode;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
 import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
-import uk.ac.standrews.cs.mamoc_client.Profilers.DeviceProfiler;
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
-import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkProfiler;
 
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.EigenDecomposition;
@@ -36,9 +32,9 @@ public class DecisionEngine {
     Context mContext;
 
     private MamocFramework framework;
-    private NetworkProfiler netProfiler;
-    private DeviceProfiler devProfiler;
-    private DBAdapter db;
+
+    private int localExecs;
+    private int remoteExecs;
 
     // TODO: set these values dynamically based on past offloading data
     private final int MAX_REMOTE_EXECUTIONS = 5;
@@ -47,9 +43,6 @@ public class DecisionEngine {
     private DecisionEngine(Context context) {
         this.mContext = context;
         framework = MamocFramework.getInstance(mContext);
-        netProfiler = framework.networkProfiler;
-        devProfiler = framework.deviceProfiler;
-        db = DBAdapter.getInstance(mContext);
     }
 
     public static DecisionEngine getInstance(Context context) {
@@ -66,35 +59,61 @@ public class DecisionEngine {
 
     ExecutionLocation makeDecision(String taskName, Boolean isParallel) {
 
+        Log.d(TAG, "making offloading decision for: " + taskName);
+
         MobileNode selfNode = MamocFramework.getInstance(mContext).getSelfNode();
 
-        ArrayList<RemoteExecution> remoteExecutions = db.getRemoteExecutions(taskName);
+        // check for 5 consecutive local executions
+        if (localExecs == MAX_LOCAL_EXECUTIONS){
+            localExecs = 0;
+            if (getNodeWithMaxOffloadingScore() == selfNode) {
+                return ExecutionLocation.LOCAL;
+            }
+        }
+
+        ArrayList<RemoteExecution> remoteExecutions = framework.dbAdapter.getRemoteExecutions(taskName);
+
         // check if task has previously been offloaded
-        if (remoteExecutions.size() > 0 && remoteExecutions.size() <= MAX_REMOTE_EXECUTIONS) {
+        if (remoteExecutions.size() > 0 && remoteExecs <= MAX_REMOTE_EXECUTIONS) {
+
+            Log.d(TAG, "remote executions exist");
+
             TreeSet<MobileNode> mobileNodes = MamocFramework.getInstance(mContext).commController.getMobileDevices();
             if (mobileNodes.size() > 0) {
                 // check if the nearby device has a higher offloading score than me
                 for (MobileNode node : mobileNodes) {
                     if (node.getOffloadingScore() > selfNode.getOffloadingScore()) {
+                        Log.d(TAG, "selecting nearby");
+                        remoteExecs++;
                         return ExecutionLocation.D2D;
                     }
                 }
             } else if (MamocFramework.getInstance(mContext).commController.getEdgeDevices().size() > 0) {
+                Log.d(TAG, "selecting edge");
+                remoteExecs++;
                 return ExecutionLocation.EDGE;
             } else if (MamocFramework.getInstance(mContext).commController.getCloudDevices().size() > 0) {
+                Log.d(TAG, "selecting public cloud");
+                remoteExecs++;
                 return ExecutionLocation.PUBLIC_CLOUD;
             } else {
+                localExecs++;
                 return ExecutionLocation.LOCAL;
             }
-            // more than 5 remote executions of the task - let's recalculate offloading scores
-            // and double check if it is still worth offloading
-        } else {
+        }
+
+        // more than 5 remote executions of the task - let's recalculate offloading scores
+        // and double check if it is still worth offloading
+        else{
+            remoteExecs = 0;
             selfNode.setOffloadingScore(calculateOffloadingScore(selfNode));
             MamocNode maxNode = getNodeWithMaxOffloadingScore();
 
             if (selfNode.getOffloadingScore() > maxNode.getOffloadingScore()) {
+                localExecs++;
                 return ExecutionLocation.LOCAL;
             } else {
+                remoteExecs++;
                 if (maxNode instanceof MobileNode) {
                     return ExecutionLocation.D2D;
                 } else if (maxNode instanceof EdgeNode) {
@@ -117,21 +136,21 @@ public class DecisionEngine {
         if (node instanceof MobileNode) {
             MobileNode mNode = (MobileNode) node;
 
-            cpuWeight = devProfiler.getTotalCpuFreq(mContext) * CPU_WEIGHT;
+            cpuWeight = framework.deviceProfiler.getTotalCpuFreq(mContext) * CPU_WEIGHT;
             memWeight = mNode.getMemoryMB() * MEMORY_WEIGHT;
 
-            BatteryState state = devProfiler.isDeviceCharging();
+            BatteryState state = framework.deviceProfiler.isDeviceCharging();
             if (state == BatteryState.CHARGING) {
                 batteryWeight = 1 * BATTERY_WEIGHT;
             } else {
-                batteryWeight = (100 - devProfiler.getBatteryLevel()) * BATTERY_WEIGHT;
+                batteryWeight = (100 - framework.deviceProfiler.getBatteryLevel()) * BATTERY_WEIGHT;
             }
 
             // calculate different RTT values for self node or connected nearby node
             if (mNode.getNodeName().equals("SelfNode")) {
                 rttWeight = 1.0 * RTT_WEIGHT; // for local execution
             } else {
-                rttWeight = netProfiler.measureRtt(mNode.getIp(), mNode.getPort()) * RTT_WEIGHT;
+                rttWeight = framework.networkProfiler.measureRtt(mNode.getIp(), mNode.getPort()) * RTT_WEIGHT;
             }
         } else {
 
@@ -256,11 +275,11 @@ public class DecisionEngine {
         }
         Log.d(TAG,("\n\nMax Eigenvalue = " + evd.getRealEigenvalue(evIdx)));
 
-        double ci = (evd.getRealEigenvalue(evIdx) - (double) nrV) / (double) (nrV - 1);
-        Log.d(TAG,("\nConsistency Index: " + ci));
+//        double ci = (evd.getRealEigenvalue(evIdx) - (double) nrV) / (double) (nrV - 1);
+//        Log.d(TAG,("\nConsistency Index: " + ci));
+//
+//        Log.d(TAG,("\nConsistency Ratio: " + ci / RI[nrV] * 100 + "%"));
 
-        Log.d(TAG,("\nConsistency Ratio: " + ci / RI[nrV] * 100 + "%"));
-
-        return ci;
+        return evd.getRealEigenvalue(evIdx);
     }
 }

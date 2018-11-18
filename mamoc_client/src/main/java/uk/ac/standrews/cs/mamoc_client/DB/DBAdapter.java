@@ -4,19 +4,23 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
 import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
 import static uk.ac.standrews.cs.mamoc_client.DB.DBHelper.TABLE_MOBILE_DEVICES;
 import static uk.ac.standrews.cs.mamoc_client.DB.DBHelper.TABLE_OFFLOAD;
 
 public class DBAdapter {
+
+    private final String TAG = "DSAdapter";
+
     private static DBAdapter instance;
     private static Object lockObject = new Object();
     private Context context;
@@ -42,23 +46,28 @@ public class DBAdapter {
 
     public long addRemoteExecution(RemoteExecution task){
 
+        Log.d(TAG, "inserting remote task: " + task.getTaskName());
+
         if (task == null) { return -1; }
 
         ContentValues values = new ContentValues();
         values.put(DBHelper.COL_APP_NAME, context.getPackageName());
-        values.put(DBHelper.COL_APP_NAME, task.getTaskName());
-        values.put(DBHelper.COL_EXEC_LOCATION, task.getExecLocation().getValue());
+        values.put(DBHelper.COL_TASK_NAME, task.getTaskName());
+        values.put(DBHelper.COL_EXEC_LOCATION, task.getExecLocation().toString());
         values.put(DBHelper.COL_COMMUNICATION_OVERHEAD, task.getCommOverhead());
-        values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().getValue());
+        values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().toString());
         values.put(DBHelper.COL_RTT_SPEED, task.getRttSpeed());
         values.put(DBHelper.COL_OFFLOAD_DATE, task.getOffloadedDate());
-        values.put(DBHelper.COL_OFFLOAD_COMPLETE, task.isCompleted());
+        values.put(DBHelper.COL_OFFLOAD_COMPLETE, task.isCompleted() ? 1 : 0);
 
         return db.insert(TABLE_OFFLOAD, null, values);
     }
 
     public ArrayList<RemoteExecution> getRemoteExecutions(String taskName){
-        ArrayList<RemoteExecution> remoteExecutions = null;
+
+        Log.d(TAG, "Fetching remote executions: " + taskName);
+
+        ArrayList<RemoteExecution> remoteExecutions =  new ArrayList<>();
 
         Cursor cursor = db.rawQuery("select * from " + TABLE_OFFLOAD,null);
 
@@ -96,6 +105,9 @@ public class DBAdapter {
     }
 
     public long addMobileDevice(MobileNode device) {
+
+        Log.d(TAG, "inserting mobile device: " + device.getNodeName());
+
         if (device == null || device.getIp() == null || device.getPort() == 0) {
             return -1;
         }
@@ -165,16 +177,10 @@ public class DBAdapter {
     }
 
     public ArrayList<MobileNode> getMobileDevicesList() {
-        ArrayList<MobileNode> devices = null;
+        ArrayList<MobileNode> devices =  new ArrayList<>();
 
         Cursor cursor = db.query(TABLE_MOBILE_DEVICES, null, null, null,
                 null, null, DBHelper.COL_DEV_ID);
-
-        if (cursor != null) {
-            devices = new ArrayList<>();
-        } else {
-            return devices;
-        }
 
         int idIndex = cursor.getColumnIndex(DBHelper.COL_DEV_ID);
         int ipIndex = cursor.getColumnIndex(DBHelper.COL_DEV_IP);
@@ -216,8 +222,11 @@ public class DBAdapter {
         return (cursor.getCount() > 0);
     }
 
-    public int clearDatabase() {
-        int rowsAffected = db.delete(TABLE_MOBILE_DEVICES, null, null);
-        return rowsAffected;
+    public int clearMobileDevicesTable() {
+        return db.delete(TABLE_MOBILE_DEVICES, null, null);
+    }
+
+    public int clearOffloadTable() {
+        return db.delete(TABLE_OFFLOAD, null, null);
     }
 }

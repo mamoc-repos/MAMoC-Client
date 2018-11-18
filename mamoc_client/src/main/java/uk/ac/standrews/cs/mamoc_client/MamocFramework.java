@@ -11,13 +11,14 @@ import java.util.ArrayList;
 
 import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
 import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
+import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.Decompiler.DexDecompiler;
 import uk.ac.standrews.cs.mamoc_client.Execution.DecisionEngine;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExceptionHandler;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionController;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.Profilers.DeviceProfiler;
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkProfiler;
 import uk.ac.standrews.cs.mamoc_client.Utils.Utils;
 
@@ -29,9 +30,9 @@ public class MamocFramework {
     public CommunicationController commController;
     public ExecutionController execController;
     public DecisionEngine decisionEngine;
-
     public DeviceProfiler deviceProfiler;
     public NetworkProfiler networkProfiler;
+    public DBAdapter dbAdapter;
 
     private ArrayList<Class> offloadableClasses = new ArrayList<>();
 
@@ -39,7 +40,6 @@ public class MamocFramework {
 
     private static MamocFramework instance;
 
-    private final int STACK_SIZE = 20 * 1024 * 1024;
     private ExceptionHandler exceptionHandler;
 
     private MamocFramework(Context context) {
@@ -47,12 +47,15 @@ public class MamocFramework {
     }
 
     public void start() {
-        commController = CommunicationController.getInstance(mContext);
-        execController = ExecutionController.getInstance(mContext);
-        decisionEngine = DecisionEngine.getInstance(mContext);
+        this.commController = CommunicationController.getInstance(mContext);
+        this.execController = ExecutionController.getInstance(mContext);
+        this.decisionEngine = DecisionEngine.getInstance(mContext);
 
-        deviceProfiler = new DeviceProfiler(mContext);
-        networkProfiler = new NetworkProfiler(mContext);
+        this.deviceProfiler = new DeviceProfiler(mContext);
+        this.networkProfiler = new NetworkProfiler(mContext);
+
+        this.dbAdapter = DBAdapter.getInstance(mContext);
+
         // TODO: find a better mechanism for reindexing the changed annotated classes
         if (!checkAnnotatedIndexing()) {
             findOffloadableClasses();
@@ -64,7 +67,6 @@ public class MamocFramework {
     private void createSelfNode(Context context) {
         selfNode = new MobileNode(context);
         selfNode.setNodeName("SelfNode");
-//        selfNode.setDeviceID(deviceProfiler.getDeviceID(context));
         selfNode.setBatteryLevel(deviceProfiler.getBatteryLevel());
         selfNode.setBatteryState(deviceProfiler.isDeviceCharging());
         selfNode.setCpuFreq((int)deviceProfiler.getTotalCpuFreq(context));
@@ -96,7 +98,8 @@ public class MamocFramework {
 
         ThreadGroup group = new ThreadGroup("Dex to Java Group");
 
-        Thread annotationIndexingThread = new Thread(group, (Runnable) () -> {
+        int STACK_SIZE = 20 * 1024 * 1024;
+        Thread annotationIndexingThread = new Thread(group, () -> {
 
             Iterable<Class<?>> klasses = ClassIndex.getAnnotated(Offloadable.class);
             ArrayList<String> annotatedClasses = new ArrayList<>();

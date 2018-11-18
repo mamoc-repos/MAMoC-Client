@@ -13,14 +13,11 @@ import io.crossbar.autobahn.wamp.types.CallResult;
 import io.crossbar.autobahn.wamp.types.Publication;
 import io.crossbar.autobahn.wamp.types.Subscription;
 import java8.util.concurrent.CompletableFuture;
-import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.standrews.cs.mamoc_client.Model.LocalExecution;
 import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
-import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkProfiler;
 
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_PUB;
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
@@ -35,8 +32,6 @@ public class ExecutionController {
     private static ExecutionController instance;
 
     private MamocFramework framework;
-    private NetworkProfiler netProfiler;
-    private DBAdapter dbAdapter;
 
     private Subscription sub;
     long startSendingTime, endSendingTime;
@@ -47,8 +42,6 @@ public class ExecutionController {
     private ExecutionController(Context context) {
         this.mContext = context;
         framework = MamocFramework.getInstance(context);
-        netProfiler = framework.networkProfiler;
-        dbAdapter = DBAdapter.getInstance(context);
     }
 
     public static ExecutionController getInstance(Context context) {
@@ -68,15 +61,17 @@ public class ExecutionController {
 
     public void runRemote(Context context, ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
 
+        Log.d(TAG, "running " + rpc_name + " remotely");
+
         remote = new RemoteExecution();
         remote.setTaskName(rpc_name);
-        remote.setNetworkType(netProfiler.getNetworkType());
+        remote.setNetworkType(framework.networkProfiler.getNetworkType());
         remote.setOffloadedDate(System.nanoTime());
 
         switch (location) {
 
             case D2D:
-                runNearby();
+                runNearby(context, rpc_name, resource_name, params);
                 remote.setExecLocation(ExecutionLocation.D2D);
                 break;
 
@@ -95,6 +90,7 @@ public class ExecutionController {
     public void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
 
         ExecutionLocation location = framework.decisionEngine.makeDecision(rpc_name, false);
+//        Log.d(TAG, "Decision Engine returned location: " + location.getValue());
 
         if (location == ExecutionLocation.LOCAL) {
             runLocal(context, rpc_name, resource_name, params);
@@ -103,15 +99,22 @@ public class ExecutionController {
         }
     }
 
-    private void runNearby() {
+    private void runNearby(Context context, String rpc_name, String resource_name, Object... params) {
+
+        Log.d(TAG, "running " + rpc_name + " on edge");
+
         // TODO: Java Reflect dynamic call to class on connected mobile nodes
+
     }
 
     private void runOnEdge(Context context, String rpc_name, String resource_name, Object... params){
+
+        Log.d(TAG, "running " + rpc_name + " on edge");
+
         TreeSet<EdgeNode> edgeNodes = MamocFramework.getInstance(context).commController.getEdgeDevices();
         if (!edgeNodes.isEmpty()) {
             EdgeNode node = edgeNodes.first(); // for now we assume we are connected to one edge device
-            remote.setRttSpeed(netProfiler.measureRtt(node.getIp(), node.getPort()));
+            remote.setRttSpeed(framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
             runRemotely(context, node, rpc_name, resource_name, params);
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
@@ -119,6 +122,9 @@ public class ExecutionController {
     }
 
     private void runOnCloud(Context context, String rpc_name, String resource_name, Object... params){
+
+        Log.d(TAG, "running " + rpc_name + " on public cloud");
+
         TreeSet<CloudNode> cloudNodes = MamocFramework.getInstance(context).commController.getCloudDevices();
         if (!cloudNodes.isEmpty()) {
             CloudNode node = cloudNodes.first();
@@ -232,7 +238,6 @@ public class ExecutionController {
 
                         subFuture.whenComplete((subscription, throwable) -> {
                             if (throwable == null) {
-
                                 mContext = context;
                                 sub = subscription;
                                 // We have successfully subscribed.
@@ -316,7 +321,7 @@ public class ExecutionController {
 
     private void addExecutionEntry(boolean completed){
         remote.setCompleted(completed);
-        dbAdapter.addRemoteExecution(remote);
+        framework.dbAdapter.addRemoteExecution(remote);
         remote = null;
     }
 }

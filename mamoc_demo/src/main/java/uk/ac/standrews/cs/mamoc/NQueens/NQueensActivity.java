@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
 import uk.ac.standrews.cs.mamoc.R;
 
@@ -30,6 +30,7 @@ public class NQueensActivity extends DemoBaseActivity {
         super.onViewReady(savedInstanceState, intent);
 
         mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         localButton = findViewById(R.id.buttonLocal);
         edgeButton = findViewById(R.id.buttonEdge);
@@ -43,6 +44,7 @@ public class NQueensActivity extends DemoBaseActivity {
         localButton.setOnClickListener(view -> runQueens(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> runQueens(ExecutionLocation.EDGE));
         cloudButton.setOnClickListener(view -> runQueens(ExecutionLocation.PUBLIC_CLOUD));
+        mamocButton.setOnClickListener(view -> runQueens(ExecutionLocation.DYNAMIC));
 
         showBackArrow("NQueens Demo");
     }
@@ -111,14 +113,12 @@ public class NQueensActivity extends DemoBaseActivity {
         }
     }
 
-
     private void runDynamically(int N) {
         try{
             mamocFramework.execute(ExecutionLocation.DYNAMIC, RPC_NAME, "None", N);
         } catch (Exception e){
             Log.e("Mamoc", e.getLocalizedMessage());
         }
-
     }
 
     @Override

@@ -1,7 +1,7 @@
 # MAMoC-Android
 
 This is a mobile computation offloading framework that offloads the compute-intensive tasks in mobile devices to more powerful
-surrogates (edge devices and remote cloud instances). 
+surrogates (nearby Android devices, edge devices or public cloud servers). 
 
 
 ## Server component installation

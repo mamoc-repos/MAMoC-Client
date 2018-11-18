@@ -1,6 +1,6 @@
 package uk.ac.standrews.cs.mamoc_client.Model;
 
-import uk.ac.standrews.cs.mamoc_client.Profilers.ExecutionLocation;
+import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
 public class RemoteExecution {
