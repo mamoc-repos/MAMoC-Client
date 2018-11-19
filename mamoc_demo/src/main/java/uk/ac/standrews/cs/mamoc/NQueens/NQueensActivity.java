@@ -15,14 +15,10 @@ import uk.ac.standrews.cs.mamoc.R;
 
 public class NQueensActivity extends DemoBaseActivity {
 
-    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.nqueens.Queens";
+    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.NQueens.Queens";
 
-    //views
-    private Button localButton, edgeButton, cloudButton, mamocButton;
     private TextView nqueensOutput, nOutput;
 
-    //variables
-    private int N;
     private MamocFramework mamocFramework;
 
     @Override
@@ -32,10 +28,11 @@ public class NQueensActivity extends DemoBaseActivity {
         mamocFramework = MamocFramework.getInstance(this);
         mamocFramework.start();
 
-        localButton = findViewById(R.id.buttonLocal);
-        edgeButton = findViewById(R.id.buttonEdge);
-        cloudButton = findViewById(R.id.buttonCloud);
-        mamocButton = findViewById(R.id.buttonMamoc);
+        //views
+        Button localButton = findViewById(R.id.buttonLocal);
+        Button edgeButton = findViewById(R.id.buttonEdge);
+        Button cloudButton = findViewById(R.id.buttonCloud);
+        Button mamocButton = findViewById(R.id.buttonMamoc);
 
         nqueensOutput = findViewById(R.id.sortOutput);
         nOutput = findViewById(R.id.mandelBrotEditText);
@@ -56,43 +53,33 @@ public class NQueensActivity extends DemoBaseActivity {
 
     private void runQueens(ExecutionLocation location) {
 
+        //variables
+        int n;
         if (nOutput.getText().toString().isEmpty()) {
         //    Toast.makeText(this, "Please enter N size", Toast.LENGTH_SHORT).show();
         //    return;
-            N = 13;
+            n = 13;
         } else {
-            N = Integer.parseInt(nOutput.getText().toString());
+            n = Integer.parseInt(nOutput.getText().toString());
         }
 
         switch (location) {
             case LOCAL:
-                runLocal(N);
+                runLocal(n);
                 break;
             case EDGE:
-                runEdge(N);
+                runEdge(n);
                 break;
             case PUBLIC_CLOUD:
-                runCloud(N);
+                runCloud(n);
                 break;
             case DYNAMIC:
-                runDynamically(N);
+                runDynamically(n);
         }
     }
 
     private void runLocal(int N) {
-
-        long startTime = System.nanoTime();
-
-        showProgressDialog();
-
-        new Queens(N).run();
-
-        long endTime = System.nanoTime();
-        long MethodDuration = (endTime - startTime);
-
-        addLog("", (double) MethodDuration * 1.0e-9, 0);
-
-        hideDialog();
+        mamocFramework.execute(ExecutionLocation.LOCAL, RPC_NAME, "None", N);
     }
 
     private void runEdge(int N) {

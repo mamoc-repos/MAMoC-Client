@@ -6,6 +6,10 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -16,8 +20,7 @@ import java8.util.concurrent.CompletableFuture;
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
-import uk.ac.standrews.cs.mamoc_client.Model.LocalExecution;
-import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
+import uk.ac.standrews.cs.mamoc_client.Model.TaskExecution;
 
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_PUB;
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
@@ -34,10 +37,9 @@ public class ExecutionController {
     private MamocFramework framework;
 
     private Subscription sub;
-    long startSendingTime, endSendingTime;
+    private long startSendingTime, endSendingTime;
 
-    RemoteExecution remote;
-    LocalExecution local;
+    private TaskExecution task;
 
     private ExecutionController(Context context) {
         this.mContext = context;
@@ -55,34 +57,66 @@ public class ExecutionController {
         return instance;
     }
 
-    public void runLocal(Context context, String rpc_name, String resource_name, Object... params) {
-        local = new LocalExecution();
+    public void runLocally(String rpc_name, Object... params) {
+        Log.d(TAG, "running " + rpc_name + " locally");
+
+        task = new TaskExecution();
+        task.setTaskName(rpc_name);
+        task.setExecLocation(ExecutionLocation.LOCAL);
+        task.setCommOverhead(0.0);
+        task.setNetworkType(framework.networkProfiler.getNetworkType());
+        task.setExecutionDate(System.currentTimeMillis());
+
+        startSendingTime = System.nanoTime();
+
+        try {
+            Class<?> cls = Class.forName(rpc_name);
+            Constructor<?> constructor = getAppropriateConstructor(cls, params); //cls.getConstructor(params.getClass());
+            Object instance = constructor.newInstance(params);
+            Method runMethod = instance.getClass().getMethod("run");
+
+            Object result = runMethod.invoke(instance);
+            if (result == null){
+                result = "Nothing";
+            }
+
+            endSendingTime = System.nanoTime();
+            double executionTime = (double)(endSendingTime - startSendingTime) * 1.0e-9;
+            task.setExecutionTime(executionTime);
+            addExecutionEntry(task);
+            broadcastLocalResults(result, executionTime);
+
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException |
+                InstantiationException | InvocationTargetException e) {
+            Log.e(TAG, e.getLocalizedMessage());
+            e.printStackTrace();
+        }
     }
 
     public void runRemote(Context context, ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
 
         Log.d(TAG, "running " + rpc_name + " remotely");
 
-        remote = new RemoteExecution();
-        remote.setTaskName(rpc_name);
-        remote.setNetworkType(framework.networkProfiler.getNetworkType());
-        remote.setOffloadedDate(System.nanoTime());
+        task = new TaskExecution();
+        task.setTaskName(rpc_name);
+        task.setNetworkType(framework.networkProfiler.getNetworkType());
+        task.setExecutionDate(System.currentTimeMillis());
 
         switch (location) {
 
             case D2D:
                 runNearby(context, rpc_name, resource_name, params);
-                remote.setExecLocation(ExecutionLocation.D2D);
+                task.setExecLocation(ExecutionLocation.D2D);
                 break;
 
             case EDGE:
                 runOnEdge(context, rpc_name, resource_name, params);
-                remote.setExecLocation(ExecutionLocation.EDGE);
+                task.setExecLocation(ExecutionLocation.EDGE);
                 break;
 
             case PUBLIC_CLOUD:
                 runOnCloud(context, rpc_name, resource_name, params);
-                remote.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
+                task.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
                 break;
         }
     }
@@ -90,10 +124,9 @@ public class ExecutionController {
     public void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
 
         ExecutionLocation location = framework.decisionEngine.makeDecision(rpc_name, false);
-//        Log.d(TAG, "Decision Engine returned location: " + location.getValue());
 
         if (location == ExecutionLocation.LOCAL) {
-            runLocal(context, rpc_name, resource_name, params);
+            runLocally(rpc_name, params);
         } else {
             runRemote(context, location, rpc_name, resource_name, params);
         }
@@ -101,7 +134,7 @@ public class ExecutionController {
 
     private void runNearby(Context context, String rpc_name, String resource_name, Object... params) {
 
-        Log.d(TAG, "running " + rpc_name + " on edge");
+        Log.d(TAG, "running " + rpc_name + " nearby");
 
         // TODO: Java Reflect dynamic call to class on connected mobile nodes
 
@@ -111,10 +144,10 @@ public class ExecutionController {
 
         Log.d(TAG, "running " + rpc_name + " on edge");
 
-        TreeSet<EdgeNode> edgeNodes = MamocFramework.getInstance(context).commController.getEdgeDevices();
+        TreeSet<EdgeNode> edgeNodes = framework.commController.getEdgeDevices();
         if (!edgeNodes.isEmpty()) {
             EdgeNode node = edgeNodes.first(); // for now we assume we are connected to one edge device
-            remote.setRttSpeed(framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
+            task.setRttSpeed(framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
             runRemotely(context, node, rpc_name, resource_name, params);
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
@@ -125,7 +158,7 @@ public class ExecutionController {
 
         Log.d(TAG, "running " + rpc_name + " on public cloud");
 
-        TreeSet<CloudNode> cloudNodes = MamocFramework.getInstance(context).commController.getCloudDevices();
+        TreeSet<CloudNode> cloudNodes = framework.commController.getCloudDevices();
         if (!cloudNodes.isEmpty()) {
             CloudNode node = cloudNodes.first();
             runRemotely(context, node, rpc_name, resource_name, params);
@@ -166,11 +199,12 @@ public class ExecutionController {
                             } else {
                                 // Something went bad.
                                 throwable.printStackTrace();
-                                addExecutionEntry(false);
+                                task.setCompleted(false);
+                                addExecutionEntry(task);
                             }
                         });
 
-                        String sourceCode =  MamocFramework.getInstance(context).fetchSourceCode(rpc_name);
+                        String sourceCode = framework.fetchSourceCode(rpc_name);
 
                         startSendingTime = System.nanoTime();
 
@@ -187,16 +221,18 @@ public class ExecutionController {
                         // Shows we can separate out exception handling
                         pubFuture.exceptionally(throwable -> {
                             throwable.printStackTrace();
-                            addExecutionEntry(false);
+                            task.setCompleted(false);
+                            addExecutionEntry(task);
                             return null;
                         });
 
                     } catch (Exception e) {
                         e.printStackTrace();
-                        addExecutionEntry(false);
+                        task.setCompleted(false);
+                        addExecutionEntry(task);
                     }
                 } else {
-                    // Call the remote procedure.
+                    // Call the task procedure.
                     Log.d(TAG, String.format("RPC ID: %s",
                             registrationResult.results.get(0)));
 
@@ -248,7 +284,7 @@ public class ExecutionController {
                             }
                         });
 
-                        String sourceCode =  MamocFramework.getInstance(context).fetchSourceCode(rpc_name);
+                        String sourceCode =  framework.fetchSourceCode(rpc_name);
 
                         startSendingTime = System.nanoTime();
 
@@ -272,7 +308,7 @@ public class ExecutionController {
                         e.printStackTrace();
                     }
                 } else {
-                    // Call the remote procedure.
+                    // Call the task procedure.
                     Log.d(TAG, String.format("RPC ID: %s",
                             registrationResult.results.get(0)));
 
@@ -297,16 +333,16 @@ public class ExecutionController {
     }
 
     private void broadcastResults(List<Object> results){
-        double commOverhead = (double)(endSendingTime - startSendingTime) * 1.0e-9;
-        Log.d(TAG, String.valueOf(commOverhead));
+        double totalTime = (double)(endSendingTime - startSendingTime) * 1.0e-9;
         double executionTime = (Double) results.get(1);
-        commOverhead -= executionTime;
+        double commOverhead = totalTime - executionTime;
 
-        remote.setExecutionTime(executionTime);
-        remote.setCommOverhead(commOverhead);
+        task.setExecutionTime(executionTime);
+        task.setCommOverhead(commOverhead);
+        task.setCompleted(true);
 
-        // insert successful remote execution to DB
-        addExecutionEntry(true);
+        // insert successful task execution to DB
+        addExecutionEntry(task);
 
         Log.d(TAG, String.valueOf(commOverhead));
 
@@ -319,9 +355,51 @@ public class ExecutionController {
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
-    private void addExecutionEntry(boolean completed){
-        remote.setCompleted(completed);
-        framework.dbAdapter.addRemoteExecution(remote);
-        remote = null;
+    private void addExecutionEntry(TaskExecution task){
+        framework.dbAdapter.addTaskExecution(task);
+    }
+
+    private void broadcastLocalResults(Object result, double duration){
+
+        Log.d(TAG, "Broadcasting local result");
+        Intent intent = new Intent(OFFLOADING_RESULT_SUB);
+        intent.putExtra("result", (String) result);
+        intent.putExtra("duration", duration);
+        intent.putExtra("overhead", 0.0);
+
+        LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
+    }
+
+
+    // https://stackoverflow.com/a/18136892/1478212
+    private static <C> Constructor<C> getAppropriateConstructor(Class<C> c, Object[] initArgs){
+        if(initArgs == null)
+            initArgs = new Object[0];
+        for(Constructor con : c.getDeclaredConstructors()){
+            Class[] types = con.getParameterTypes();
+            if(types.length!=initArgs.length)
+                continue;
+            boolean match = true;
+            for(int i = 0; i < types.length; i++){
+                Class need = types[i], got = initArgs[i].getClass();
+                if(!need.isAssignableFrom(got)){
+                    if(need.isPrimitive()){
+                        match = (int.class.equals(need) && Integer.class.equals(got))
+                                || (long.class.equals(need) && Long.class.equals(got))
+                                || (char.class.equals(need) && Character.class.equals(got))
+                                || (short.class.equals(need) && Short.class.equals(got))
+                                || (boolean.class.equals(need) && Boolean.class.equals(got))
+                                || (byte.class.equals(need) && Byte.class.equals(got));
+                    }else{
+                        match = false;
+                    }
+                }
+                if(!match)
+                    break;
+            }
+            if(match)
+                return con;
+        }
+        throw new IllegalArgumentException("Cannot find an appropriate constructor for class " + c + " and arguments " + Arrays.toString(initArgs));
     }
 }

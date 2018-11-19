@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
+import uk.ac.standrews.cs.mamoc_client.Model.TaskExecution;
 import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
@@ -44,9 +44,9 @@ public class DBAdapter {
         return instance;
     }
 
-    public long addRemoteExecution(RemoteExecution task){
+    public long addTaskExecution(TaskExecution task){
 
-        Log.d(TAG, "inserting remote task: " + task.getTaskName());
+        Log.d(TAG, "inserting task to db: " + task.getTaskName());
 
         if (task == null) { return -1; }
 
@@ -57,17 +57,17 @@ public class DBAdapter {
         values.put(DBHelper.COL_COMMUNICATION_OVERHEAD, task.getCommOverhead());
         values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().toString());
         values.put(DBHelper.COL_RTT_SPEED, task.getRttSpeed());
-        values.put(DBHelper.COL_OFFLOAD_DATE, task.getOffloadedDate());
+        values.put(DBHelper.COL_OFFLOAD_DATE, task.getExecutionDate());
         values.put(DBHelper.COL_OFFLOAD_COMPLETE, task.isCompleted() ? 1 : 0);
 
         return db.insert(TABLE_OFFLOAD, null, values);
     }
 
-    public ArrayList<RemoteExecution> getRemoteExecutions(String taskName){
+    public ArrayList<TaskExecution> getRemoteExecutions(String taskName){
 
         Log.d(TAG, "Fetching remote executions: " + taskName);
 
-        ArrayList<RemoteExecution> remoteExecutions =  new ArrayList<>();
+        ArrayList<TaskExecution> taskExecutions =  new ArrayList<>();
 
         Cursor cursor = db.rawQuery("select * from " + TABLE_OFFLOAD,null);
 
@@ -83,17 +83,17 @@ public class DBAdapter {
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(DBHelper.COL_TASK_NAME));
             if (name.equalsIgnoreCase(taskName)) {
-                RemoteExecution remote = new RemoteExecution();
+                TaskExecution remote = new TaskExecution();
                 remote.setTaskName(cursor.getString(nameIndex));
                 remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
                 remote.setNetworkType(NetworkType.valueOf(cursor.getString(networkTypeIndex)));
                 remote.setExecutionTime(cursor.getDouble(execTimeIndex));
                 remote.setCommOverhead(cursor.getDouble(commIndex));
                 remote.setRttSpeed(cursor.getLong(rttIndex));
-                remote.setOffloadedDate(cursor.getLong(offDateIndex));
-                remote.setOffloadedDate(cursor.getInt(completedIndex));
+                remote.setExecutionDate(cursor.getLong(offDateIndex));
+                remote.setExecutionDate(cursor.getInt(completedIndex));
 
-                remoteExecutions.add(remote);
+                taskExecutions.add(remote);
             }
         }
 
@@ -101,7 +101,7 @@ public class DBAdapter {
             cursor.close();
         }
 
-        return remoteExecutions;
+        return taskExecutions;
     }
 
     public long addMobileDevice(MobileNode device) {
@@ -229,4 +229,5 @@ public class DBAdapter {
     public int clearOffloadTable() {
         return db.delete(TABLE_OFFLOAD, null, null);
     }
+
 }

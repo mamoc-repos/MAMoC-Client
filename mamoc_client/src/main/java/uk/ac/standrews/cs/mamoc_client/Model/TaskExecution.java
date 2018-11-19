@@ -3,7 +3,7 @@ package uk.ac.standrews.cs.mamoc_client.Model;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
-public class RemoteExecution {
+public class TaskExecution {
 
     private String taskName;
     private ExecutionLocation execLocation;
@@ -11,10 +11,10 @@ public class RemoteExecution {
     private double executionTime;
     private double commOverhead;
     private long rttSpeed;
-    private long offloadedDate;
+    private long executionDate;
     private boolean completed;
 
-    public RemoteExecution(){
+    public TaskExecution(){
 
     }
 
@@ -66,12 +66,12 @@ public class RemoteExecution {
         this.rttSpeed = rttSpeed;
     }
 
-    public long getOffloadedDate() {
-        return offloadedDate;
+    public long getExecutionDate() {
+        return executionDate;
     }
 
-    public void setOffloadedDate(long offloadedDate) {
-        this.offloadedDate = offloadedDate;
+    public void setExecutionDate(long offloadedDate) {
+        this.executionDate = offloadedDate;
     }
 
     public boolean isCompleted() { return completed; }

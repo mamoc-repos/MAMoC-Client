@@ -11,7 +11,7 @@ import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.standrews.cs.mamoc_client.Model.MamocNode;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
-import uk.ac.standrews.cs.mamoc_client.Model.RemoteExecution;
+import uk.ac.standrews.cs.mamoc_client.Model.TaskExecution;
 import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
 
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
@@ -71,10 +71,10 @@ public class DecisionEngine {
             }
         }
 
-        ArrayList<RemoteExecution> remoteExecutions = framework.dbAdapter.getRemoteExecutions(taskName);
+        ArrayList<TaskExecution> taskExecutions = framework.dbAdapter.getRemoteExecutions(taskName);
 
         // check if task has previously been offloaded
-        if (remoteExecutions.size() > 0 && remoteExecs <= MAX_REMOTE_EXECUTIONS) {
+        if (taskExecutions.size() > 0 && remoteExecs <= MAX_REMOTE_EXECUTIONS) {
 
             Log.d(TAG, "remote executions exist");
 
