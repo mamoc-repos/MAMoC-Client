@@ -6,6 +6,9 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -57,11 +60,11 @@ public class ExecutionController {
         return instance;
     }
 
-    public void runLocally(String rpc_name, Object... params) {
-        Log.d(TAG, "running " + rpc_name + " locally");
+    public void runLocally(String task_name, String resource_name, Object... params) {
+        Log.d(TAG, "running " + task_name + " locally");
 
         task = new TaskExecution();
-        task.setTaskName(rpc_name);
+        task.setTaskName(task_name);
         task.setExecLocation(ExecutionLocation.LOCAL);
         task.setCommOverhead(0.0);
         task.setNetworkType(framework.networkProfiler.getNetworkType());
@@ -70,12 +73,30 @@ public class ExecutionController {
         startSendingTime = System.nanoTime();
 
         try {
-            Class<?> cls = Class.forName(rpc_name);
-            Constructor<?> constructor = getAppropriateConstructor(cls, params); //cls.getConstructor(params.getClass());
-            Object instance = constructor.newInstance(params);
+            Class<?> cls = Class.forName(task_name);
+            Constructor<?> constructor = null;
+            Object instance = null;
+
+            if (!resource_name.equalsIgnoreCase("None")){
+                String fileContent = getContentFromTextFile(resource_name + ".txt");
+
+                // create a new parameters array with the file content appended to it
+                Object[] newParams = new Object[params.length + 1];
+                newParams[0] = fileContent;
+                System.arraycopy(params, 0, newParams, 1, params.length);
+
+                constructor = getAppropriateConstructor(cls, newParams);
+                instance = constructor.newInstance(newParams);
+            } else {
+                constructor = getAppropriateConstructor(cls, params);
+                instance = constructor.newInstance(params);
+            }
+
             Method runMethod = instance.getClass().getMethod("run");
 
             Object result = runMethod.invoke(instance);
+
+            // if nothing is returned from the execution
             if (result == null){
                 result = "Nothing";
             }
@@ -93,95 +114,95 @@ public class ExecutionController {
         }
     }
 
-    public void runRemote(Context context, ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
+    public void runRemote(Context context, ExecutionLocation location, String task_name, String resource_name, Object... params) {
 
-        Log.d(TAG, "running " + rpc_name + " remotely");
+        Log.d(TAG, "running " + task_name + " remotely");
 
         task = new TaskExecution();
-        task.setTaskName(rpc_name);
+        task.setTaskName(task_name);
         task.setNetworkType(framework.networkProfiler.getNetworkType());
         task.setExecutionDate(System.currentTimeMillis());
 
         switch (location) {
 
             case D2D:
-                runNearby(context, rpc_name, resource_name, params);
+                runNearby(context, task_name, resource_name, params);
                 task.setExecLocation(ExecutionLocation.D2D);
                 break;
 
             case EDGE:
-                runOnEdge(context, rpc_name, resource_name, params);
+                runOnEdge(context, task_name, resource_name, params);
                 task.setExecLocation(ExecutionLocation.EDGE);
                 break;
 
             case PUBLIC_CLOUD:
-                runOnCloud(context, rpc_name, resource_name, params);
+                runOnCloud(context, task_name, resource_name, params);
                 task.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
                 break;
         }
     }
 
-    public void runDynamically(Context context, String rpc_name, String resource_name, Object[] params) {
+    public void runDynamically(Context context, String task_name, String resource_name, Object[] params) {
 
-        ExecutionLocation location = framework.decisionEngine.makeDecision(rpc_name, false);
+        ExecutionLocation location = framework.decisionEngine.makeDecision(task_name, false);
 
         if (location == ExecutionLocation.LOCAL) {
-            runLocally(rpc_name, params);
+            runLocally(task_name, resource_name, params);
         } else {
-            runRemote(context, location, rpc_name, resource_name, params);
+            runRemote(context, location, task_name, resource_name, params);
         }
     }
 
-    private void runNearby(Context context, String rpc_name, String resource_name, Object... params) {
+    private void runNearby(Context context, String task_name, String resource_name, Object... params) {
 
-        Log.d(TAG, "running " + rpc_name + " nearby");
+        Log.d(TAG, "running " + task_name + " nearby");
 
         // TODO: Java Reflect dynamic call to class on connected mobile nodes
 
     }
 
-    private void runOnEdge(Context context, String rpc_name, String resource_name, Object... params){
+    private void runOnEdge(Context context, String task_name, String resource_name, Object... params){
 
-        Log.d(TAG, "running " + rpc_name + " on edge");
+        Log.d(TAG, "running " + task_name + " on edge");
 
         TreeSet<EdgeNode> edgeNodes = framework.commController.getEdgeDevices();
         if (!edgeNodes.isEmpty()) {
             EdgeNode node = edgeNodes.first(); // for now we assume we are connected to one edge device
             task.setRttSpeed(framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
-            runRemotely(context, node, rpc_name, resource_name, params);
+            runRemotely(context, node, task_name, resource_name, params);
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void runOnCloud(Context context, String rpc_name, String resource_name, Object... params){
+    private void runOnCloud(Context context, String task_name, String resource_name, Object... params){
 
-        Log.d(TAG, "running " + rpc_name + " on public cloud");
+        Log.d(TAG, "running " + task_name + " on public cloud");
 
         TreeSet<CloudNode> cloudNodes = framework.commController.getCloudDevices();
         if (!cloudNodes.isEmpty()) {
             CloudNode node = cloudNodes.first();
-            runRemotely(context, node, rpc_name, resource_name, params);
+            runRemotely(context, node, task_name, resource_name, params);
         } else {
             Toast.makeText(context, "No cloud node exists", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void runRemotely(Context context, EdgeNode node, String rpc_name, String resource_name, Object[] params){
+    private void runRemotely(Context context, EdgeNode node, String task_name, String resource_name, Object[] params){
 
         if (node.session.isConnected()) {
-            Log.d(TAG, "trying to call " +  rpc_name + " procedure");
+            Log.d(TAG, "trying to call " +  task_name + " procedure");
 
             mContext = context;
 
             // check if procedure is registered
-            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
+            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, task_name);
 
             registeredFuture.thenAccept(registrationResult -> {
                 if (registrationResult.results.get(0) == null) {
                     // Procedure not registered
-                    Log.d(TAG, rpc_name + " not registered");
-                    Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, task_name + " not registered");
+                    Toast.makeText(context, task_name + " not registered", Toast.LENGTH_SHORT).show();
 
                     try {
                         // subscribe to the result of offloading
@@ -204,7 +225,7 @@ public class ExecutionController {
                             }
                         });
 
-                        String sourceCode = framework.fetchSourceCode(rpc_name);
+                        String sourceCode = framework.fetchSourceCode(task_name);
 
                         startSendingTime = System.nanoTime();
 
@@ -212,7 +233,7 @@ public class ExecutionController {
                         CompletableFuture<Publication> pubFuture = node.session.publish(
                                 OFFLOADING_PUB,
                                 "Android",
-                                rpc_name,
+                                task_name,
                                 sourceCode,
                                 resource_name,
                                 params);
@@ -237,7 +258,7 @@ public class ExecutionController {
                             registrationResult.results.get(0)));
 
                     CompletableFuture<CallResult> callFuture = node.session.call(
-                            rpc_name);
+                            task_name);
                     callFuture.thenAccept(callResult -> {
                         List<Object> results = (List) callResult.results.get(0);
 
@@ -250,21 +271,21 @@ public class ExecutionController {
         }
     }
 
-    private void runRemotely(Context context, CloudNode node, String rpc_name, String resource_name, Object[] params){
+    private void runRemotely(Context context, CloudNode node, String task_name, String resource_name, Object[] params){
 
         if (node.session.isConnected()) {
-            Log.d(TAG, "trying to call " +  rpc_name + " procedure");
+            Log.d(TAG, "trying to call " +  task_name + " procedure");
 
             mContext = context;
 
             // check if procedure is registered
-            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, rpc_name);
+            CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, task_name);
 
             registeredFuture.thenAccept(registrationResult -> {
                 if (registrationResult.results.get(0) == null) {
                     // Procedure not registered
-                    Log.d(TAG, rpc_name + " not registered");
-                    Toast.makeText(context, rpc_name + " not registered", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, task_name + " not registered");
+                    Toast.makeText(context, task_name + " not registered", Toast.LENGTH_SHORT).show();
 
                     try {
                         // subscribe to the result of offloading
@@ -284,7 +305,7 @@ public class ExecutionController {
                             }
                         });
 
-                        String sourceCode =  framework.fetchSourceCode(rpc_name);
+                        String sourceCode =  framework.fetchSourceCode(task_name);
 
                         startSendingTime = System.nanoTime();
 
@@ -292,7 +313,7 @@ public class ExecutionController {
                         CompletableFuture<Publication> pubFuture = node.session.publish(
                                 OFFLOADING_PUB,
                                 "Android",
-                                rpc_name,
+                                task_name,
                                 sourceCode,
                                 resource_name,
                                 params);
@@ -313,7 +334,7 @@ public class ExecutionController {
                             registrationResult.results.get(0)));
 
                     CompletableFuture<CallResult> callFuture = node.session.call(
-                            rpc_name);
+                            task_name);
                     callFuture.thenAccept(callResult -> {
                         List<Object> results = (List) callResult.results.get(0);
 
@@ -348,7 +369,7 @@ public class ExecutionController {
 
         Log.d(TAG, "Broadcasting offloading result");
         Intent intent = new Intent(OFFLOADING_RESULT_SUB);
-        intent.putExtra("result", (String) results.get(0));
+        intent.putExtra("result", String.valueOf(results.get(0)));
         intent.putExtra("duration", (Double) results.get(1));
         intent.putExtra("overhead", commOverhead);
 
@@ -363,7 +384,7 @@ public class ExecutionController {
 
         Log.d(TAG, "Broadcasting local result");
         Intent intent = new Intent(OFFLOADING_RESULT_SUB);
-        intent.putExtra("result", (String) result);
+        intent.putExtra("result", String.valueOf(result));
         intent.putExtra("duration", duration);
         intent.putExtra("overhead", 0.0);
 
@@ -401,5 +422,30 @@ public class ExecutionController {
                 return con;
         }
         throw new IllegalArgumentException("Cannot find an appropriate constructor for class " + c + " and arguments " + Arrays.toString(initArgs));
+    }
+
+    private String getContentFromTextFile(String file) {
+
+        String fileContent = null;
+        try {
+            fileContent = readFromAssets(mContext, file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return fileContent;
+    }
+
+    private String readFromAssets(Context context, String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filename)));
+
+        StringBuilder sb = new StringBuilder();
+        String mLine = reader.readLine();
+        while (mLine != null) {
+            sb.append(mLine); // process line
+            mLine = reader.readLine();
+        }
+        reader.close();
+        return sb.toString();
     }
 }

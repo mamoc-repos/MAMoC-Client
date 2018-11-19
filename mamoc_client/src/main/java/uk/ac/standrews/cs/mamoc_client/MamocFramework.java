@@ -151,13 +151,13 @@ public class MamocFramework {
         return null;
     }
 
-    public void execute(ExecutionLocation location, String rpc_name, String resource_name, Object... params) {
+    public void execute(ExecutionLocation location, String task_name, String resource_name, Object... params) {
         if (location == ExecutionLocation.DYNAMIC){
-            execController.runDynamically(mContext, rpc_name, resource_name, params);
+            execController.runDynamically(mContext, task_name, resource_name, params);
         } else if (location == ExecutionLocation.LOCAL) {
-            execController.runLocally(rpc_name, params);
+            execController.runLocally(task_name, resource_name, params);
         } else {
-            execController.runRemote(mContext, location, rpc_name, resource_name, params);
+            execController.runRemote(mContext, location, task_name, resource_name, params);
         }
     }
 

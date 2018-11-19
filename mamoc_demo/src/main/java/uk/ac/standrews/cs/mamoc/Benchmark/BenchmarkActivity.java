@@ -15,7 +15,7 @@ import uk.ac.standrews.cs.mamoc.R;
 
 public class BenchmarkActivity extends DemoBaseActivity {
 
-    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.Benchmark.Benchmark";
+    private final String task_name = "uk.ac.standrews.cs.mamoc.Benchmark.Benchmark";
 
     //views
     private Button localButton, edgeButton, cloudButton, mamocButton;
@@ -77,7 +77,7 @@ public class BenchmarkActivity extends DemoBaseActivity {
     private void runEdge() {
 
         try{
-            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, "None");
+            mamocFramework.execute(ExecutionLocation.EDGE, task_name, "None");
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();

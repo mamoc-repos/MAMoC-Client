@@ -15,7 +15,7 @@ import uk.ac.standrews.cs.mamoc.R;
 
 public class NQueensActivity extends DemoBaseActivity {
 
-    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.NQueens.Queens";
+    private final String task_name = Queens.class.getName();
 
     private TextView nqueensOutput, nOutput;
 
@@ -75,16 +75,17 @@ public class NQueensActivity extends DemoBaseActivity {
                 break;
             case DYNAMIC:
                 runDynamically(n);
+                break;
         }
     }
 
     private void runLocal(int N) {
-        mamocFramework.execute(ExecutionLocation.LOCAL, RPC_NAME, "None", N);
+        mamocFramework.execute(ExecutionLocation.LOCAL, task_name, "None", N);
     }
 
     private void runEdge(int N) {
         try{
-            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, "None", N);
+            mamocFramework.execute(ExecutionLocation.EDGE, task_name, "None", N);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
@@ -93,7 +94,7 @@ public class NQueensActivity extends DemoBaseActivity {
 
     private void runCloud(int N) {
         try{
-            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, RPC_NAME, "None", N);
+            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, task_name, "None", N);
         } catch (Exception e){
             Log.e("runCloud", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
@@ -102,7 +103,7 @@ public class NQueensActivity extends DemoBaseActivity {
 
     private void runDynamically(int N) {
         try{
-            mamocFramework.execute(ExecutionLocation.DYNAMIC, RPC_NAME, "None", N);
+            mamocFramework.execute(ExecutionLocation.DYNAMIC, task_name, "None", N);
         } catch (Exception e){
             Log.e("Mamoc", e.getLocalizedMessage());
         }

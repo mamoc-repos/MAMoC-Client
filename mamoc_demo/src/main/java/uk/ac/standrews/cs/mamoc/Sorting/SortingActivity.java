@@ -1,6 +1,5 @@
 package uk.ac.standrews.cs.mamoc.Sorting;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -10,10 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc.DemoBaseActivity;
@@ -21,10 +16,8 @@ import uk.ac.standrews.cs.mamoc.R;
 
 public class SortingActivity extends DemoBaseActivity {
 
-    private final String RPC_NAME = "uk.ac.standrews.cs.mamoc.sorting.QuickSort";
+    private final String task_name = QuickSort.class.getName();
 
-    //views
-    private Button localButton, edgeButton, cloudButton, mamocButton;
     RadioGroup radioGroup;
     private TextView sortOutput;
 
@@ -36,10 +29,11 @@ public class SortingActivity extends DemoBaseActivity {
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
 
-        localButton = findViewById(R.id.buttonLocal);
-        edgeButton = findViewById(R.id.buttonEdge);
-        cloudButton = findViewById(R.id.buttonCloud);
-        mamocButton = findViewById(R.id.buttonMamoc);
+        //views
+        Button localButton = findViewById(R.id.buttonLocal);
+        Button edgeButton = findViewById(R.id.buttonEdge);
+        Button cloudButton = findViewById(R.id.buttonCloud);
+        Button mamocButton = findViewById(R.id.buttonMamoc);
 
         sortOutput = findViewById(R.id.sortOutput);
         sortOutput.setMovementMethod(new ScrollingMovementMethod());
@@ -58,8 +52,10 @@ public class SortingActivity extends DemoBaseActivity {
         localButton.setOnClickListener(view -> sortText(ExecutionLocation.LOCAL));
         edgeButton.setOnClickListener(view -> sortText(ExecutionLocation.EDGE));
         cloudButton.setOnClickListener(view -> sortText(ExecutionLocation.PUBLIC_CLOUD));
+        mamocButton.setOnClickListener(view -> sortText(ExecutionLocation.DYNAMIC));
 
         mamocFramework = MamocFramework.getInstance(this);
+        mamocFramework.start();
 
         showBackArrow("Sorting Demo");
     }
@@ -86,32 +82,20 @@ public class SortingActivity extends DemoBaseActivity {
             case PUBLIC_CLOUD:
                 runCloud();
                 break;
+            case DYNAMIC:
+                runDynamically();
+                break;
         }
     }
 
     private void sortLocal() {
-
-        long startTime = System.nanoTime();
-
-        String fileContent = getContentFromTextFile(fileSize + ".txt");
-
-        showProgressDialog();
-
-        // quick sort
-        new QuickSort(fileContent).run();
-
-        long endTime = System.nanoTime();
-        long MethodDuration = (endTime - startTime);
-
-        addLog("nothing", (double) MethodDuration *1.0e-9, 0);
-
-        hideDialog();
+        mamocFramework.execute(ExecutionLocation.LOCAL, task_name, fileSize);
     }
 
     private void runEdge() {
 
         try{
-            mamocFramework.execute(ExecutionLocation.EDGE, RPC_NAME, fileSize);
+            mamocFramework.execute(ExecutionLocation.EDGE, task_name, fileSize);
         } catch (Exception e){
             Log.e("runEdge", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Edge", Toast.LENGTH_SHORT).show();
@@ -120,10 +104,18 @@ public class SortingActivity extends DemoBaseActivity {
 
     private void runCloud() {
         try{
-            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, RPC_NAME, fileSize);
+            mamocFramework.execute(ExecutionLocation.PUBLIC_CLOUD, task_name, fileSize);
         } catch (Exception e){
             Log.e("runCloud", e.getLocalizedMessage());
             Toast.makeText(this, "Could not execute on Cloud", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void runDynamically() {
+        try{
+            mamocFramework.execute(ExecutionLocation.DYNAMIC, task_name, fileSize);
+        } catch (Exception e){
+            Log.e("Mamoc", e.getLocalizedMessage());
         }
     }
 
@@ -134,30 +126,4 @@ public class SortingActivity extends DemoBaseActivity {
         sortOutput.append("Communication Overhead: " + commOverhead + "\n");
         sortOutput.append("************************************************\n");
     }
-
-    private String getContentFromTextFile(String file) {
-
-        String fileContent = null;
-        try {
-            fileContent = readFromAssets(this, file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return fileContent;
-    }
-
-    private String readFromAssets(Context context, String filename) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filename)));
-
-        StringBuilder sb = new StringBuilder();
-        String mLine = reader.readLine();
-        while (mLine != null) {
-            sb.append(mLine); // process line
-            mLine = reader.readLine();
-        }
-        reader.close();
-        return sb.toString();
-    }
-
 }
