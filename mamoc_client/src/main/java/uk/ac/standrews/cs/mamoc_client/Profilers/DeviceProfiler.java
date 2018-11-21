@@ -52,7 +52,9 @@ public class DeviceProfiler {
                         result += Double.parseDouble(line);
                     }
                 }
-                br.close();
+                if (br != null) {
+                    br.close();
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
