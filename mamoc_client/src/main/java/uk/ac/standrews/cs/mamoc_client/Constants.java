@@ -29,11 +29,6 @@ public class Constants {
     public static final int PHONE_ACCESS_PERM_REQ_CODE = 20;
     public static final int REQUEST_CODE_ASK_PERMISSIONS = 0;
 
-    public static final double CPU_WEIGHT = 0.3;
-    public static final double MEMORY_WEIGHT = 0.2;
-    public static final double RTT_WEIGHT = 0.3;
-    public static final double BATTERY_WEIGHT = 0.2;
-
     private static final String SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath();
     private static final String MAMOC_FOLDER = SDCARD + File.separator + "mamoc";
     public static final String DB_FILE = MAMOC_FOLDER + File.separator + "db-";
@@ -43,8 +38,8 @@ public class Constants {
     public static final Double BANDWIDTH_SECURITY = 7.0;
     public static final Double BANDWIDTH_PRICE = 9.0;
     public static final Double SPEED_AVAILABILITY = 5.0;
-    public static final Double SPEED_SECURITY = 7.0;
-    public static final Double SPEED_PRICE = 9.0;
+    public static final Double SPEED_SECURITY = 6.0;
+    public static final Double SPEED_PRICE = 8.0;
     public static final Double AVAILABLITY_SECURITY = 3.0;
     public static final Double AVAIALABILITY_PRICE = 3.0;
     public static final Double SECURITY_PRICE = 2.0;

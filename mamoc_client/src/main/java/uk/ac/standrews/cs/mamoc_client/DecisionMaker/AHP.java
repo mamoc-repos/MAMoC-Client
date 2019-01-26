@@ -6,6 +6,17 @@ import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.EigenDecomposition;
 import org.apache.commons.math3.linear.RealVector;
 
+import static uk.ac.standrews.cs.mamoc_client.Constants.AVAIALABILITY_PRICE;
+import static uk.ac.standrews.cs.mamoc_client.Constants.AVAILABLITY_SECURITY;
+import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_AVAILABILITY;
+import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_PRICE;
+import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_SECURITY;
+import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_SPEED;
+import static uk.ac.standrews.cs.mamoc_client.Constants.SECURITY_PRICE;
+import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_AVAILABILITY;
+import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_PRICE;
+import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_SECURITY;
+
 public class AHP {
 
     /**
@@ -185,8 +196,8 @@ public class AHP {
      * @param argv
      */
     public static void main(String argv[]) {
-        int nrVx = 4;
-        String labels[] = {"Bandwidth", "Speed", "Security", "Price"};
+        int nrVx = 5;
+        String labels[] = {"Bandwidth", "Speed", "Availability", "Security", "Price"};
 
         AHP ahp = new AHP(nrVx);
         System.out.println(ahp);
@@ -196,12 +207,16 @@ public class AHP {
         double compArray[] = ahp.getPairwiseComparisonArray();
 
         // Set the pairwise comparison values
-        compArray[0] = 2.0; // bandwidth - speed
-        compArray[1] = 9.0; // bandwidth - price
-        compArray[2] = 7.0; // bandwidth - security
-        compArray[3] = 8.0; // speed - price
-        compArray[4] = 6.0; // speed - security
-        compArray[5] = 2.0; // security - price
+        compArray[0] = 1.0; // BANDWIDTH_SPEED;
+        compArray[1] = 5.0; // BANDWIDTH_AVAILABILITY;
+        compArray[2] = 7.0; // BANDWIDTH_SECURITY;
+        compArray[3] = 9.0; // BANDWIDTH_PRICE;
+        compArray[4] = 5.0; // SPEED_AVAILABILITY;
+        compArray[5] = 6.0; // SPEED_SECURITY;
+        compArray[6] = 8.0; // SPEED_PRICE;
+        compArray[7] = 3.0; // AVAILABLITY_SECURITY;
+        compArray[8] = 3.0; // AVAIALABILITY_PRICE;
+        compArray[9] = 2.0; // SECURITY_PRICE;
 
         ahp.setPairwiseComparisonArray(compArray);
 
@@ -218,7 +233,7 @@ public class AHP {
         System.out.println();
         System.out.println("Weights: ");
         for (int k=0; k<ahp.getWeights().length; k++) {
-            System.out.println(labels[k] + ": " + ahp.getWeights()[k] * 100);
+            System.out.println(labels[k] + ": " + ahp.getWeights()[k]);
         }
 
     }
