@@ -13,7 +13,7 @@ import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
 import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.Decompiler.DexDecompiler;
-import uk.ac.standrews.cs.mamoc_client.Execution.DecisionEngine;
+import uk.ac.standrews.cs.mamoc_client.DecisionMaker.DecisionEngine;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExceptionHandler;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionController;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;

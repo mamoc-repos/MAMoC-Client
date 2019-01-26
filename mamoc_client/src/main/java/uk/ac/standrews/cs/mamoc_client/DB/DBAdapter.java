@@ -63,7 +63,7 @@ public class DBAdapter {
         return db.insert(TABLE_OFFLOAD, null, values);
     }
 
-    public ArrayList<TaskExecution> getRemoteExecutions(String taskName){
+    public ArrayList<TaskExecution> getExecutions(String taskName, boolean Remote){
 
         Log.d(TAG, "Fetching remote executions: " + taskName);
 
@@ -82,18 +82,36 @@ public class DBAdapter {
 
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(DBHelper.COL_TASK_NAME));
-            if (name.equalsIgnoreCase(taskName)) {
-                TaskExecution remote = new TaskExecution();
-                remote.setTaskName(cursor.getString(nameIndex));
-                remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
-                remote.setNetworkType(NetworkType.valueOf(cursor.getString(networkTypeIndex)));
-                remote.setExecutionTime(cursor.getDouble(execTimeIndex));
-                remote.setCommOverhead(cursor.getDouble(commIndex));
-                remote.setRttSpeed(cursor.getLong(rttIndex));
-                remote.setExecutionDate(cursor.getLong(offDateIndex));
-                remote.setExecutionDate(cursor.getInt(completedIndex));
+            if (Remote) {
+                // only fetch the executions where the commOverhead if greater than 0
+                if (name.equalsIgnoreCase(taskName) && cursor.getDouble(commIndex) > 0) {
+                    TaskExecution remote = new TaskExecution();
+                    remote.setTaskName(cursor.getString(nameIndex));
+                    remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
+                    remote.setNetworkType(NetworkType.valueOf(cursor.getString(networkTypeIndex)));
+                    remote.setExecutionTime(cursor.getDouble(execTimeIndex));
+                    remote.setCommOverhead(cursor.getDouble(commIndex));
+                    remote.setRttSpeed(cursor.getLong(rttIndex));
+                    remote.setExecutionDate(cursor.getLong(offDateIndex));
+                    remote.setExecutionDate(cursor.getInt(completedIndex));
 
-                taskExecutions.add(remote);
+                    taskExecutions.add(remote);
+                }
+            } else {
+                // only fetch the executions where the commOverhead is 0 (Local Execution)
+                if (name.equalsIgnoreCase(taskName) && cursor.getDouble(commIndex) == 0) {
+                    TaskExecution remote = new TaskExecution();
+                    remote.setTaskName(cursor.getString(nameIndex));
+                    remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
+                    remote.setNetworkType(NetworkType.valueOf(cursor.getString(networkTypeIndex)));
+                    remote.setExecutionTime(cursor.getDouble(execTimeIndex));
+                    remote.setCommOverhead(cursor.getDouble(commIndex));
+                    remote.setRttSpeed(cursor.getLong(rttIndex));
+                    remote.setExecutionDate(cursor.getLong(offDateIndex));
+                    remote.setExecutionDate(cursor.getInt(completedIndex));
+
+                    taskExecutions.add(remote);
+                }
             }
         }
 
@@ -103,6 +121,8 @@ public class DBAdapter {
 
         return taskExecutions;
     }
+
+
 
     public long addMobileDevice(MobileNode device) {
 

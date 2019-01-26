@@ -1,4 +1,6 @@
-package uk.ac.standrews.cs.mamoc_client.Utils;
+package uk.ac.standrews.cs.mamoc_client.DecisionMaker;
+
+import android.support.annotation.NonNull;
 
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.EigenDecomposition;
@@ -9,22 +11,22 @@ public class AHP {
     /**
      * Random Consistency Index
      */
-    protected static double RI[] = {0.0, 0.0, 0.58, 0.9, 1.12, 1.24, 1.32, 1.41, 1.45, 1.49};
+    private static double RI[] = {0.0, 0.0, 0.58, 0.9, 1.12, 1.24, 1.32, 1.41, 1.45, 1.49};
 
     /**
      * The matrix
      */
-    protected Array2DRowRealMatrix mtx;
+    private Array2DRowRealMatrix mtx;
 
     /**
      * Contains
      */
-    protected double pairwiseComparisonArray[];
+    private double pairwiseComparisonArray[];
 
     /**
      * Number of alternatives
      */
-    protected int nrAlternatives;
+    private int nrAlternatives;
 
     /**
      * The resulting weights/priorities
@@ -34,23 +36,23 @@ public class AHP {
     /**
      * Corresponds to the weights
      */
-    protected String labels[] = null;
+    private String labels[] = null;
 
     /**
      *
      */
-    protected EigenDecomposition evd;
+    private EigenDecomposition evd;
 
     /**
      * Convenience array, i.e. comparisonIndices[length=NumberOfPairwiseComparisons][2]
      * Contains minimum number of comparisons.
      */
-    protected int[][] comparisonIndices;
+    private int[][] comparisonIndices;
 
     /**
      * Index of the greatest Eigenvalue/ -vector
      */
-    protected int evIdx = 0; // index of actual eigenvalue/-vector
+    private int evIdx = 0; // index of actual eigenvalue/-vector
 
     /**
      *
@@ -65,7 +67,7 @@ public class AHP {
      * Construct an AHP with number of alternatives
      * @param nrAlternatives
      */
-    public AHP(int nrAlternatives) {
+    AHP(int nrAlternatives) {
         this.nrAlternatives = nrAlternatives;
         mtx = new Array2DRowRealMatrix(nrAlternatives, nrAlternatives);
         weights = new double[nrAlternatives];
@@ -88,7 +90,7 @@ public class AHP {
      *
      * @return the number of pairwise comparisons which have to be done by the user
      */
-    public int getNrOfPairwiseComparisons() {
+    int getNrOfPairwiseComparisons() {
         return ((nrAlternatives - 1) * nrAlternatives) / 2;
     }
 
@@ -96,7 +98,7 @@ public class AHP {
      *
      * @return the user input of the pairwise comparisons
      */
-    public double[] getPairwiseComparisonArray() {
+    double[] getPairwiseComparisonArray() {
         return pairwiseComparisonArray;
     }
 
@@ -104,7 +106,7 @@ public class AHP {
      * Set the pairwise comparison scores and calculate all relevant numbers
      * @param a
      */
-    public void setPairwiseComparisonArray(double a[]) {
+    void setPairwiseComparisonArray(double a[]) {
         int i = 0;
         for (int row = 0; row < nrAlternatives; row++) {
             for (int col = row + 1; col < nrAlternatives; col++) {
@@ -142,7 +144,7 @@ public class AHP {
      * @param arrayIdx
      * @return
      */
-    public int[] getIndicesForPairwiseComparison(int arrayIdx) {
+    int[] getIndicesForPairwiseComparison(int arrayIdx) {
         return comparisonIndices[arrayIdx];
     }
 
@@ -158,7 +160,7 @@ public class AHP {
      *
      * @return the consistency index
      */
-    public double getConsistencyIndex() {
+    double getConsistencyIndex() {
         return (evd.getRealEigenvalue(evIdx) - (double) nrAlternatives) / (double) (nrAlternatives - 1);
     }
 
@@ -170,6 +172,7 @@ public class AHP {
         return getConsistencyIndex() / RI[nrAlternatives] * 100.0;
     }
 
+    @NonNull
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i=0; i<nrAlternatives; i++)
@@ -178,12 +181,12 @@ public class AHP {
     }
 
     /**
-     *
+     * Test the AHP with these static values
      * @param argv
      */
     public static void main(String argv[]) {
         int nrVx = 4;
-        String labels[] = {"Experience ", "Education  ", "Charisma   ", "Age        "};
+        String labels[] = {"Bandwidth", "Speed", "Security", "Price"};
 
         AHP ahp = new AHP(nrVx);
         System.out.println(ahp);
@@ -193,12 +196,12 @@ public class AHP {
         double compArray[] = ahp.getPairwiseComparisonArray();
 
         // Set the pairwise comparison values
-        compArray[0] = 4.0;
-        compArray[1] = 3.0;
-        compArray[2] = 7.0;
-        compArray[3] = 1.0 / 3.0;
-        compArray[4] = 3.0;
-        compArray[5] = 5.0;
+        compArray[0] = 2.0; // bandwidth - speed
+        compArray[1] = 9.0; // bandwidth - price
+        compArray[2] = 7.0; // bandwidth - security
+        compArray[3] = 8.0; // speed - price
+        compArray[4] = 6.0; // speed - security
+        compArray[5] = 2.0; // security - price
 
         ahp.setPairwiseComparisonArray(compArray);
 
