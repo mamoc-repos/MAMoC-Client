@@ -33,20 +33,21 @@ public class Constants {
     private static final String MAMOC_FOLDER = SDCARD + File.separator + "mamoc";
     public static final String DB_FILE = MAMOC_FOLDER + File.separator + "db-";
 
-    public static final Double BANDWIDTH_SPEED = 1.0;
-    public static final Double BANDWIDTH_AVAILABILITY = 5.0;
-    public static final Double BANDWIDTH_SECURITY = 7.0;
-    public static final Double BANDWIDTH_PRICE = 9.0;
-    public static final Double SPEED_AVAILABILITY = 5.0;
-    public static final Double SPEED_SECURITY = 6.0;
-    public static final Double SPEED_PRICE = 8.0;
-    public static final Double AVAILABLITY_SECURITY = 3.0;
-    public static final Double AVAIALABILITY_PRICE = 3.0;
-    public static final Double SECURITY_PRICE = 2.0;
+    // Moved to DecisionMaker.Config to enable them to be changed dynamically
+//    public static final Double BANDWIDTH_SPEED = 1.0;
+//    public static final Double BANDWIDTH_AVAILABILITY = 5.0;
+//    public static final Double BANDWIDTH_SECURITY = 7.0;
+//    public static final Double BANDWIDTH_PRICE = 9.0;
+//    public static final Double SPEED_AVAILABILITY = 5.0;
+//    public static final Double SPEED_SECURITY = 6.0;
+//    public static final Double SPEED_PRICE = 8.0;
+//    public static final Double AVAILABLITY_SECURITY = 3.0;
+//    public static final Double AVAIALABILITY_PRICE = 3.0;
+//    public static final Double SECURITY_PRICE = 2.0;
 
-
-    public static final Double IMPORTANCE_HIGH = 0.9;
-    public static final Double IMPORTANCE_MEDIUM = 0.5;
-    public static final Double IMPORTANCE_LOW = 0.1;
+    // Changed to fuzzy values for TOPSIS (Check @Fuzzy class)
+//    public static final Double IMPORTANCE_HIGH = 0.9;
+//    public static final Double IMPORTANCE_MEDIUM = 0.5;
+//    public static final Double IMPORTANCE_LOW = 0.1;
 
 }

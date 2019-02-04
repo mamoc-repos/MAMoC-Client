@@ -6,17 +6,6 @@ import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.EigenDecomposition;
 import org.apache.commons.math3.linear.RealVector;
 
-import static uk.ac.standrews.cs.mamoc_client.Constants.AVAIALABILITY_PRICE;
-import static uk.ac.standrews.cs.mamoc_client.Constants.AVAILABLITY_SECURITY;
-import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_AVAILABILITY;
-import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_PRICE;
-import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_SECURITY;
-import static uk.ac.standrews.cs.mamoc_client.Constants.BANDWIDTH_SPEED;
-import static uk.ac.standrews.cs.mamoc_client.Constants.SECURITY_PRICE;
-import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_AVAILABILITY;
-import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_PRICE;
-import static uk.ac.standrews.cs.mamoc_client.Constants.SPEED_SECURITY;
-
 public class AHP {
 
     /**
@@ -179,7 +168,7 @@ public class AHP {
      *
      * @return the consistency ratio. Should be less than 10%
      */
-    public double getConsistencyRatio() {
+    double getConsistencyRatio() {
         return getConsistencyIndex() / RI[nrAlternatives] * 100.0;
     }
 
@@ -187,7 +176,7 @@ public class AHP {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i=0; i<nrAlternatives; i++)
-            sb.append(mtx.getRowVector(i) + "\n");
+            sb.append(mtx.getRowVector(i)).append("\n");
         return sb.toString();
     }
 
@@ -201,8 +190,6 @@ public class AHP {
 
         AHP ahp = new AHP(nrVx);
         System.out.println(ahp);
-
-        int d = ahp.getNrOfPairwiseComparisons();
 
         double compArray[] = ahp.getPairwiseComparisonArray();
 
@@ -226,16 +213,13 @@ public class AHP {
             System.out.println(ahp.getPairwiseComparisonArray()[i]);
         }
 
-        System.out.println("\n" + ahp + "\n");
-
-        System.out.println("Consistency Index: " + ahp.getConsistencyIndex());
-        System.out.println("Consistency Ratio: " + ahp.getConsistencyRatio() + "%");
-        System.out.println();
         System.out.println("Weights: ");
         for (int k=0; k<ahp.getWeights().length; k++) {
             System.out.println(labels[k] + ": " + ahp.getWeights()[k]);
         }
 
+        System.out.println("Consistency Index: " + ahp.getConsistencyIndex());
+        System.out.println("Consistency Ratio: " + ahp.getConsistencyRatio() + "%");
     }
 
 }
