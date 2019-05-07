@@ -1,12 +1,9 @@
 package uk.ac.standrews.cs.mamoc_client.ServiceDiscovery;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +26,7 @@ import io.crossbar.autobahn.wamp.types.ExitInfo;
 
 import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.standrews.cs.mamoc_client.Constants;
+import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.CloudNode;
 import uk.ac.standrews.cs.mamoc_client.Model.EdgeNode;
 import uk.ac.standrews.cs.mamoc_client.R;
@@ -37,18 +35,13 @@ import uk.ac.standrews.cs.mamoc_client.Utils.Utils;
 import static uk.ac.standrews.cs.mamoc_client.Constants.CLOUD_IP;
 import static uk.ac.standrews.cs.mamoc_client.Constants.CLOUD_REALM_NAME;
 import static uk.ac.standrews.cs.mamoc_client.Constants.EDGE_REALM_NAME;
-import static uk.ac.standrews.cs.mamoc_client.Constants.PHONE_ACCESS_PERM_REQ_CODE;
 import static uk.ac.standrews.cs.mamoc_client.Constants.REQUEST_CODE_ASK_PERMISSIONS;
-import static uk.ac.standrews.cs.mamoc_client.Constants.REQUEST_READ_PHONE_STATE;
-import static uk.ac.standrews.cs.mamoc_client.Constants.WRITE_PERMISSION;
-import static uk.ac.standrews.cs.mamoc_client.Constants.WRITE_PERM_REQ_CODE;
 import static uk.ac.standrews.cs.mamoc_client.Constants.EDGE_IP;
 
 public class DiscoveryActivity extends AppCompatActivity {
 
     private final String TAG = "DiscoveryActivity";
-
-    CommunicationController controller;
+    private MamocFramework framework;
     EdgeNode edge;
     CloudNode cloud;
 
@@ -70,8 +63,9 @@ public class DiscoveryActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        controller = CommunicationController.getInstance(this);
-        controller.startConnectionListener();
+        framework = MamocFramework.getInstance(this);
+        framework.commController = CommunicationController.getInstance(this);
+        framework.commController.startConnectionListener();
 
         listeningPort = findViewById(R.id.ListenPort);
 
@@ -136,7 +130,7 @@ public class DiscoveryActivity extends AppCompatActivity {
         Utils.alert(DiscoveryActivity.this, "Connected.");
         edgeBtn.setText("Status: Connected to " + EDGE_IP);
         edgeBtn.setEnabled(false);
-        controller.addEdgeDevice(edge);
+        framework.commController.addEdgeDevice(edge);
         savePrefs("edgeIP", EDGE_IP);
     }
 
@@ -149,7 +143,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     private void onDisconnectCallbackEdge(Session session, boolean wasClean) {
         Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
         Utils.alert(DiscoveryActivity.this, "Disconnected.");
-        controller.removeEdgeDevice(edge);
+        framework.commController.removeEdgeDevice(edge);
         edgeBtn.setEnabled(true);
     }
 
@@ -178,7 +172,8 @@ public class DiscoveryActivity extends AppCompatActivity {
         Utils.alert(DiscoveryActivity.this, "Connected.");
         cloudBtn.setText("Status: Connected to " + CLOUD_IP);
         cloudBtn.setEnabled(false);
-        controller.addCloudDevices(cloud);
+        framework.commController.addCloudDevices(cloud);
+        Log.d(TAG, "commController added " + CLOUD_IP);
         savePrefs("cloudIP", CLOUD_IP);
     }
 
@@ -191,7 +186,7 @@ public class DiscoveryActivity extends AppCompatActivity {
     private void onDisconnectCallbackCloud(Session session, boolean wasClean) {
         Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
         Utils.alert(DiscoveryActivity.this, "Disconnected.");
-        controller.removeCloudDevice(cloud);
+        framework.commController.removeCloudDevice(cloud);
         cloudBtn.setEnabled(true);
     }
 
@@ -227,20 +222,18 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                final int numOfRequest = grantResults.length;
-                final boolean isGranted = numOfRequest == 1
-                        && PackageManager.PERMISSION_GRANTED == grantResults[numOfRequest - 1];
-                if (isGranted) {
-                    // you are good to go
-                } else {
-                    Toast.makeText(this, "Please allow all the needed permissions", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+            final int numOfRequest = grantResults.length;
+            final boolean isGranted = numOfRequest == 1
+                    && PackageManager.PERMISSION_GRANTED == grantResults[numOfRequest - 1];
+            if (isGranted) {
+                // you are good to go
+            } else {
+                Toast.makeText(this, "Please allow all the needed permissions", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

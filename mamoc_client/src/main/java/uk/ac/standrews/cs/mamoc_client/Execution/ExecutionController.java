@@ -114,7 +114,7 @@ public class ExecutionController {
         }
     }
 
-    public void runRemote(Context context, ExecutionLocation location, String task_name, String resource_name, Object... params) {
+    public void runRemotely(Context context, ExecutionLocation location, String task_name, String resource_name, Object... params) {
 
         Log.d(TAG, "running " + task_name + " remotely");
 
@@ -142,14 +142,16 @@ public class ExecutionController {
         }
     }
 
-    public void runDynamically(Context context, String task_name, String resource_name, Object[] params) {
+    public void runDynamically(Context context, String task_name, String resource_name, Object... params) {
+
+        Log.d(TAG, "running " + task_name + " dynamically");
 
         ExecutionLocation location = framework.decisionEngine.makeDecision(task_name, false);
 
         if (location == ExecutionLocation.LOCAL) {
             runLocally(task_name, resource_name, params);
         } else {
-            runRemote(context, location, task_name, resource_name, params);
+            runRemotely(context, location, task_name, resource_name, params);
         }
     }
 

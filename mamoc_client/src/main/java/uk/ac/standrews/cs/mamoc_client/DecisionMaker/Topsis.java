@@ -141,7 +141,7 @@ public class Topsis {
 
             results.put(entry.getKey(), dValue);
             Log.d(TAG, ideal? "D+": "D-");
-            Log.d(TAG, " for " + entry.getKey() + " is: " + Config.df.format(dValue));
+            Log.d(TAG, " for " + entry.getKey().getNodeName() + " is: " + Config.df.format(dValue));
         }
 
         return results;

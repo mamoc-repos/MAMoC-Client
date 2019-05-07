@@ -28,7 +28,7 @@ public class MamocFramework {
     private Context mContext;
 
     public CommunicationController commController;
-    public ExecutionController execController;
+    private ExecutionController execController;
     public DecisionEngine decisionEngine;
     public DeviceProfiler deviceProfiler;
     public NetworkProfiler networkProfiler;
@@ -41,6 +41,7 @@ public class MamocFramework {
     private static MamocFramework instance;
 
     private ExceptionHandler exceptionHandler;
+    public String lastExecution;
 
     private MamocFramework(Context context) {
         this.mContext = context;
@@ -61,7 +62,13 @@ public class MamocFramework {
             findOffloadableClasses();
         }
 
-        createSelfNode(mContext);
+        if (selfNode == null) {
+            createSelfNode(mContext);
+        }
+
+        if (lastExecution == null){
+            lastExecution = "Local";
+        }
     }
 
     private void createSelfNode(Context context) {
@@ -157,7 +164,7 @@ public class MamocFramework {
         } else if (location == ExecutionLocation.LOCAL) {
             execController.runLocally(task_name, resource_name, params);
         } else {
-            execController.runRemote(mContext, location, task_name, resource_name, params);
+            execController.runRemotely(mContext, location, task_name, resource_name, params);
         }
     }
 

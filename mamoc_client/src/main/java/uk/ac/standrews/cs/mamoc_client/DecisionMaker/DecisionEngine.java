@@ -32,7 +32,7 @@ public class DecisionEngine {
 
     private DecisionEngine(Context context) {
         this.mContext = context;
-        framework = MamocFramework.getInstance(mContext);
+        framework = MamocFramework.getInstance(context);
     }
 
     public static DecisionEngine getInstance(Context context) {
@@ -56,64 +56,48 @@ public class DecisionEngine {
         ArrayList<TaskExecution> remoteTaskExecutions = framework.dbAdapter.getExecutions(taskName, true);
         remoteExecs = remoteTaskExecutions.size();
 
+        Log.d(TAG, "Remote execs: " + remoteExecs);
+
         ArrayList<TaskExecution> localTaskExecutions = framework.dbAdapter.getExecutions(taskName, false);
         localExecs = localTaskExecutions.size();
 
-        MobileNode selfNode = MamocFramework.getInstance(mContext).getSelfNode();
+        Log.d(TAG, "Local execs: " + localExecs);
+        Log.d(TAG, "Last Execution: " + framework.lastExecution);
 
-        // check for 5 consecutive local executions
-        if (localExecs == MAX_LOCAL_EXECUTIONS){
-            localExecs = 0;
-            if (getNodeWithMaxOffloadingScore() == selfNode) {
-                return ExecutionLocation.LOCAL;
-            }
+        // more than 5 local executions of the task - let's check if local is still better
+        if (localExecs % MAX_LOCAL_EXECUTIONS == 0 && framework.lastExecution.equals("Local")){
+            Log.d(TAG, "MAX LOCAL EXECUTIONS REACHED");
+            return evaluateRemoteSites();
         }
 
         // more than 5 remote executions of the task - let's recalculate offloading scores
         // and double check if it is still worth offloading
-        if (remoteExecs == MAX_REMOTE_EXECUTIONS ){
-            remoteExecs = 0;
+        if (remoteExecs % MAX_REMOTE_EXECUTIONS == 0 && framework.lastExecution.equals("Remote")){
+            Log.d(TAG, "MAX REMOTE EXECUTIONS REACHED");
 
-            // if there are no local executions, at least have one without calculating its offloading score
-            if (localExecs == 0){
+            Log.d(TAG, "The last executed local execution time: " + localTaskExecutions.get(localExecs-1).getExecutionTime());
+            Log.d(TAG, "The last executed remote execution time: " + remoteTaskExecutions.get(remoteExecs-1).getExecutionTime());
+
+            double localExecTime = localTaskExecutions.get(localExecs-1).getExecutionTime();
+            double remoteExecTime = remoteTaskExecutions.get(remoteExecs-1).getExecutionTime();
+
+            // Compare the last local execution with the last remote execution
+            // OR if there is no local Execution at all
+            if (localExecTime < remoteExecTime || localExecs == 0){
+                framework.lastExecution = "Local";
                 return ExecutionLocation.LOCAL;
             } else {
-                //    selfNode.setOffloadingScore(profileNode(selfNode));
-                MamocNode maxNode = getNodeWithMaxOffloadingScore();
-
-                remoteExecs++;
-                if (maxNode instanceof MobileNode) {
-                    return ExecutionLocation.D2D;
-                } else if (maxNode instanceof EdgeNode) {
-                    return ExecutionLocation.EDGE;
-                } else if (maxNode instanceof CloudNode) {
-                    return ExecutionLocation.PUBLIC_CLOUD;
-                }
-                //   }
+                return evaluateRemoteSites();
             }
         }
 
         // check if the task has previously been offloaded, if not, let's do some remote offloading
         // to record their execution times
         if (remoteExecs == 0) {
+            Log.d(TAG, "No remote executions exist");
 
-            Log.d(TAG, "remote executions exist");
-
-            TreeSet<MobileNode> mobileNodes = MamocFramework.getInstance(mContext).commController.getMobileDevices();
-            if (mobileNodes.size() > 0) {
-                // check if the nearby device has a higher offloading score than me
-                for (MobileNode node : mobileNodes) {
-                    if (node.getOffloadingScore() > selfNode.getOffloadingScore()) {
-                        Log.d(TAG, "selecting nearby");
-                        return ExecutionLocation.D2D;
-                    }
-                }
-            } else if (MamocFramework.getInstance(mContext).commController.getEdgeDevices().size() > 0) {
-                Log.d(TAG, "selecting edge");
-                return ExecutionLocation.EDGE;
-            } else if (MamocFramework.getInstance(mContext).commController.getCloudDevices().size() > 0) {
-                Log.d(TAG, "selecting public cloud");
-                return ExecutionLocation.PUBLIC_CLOUD;
+            if (evaluateRemoteSites() != null) {
+                return evaluateRemoteSites();
             }
             // if no remote resources are available then we just revert back to local execution
             else {
@@ -121,20 +105,40 @@ public class DecisionEngine {
             }
         }
 
+        // For all other normal remote executions
+        if (remoteExecs % MAX_REMOTE_EXECUTIONS != 0 && framework.lastExecution.equals("Remote")) {
+            return evaluateRemoteSites();
+        }
+
+        // For all other normal local executions
         return ExecutionLocation.LOCAL;
     }
 
+    private ExecutionLocation evaluateRemoteSites(){
+        framework.lastExecution = "Remote";
+        MamocNode maxNode = getNodeWithMaxOffloadingScore();
+
+        if (maxNode instanceof MobileNode) {
+            return ExecutionLocation.D2D;
+        } else if (maxNode instanceof EdgeNode) {
+            return ExecutionLocation.EDGE;
+        } else if (maxNode instanceof CloudNode) {
+            return ExecutionLocation.PUBLIC_CLOUD;
+        } else {
+            // This should not happen!
+            return ExecutionLocation.LOCAL;
+        }
+    }
 
     private ArrayList<Fuzzy> profileNode(MamocNode node) {
+
+        Log.d(TAG, "Profiling " + node.getNodeName() + " - " + node.getIp());
 
         double cpu, mem, rtt, battery;
         ArrayList<Fuzzy> siteCriteria = new ArrayList<>();
 
-        MobileNode selfNode = MamocFramework.getInstance(mContext).getSelfNode();
+        MobileNode selfNode = framework.getSelfNode();
 
-//        if (node.getNodeName().equals("SelfNode")) {
-//            return 1.0;
-//        }
         // nearby mobile device
         if (node instanceof MobileNode) {
 
@@ -223,7 +227,6 @@ public class DecisionEngine {
     }
 
     private MamocNode getNodeWithMaxOffloadingScore() {
-        MobileNode selfNode = framework.getSelfNode();
         TreeSet<MobileNode> mobileNodes = framework.commController.getMobileDevices();
         TreeSet<EdgeNode> edgeNodes = framework.commController.getEdgeDevices();
         TreeSet<CloudNode> cloudNodes = framework.commController.getCloudDevices();
@@ -231,25 +234,37 @@ public class DecisionEngine {
         HashMap<MamocNode, ArrayList<Fuzzy>> availableSites = new HashMap<>();
         ArrayList<Fuzzy> criteriaImportance;
 
-        MamocNode maxNode = selfNode;
-
         for (MobileNode node : mobileNodes) {
+            Log.d(TAG, "Mobile node: " + node.getNodeName() + " " + node.getIp());
             criteriaImportance = profileNode(node);
             availableSites.put(node, criteriaImportance);
         }
 
         for (EdgeNode node : edgeNodes) {
+            Log.d(TAG, "Edge node: " + node.getNodeName() + " " + node.getIp());
             criteriaImportance = profileNode(node);
             availableSites.put(node, criteriaImportance);
         }
 
         for (CloudNode node : cloudNodes) {
+            Log.d(TAG, "Cloud node: " + node.getNodeName() + " " + node.getIp());
             criteriaImportance = profileNode(node);
             availableSites.put(node, criteriaImportance);
         }
 
+        Log.d(TAG, "Available offloading sites: " + availableSites.size());
+
+        // In case only one offloading site is available
+        if (availableSites.size() == 1){
+            return availableSites.entrySet().iterator().next().getKey();
+        }
+
         // Calculate the weighted decision matrix
         TreeMap<MamocNode, Double> ranking = performEvaluation(availableSites);
+
+        // Simulate a low offloading score node
+        MamocNode maxNode = new MamocNode();
+        maxNode.setOffloadingScore(0);
 
         for (Map.Entry<MamocNode,Double> entry: ranking.entrySet()) {
             if (entry.getValue() > maxNode.getOffloadingScore()){
@@ -294,7 +309,6 @@ public class DecisionEngine {
             Log.d(TAG, Config.criteria[k] + ": " + Config.df.format(ahp.getWeights()[k]));
         }
     }
-
 
     private TreeMap<MamocNode, Double> performEvaluation(HashMap<MamocNode, ArrayList<Fuzzy>> availableSites){
 

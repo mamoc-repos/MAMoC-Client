@@ -26,8 +26,8 @@ public class NetworkProfiler {
     private final Context context;
 
     private static final int rttPings = 5;
-    public static final int rttInfinite = 100000000;
-    public static int rtt = rttInfinite;
+    private static final int rttInfinite = 100000000;
+    private static int rtt = rttInfinite;
 
     public NetworkProfiler(Context context) {
         this.context = context;

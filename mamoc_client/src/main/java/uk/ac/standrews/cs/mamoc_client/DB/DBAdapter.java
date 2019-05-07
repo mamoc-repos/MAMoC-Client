@@ -65,7 +65,7 @@ public class DBAdapter {
 
     public ArrayList<TaskExecution> getExecutions(String taskName, boolean Remote){
 
-        Log.d(TAG, "Fetching remote executions: " + taskName);
+        Log.d(TAG, "Fetching " + (Remote?"remote":"local") + " executions: " + taskName);
 
         ArrayList<TaskExecution> taskExecutions =  new ArrayList<>();
 
