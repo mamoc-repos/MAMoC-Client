@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
 
 /**
  * This class represents a specific field definition in a class.
- * <p/>
+ * <p>
  * It also acts as a FieldReference to itself. Any equality/comparison is based on its identity as a FieldReference,
  * and shouldn't take into account any non-FieldReference specifics of this field.
  */
@@ -72,7 +72,7 @@ public interface Field extends FieldReference {
 
     /**
      * Gets the access flags for this field.
-     * <p/>
+     * <p>
      * This will be a combination of the AccessFlags.* flags that are marked as compatible for use with a field.
      *
      * @return The access flags for this field
@@ -81,7 +81,7 @@ public interface Field extends FieldReference {
 
     /**
      * Gets the initial value for this field, if available.
-     * <p/>
+     * <p>
      * Only static field may have an initial value set, but are not required to have an initial value.
      *
      * @return The initial value for this field, or null if this field is not a static field, or if this static field
@@ -92,7 +92,7 @@ public interface Field extends FieldReference {
 
     /**
      * Gets a set of the annotations that are applied to this field.
-     * <p/>
+     * <p>
      * The annotations in the returned set are guaranteed to have unique types.
      *
      * @return A set of the annotations that are applied to this field

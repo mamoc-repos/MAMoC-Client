@@ -47,9 +47,9 @@ public interface CharEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedCharValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue();
@@ -62,7 +62,7 @@ public interface CharEncodedValue extends EncodedValue {
 
     /**
      * Compares this CharEncodedValue to another CharEncodedValue for equality.
-     * <p/>
+     * <p>
      * This CharEncodedValue is equal to another CharEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this CharEncodedValue
@@ -73,7 +73,7 @@ public interface CharEncodedValue extends EncodedValue {
 
     /**
      * Compare this CharEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * CharEncodedValue, the return values of getValue() are compared.
      *

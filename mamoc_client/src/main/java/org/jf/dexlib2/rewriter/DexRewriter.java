@@ -53,11 +53,11 @@ import javax.annotation.Nonnull;
 
 /**
  * Out-of-the box, this class does nothing except make a picture-perfect copy of a dex file.
- * <p/>
+ * <p>
  * However, it provides many points where you can hook into this process and selectively modify
  * the dex file. For example, If you want to rename all instances (including definitions and references)
  * of the class Lorg/blah/MyBlah; to Lorg/blah/YourBlah;
- * <p/>
+ * <p>
  * <pre>
  * {@code
  * DexRewriter rewriter = new DexRewriter(new RewriterModule() {

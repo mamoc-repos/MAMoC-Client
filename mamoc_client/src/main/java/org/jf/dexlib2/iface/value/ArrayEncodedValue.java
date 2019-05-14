@@ -50,9 +50,9 @@ public interface ArrayEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedArrayValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue().hashCode();
@@ -65,7 +65,7 @@ public interface ArrayEncodedValue extends EncodedValue {
 
     /**
      * Compares this ArrayEncodedValue to another ArrayEncodedValue for equality.
-     * <p/>
+     * <p>
      * This ArrayEncodedValue is equal to another ArrayEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this ArrayEncodedValue
@@ -76,7 +76,7 @@ public interface ArrayEncodedValue extends EncodedValue {
 
     /**
      * Compare this ArrayEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * ArrayEncodedValue, the lists returned by getValue() are compared, based on the semantics of
      * org.jf.util.ComparisonUtils.compareAsList(), using the natural ordering for EncodedValue.

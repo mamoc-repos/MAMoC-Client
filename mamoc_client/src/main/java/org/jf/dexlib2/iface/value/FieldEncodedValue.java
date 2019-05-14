@@ -50,9 +50,9 @@ public interface FieldEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedFieldValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue.hashCode();
@@ -65,7 +65,7 @@ public interface FieldEncodedValue extends EncodedValue {
 
     /**
      * Compares this FieldEncodedValue to another FieldEncodedValue for equality.
-     * <p/>
+     * <p>
      * This FieldEncodedValue is equal to another FieldEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this FieldEncodedValue
@@ -76,7 +76,7 @@ public interface FieldEncodedValue extends EncodedValue {
 
     /**
      * Compare this FieldEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * FieldEncodedValue, the return values of getValue() are compared.
      *

@@ -48,9 +48,9 @@ public interface StringEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedStringValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue().hashCode();
@@ -63,7 +63,7 @@ public interface StringEncodedValue extends EncodedValue {
 
     /**
      * Compares this StringEncodedValue to another StringEncodedValue for equality.
-     * <p/>
+     * <p>
      * This StringEncodedValue is equal to another StringEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this StringEncodedValue
@@ -74,7 +74,7 @@ public interface StringEncodedValue extends EncodedValue {
 
     /**
      * Compare this StringEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * StringEncodedValue, the return values of getValue() are compared.
      *

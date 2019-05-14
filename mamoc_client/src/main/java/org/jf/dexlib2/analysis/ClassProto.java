@@ -464,7 +464,7 @@ public class ClassProto implements TypeProto {
 
     /**
      * Returns true if this class is an interface.
-     * <p/>
+     * <p>
      * If this class is not defined, then this will throw an UnresolvedClassException
      *
      * @return True if this class is an interface
@@ -476,14 +476,14 @@ public class ClassProto implements TypeProto {
 
     /**
      * Returns the set of interfaces that this class implements as a Map<String, ClassDef>.
-     * <p/>
+     * <p>
      * The ClassDef value will be present only for the interfaces that this class directly implements (including any
      * interfaces transitively implemented), but not for any interfaces that are only implemented by a superclass of
      * this class
-     * <p/>
+     * <p>
      * For any interfaces that are only implemented by a superclass (or the class itself, if the class is an interface),
      * the value will be null.
-     * <p/>
+     * <p>
      * If any interface couldn't be resolved, then the interfacesFullyResolved field will be set to false upon return.
      *
      * @return the set of interfaces that this class implements as a Map<String, ClassDef>.
@@ -495,7 +495,7 @@ public class ClassProto implements TypeProto {
 
     /**
      * Gets the interfaces directly implemented by this class, or the interfaces they transitively implement.
-     * <p/>
+     * <p>
      * This does not include any interfaces that are only implemented by a superclass
      *
      * @return An iterables of ClassDefs representing the directly or transitively implemented interfaces
@@ -515,7 +515,7 @@ public class ClassProto implements TypeProto {
 
     /**
      * Checks if this class implements the given interface.
-     * <p/>
+     * <p>
      * If the interfaces of this class cannot be fully resolved then this
      * method will either return true or throw an UnresolvedClassException
      *
@@ -543,12 +543,12 @@ public class ClassProto implements TypeProto {
 
     /**
      * This is a helper method for getCommonSuperclass
-     * <p/>
+     * <p>
      * It checks if this class is an interface, and if so, if other implements it.
-     * <p/>
+     * <p>
      * If this class is undefined, we go ahead and check if it is listed in other's interfaces. If not, we throw an
      * UndefinedClassException
-     * <p/>
+     * <p>
      * If the interfaces of other cannot be fully resolved, we check the interfaces that can be resolved. If not found,
      * we throw an UndefinedClassException
      *

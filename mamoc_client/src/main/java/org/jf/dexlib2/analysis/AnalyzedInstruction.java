@@ -146,7 +146,7 @@ public class AnalyzedInstruction implements Comparable<AnalyzedInstruction> {
      * the first instruction of any exception handler for that try block is also a beginning instruction. And likewise,
      * if any of those instructions can throw an exception and are covered by try blocks, the first instruction of the
      * corresponding exception handler is a beginning instruction, etc.
-     * <p/>
+     * <p>
      * To determine this, we simply check if the first predecessor is the fake "StartOfMethod" instruction, which has
      * an instruction index of -1.
      *

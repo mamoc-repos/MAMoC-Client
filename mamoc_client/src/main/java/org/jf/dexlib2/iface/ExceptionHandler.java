@@ -67,9 +67,9 @@ public interface ExceptionHandler extends Comparable<ExceptionHandler> {
 
     /**
      * Returns a hashcode for this ExceptionHandler.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * String exceptionType = getExceptionType();
@@ -84,7 +84,7 @@ public interface ExceptionHandler extends Comparable<ExceptionHandler> {
 
     /**
      * Compares this ExceptionHandler to another ExceptionHandler for equality.
-     * <p/>
+     * <p>
      * This ExceptionHandler is equal to another ExceptionHandler if all of it's "fields" are equal. That is, if
      * the return values of getExceptionType() and getHandlerCodeAddress() are both equal.
      *
@@ -96,7 +96,7 @@ public interface ExceptionHandler extends Comparable<ExceptionHandler> {
 
     /**
      * Compare this ExceptionHandler to another ExceptionHandler.
-     * <p/>
+     * <p>
      * The comparison is based on the comparison of the return values of getExceptionType() and
      * getHandlerCodeAddress() in that order. A null value for getExceptionType() compares after a non-null value.
      *

@@ -47,9 +47,9 @@ public interface DoubleEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedDoubleValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * long v = Double.doubleToRawLongBits(getValue());
@@ -66,10 +66,10 @@ public interface DoubleEncodedValue extends EncodedValue {
 
     /**
      * Compares this DoubleEncodedValue to another DoubleEncodedValue for equality.
-     * <p/>
+     * <p>
      * This DoubleEncodedValue is equal to another DoubleEncodedValue if the values returned by
      * getValue().doubleToRawLongBits() are equal.
-     * <p/>
+     * <p>
      * Note: this isn't quite the same as getValue() == getValue(), due to various NaN issues and signed zero issues.
      *
      * @param o The object to be compared for equality with this DoubleEncodedValue
@@ -80,7 +80,7 @@ public interface DoubleEncodedValue extends EncodedValue {
 
     /**
      * Compare this DoubleEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(), and then if the other value is another
      * DoubleEncodedValue, the return values of getValue() are compared, using the semantics of Double.compare()
      *

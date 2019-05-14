@@ -30,6 +30,9 @@ public class DecisionEngine {
     private Context mContext;
     private MamocFramework framework;
 
+    private AHP ahp;
+    private Topsis topsis;
+
     private DecisionEngine(Context context) {
         this.mContext = context;
         framework = MamocFramework.getInstance(context);
@@ -75,11 +78,18 @@ public class DecisionEngine {
         if (remoteExecs % MAX_REMOTE_EXECUTIONS == 0 && framework.lastExecution.equals("Remote")){
             Log.d(TAG, "MAX REMOTE EXECUTIONS REACHED");
 
-            Log.d(TAG, "The last executed local execution time: " + localTaskExecutions.get(localExecs-1).getExecutionTime());
-            Log.d(TAG, "The last executed remote execution time: " + remoteTaskExecutions.get(remoteExecs-1).getExecutionTime());
+            double localExecTime = 0;
+            double remoteExecTime = 0;
 
-            double localExecTime = localTaskExecutions.get(localExecs-1).getExecutionTime();
-            double remoteExecTime = remoteTaskExecutions.get(remoteExecs-1).getExecutionTime();
+            if (localExecs != 0) {
+                Log.d(TAG, "The last executed local execution time: " + localTaskExecutions.get(localExecs-1).getExecutionTime());
+                localExecTime = localTaskExecutions.get(localExecs-1).getExecutionTime();
+            }
+
+            if (remoteExecs != 0) {
+                Log.d(TAG, "The last executed remote execution time: " + remoteTaskExecutions.get(remoteExecs - 1).getExecutionTime());
+                remoteExecTime = remoteTaskExecutions.get(remoteExecs - 1).getExecutionTime();
+            }
 
             // Compare the last local execution with the last remote execution
             // OR if there is no local Execution at all
@@ -277,7 +287,7 @@ public class DecisionEngine {
 
     private void calculateAHP(){
 
-        AHP ahp = new AHP(Config.criteria);
+        ahp = new AHP(Config.criteria);
 
         double compArray[] = ahp.getPairwiseComparisonArray();
 
@@ -318,7 +328,7 @@ public class DecisionEngine {
         Log.d(TAG, "********************************");
         Log.d(TAG, "Calculating Fuzzy TOPSIS: ");
 
-        Topsis topsis = new Topsis();
+        topsis = new Topsis();
 
         return topsis.start(availableSites);
     }

@@ -400,7 +400,7 @@ public abstract class DexWriter<
 
     /**
      * Writes out the class_def_item and class_data_item for the given class.
-     * <p/>
+     * <p>
      * This will recursively write out any unwritten superclass/interface before writing the class itself, as per the
      * dex specification.
      *

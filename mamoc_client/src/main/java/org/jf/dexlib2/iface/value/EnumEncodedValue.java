@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 
 /**
  * This class represents an encoded enum value.
- * <p/>
+ * <p>
  * The enum value is represented as a FieldReference to the field on an enum class that holds the enum value.
  */
 public interface EnumEncodedValue extends EncodedValue {
@@ -52,9 +52,9 @@ public interface EnumEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedEnumValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue.hashCode();
@@ -67,7 +67,7 @@ public interface EnumEncodedValue extends EncodedValue {
 
     /**
      * Compares this EnumEncodedValue to another EnumEncodedValue for equality.
-     * <p/>
+     * <p>
      * This EnumEncodedValue is equal to another EnumEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this EnumEncodedValue
@@ -78,7 +78,7 @@ public interface EnumEncodedValue extends EncodedValue {
 
     /**
      * Compare this EnumEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * EnumEncodedValue, the return values of getValue() are compared.
      *

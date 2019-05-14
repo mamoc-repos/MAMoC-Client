@@ -51,18 +51,18 @@ import javax.annotation.Nullable;
 /**
  * Collects/presents a set of textual annotations, each associated with a range of bytes or a specific point
  * between bytes.
- * <p/>
+ * <p>
  * Point annotations cannot occur within the middle of a range annotation, only at the endpoints, or some other area
  * with no range annotation.
- * <p/>
+ * <p>
  * Multiple point annotations can be defined for a given point. They will be printed in insertion order.
- * <p/>
+ * <p>
  * Only a single range annotation may exist for any given range of bytes. Range annotations may not overlap.
  */
 public class AnnotatedBytes {
     /**
      * This defines the bytes ranges and their associated range and point annotations.
-     * <p/>
+     * <p>
      * A range is defined by 2 consecutive keys in the map. The first key is the inclusive start point, the second key
      * is the exclusive end point. The range annotation for a range is associated with the first key for that range.
      * The point annotations for a point are associated with the key at that point.
@@ -115,7 +115,7 @@ public class AnnotatedBytes {
 
     /**
      * Add an annotation of the given length at the current location.
-     * <p/>
+     * <p>
      * The location
      *
      * @param length     the length of data being annotated

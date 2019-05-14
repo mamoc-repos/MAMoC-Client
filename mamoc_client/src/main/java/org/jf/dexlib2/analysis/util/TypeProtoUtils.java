@@ -44,9 +44,9 @@ public class TypeProtoUtils {
     /**
      * Get the chain of superclasses of the given class. The first element will be the immediate superclass followed by
      * it's superclass, etc. up to java.lang.Object.
-     * <p/>
+     * <p>
      * Returns an empty iterable if called on java.lang.Object or a primitive.
-     * <p/>
+     * <p>
      * If any class in the superclass chain can't be resolved, the iterable will return Ujava/lang/Object; to represent
      * the unknown class.
      *

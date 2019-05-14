@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
 
 /**
  * Wraps a ClassDef around a class loaded in the current VM
- * <p/>
+ * <p>
  * Only supports the basic information exposed by ClassProto
  */
 public class ReflectionClassDef extends BaseTypeReference implements ClassDef {

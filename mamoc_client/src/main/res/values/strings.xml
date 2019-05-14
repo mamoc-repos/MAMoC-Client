@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mamoc_Client</string>
+    <string name="library_name">Mamoc Client</string>
     <string name="nsd_title_with_count">NSD (%s)</string>
     <string name="action_settings">Settings</string>
     <string name="chat_request_title">Chat Request from %s</string>

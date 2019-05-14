@@ -10,7 +10,7 @@ import javax.annotation.Nonnull;
 public interface BasicAnnotation {
     /**
      * Gets the type of this annotation.
-     * <p/>
+     * <p>
      * This will be the type descriptor of the class that defines this annotation.
      *
      * @return The type of this annotation
@@ -20,7 +20,7 @@ public interface BasicAnnotation {
 
     /**
      * Gets a set of the name/value elements associated with this annotation.
-     * <p/>
+     * <p>
      * The elements in the returned set will be unique with respect to the element name.
      *
      * @return A set of AnnotationElements

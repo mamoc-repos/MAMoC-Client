@@ -47,9 +47,9 @@ public interface ByteEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedByteValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue();
@@ -62,7 +62,7 @@ public interface ByteEncodedValue extends EncodedValue {
 
     /**
      * Compares this ByteEncodedValue to another ByteEncodedValue for equality.
-     * <p/>
+     * <p>
      * This ByteEncodedValue is equal to another ByteEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this ByteEncodedValue
@@ -73,7 +73,7 @@ public interface ByteEncodedValue extends EncodedValue {
 
     /**
      * Compare this ByteEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * ByteEncodedValue, the return values of getValue() are compared.
      *

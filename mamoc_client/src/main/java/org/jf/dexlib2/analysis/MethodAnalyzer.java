@@ -93,7 +93,7 @@ import javax.annotation.Nullable;
  * are done in two separate passes, because the analysis has to process instructions multiple times in some cases, and
  * there's no need to perform the verification multiple times, so we wait until the method is fully analyzed and then
  * verify it.
- * <p/>
+ * <p>
  * Before calling the analyze() method, you must have initialized the ClassPath by calling
  * ClassPath.InitializeClassPath
  */

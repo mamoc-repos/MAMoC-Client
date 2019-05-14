@@ -38,7 +38,7 @@ public class StringWrapper {
     /**
      * Splits the given string into lines using on any embedded newlines, and wrapping the text as needed to conform to
      * the given maximum line width.
-     * <p/>
+     * <p>
      * This uses and assumes unix-style newlines
      *
      * @param str      The string to split

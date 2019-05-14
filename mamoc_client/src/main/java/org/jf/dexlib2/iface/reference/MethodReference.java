@@ -74,9 +74,9 @@ public interface MethodReference extends Reference, Comparable<MethodReference> 
 
     /**
      * Returns a hashcode for this MethodReference.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode =  getDefiningClass().hashCode();
@@ -92,10 +92,10 @@ public interface MethodReference extends Reference, Comparable<MethodReference> 
 
     /**
      * Compares this MethodReference to another MethodReference for equality.
-     * <p/>
+     * <p>
      * This MethodReference is equal to another MethodReference if all of it's "fields" are equal. That is, if
      * the return values of getDefiningClass(), getName(), getReturnType() and getParameterTypes() are all equal.
-     * <p/>
+     * <p>
      * Equality for getParameters() should be tested by comparing the string representation of each element. I.e.
      * CharSequenceUtils.listEquals(this.getParameterTypes(), other.getParameterTypes())
      *
@@ -107,7 +107,7 @@ public interface MethodReference extends Reference, Comparable<MethodReference> 
 
     /**
      * Compare this MethodReference to another MethodReference.
-     * <p/>
+     * <p>
      * The comparison is based on the comparison of the return values of getDefiningClass(), getName(),
      * getReturnType() and getParameters(), in that order. getParameters() should be compared using the semantics
      * of org.jf.util.CollectionUtils.compareAsList()

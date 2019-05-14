@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
 public interface AnnotationEncodedValue extends EncodedValue, BasicAnnotation {
     /**
      * Gets the type of this annotation.
-     * <p/>
+     * <p>
      * This will be the type descriptor of the class that defines this annotation.
      *
      * @return The type of this annotation
@@ -55,7 +55,7 @@ public interface AnnotationEncodedValue extends EncodedValue, BasicAnnotation {
 
     /**
      * Gets a set of the name/value elements associated with this annotation.
-     * <p/>
+     * <p>
      * The elements in the returned set will be unique by name.
      *
      * @return A set of AnnotationElements
@@ -65,9 +65,9 @@ public interface AnnotationEncodedValue extends EncodedValue, BasicAnnotation {
 
     /**
      * Returns a hashcode for this AnnotationEncodedValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getType().hashCode();
@@ -81,7 +81,7 @@ public interface AnnotationEncodedValue extends EncodedValue, BasicAnnotation {
 
     /**
      * Compares this AnnotationEncodedValue to another AnnotationEncodedValue for equality.
-     * <p/>
+     * <p>
      * This AnnotationEncodedValue is equal to another AnnotationEncodedValue if all of it's "fields" are equal. That
      * is, if the return values getType() and getElements() are both equal.
      *
@@ -93,7 +93,7 @@ public interface AnnotationEncodedValue extends EncodedValue, BasicAnnotation {
 
     /**
      * Compare this AnnotationEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is based on the value of getType() and getElements(), in that order. When
      * comparing the set of elements, the comparison is done with the semantics of
      * org.jf.util.CollectionUtils.compareAsSet(), using the natural ordering of AnnotationElement.

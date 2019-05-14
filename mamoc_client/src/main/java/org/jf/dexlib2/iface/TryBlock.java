@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
 public interface TryBlock<EH extends ExceptionHandler> {
     /**
      * Gets the code offset of the start of this try block.
-     * <p/>
+     * <p>
      * The starting location must not occur in the middle of an instruction.
      *
      * @return The offset of the start of the try block from the the beginning of the bytecode for the method. The
@@ -52,7 +52,7 @@ public interface TryBlock<EH extends ExceptionHandler> {
 
     /**
      * Gets the number of code units covered by this try block.
-     * <p/>
+     * <p>
      * The end of the try block is typically coincident with the end of an instruction, but does not strictly need to
      * be. If the last instruction is only partly covered by this try block, it is considered to be covered.
      *
@@ -62,7 +62,7 @@ public interface TryBlock<EH extends ExceptionHandler> {
 
     /**
      * A list of the exception handlers associated with this try block.
-     * <p/>
+     * <p>
      * The exception handlers in the returned list will all have a unique type, including at most 1 with no type, which
      * is the catch-all handler. If present, the catch-all handler is always the last item in the list.
      *
@@ -73,7 +73,7 @@ public interface TryBlock<EH extends ExceptionHandler> {
 
     /**
      * Compares this TryBlock to another TryBlock for equality.
-     * <p/>
+     * <p>
      * This TryBlock is equal to another TryBlock if all 3 fields are equal. The exception handlers are tested for
      * equality using the usual List equality semantics.
      *

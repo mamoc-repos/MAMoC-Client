@@ -36,13 +36,13 @@ import javax.annotation.Nullable;
 
 /**
  * This class represents a reference to a type.
- * <p/>
+ * <p>
  * When possible, elsewhere in the interface, a type is referenced directly as a String. A TypeReference is only used
  * in those cases where a generic Reference is needed
- * <p/>
+ * <p>
  * The type being referenced is represented as a String in the format of a TypeDescriptor, as defined by the dex file
  * specification.
- * <p/>
+ * <p>
  * This type also acts as a CharSequence wrapper around the TypeDescriptor string. As per the CharSequence contract,
  * calling toString() on a TypeReference yields the type descriptor as a String. This is the same value returned by
  * getType()
@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
 public interface TypeReference extends Reference, CharSequence, Comparable<CharSequence> {
     /**
      * Gets the string representation of the referenced type.
-     * <p/>
+     * <p>
      * The returned string will be a TypeDescriptor, as defined in the dex file specification
      *
      * @return The string representation of the referenced type.
@@ -60,7 +60,7 @@ public interface TypeReference extends Reference, CharSequence, Comparable<CharS
 
     /**
      * Returns a hashcode for this TypeReference.
-     * <p/>
+     * <p>
      * This is defined to be getType().hashCode()
      *
      * @return The hash code value for this TypeReference
@@ -70,9 +70,9 @@ public interface TypeReference extends Reference, CharSequence, Comparable<CharS
 
     /**
      * Compares this TypeReference to another TypeReference, or more generally to another CharSequence for equality.
-     * <p/>
+     * <p>
      * This TypeReference is equal to a CharSequence iff this.getType().equals(other.toString()).
-     * <p/>
+     * <p>
      * Equivalently, This TypeReference is equal to another TypeReference iff this.getType().equals(other.getType()).
      *
      * @param o The object to be compared for equality with this TypeReference
@@ -83,7 +83,7 @@ public interface TypeReference extends Reference, CharSequence, Comparable<CharS
 
     /**
      * Compare this TypeReference to another TypeReference, or more generally to another CharSequence.
-     * <p/>
+     * <p>
      * The comparison is defined to be this.getType().compareTo(other.toString())
      *
      * @param o The CharSequence to compare with this TypeReference

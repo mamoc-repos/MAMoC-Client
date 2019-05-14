@@ -91,7 +91,7 @@ public class ClassFileNameHandler {
      * Shortens an individual file/directory name, removing the necessary number of code points
      * from the middle of the string such that the utf-8 encoding of the string is at least
      * bytesToRemove bytes shorter than the original.
-     * <p/>
+     * <p>
      * The removed codePoints in the middle of the string will be replaced with a # character.
      */
     @Nonnull

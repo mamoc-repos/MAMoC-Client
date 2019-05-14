@@ -103,7 +103,7 @@ public interface RadixTree<T> {
 
     /**
      * Complete the a prefix to the point where ambiguity starts.
-     * <p/>
+     * <p>
      * Example:
      * If a tree contain "blah1", "blah2"
      * complete("b") -> return "blah"

@@ -369,7 +369,7 @@ public class RadixTreeImpl<T> implements RadixTree<T>, Formattable {
 
     /**
      * Display the Trie on console.
-     * <p/>
+     * <p>
      * WARNING! Do not use this for a large Trie, it's for testing purpose only.
      *
      * @see formatTo
@@ -409,9 +409,9 @@ public class RadixTreeImpl<T> implements RadixTree<T>, Formattable {
 
     /**
      * Writes a textual representation of this tree to the given formatter.
-     * <p/>
+     * <p>
      * Currently, all options are simply ignored.
-     * <p/>
+     * <p>
      * WARNING! Do not use this for a large Trie, it's for testing purpose only.
      */
     public void formatTo(Formatter formatter, int flags, int width, int precision) {
@@ -420,7 +420,7 @@ public class RadixTreeImpl<T> implements RadixTree<T>, Formattable {
 
     /**
      * Complete the a prefix to the point where ambiguity starts.
-     * <p/>
+     * <p>
      * Example:
      * If a tree contain "blah1", "blah2"
      * complete("b") -> return "blah"

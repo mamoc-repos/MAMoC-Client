@@ -33,14 +33,14 @@ package org.jf.dexlib2.iface.debug;
 
 /**
  * This class represents a generic debug item.
- * <p/>
+ * <p>
  * The specific sub-types of this class correspond to the various debug opcodes specified in the debug_info_item type
  * in the dex file specification.
  */
 public interface DebugItem {
     /**
      * The type of this debug item.
-     * <p/>
+     * <p>
      * The returned integer will be one of the DebugItemType.* constants.
      *
      * @return The type of this debug item.

@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
 public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
     /**
      * Gets the visibility of this annotation.
-     * <p/>
+     * <p>
      * This will be one of the AnnotationVisibility.* constants.
      *
      * @return The visibility of this annotation
@@ -51,7 +51,7 @@ public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
 
     /**
      * Gets the type of this annotation.
-     * <p/>
+     * <p>
      * This will be the type descriptor of the class that defines this annotation.
      *
      * @return The type of this annotation
@@ -61,7 +61,7 @@ public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
 
     /**
      * Gets a set of the name/value elements associated with this annotation.
-     * <p/>
+     * <p>
      * The elements in the returned set will be unique with respect to the element name.
      *
      * @return A set of AnnotationElements
@@ -71,9 +71,9 @@ public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
 
     /**
      * Returns a hashcode for this Annotation.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getVisibility();
@@ -88,7 +88,7 @@ public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
 
     /**
      * Compares this Annotation to another Annotation for equality.
-     * <p/>
+     * <p>
      * This Annotation is equal to another Annotation if all of it's "fields" are equal. That is, if the return values
      * of getVisibility(), getType(), and getElements() are all equal.
      *
@@ -100,7 +100,7 @@ public interface Annotation extends BasicAnnotation, Comparable<Annotation> {
 
     /**
      * Compares this Annotation to another Annotation.
-     * <p/>
+     * <p>
      * The comparison is based on the value of getVisibility(), getType() and getElements(), in that order. When
      * comparing the set of elements, the comparison is done with the semantics of
      * org.jf.util.CollectionUtils.compareAsSet(), using the natural ordering of AnnotationElement.

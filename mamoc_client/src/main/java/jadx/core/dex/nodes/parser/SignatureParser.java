@@ -216,7 +216,7 @@ public class SignatureParser {
 
 	/**
 	 * Map of generic types names to extends classes.
-	 * <p/>
+	 * <p>
 	 * Example: "<T:Ljava/lang/Exception;:Ljava/lang/Object;>"
 	 */
 	public Map<ArgType, List<ArgType>> consumeGenericMap() {
@@ -244,7 +244,7 @@ public class SignatureParser {
 
 	/**
 	 * List of types separated by ':' last type is 'java.lang.Object'.
-	 * <p/>
+	 * <p>
 	 * Example: "Ljava/lang/Exception;:Ljava/lang/Object;"
 	 */
 	private List<ArgType> consumeExtendsTypesList() {

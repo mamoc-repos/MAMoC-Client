@@ -19,7 +19,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "0.13"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -41,10 +41,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -69,12 +75,15 @@ dependencies {
     implementation 'net.sourceforge.streamsupport:streamsupport-cfuture:1.6.2'
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2') {
+        exclude group: 'com.google.code.findbugs'
+    }
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     // DEPENDENCIES FOR JaDX
-    implementation files('libs/dx-1.10.jar')
-    implementation files('libs/android-5.1-clst-core.jar')
+//    implementation files('libs/dx-1.10.jar')
+//    implementation files('libs/android-5.1-clst-core.jar')
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'uk.com.robust-it:cloning:1.9.2'
     implementation 'com.intellij:annotations:12.0@jar'
@@ -82,15 +91,16 @@ dependencies {
     // DEX2JAR and its dependencies
     implementation 'com.google.guava:guava:18.0'
     implementation 'asm:asm-all:3.3.1'
-    implementation files('libs/antlr-3.1.1.jar')
-    implementation files('libs/dex-ir-1.12.jar')
-    implementation files('libs/dex-reader-1.15.jar')
-    implementation files('libs/dex-tools-0.0.9.15.jar')
-    implementation files('libs/dex-translator-0.0.9.15.jar')
-    implementation files('libs/jsr305-1.3.9.jar')
 
-    // CLASS FILE READER - JAVA DECOMPILER
-    implementation files('libs/cfr_0_117.jar')
+//    implementation files('libs/antlr-3.1.1.jar')
+//    implementation files('libs/dex-ir-1.12.jar')
+//    implementation files('libs/dex-reader-1.15.jar')
+//    implementation files('libs/dex-tools-0.0.9.15.jar')
+//    implementation files('libs/dex-translator-0.0.9.15.jar')
+//    implementation files('libs/jsr305-1.3.9.jar')
+//
+//    // CLASS FILE READER - JAVA DECOMPILER
+//    implementation files('libs/cfr_0_117.jar')
 
     // APACHE COMMONS LIBRARIES
     implementation 'commons-cli:commons-cli:1.3.1'
@@ -99,22 +109,22 @@ dependencies {
 
     //ClassIndex for Annotation indexing
     implementation 'org.atteo.classindex:classindex:3.4'
-
 }
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'MAMoC-Client'
+    bintrayRepo = 'mamoc_client'
+    bintrayName = 'mamoc_client'
 
     publishedGroupId = 'uk.ac.standrews.cs'
-    libraryName = 'MamocClient'
-    artifact = 'mamoc'
+    libraryName = 'mamoc_client'
+    artifact = 'mamoc_client'
 
-    libraryDescription = 'A framework for offloading parts of a mobile application to nearby mobile devices, edge devices (cloudlets), and remote clouds '
+    libraryDescription = 'A framework for offloading parts of a mobile application to nearby mobile devices, ' +
+            'edge devices (cloudlets), and remote clouds '
     siteUrl = 'https://github.com/dawand/MAMoC-Android'
     gitUrl = 'https://github.com/dawand/MAMoC-Android.git'
 
-    libraryVersion = '1.0'
+    libraryVersion = '0.13'
 
     developerId = 'djs21'
     developerName = 'Dawand Sulaiman'
@@ -198,7 +208,7 @@ bintray {
         licenses = allLicenses
         dryRun = false
         publish = true
-        override = false
+//        override = false
         publicDownloadNumbers = true
         version {
             desc = libraryDescription

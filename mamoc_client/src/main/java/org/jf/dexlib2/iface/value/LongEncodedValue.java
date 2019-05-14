@@ -47,9 +47,9 @@ public interface LongEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedLongValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * long v = getValue();
@@ -63,7 +63,7 @@ public interface LongEncodedValue extends EncodedValue {
 
     /**
      * Compares this LongEncodedValue to another LongEncodedValue for equality.
-     * <p/>
+     * <p>
      * This LongEncodedValue is equal to another LongEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this LongEncodedValue
@@ -74,7 +74,7 @@ public interface LongEncodedValue extends EncodedValue {
 
     /**
      * Compare this LongEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * LongEncodedValue, the return values of getValue() are compared.
      *

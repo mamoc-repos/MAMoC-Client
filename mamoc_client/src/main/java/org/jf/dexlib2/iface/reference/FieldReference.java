@@ -64,9 +64,9 @@ public interface FieldReference extends Reference, Comparable<FieldReference> {
 
     /**
      * Returns a hashcode for this FieldReference.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode =  getDefiningClass().hashCode();
@@ -81,7 +81,7 @@ public interface FieldReference extends Reference, Comparable<FieldReference> {
 
     /**
      * Compares this FieldReference to another FieldReference for equality.
-     * <p/>
+     * <p>
      * This FieldReference is equal to another FieldReference if all of it's "fields" are equal. That is, if
      * the return values of getDefiningClass(), getName() and getType() are all equal.
      *
@@ -93,7 +93,7 @@ public interface FieldReference extends Reference, Comparable<FieldReference> {
 
     /**
      * Compare this FieldReference to another FieldReference.
-     * <p/>
+     * <p>
      * The comparison is based on the comparison of the return values of getDefiningClass(), getName() and
      * getType(), in that order.
      *

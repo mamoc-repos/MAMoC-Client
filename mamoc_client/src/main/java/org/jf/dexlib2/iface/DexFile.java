@@ -41,7 +41,7 @@ import javax.annotation.Nonnull;
 public interface DexFile {
     /**
      * Get a set of the classes defined in this dex file.
-     * <p/>
+     * <p>
      * The classes in the returned set will all have unique types.
      *
      * @return A set of the classes defined in this dex file

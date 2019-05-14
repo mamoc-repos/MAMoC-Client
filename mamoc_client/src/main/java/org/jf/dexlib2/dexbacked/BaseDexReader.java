@@ -144,7 +144,7 @@ public class BaseDexReader<T extends BaseDexBuffer> {
 
     /**
      * Reads a "large" uleb128. That is, one that may legitimately be greater than a signed int.
-     * <p/>
+     * <p>
      * The value is returned as if it were signed. i.e. a value of 0xFFFFFFFF would be returned as -1. It is up to the
      * caller to handle the value appropriately.
      */

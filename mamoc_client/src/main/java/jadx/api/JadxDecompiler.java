@@ -42,7 +42,7 @@ import java8.util.concurrent.CompletableFuture;
  *  jadx.setOutputDir(new File("out"));
  *  jadx.save();
  * </code></pre>
- * <p/>
+ * <p>
  * Instead of 'save()' you can get list of decompiled classes:
  * <pre><code>
  *  for(JavaClass cls : jadx.getClasses()) {

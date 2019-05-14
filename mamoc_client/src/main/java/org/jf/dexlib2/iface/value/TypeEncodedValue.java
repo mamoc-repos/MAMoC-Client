@@ -48,9 +48,9 @@ public interface TypeEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedTypeValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue().hashCode();
@@ -63,7 +63,7 @@ public interface TypeEncodedValue extends EncodedValue {
 
     /**
      * Compares this TypeEncodedValue to another TypeEncodedValue for equality.
-     * <p/>
+     * <p>
      * This TypeEncodedValue is equal to another TypeEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this TypeEncodedValue
@@ -74,7 +74,7 @@ public interface TypeEncodedValue extends EncodedValue {
 
     /**
      * Compare this TypeEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * TypeEncodedValue, the return values of getValue() are compared.
      *

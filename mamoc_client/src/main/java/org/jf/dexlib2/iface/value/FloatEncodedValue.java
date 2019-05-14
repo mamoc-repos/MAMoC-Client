@@ -47,9 +47,9 @@ public interface FloatEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedFloatValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = Float.floatToRawIntBits(getValue());
@@ -65,10 +65,10 @@ public interface FloatEncodedValue extends EncodedValue {
 
     /**
      * Compares this FloatEncodedValue to another FloatEncodedValue for equality.
-     * <p/>
+     * <p>
      * This FloatEncodedValue is equal to another FloatEncodedValue if the values returned by
      * getValue().floatToRawIntBits() are equal.
-     * <p/>
+     * <p>
      * Note: this isn't quite the same as getValue() == getValue(), due to various NaN issues and signed zero issues.
      *
      * @param o The object to be compared for equality with this FloatEncodedValue
@@ -79,7 +79,7 @@ public interface FloatEncodedValue extends EncodedValue {
 
     /**
      * Compare this FloatEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * FloatEncodedValue, the return values of getValue() are compared, using the semantics of Float.compare()
      *

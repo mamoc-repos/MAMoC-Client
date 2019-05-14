@@ -36,10 +36,10 @@ import javax.annotation.Nullable;
 
 /**
  * This class represents a reference to an arbitrary string.
- * <p/>
+ * <p>
  * When possible, elsewhere in the interface, a string is represented directly by its value. A StringReference is only
  * used  in those cases where a generic Reference is needed
- * <p/>
+ * <p>
  * This type also acts as a CharSequence wrapper around the referenced string value. As per the CharSequence contract,
  * calling toString() on a StringReference yields the referenced string value. This is the same value returned by
  * getString().
@@ -55,7 +55,7 @@ public interface StringReference extends Reference, CharSequence, Comparable<Cha
 
     /**
      * Returns a hashcode for this StringReference.
-     * <p/>
+     * <p>
      * This is defined to be getString().hashCode().
      *
      * @return The hash code value for this StringReference
@@ -65,9 +65,9 @@ public interface StringReference extends Reference, CharSequence, Comparable<Cha
 
     /**
      * Compares this StringReference to another CharSequence for equality.
-     * <p/>
+     * <p>
      * String StringReference is equal to a CharSequence iff this.getString().equals(other.toString()).
-     * <p/>
+     * <p>
      * Equivalently, This StringReference is equal to another StringReference iff
      * this.getString().equals(other.getString()).
      *
@@ -79,7 +79,7 @@ public interface StringReference extends Reference, CharSequence, Comparable<Cha
 
     /**
      * Compare this StringReference to another StringReference, or more generally to another CharSequence.
-     * <p/>
+     * <p>
      * The comparison is defined to be this.getString().compareTo(other.toString()).
      *
      * @param o The CharSequence to compare with this StringReference

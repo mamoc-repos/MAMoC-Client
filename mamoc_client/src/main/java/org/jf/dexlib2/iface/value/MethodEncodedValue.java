@@ -49,9 +49,9 @@ public interface MethodEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedMethodValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue.hashCode();
@@ -64,7 +64,7 @@ public interface MethodEncodedValue extends EncodedValue {
 
     /**
      * Compares this MethodEncodedValue to another MethodEncodedValue for equality.
-     * <p/>
+     * <p>
      * This MethodEncodedValue is equal to another MethodEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this MethodEncodedValue
@@ -75,7 +75,7 @@ public interface MethodEncodedValue extends EncodedValue {
 
     /**
      * Compare this MethodEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * MethodEncodedValue, the return values of getValue() are compared.
      *

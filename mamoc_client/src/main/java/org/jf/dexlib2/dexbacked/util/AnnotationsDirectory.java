@@ -146,7 +146,7 @@ public abstract class AnnotationsDirectory {
     /**
      * This provides a forward-only, skipable iteration over the field_annotation, method_annotation or
      * parameter_annotation lists in an annotations_directory_item.
-     * <p/>
+     * <p>
      * These lists associate a key, either a field or method index, with an offset to where the annotation data for
      * that field/method/parameter is stored.
      */
@@ -165,7 +165,7 @@ public abstract class AnnotationsDirectory {
         /**
          * Seeks the iterator forward, to the first item whose key is >= the requested key. If the requested key value
          * is less than that of the item that the iterator currently points to, it will not be moved forward.
-         * <p/>
+         * <p>
          * If an item with the requested key is found, the associated annotation offset is returned. Otherwise, 0 is
          * returned.
          *

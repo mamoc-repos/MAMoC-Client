@@ -47,9 +47,9 @@ public interface BooleanEncodedValue extends EncodedValue {
 
     /**
      * Returns a hashcode for this EncodedBooleanValue.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getValue()?1:0;
@@ -62,7 +62,7 @@ public interface BooleanEncodedValue extends EncodedValue {
 
     /**
      * Compares this BooleanEncodedValue to another BooleanEncodedValue for equality.
-     * <p/>
+     * <p>
      * This BooleanEncodedValue is equal to another BooleanEncodedValue if the values returned by getValue() are equal.
      *
      * @param o The object to be compared for equality with this BooleanEncodedValue
@@ -73,7 +73,7 @@ public interface BooleanEncodedValue extends EncodedValue {
 
     /**
      * Compare this BooleanEncodedValue to another EncodedValue.
-     * <p/>
+     * <p>
      * The comparison is first done on the return values of getValueType(). If the other value is another
      * BooleanEncodedValue, the return values of getValue() are compared, based on the semantics of
      * Boolean.compareTo().

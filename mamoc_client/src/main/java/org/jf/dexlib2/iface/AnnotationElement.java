@@ -58,9 +58,9 @@ public interface AnnotationElement extends Comparable<AnnotationElement> {
 
     /**
      * Returns a hashcode for this AnnotationElement.
-     * <p/>
+     * <p>
      * This hashCode is defined to be the following:
-     * <p/>
+     * <p>
      * <pre>
      * {@code
      * int hashCode = getName().hashCode();
@@ -74,7 +74,7 @@ public interface AnnotationElement extends Comparable<AnnotationElement> {
 
     /**
      * Compares this AnnotationElement to another AnnotationElement for equality.
-     * <p/>
+     * <p>
      * This AnnotationElement is equal to another AnnotationElement if all of it's "fields" are equal. That is, if
      * the return values of getName() and getValue() are both equal.
      *
@@ -86,7 +86,7 @@ public interface AnnotationElement extends Comparable<AnnotationElement> {
 
     /**
      * Compares this AnnotationElement to another AnnotationElement.
-     * <p/>
+     * <p>
      * The comparison is based on the value of getName() and getValue(), in that order.
      *
      * @param o The AnnotationElement to compare with this AnnotationElement
