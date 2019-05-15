@@ -1,8 +1,7 @@
-# MAMoC-Android
+# MAMoC-Android Offloading Framework
 
 This is a mobile computation offloading framework that offloads the compute-intensive tasks in mobile devices to more powerful
 surrogates (nearby Android devices, edge devices or public cloud servers). 
-
 
 ## Server component installation
 
@@ -25,19 +24,14 @@ docker run --rm -it --name "mamoc-server" --network="host" dawan/mamoc_server
 If you want to get the source code of the server and host it on bare metal. Navigate to [`MAMoC-Server`](https://github.com/dawand/MAMoC-Server) 
 for setting up the router and the server components.
 
+## Test
 
-## Examples
-
-### Text Search
-
-This allows a user to enter a keyword and select a file size from (small, medium, and large) to find the occurrences of the word in the file . 
-[Knuth-Morris-Pratt](https://www.nayuki.io/page/knuth-morris-pratt-string-matching) string searching algorithm is used. 
-
-### Quick Sort
-QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
-
-### NQueens
-The eight queens puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other.
+``
+./gradlew connectedAndroidTest
+``
+## Usage
+We have provided some initial demo applications together with instructions on how to use the framework.
+Check them on the [MAMoC Demo](https://github.com/dawand/MAMoC_Demo) repository. 
 
 
 ## Third party libraries
@@ -55,5 +49,6 @@ We use Annotation Indexing from [classindex](https://github.com/atteo/classindex
 ### Web Application Messaging Protocol
 We use [crossbar + autobahn](https://github.com/crossbario/autobahn-java) to manage the Remote Procedure Calls and Publish/Subscribe events. 
 The reason we have included the source code of the library is its incompatibility with Android API < 24. 
-We have used [streamsupport](https://github.com/streamsupport/streamsupport) to get the necessary functional interfaces used in Autobahn for older Android versions. 
+We have used [streamsupport](https://github.com/streamsupport/streamsupport) to get the necessary functional interfaces used in Autobahn for older Android versions.
+
 
