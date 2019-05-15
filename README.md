@@ -5,7 +5,7 @@ surrogates (nearby Android devices, edge devices or public cloud servers).
 
 ## Test
 
-We have written [few simple Android JUnit tests](./blob/master/mamoc_client/src/androidTest/java/uk/ac/standrews/cs/mamoc_client/ExampleInstrumentedTest.java) to test some of the components of the framework.
+We have written [few simple Android JUnit tests](./mamoc_client/src/androidTest/java/uk/ac/standrews/cs/mamoc_client/ExampleInstrumentedTest.java) to test some of the components of the framework.
 
 Make sure that you have both JAVA_SDK and ANDROID_SDK_ROOT variables in your environment.
 
