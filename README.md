@@ -3,6 +3,14 @@
 This is a mobile computation offloading framework that offloads the compute-intensive tasks in mobile devices to more powerful
 surrogates (nearby Android devices, edge devices or public cloud servers). 
 
+## Citation
+If you use this offloading library in your work, don't forget to cite the following paper please:
+```
+D. Sulaiman and A. Barker, "MAMoC-Android: Multisite Adaptive Computation Offloading for Android Applications," 2019 7th IEEE International Conference on Mobile Cloud Computing, Services, and Engineering (MobileCloud), Newark, CA, USA, 2019, pp. 68-75.
+doi: 10.1109/MobileCloud.2019.00017
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8710699&isnumber=8710648
+```
+
 ## Test
 
 We have written [few simple Android JUnit tests](./mamoc_client/src/androidTest/java/uk/ac/standrews/cs/mamoc_client/ExampleInstrumentedTest.java) to test some of the components of the framework.

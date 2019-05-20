@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -20,18 +21,19 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("uk.ac.standrews.cs.mamoc_client.test", appContext.getPackageName());
+    private MamocFramework framework;
+
+    @Before
+    public void init_framework() {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        framework = MamocFramework.getInstance(appContext);
     }
 
     @Test
-    public void init_framework() {
+    public void framework_only_init_once() {
         Context appContext = InstrumentationRegistry.getTargetContext();
-        MamocFramework framework = MamocFramework.getInstance(appContext);
+        framework = MamocFramework.getInstance(appContext);
         MamocFramework framework2 = MamocFramework.getInstance(appContext);
 
         assertEquals(framework, framework2);
@@ -40,7 +42,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void start_framework_and_test_profilers(){
         Context appContext = InstrumentationRegistry.getTargetContext();
-        MamocFramework framework = MamocFramework.getInstance(appContext);
+        framework = MamocFramework.getInstance(appContext);
         framework.start();
 
         assertEquals(framework.deviceProfiler, framework.deviceProfiler);
@@ -50,7 +52,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void decision_engine_local_execution(){
         Context appContext = InstrumentationRegistry.getTargetContext();
-        MamocFramework framework = MamocFramework.getInstance(appContext);
+        framework = MamocFramework.getInstance(appContext);
         framework.start();
 
         TaskExecution task = new TaskExecution();
@@ -63,7 +65,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void decision_engine_remote_execution(){
         Context appContext = InstrumentationRegistry.getTargetContext();
-        MamocFramework framework = MamocFramework.getInstance(appContext);
+        framework = MamocFramework.getInstance(appContext);
         framework.start();
 
         EdgeNode edgeNode = new EdgeNode("192.168.0.12", 1);
@@ -77,4 +79,28 @@ public class ExampleInstrumentedTest {
         assertEquals(execLoc.getValue(), "EDGE");
     }
 
+    @Test
+    public void dex_decompiling(){
+
+    }
+
+    @Test
+    public void class_indexing(){
+
+    }
+
+    @Test
+    public void device_profiling_cpu(){
+
+    }
+
+    @Test
+    public void network_profiling_netType(){
+
+    }
+
+    @Test
+    public void ahp_init(){
+
+    }
 }
