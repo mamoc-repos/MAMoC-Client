@@ -57,21 +57,7 @@ public class MamocNode implements Serializable {
         this.port = port;
     }
 
-    public double getOffloadingScore() {
-        return OffloadingScore;
-    }
+    public double getOffloadingScore() { return OffloadingScore; }
 
-    public void setOffloadingScore(double offloadingScore) {
-        OffloadingScore = offloadingScore;
-    }
-
-//    public static MamocNode fromJSON(String deviceJSON) {
-//        Gson gson = new Gson();
-//        return gson.fromJson(deviceJSON, MamocNode.class);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return (new Gson()).toJson(this);
-//    }
+    public void setOffloadingScore(double offloadingScore) { OffloadingScore = offloadingScore; }
 }

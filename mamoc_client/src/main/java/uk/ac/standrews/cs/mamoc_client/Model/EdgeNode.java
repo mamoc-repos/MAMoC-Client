@@ -17,6 +17,11 @@ public class EdgeNode extends MamocNode implements WebSocket, Comparable<MamocNo
     public Session session;
 
     public EdgeNode(String url, int i) {
+
+        super.setIp(url);
+        super.setPort(i);
+        super.setNodeName(url);
+
         this.wsUri = url;
         session = new Session();
     }
@@ -33,7 +38,6 @@ public class EdgeNode extends MamocNode implements WebSocket, Comparable<MamocNo
     private void connectToWebSocket(String wsUri, IWebSocketConnectionHandler wsHandler) throws WebSocketException {
         edgeConnection.connect(wsUri, wsHandler);
     }
-
 
     @Override
     public void send(String text) {

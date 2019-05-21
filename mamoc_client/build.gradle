@@ -19,7 +19,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "0.13"
+        versionName "0.14"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -124,7 +124,7 @@ ext {
     siteUrl = 'https://github.com/dawand/MAMoC-Android'
     gitUrl = 'https://github.com/dawand/MAMoC-Android.git'
 
-    libraryVersion = '0.13'
+    libraryVersion = '0.14'
 
     developerId = 'djs21'
     developerName = 'Dawand Sulaiman'

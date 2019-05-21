@@ -74,8 +74,8 @@ public class ExecutionController {
 
         try {
             Class<?> cls = Class.forName(task_name);
-            Constructor<?> constructor = null;
-            Object instance = null;
+            Constructor<?> constructor;
+            Object instance;
 
             if (!resource_name.equalsIgnoreCase("None")){
                 String fileContent = getContentFromTextFile(resource_name + ".txt");
@@ -336,7 +336,7 @@ public class ExecutionController {
                             registrationResult.results.get(0)));
 
                     CompletableFuture<CallResult> callFuture = node.session.call(
-                            task_name);
+                            task_name, params);
                     callFuture.thenAccept(callResult -> {
                         List<Object> results = (List) callResult.results.get(0);
 
@@ -356,8 +356,10 @@ public class ExecutionController {
     }
 
     private void broadcastResults(List<Object> results){
-        double totalTime = (double)(endSendingTime - startSendingTime) * 1.0e-9;
+        String executionResult = String.valueOf(results.get(0));
         double executionTime = (Double) results.get(1);
+
+        double totalTime = (double)(endSendingTime - startSendingTime) * 1.0e-9;
         double commOverhead = totalTime - executionTime;
 
         task.setExecutionTime(executionTime);
@@ -371,8 +373,8 @@ public class ExecutionController {
 
         Log.d(TAG, "Broadcasting offloading result");
         Intent intent = new Intent(OFFLOADING_RESULT_SUB);
-        intent.putExtra("result", String.valueOf(results.get(0)));
-        intent.putExtra("duration", (Double) results.get(1));
+        intent.putExtra("result", executionResult);
+        intent.putExtra("duration", executionTime);
         intent.putExtra("overhead", commOverhead);
 
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
