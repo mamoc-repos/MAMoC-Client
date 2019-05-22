@@ -1,6 +1,7 @@
 package uk.ac.standrews.cs.mamoc_client;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.util.Log;
 
@@ -39,7 +40,6 @@ public class MamocFramework {
     private MobileNode selfNode;
 
     private static MamocFramework instance;
-
     private ExceptionHandler exceptionHandler;
     public String lastExecution;
 
@@ -57,8 +57,8 @@ public class MamocFramework {
 
         this.dbAdapter = DBAdapter.getInstance(mContext);
 
-        // TODO: find a better mechanism for reindexing the changed annotated classes
-        if (!checkAnnotatedIndexing()) {
+        // We only perform class indexing after a fresh install of the app
+        if (isFirstInstall(mContext)) {
             findOffloadableClasses();
         }
 
@@ -95,10 +95,22 @@ public class MamocFramework {
         return offloadableClasses;
     }
 
-    private boolean checkAnnotatedIndexing() {
-        String mamocDirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/mamoc";
-        File mamocDir = new File(mamocDirPath);
-        return mamocDir.exists();
+//    private boolean checkAnnotatedIndexing() {
+//        String mamocDirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/mamoc";
+//        File mamocDir = new File(mamocDirPath);
+//        Log.d(TAG, mamocDir.exists()? "index file exists": "index file does not exist");
+//        return mamocDir.exists();
+//    }
+
+    private static boolean isFirstInstall(Context context) {
+        try {
+            long firstInstallTime = context.getPackageManager().getPackageInfo(BuildConfig.APPLICATION_ID, 0).firstInstallTime;
+            long lastUpdateTime = context.getPackageManager().getPackageInfo(BuildConfig.APPLICATION_ID, 0).lastUpdateTime;
+            return firstInstallTime == lastUpdateTime;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return true;
+        }
     }
 
     private void findOffloadableClasses() {
