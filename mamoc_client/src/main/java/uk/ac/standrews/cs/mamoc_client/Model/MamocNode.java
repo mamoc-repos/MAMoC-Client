@@ -1,9 +1,5 @@
 package uk.ac.standrews.cs.mamoc_client.Model;
 
-import android.os.Build;
-
-import com.google.gson.Gson;
-
 import java.io.Serializable;
 
 public class MamocNode implements Serializable {

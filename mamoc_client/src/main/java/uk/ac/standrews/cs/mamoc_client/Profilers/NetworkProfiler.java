@@ -27,7 +27,6 @@ public class NetworkProfiler {
 
     private static final int rttPings = 5;
     private static final int rttInfinite = 100000000;
-    private static int rtt = rttInfinite;
 
     public NetworkProfiler(Context context) {
         this.context = context;
@@ -63,6 +62,7 @@ public class NetworkProfiler {
         Log.d(TAG, "Pinging");
         int tRtt = 0;
         int response;
+        int rtt;
         try {
             for (int i = 0; i < rttPings; i++) {
                 Long start = System.nanoTime();
@@ -93,7 +93,7 @@ public class NetworkProfiler {
     })
     public final NetworkType getNetworkType() {
         NetworkType result = NetworkType.UNKNOWN;
-        if (hasPermission(context, Manifest.permission.ACCESS_NETWORK_STATE)) {
+        if (hasPermission(context)) {
             ConnectivityManager cm =
                     (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -138,11 +138,11 @@ public class NetworkProfiler {
         return result;
     }
 
-    boolean hasPermission(final Context context, final String permission) {
+    private boolean hasPermission(final Context context) {
         boolean permGranted =
-                context.checkCallingOrSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
+                context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED;
         if (!permGranted) {
-            Log.e(TAG, ">\t" + permission);
+            Log.e(TAG, ">\t" + Manifest.permission.ACCESS_NETWORK_STATE);
             Log.w(TAG,
                     "\nPermission not granted/missing!\nMake sure you have declared the permission in your manifest file (and granted it on API 23+).\n");
         }

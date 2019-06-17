@@ -74,12 +74,7 @@ public class DeviceProfiler {
     public int getNumCpuCores() {
         try {
             File dir = new File("/sys/devices/system/cpu/");
-            File[] files = dir.listFiles(file -> {
-                if (Pattern.matches("cpu[0-9]+", file.getName())) {
-                    return true;
-                }
-                return false;
-            });
+            File[] files = dir.listFiles(file -> Pattern.matches("cpu[0-9]+", file.getName()));
             return files.length;
         } catch (Exception e) {
             Log.e(TAG, "Failed to count number of cores, defaulting to 1", e);
@@ -124,8 +119,25 @@ public class DeviceProfiler {
         if (activityManager != null) {
             activityManager.getMemoryInfo(mi);
             totalMemory = mi.totalMem;
+            Log.i(TAG, "total memory: " + totalMemory);
         }
 
         return totalMemory;
+    }
+
+    public final long getAvailMemory() {
+
+        long freeMem = 0;
+
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+
+        if (activityManager != null) {
+            activityManager.getMemoryInfo(mi);
+            freeMem = mi.availMem;
+            Log.i(TAG, "free memory: " + freeMem);
+        }
+        return freeMem;
     }
 }
