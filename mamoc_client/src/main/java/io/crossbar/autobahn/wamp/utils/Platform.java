@@ -12,7 +12,7 @@
 package io.crossbar.autobahn.wamp.utils;
 
 import java.util.concurrent.Executor;
-import java8.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinPool;
 
 import io.crossbar.autobahn.wamp.interfaces.ITransport;
 

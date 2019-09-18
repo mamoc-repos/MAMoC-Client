@@ -11,7 +11,7 @@
 
 package io.crossbar.autobahn.wamp.requests;
 
-import java8.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletableFuture;
 
 public class UnregisterRequest extends Request {
 
