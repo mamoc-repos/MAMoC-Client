@@ -9,11 +9,16 @@ If you use this offloading library in your work, don't forget to cite the follow
 D. Sulaiman and A. Barker, "MAMoC-Android: Multisite Adaptive Computation Offloading for Android Applications,"
 2019 7th IEEE International Conference on Mobile Cloud Computing, Services, and Engineering (MobileCloud), Newark, CA, USA, 2019, pp. 68-75.
 ```
-[Link to the paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8710699&isnumber=8710648)
+[Link to the paper](https://ieeexplore.ieee.org/document/8710699)
+
+## Usage
+We have provided some initial demo applications together with instructions on how to use the framework. 
+
+Check them on the [MAMoC Demo](https://github.com/dawand/MAMoC_Demo) repository. 
 
 ## Test
 
-We have written [few simple Android JUnit tests](./mamoc_client/src/androidTest/java/uk/ac/standrews/cs/mamoc_client/ExampleInstrumentedTest.java) to test some of the components of the framework.
+We have written a few simple [Android JUnit tests](./mamoc_client/src/androidTest/java/uk/ac/standrews/cs/mamoc_client/ExampleInstrumentedTest.java) to test the different components of the framework.
 
 Make sure that you have both JAVA_SDK and ANDROID_SDK_ROOT variables in your environment.
 
@@ -23,10 +28,6 @@ cd MAMoC-Android
 ./gradlew clean build
 ./gradlew connectedAndroidTest
 ```
-
-## Usage
-We have provided some initial demo applications together with instructions on how to use the framework.
-Check them on the [MAMoC Demo](https://github.com/dawand/MAMoC_Demo) repository. 
 
 ## Server component installation
 
