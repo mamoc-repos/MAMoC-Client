@@ -25,7 +25,6 @@ public class DexDecompiler {
 
     private static final Logger LOG = LoggerFactory.getLogger(DexDecompiler.class);
 
-    private final int STACK_SIZE = 20 * 1024 * 1024;
     private ExceptionHandler exceptionHandler;
 
     private Context context;
@@ -36,7 +35,7 @@ public class DexDecompiler {
         this.classNames = classNames;
     }
 
-    public void runDecompiler(){
+    public void start(){
         extractDexFiles();
     }
 
@@ -74,6 +73,7 @@ public class DexDecompiler {
 
     private void decompileDex(File dexInputFile) {
         ThreadGroup group = new ThreadGroup("Dex to Java Group");
+        int STACK_SIZE = 20 * 1024 * 1024;
         Thread javaExtractionThread = new Thread(group, (Runnable) () -> {
             boolean javaError = false;
             try {

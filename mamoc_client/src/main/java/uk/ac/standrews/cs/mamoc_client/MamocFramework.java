@@ -9,6 +9,7 @@ import org.atteo.classindex.ClassIndex;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
 import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
@@ -35,7 +36,7 @@ public class MamocFramework {
     public NetworkProfiler networkProfiler;
     public DBAdapter dbAdapter;
 
-    private ArrayList<Class> offloadableClasses = new ArrayList<>();
+//    private ArrayList<Class> offloadableClasses = new ArrayList<>();
 
     private MobileNode selfNode;
 
@@ -57,9 +58,10 @@ public class MamocFramework {
 
         this.dbAdapter = DBAdapter.getInstance(mContext);
 
-        // We only perform class indexing after a fresh install of the app
+        // We need to perform class indexing and decompiling after a fresh install of the app
         if (isFirstInstall(mContext)) {
-            findOffloadableClasses();
+//            findOffloadableTasks();
+            decompileAnnotatedClassFiles();
         }
 
         if (selfNode == null) {
@@ -91,9 +93,9 @@ public class MamocFramework {
         return instance;
     }
 
-    public ArrayList<Class> getOffloadableClasses() {
-        return offloadableClasses;
-    }
+//    public ArrayList<Class> getOffloadableClasses() {
+//        return offloadableClasses;
+//    }
 
 //    private boolean checkAnnotatedIndexing() {
 //        String mamocDirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/mamoc";
@@ -113,34 +115,42 @@ public class MamocFramework {
         }
     }
 
-    private void findOffloadableClasses() {
+//    private void findOffloadableTasks() {
+//
+//        ThreadGroup group = new ThreadGroup("Offloadable tasks group");
+//
+//        // increase stack size from 8k (around 260 calls) to 2M (enough for not getting the StackOverFlowException)
+//        int STACK_SIZE = 20 * 1024 * 1024;
+//
+//        Thread offloadableTasksThread = new Thread(group, () -> {
+//            Iterable<Class<?>> klasses = ClassIndex.getAnnotated(Offloadable.class);
+//
+//            for (Class<?> klass : klasses) {
+//                offloadableClasses.add(klass);
+//                Log.d("annotation", "new annotated class found: " + klass.getName());
+//            }
+//
+//        }, "Offloadable Tasks Thread", STACK_SIZE);
+//
+//        offloadableTasksThread.setPriority(Thread.MAX_PRIORITY);
+//        offloadableTasksThread.setUncaughtExceptionHandler(exceptionHandler);
+//        offloadableTasksThread.start();
+//    }
 
-        ThreadGroup group = new ThreadGroup("Dex to Java Group");
+    private void decompileAnnotatedClassFiles() {
 
-        int STACK_SIZE = 20 * 1024 * 1024;
-        Thread annotationIndexingThread = new Thread(group, () -> {
+        ArrayList<String> classNames = new ArrayList<>();
 
-            Iterable<Class<?>> klasses = ClassIndex.getAnnotated(Offloadable.class);
-            ArrayList<String> annotatedClasses = new ArrayList<>();
+        for (String s : ClassIndex.getAnnotatedNames(Offloadable.class)) {
+            classNames.add(s);
+        }
 
-            for (Class<?> klass : klasses) {
-                offloadableClasses.add(klass);
-                annotatedClasses.add(klass.getName());
-                Log.d("annotation", "new annotated class found: " + klass.getName());
-            }
+//        for (Class klass: offloadableClasses){
+//            classNames.add(klass.getName());
+//        }
 
-            decompileAnnotatedClassFiles(annotatedClasses);
-
-        }, "Annotation Indexing Thread", STACK_SIZE);
-
-        annotationIndexingThread.setPriority(Thread.MAX_PRIORITY);
-        annotationIndexingThread.setUncaughtExceptionHandler(exceptionHandler);
-        annotationIndexingThread.start();
-    }
-
-    private void decompileAnnotatedClassFiles(ArrayList<String> offloadableClasses) {
-        DexDecompiler decompiler = new DexDecompiler(mContext, offloadableClasses);
-        decompiler.runDecompiler();
+        DexDecompiler decompiler = new DexDecompiler(mContext, classNames);
+        decompiler.start();
     }
 
     public String fetchSourceCode(String className) {
