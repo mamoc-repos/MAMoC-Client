@@ -38,7 +38,6 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     NsdHelper nsdHelper;
     PeerListFragment deviceListFragment;
 
-    private MobileNode selectedNode;
     CommunicationController communicationController = null;
 
     View progressBar;
@@ -250,7 +249,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     @Override
     public void onListFragmentInteraction(MobileNode node) {
         Toast.makeText(this, "Trying to connect to: " + node.getIp(), Toast.LENGTH_SHORT).show();
-        selectedNode = node;
+        MobileNode selectedNode = node;
         DialogUtils.getServiceSelectionDialog(this, selectedNode).show();
     }
 

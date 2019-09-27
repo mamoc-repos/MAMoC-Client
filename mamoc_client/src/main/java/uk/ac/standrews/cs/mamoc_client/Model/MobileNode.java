@@ -6,13 +6,15 @@ import android.os.Build;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Date;
 
 import uk.ac.standrews.cs.mamoc_client.Utils.Utils;
 import uk.ac.standrews.cs.mamoc_client.Profilers.BatteryState;
 import uk.ac.standrews.cs.mamoc_client.Profilers.DeviceProfiler;
 
-public class MobileNode extends MamocNode{
+public class MobileNode extends MamocNode implements Comparable<MamocNode>{
 
     private String deviceID;
     private String osVersion;
@@ -72,8 +74,18 @@ public class MobileNode extends MamocNode{
         return mobile;
     }
 
+    @NotNull
     @Override
     public String toString() {
         return (new Gson()).toJson(this);
+    }
+
+    @Override
+    public int compareTo(MamocNode o) {
+        if (this.getCpuFreq() > o.getCpuFreq()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }

@@ -74,11 +74,6 @@ public class CommunicationController {
         startConnectionListener();
     }
 
-    public void restartConnectionListenerWith(int port) {
-        stopConnectionListener();
-        startConnectionListener(port);
-    }
-
     public int getMyPort() {
         return myPort;
     }
@@ -91,7 +86,7 @@ public class CommunicationController {
         return mobileDevices;
     }
 
-    public void addMobileDevices(MobileNode mobileNode) {
+    public void addMobileDevice(MobileNode mobileNode) {
         this.mobileDevices.add(mobileNode);
     }
 

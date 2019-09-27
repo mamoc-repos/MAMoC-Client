@@ -32,27 +32,27 @@ public class NsdHelper {
     public static final String BROADCAST_TAG = "NSDBroadcast";
     public static final String KEY_SERVICE_INFO = "serviceinfo";
 
-    Context mContext;
+    private Context mContext;
 
     private LocalBroadcastManager broadcaster;
 
-    NsdManager mNsdManager;
-    NsdManager.ResolveListener mResolveListener;
-    NsdManager.DiscoveryListener mDiscoveryListener;
-    NsdManager.RegistrationListener mRegistrationListener;
+    private NsdManager mNsdManager;
+    private NsdManager.ResolveListener mResolveListener;
+    private NsdManager.DiscoveryListener mDiscoveryListener;
+    private NsdManager.RegistrationListener mRegistrationListener;
 
-    public static final String SERVICE_TYPE = "_http._tcp";
+    private static final String SERVICE_TYPE = "_http._tcp";
 
     // There is an additional dot at the end of service name most probably by os, this is to
     // rectify that problem
-    public static final String SERVICE_TYPE_PLUS_DOT = SERVICE_TYPE + ".";
+    private static final String SERVICE_TYPE_PLUS_DOT = SERVICE_TYPE + ".";
 
     public static final String TAG = "NSDHelperDXDX: ";
 
     private static final String DEFAULT_SERVICE_NAME = "MAMoC";
-    public String mServiceName = DEFAULT_SERVICE_NAME;
+    private String mServiceName = DEFAULT_SERVICE_NAME;
 
-    NsdServiceInfo mService;
+    private NsdServiceInfo mService;
 
     public NsdHelper(Context context) {
         mContext = context;
@@ -65,7 +65,7 @@ public class NsdHelper {
         //mNsdManager.init(mContext.getMainLooper(), this);
     }
 
-    public void initializeDiscoveryListener() {
+    private void initializeDiscoveryListener() {
         mDiscoveryListener = new NsdManager.DiscoveryListener() {
             @Override
             public void onDiscoveryStarted(String regType) {
@@ -117,7 +117,7 @@ public class NsdHelper {
         };
     }
 
-    public void initializeResolveListener() {
+    private void initializeResolveListener() {
         mResolveListener = new NsdManager.ResolveListener() {
             @Override
             public void onResolveFailed(NsdServiceInfo serviceInfo, int errorCode) {
@@ -140,7 +140,7 @@ public class NsdHelper {
         };
     }
 
-    public void initializeRegistrationListener() {
+    private void initializeRegistrationListener() {
         mRegistrationListener = new NsdManager.RegistrationListener() {
             @Override
             public void onServiceRegistered(NsdServiceInfo NsdServiceInfo) {
@@ -188,10 +188,7 @@ public class NsdHelper {
 
     public void stopDiscovery() {
         if (mDiscoveryListener != null) {
-            try {
-                mNsdManager.stopServiceDiscovery(mDiscoveryListener);
-            } finally {
-            }
+            mNsdManager.stopServiceDiscovery(mDiscoveryListener);
             mDiscoveryListener = null;
         }
     }
@@ -202,10 +199,7 @@ public class NsdHelper {
 
     public void tearDown() {
         if (mRegistrationListener != null) {
-            try {
-                mNsdManager.unregisterService(mRegistrationListener);
-            } finally {
-            }
+            mNsdManager.unregisterService(mRegistrationListener);
             mRegistrationListener = null;
         }
     }
