@@ -1,4 +1,4 @@
-package uk.ac.standrews.cs.mamoc_client.WebSocket;
+package uk.ac.standrews.cs.mamoc_client.ServiceDiscovery;
 
 public interface WebSocket {
 

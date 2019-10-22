@@ -115,7 +115,7 @@ public class ClassFileNameHandler {
         int secondStart = midPoint + 1; // inclusive
         int bytesRemoved = utf8Length(codePoints[midPoint]);
 
-        // if we have an even number of codepoints, start by removing both middle characters,
+        // if we have an even number of codepoints, calculateTopsis by removing both middle characters,
         // unless just removing the first already removes enough bytes
         if (((codePoints.length % 2) == 0) && bytesRemoved < bytesToRemove) {
             bytesRemoved += utf8Length(codePoints[secondStart]);

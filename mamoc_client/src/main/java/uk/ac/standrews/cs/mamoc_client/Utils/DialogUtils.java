@@ -2,12 +2,11 @@ package uk.ac.standrews.cs.mamoc_client.Utils;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.Toast;
 
-import uk.ac.standrews.cs.mamoc_client.Communication.DataSender;
+import uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.DataSender;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.R;
 

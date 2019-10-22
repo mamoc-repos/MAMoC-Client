@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresPermission;
@@ -24,9 +25,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.ServerSocket;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -103,7 +106,7 @@ public class Utils {
     }
 
     public static boolean isWifiConnected(Context context) {
-            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
             return (cm != null) && (cm.getActiveNetworkInfo() != null) &&
                     (cm.getActiveNetworkInfo().getType() == 1);
@@ -112,11 +115,7 @@ public class Utils {
     public static boolean checkPermission(String strPermission, Context _c) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int result = ContextCompat.checkSelfPermission(_c, strPermission);
-            if (result == PackageManager.PERMISSION_GRANTED) {
-                return true;
-            } else {
-                return false;
-            }
+            return result == PackageManager.PERMISSION_GRANTED;
         } else {
             return true;
         }
@@ -250,5 +249,36 @@ public class Utils {
             }
         }
         return false;
+    }
+
+    public static String getDottedDecimalIP(byte[] ipAddr) {
+
+        /*
+         * ripped from:
+         * http://stackoverflow.com/questions/10053385/how-to-get-each-devices-ip-address-in-wifi-direct-scenario
+         *
+         * */
+
+        String ipAddrStr = "";
+        for (int i=0; i<ipAddr.length; i++) {
+            if (i > 0) {
+                ipAddrStr += ".";
+            }
+            ipAddrStr += ipAddr[i]&0xFF;
+        }
+        return ipAddrStr;
+    }
+
+    public static String getWiFiIPAddress(Context context) {
+        WifiManager wm = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        int ipAddr = wm.getConnectionInfo().getIpAddress();
+
+        if (ByteOrder.nativeOrder().equals(ByteOrder.LITTLE_ENDIAN)) {
+            ipAddr = Integer.reverseBytes(ipAddr);
+        }
+        
+        byte[] ipByteArray = BigInteger.valueOf(ipAddr).toByteArray();
+
+        return  getDottedDecimalIP(ipByteArray);
     }
 }

@@ -1,5 +1,5 @@
 
-package uk.ac.standrews.cs.mamoc_client.Communication;
+package uk.ac.standrews.cs.mamoc_client.ServiceDiscovery;
 
 /*
  * Copyright (C) 2011 The Android Open Source Project
@@ -82,16 +82,16 @@ public class WiFiP2PSDReceiver extends BroadcastReceiver {
                 // It's a disconnect
             }
         }
-//        else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
-//
-//            // request available peers from the wifi p2p manager. This is an
-//            // asynchronous call and the calling activity is notified with a
-//            // callback on PeerListListener.onPeersAvailable()
-//            if (manager != null) {
-//                manager.requestPeers(channel, (WifiP2pManager.PeerListListener) activity);
-//            }
-//            Log.d(TAG, "P2P peers changed");
-//        }
+        else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
+
+            // request available peers from the wifi p2p manager. This is an
+            // asynchronous call and the calling activity is notified with a
+            // callback on PeerListListener.onPeersAvailable()
+            if (manager != null) {
+                manager.requestPeers(channel, (WifiP2pManager.PeerListListener) activity);
+            }
+            Log.d(TAG, "P2P peers changed");
+        }
         else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION
                 .equals(action)) {
 

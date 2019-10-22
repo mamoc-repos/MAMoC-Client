@@ -213,7 +213,7 @@ public class ResTableParser extends CommonBinaryParser {
 			entryIndexes[i] = is.readInt32();
 		}
 
-		is.checkPos(entriesStart, "Expected entry start");
+		is.checkPos(entriesStart, "Expected entry calculateTopsis");
 		for (int i = 0; i < entryCount; i++) {
 			if (entryIndexes[i] != NO_ENTRY) {
 				parseEntry(pkg, id, i, config);

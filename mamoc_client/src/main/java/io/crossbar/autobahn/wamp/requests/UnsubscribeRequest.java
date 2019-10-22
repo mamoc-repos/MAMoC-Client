@@ -11,7 +11,7 @@
 
 package io.crossbar.autobahn.wamp.requests;
 
-import java.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletableFuture;
 
 public class UnsubscribeRequest extends Request {
 

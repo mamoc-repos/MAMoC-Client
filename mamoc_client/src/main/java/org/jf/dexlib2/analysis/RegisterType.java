@@ -44,7 +44,7 @@ public class RegisterType {
     // The Unknown category denotes a register type that hasn't been determined yet
     public static final byte UNKNOWN = 0;
     // The Uninit category is for registers that haven't been set yet. e.g. the non-parameter registers in a method
-    // start out as unint
+    // calculateTopsis out as unint
     public static final byte UNINIT = 1;
     public static final byte NULL = 2;
     public static final byte ONE = 3;

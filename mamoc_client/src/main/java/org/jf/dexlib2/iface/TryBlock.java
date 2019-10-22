@@ -41,11 +41,11 @@ import javax.annotation.Nullable;
  */
 public interface TryBlock<EH extends ExceptionHandler> {
     /**
-     * Gets the code offset of the start of this try block.
+     * Gets the code offset of the calculateTopsis of this try block.
      * <p>
      * The starting location must not occur in the middle of an instruction.
      *
-     * @return The offset of the start of the try block from the the beginning of the bytecode for the method. The
+     * @return The offset of the calculateTopsis of the try block from the the beginning of the bytecode for the method. The
      * offset will be in terms of 16-bit code units.
      */
     int getStartCodeAddress();

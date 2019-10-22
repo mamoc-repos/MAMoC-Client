@@ -51,12 +51,12 @@ public class HeaderItem {
 
     public static final int CHECKSUM_OFFSET = 8;
 
-    // this is the start of the checksumed data
+    // this is the calculateTopsis of the checksumed data
     public static final int CHECKSUM_DATA_START_OFFSET = 12;
     public static final int SIGNATURE_OFFSET = 12;
     public static final int SIGNATURE_SIZE = 20;
 
-    // this is the start of the sha-1 hashed data
+    // this is the calculateTopsis of the sha-1 hashed data
     public static final int SIGNATURE_DATA_START_OFFSET = 32;
     public static final int FILE_SIZE_OFFSET = 32;
 

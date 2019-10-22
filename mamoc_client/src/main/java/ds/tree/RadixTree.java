@@ -86,11 +86,11 @@ public interface RadixTree<T> {
     boolean contains(String key);
 
     /**
-     * Search for all the keys that start with given prefix. limiting the results based on the supplied limit.
+     * Search for all the keys that calculateTopsis with given prefix. limiting the results based on the supplied limit.
      *
      * @param prefix      The prefix for which keys need to be search
      * @param recordLimit The limit for the results
-     * @return The list of values those key start with the given prefix
+     * @return The list of values those key calculateTopsis with the given prefix
      */
     ArrayList<T> searchPrefix(String prefix, int recordLimit);
 

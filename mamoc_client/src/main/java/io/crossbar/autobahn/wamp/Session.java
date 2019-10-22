@@ -18,19 +18,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
+import java8.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletionException;
 import java.util.concurrent.Executor;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java8.util.function.BiConsumer;
+import java8.util.function.BiFunction;
+import java8.util.function.Consumer;
+import java8.util.function.Function;
+import java8.util.function.Supplier;
 
 import io.crossbar.autobahn.utils.ABLogger;
 import io.crossbar.autobahn.utils.IABLogger;
 import io.crossbar.autobahn.wamp.auth.ChallengeResponseAuth;
-import io.crossbar.autobahn.wamp.auth.CryptosignAuth;
 import io.crossbar.autobahn.wamp.auth.TicketAuth;
 import io.crossbar.autobahn.wamp.exceptions.ApplicationError;
 import io.crossbar.autobahn.wamp.exceptions.ProtocolError;
@@ -92,7 +91,7 @@ import io.crossbar.autobahn.wamp.utils.Platform;
 
 import static io.crossbar.autobahn.wamp.messages.MessageMap.MESSAGE_TYPE_MAP;
 import static io.crossbar.autobahn.wamp.utils.Shortcuts.getOrDefault;
-import static java.util.concurrent.CompletableFuture.runAsync;
+import static java8.util.concurrent.CompletableFuture.runAsync;
 
 
 public class Session implements ISession, ITransportHandler {
@@ -303,16 +302,6 @@ public class Session implements ISession, ITransportHandler {
                             break;
                         }
                     }
-                } else if (msg.method.equals(CryptosignAuth.authmethod)) {
-                    for (IAuthenticator authenticator: mAuthenticators) {
-                        if (authenticator.getAuthMethod().equals(CryptosignAuth.authmethod)) {
-                            CryptosignAuth auth = (CryptosignAuth) authenticator;
-                            auth.onChallenge(this, challenge).whenCompleteAsync(
-                                    (response, throwable) -> send(new Authenticate(
-                                            response.signature, response.extra)), mExecutor);
-                            break;
-                        }
-                    }
                 }
             }
         }
@@ -445,12 +434,8 @@ public class Session implements ISession, ITransportHandler {
                         msg.registration));
             }
 
-            long callerSessionID = getOrDefault(msg.details, "caller", -1L);
-            String callerAuthID = getOrDefault(msg.details, "caller_authid", null);
-            String callerAuthRole = getOrDefault(msg.details, "caller_authrole", null);
-            
             InvocationDetails details = new InvocationDetails(
-                    registration, registration.procedure, callerSessionID, callerAuthID, callerAuthRole, this);
+                    registration, registration.procedure, -1, null, null, this);
 
             runAsync(() -> {
                 Object result;
@@ -1250,14 +1235,6 @@ public class Session implements ISession, ITransportHandler {
         return reallyCall(procedure, Arrays.asList(args), null, options, resultType, null);
     }
 
-    @Override
-    public <T> CompletableFuture<T> call(
-            String procedure,
-            TypeReference<T> resultType,
-            Object... args) {
-        return reallyCall(procedure, Arrays.asList(args), null, null, resultType, null);
-    }
-
     private CompletableFuture<SessionDetails> reallyJoin(
             String realm,
             List<IAuthenticator> authenticators) {
@@ -1284,10 +1261,6 @@ public class Session implements ISession, ITransportHandler {
                 } else if (authenticator.getAuthMethod().equals(ChallengeResponseAuth.authmethod)) {
                     ChallengeResponseAuth auth = (ChallengeResponseAuth) authenticator;
                     authID = auth.authid;
-                } else if (authenticator.getAuthMethod().equals(CryptosignAuth.authmethod)) {
-                    CryptosignAuth auth = (CryptosignAuth) authenticator;
-                    authID = auth.authid;
-                    authextra = auth.authextra;
                 }
             }
             send(new Hello(realm, roles, authMethods, authID, authextra));

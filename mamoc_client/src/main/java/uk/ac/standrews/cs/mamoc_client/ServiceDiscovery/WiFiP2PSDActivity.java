@@ -25,13 +25,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
 import uk.ac.standrews.cs.mamoc_client.Constants;
 import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
-import uk.ac.standrews.cs.mamoc_client.Communication.WiFiP2PSDReceiver;
-import uk.ac.standrews.cs.mamoc_client.Communication.TransferConstants;
-import uk.ac.standrews.cs.mamoc_client.Communication.DataHandler;
-import uk.ac.standrews.cs.mamoc_client.Communication.DataSender;
+import uk.ac.standrews.cs.mamoc_client.MamocFramework;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.R;
 import uk.ac.standrews.cs.mamoc_client.Utils.DialogUtils;
@@ -39,16 +35,13 @@ import uk.ac.standrews.cs.mamoc_client.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFragment.OnListFragmentInteractionListener
         , WifiP2pManager.ConnectionInfoListener {
 
-//    private static final int CODE_PICK_IMAGE = 21;
-
     private static final String TAG = "WiFIP2PSD";
     private static final String SERVICE_INSTANCE = "MAMoC";
-    private static final String SERVICE_TYPE = "_mamoc._tcp";
+    private static final String SERVICE_TYPE = "_http._tcp";
 
     PeerListFragment deviceListFragment;
 
@@ -59,12 +52,19 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
     WiFiP2PSDReceiver wiFiP2PSDReceiver;
     //private boolean isWifiP2pEnabled = false;
 
-    private CommunicationController commController;
+    private ServiceDiscovery serviceDiscovery;
 
     WifiP2pDnsSdServiceRequest serviceRequest = null;
 
+    private MobileNode selfNode;
     private MobileNode selectedDevice;
 
+    private boolean isConnectionInfoSent = false;
+    private String peerIP = null;
+    private int peerPort = -1;
+
+    private boolean isConnectP2pCalled = false;
+    private boolean isWDConnected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,15 +82,12 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
 
     private void initialize() {
 
-        commController = CommunicationController.getInstance(this);
+        selfNode = MamocFramework.getInstance(this).getSelfNode();
 
+        serviceDiscovery = ServiceDiscovery.getInstance(this);
         selectedDevice = new MobileNode(this);
-
         progressBar = findViewById(R.id.progressBarNSD);
-
-        commController.startConnectionListener();
-
-        setToolBarTitle(0);
+        serviceDiscovery.startConnectionListener();
 
         wifiP2pManager = (WifiP2pManager) getSystemService(WIFI_P2P_SERVICE);
         wifip2pChannel = wifiP2pManager.initialize(this, getMainLooper(), null);
@@ -119,9 +116,14 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
         return super.onOptionsItemSelected(item);
     }
 
-    public void findPeers(View v) {
-        Snackbar.make(v, "Replace this junk with yours", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+    public void advertiseService(View view) {
+        startRegistrationAndDiscovery(Utils.getPort(this));
+
+        Log.d("Info", Build.MANUFACTURER + " IP: " + Utils.getIPAddress(true));
+        Snackbar.make(view,
+                "Advertising on: " + Utils.getIPAddress(true),
+                Snackbar.LENGTH_LONG)
+                .show();
     }
 
     /**
@@ -129,29 +131,95 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
      */
     private void startRegistrationAndDiscovery(int port) {
 
-        String player = Utils.getValue(this, TransferConstants.KEY_USER_NAME);
-
-        Map<String, String> record = new HashMap<String, String>();
-        record.put(TransferConstants.KEY_BUDDY_NAME, player == null ? Build.MANUFACTURER : player);
-        record.put(TransferConstants.KEY_PORT_NUMBER, String.valueOf(port));
-        record.put(TransferConstants.KEY_DEVICE_STATUS, "available");
-        record.put(TransferConstants.KEY_WIFI_IP, Utils.getIPAddress(true));
-
-        WifiP2pDnsSdServiceInfo service = WifiP2pDnsSdServiceInfo.newInstance(
-                SERVICE_INSTANCE, SERVICE_TYPE, record);
-        wifiP2pManager.addLocalService(wifip2pChannel, service, new WifiP2pManager.ActionListener() {
-
+        wifiP2pManager.clearLocalServices(wifip2pChannel, new WifiP2pManager.ActionListener() {
             @Override
             public void onSuccess() {
-                Log.d(TAG, "Added Local Service");
+                HashMap<String, String> record = new HashMap<>();
+                record.put("name", "Amos");
+                WifiP2pDnsSdServiceInfo serviceInfo = WifiP2pDnsSdServiceInfo.newInstance(SERVICE_INSTANCE, SERVICE_TYPE, record);
+                wifiP2pManager.addLocalService(wifip2pChannel, serviceInfo, new WifiP2pManager.ActionListener() {
+                    @Override
+                    public void onSuccess() {
+//                        wifiP2pManager.setDnsSdResponseListeners(wifip2pChannel, this, PeerListFragment.this);
+                        wifiP2pManager.clearServiceRequests(wifip2pChannel, new WifiP2pManager.ActionListener() {
+                            @Override
+                            public void onSuccess() {
+                                wifiP2pManager.addServiceRequest(wifip2pChannel, WifiP2pDnsSdServiceRequest.newInstance(), new WifiP2pManager.ActionListener() {
+                                    @Override
+                                    public void onSuccess() {
+                                        wifiP2pManager.discoverPeers(wifip2pChannel, new WifiP2pManager.ActionListener() {
+                                            @Override
+                                            public void onSuccess() {
+                                                wifiP2pManager.discoverServices(wifip2pChannel, new WifiP2pManager.ActionListener() {
+                                                    @Override
+                                                    public void onSuccess() {
+                                                        // this is my recursive discovery approach
+//                                                        handler.postDelayed(discoveryRunnable, AppConfig.DNS_SD_SERVICE_DISCOVERABLE_DURATION_S * 1000);
+                                                    }
+
+                                                    @Override
+                                                    public void onFailure(int code) {
+                                                    }
+                                                });
+                                            }
+
+                                            @Override
+                                            public void onFailure(int code) {
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onFailure(int code) {
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onFailure(int code) {
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailure(int code) {
+                        Log.e(TAG, "Failure: Failed to add a service. code error: " + code);
+                        Snackbar.make(findViewById(R.id.progressBarNSD),"Failure: Failed to add a service",Snackbar.LENGTH_LONG).show();
+                    }
+                });
             }
 
             @Override
-            public void onFailure(int error) {
-                Log.e(TAG, "ERRORCEPTION: Failed to add a service");
+            public void onFailure(int code) {
+                Log.e(TAG, "Failure: Failed to clear a service. code error: " + code);
+                Snackbar.make(findViewById(R.id.progressBarNSD),"Failure: Failed to clear a service",Snackbar.LENGTH_LONG).show();
             }
         });
-        discoverService();
+
+//        Map<String, String> record = new HashMap<String, String>();
+//        record.put("deviceid", selfNode.getDeviceID());
+//        record.put("localip", selfNode.getIp());
+//        record.put("portnumber", String.valueOf(port));
+//        record.put("devicestatus", "available");
+//
+//        WifiP2pDnsSdServiceInfo service = WifiP2pDnsSdServiceInfo.newInstance(
+//                SERVICE_INSTANCE, SERVICE_TYPE, record);
+//
+//        wifiP2pManager.addLocalService(wifip2pChannel, service, new WifiP2pManager.ActionListener() {
+//
+//            @Override
+//            public void onSuccess() {
+//                Log.d(TAG, "Added Local Service");
+//                Snackbar.make(findViewById(R.id.progressBarNSD),"Added local service",Snackbar.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onFailure(int error) {
+//                Log.e(TAG, "Failure: Failed to add a service");
+//                Snackbar.make(findViewById(R.id.progressBarNSD),"Failure: Failed to add a service",Snackbar.LENGTH_LONG).show();
+//            }
+//        });
+//        discoverService();
     }
 
     private void discoverService() {
@@ -162,46 +230,63 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
          */
 
         wifiP2pManager.setDnsSdResponseListeners(wifip2pChannel,
-                new WifiP2pManager.DnsSdServiceResponseListener() {
+                (String instanceName, String registrationType, WifiP2pDevice srcDevice) -> {
+                    Log.d(TAG, instanceName + "####" + registrationType);
+                    // A service has been discovered. Is this our app?
+                    if (instanceName.equalsIgnoreCase(SERVICE_INSTANCE)) {
+                        // yes it is
 
-                    @Override
-                    public void onDnsSdServiceAvailable(String instanceName,
-                                                        String registrationType, WifiP2pDevice srcDevice) {
-                        Log.d(TAG, instanceName + "####" + registrationType);
-                        // A service has been discovered. Is this our app?
-                        if (instanceName.equalsIgnoreCase(SERVICE_INSTANCE)) {
-                            // yes it is
-                            WiFiP2pServiceHolder serviceHolder = new WiFiP2pServiceHolder();
-                            serviceHolder.device = srcDevice;
-                            serviceHolder.registrationType = registrationType;
-                            serviceHolder.instanceName = instanceName;
-                            connectP2p(serviceHolder);
-                        } else {
-                            //no it isn't
+                        if (!isConnectP2pCalled) {
+                            isConnectP2pCalled = true;
+                            WifiP2pConfig config = new WifiP2pConfig();
+                            config.deviceAddress = srcDevice.deviceAddress;
+                            config.wps.setup = WpsInfo.PBC;
+                            if (serviceRequest != null)
+                                wifiP2pManager.removeServiceRequest(wifip2pChannel, serviceRequest,
+                                        new WifiP2pManager.ActionListener() {
+
+                                            @Override
+                                            public void onSuccess() {
+                                            }
+
+                                            @Override
+                                            public void onFailure(int arg0) {
+                                            }
+                                        });
+
+                            wifiP2pManager.connect(wifip2pChannel, config, new WifiP2pManager.ActionListener() {
+
+                                @Override
+                                public void onSuccess() {
+                                    Snackbar.make(findViewById(R.id.progressBarNSD),"Connecting to service",Snackbar.LENGTH_LONG).show();
+                                }
+
+                                @Override
+                                public void onFailure(int errorCode) {
+                                    Snackbar.make(findViewById(R.id.progressBarNSD),"Failed connecting to service",Snackbar.LENGTH_LONG).show();
+                                }
+                            });
                         }
+
                     }
-                }, new WifiP2pManager.DnsSdTxtRecordListener() {
-
-                    @Override
-                    public void onDnsSdTxtRecordAvailable(
-                            String fullDomainName, Map<String, String> record,
-                            WifiP2pDevice device) {
-                        boolean isGroupOwner = device.isGroupOwner();
-                        peerPort = Integer.parseInt(record.get(TransferConstants.KEY_PORT_NUMBER).toString());
-                        Log.v(TAG, Build.MANUFACTURER + ". peer port received: " + peerPort);
-                        if (peerIP != null && peerPort > 0 && !isConnectionInfoSent) {
-                            String player = record.get(TransferConstants.KEY_BUDDY_NAME).toString();
-
-                            DataSender.sendCurrentDeviceData(WiFiP2PSDActivity.this,
-                                    peerIP, peerPort, true);
-                            isWDConnected = true;
-                            isConnectionInfoSent = true;
-                        }
+                }, (fullDomainName, record, device) -> {
+                    boolean isGroupOwner = device.isGroupOwner();
+                    if (record.get("portnumber") != null){
+                        peerPort = Integer.parseInt(record.get("portnumber"));
+                    } else {
+                        peerPort = 1124;
+                    }
+                    Log.v(TAG, Build.DEVICE + ". peer port received: " + peerPort);
+                    if (peerIP != null && peerPort > 0 && !isConnectionInfoSent) {
+                        String mobileNodeID = record.get("deviceid");
+                        DataSender.sendCurrentDeviceData(WiFiP2PSDActivity.this,
+                                peerIP, peerPort, true);
+                        isWDConnected = true;
+                        isConnectionInfoSent = true;
                     }
                 });
 
-        // After attaching listeners, create a service request and initiate
-        // discovery.
+        // After attaching listeners, create a service request and initiate discovery.
         serviceRequest = WifiP2pDnsSdServiceRequest.newInstance();
         wifiP2pManager.addServiceRequest(wifip2pChannel, serviceRequest,
                 new WifiP2pManager.ActionListener() {
@@ -232,9 +317,6 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
 
     @Override
     protected void onPause() {
-//        if (mNsdHelper != null) {
-//            mNsdHelper.stopDiscovery();
-//        }
         LocalBroadcastManager.getInstance(this).unregisterReceiver(MamocReceiver);
         unregisterReceiver(wiFiP2PSDReceiver);
         super.onPause();
@@ -248,15 +330,13 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
         localFilter.addAction(DataHandler.DEVICE_LIST_CHANGED);
         localFilter.addAction(DataHandler.REQUEST_RECEIVED);
         localFilter.addAction(DataHandler.RESPONSE_RECEIVED);
-        LocalBroadcastManager.getInstance(this).registerReceiver(MamocReceiver,
-                localFilter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(MamocReceiver, localFilter);
 
         IntentFilter wifip2pFilter = new IntentFilter();
         wifip2pFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
         wifip2pFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
 
-        wiFiP2PSDReceiver = new WiFiP2PSDReceiver(wifiP2pManager,
-                wifip2pChannel, this);
+        wiFiP2PSDReceiver = new WiFiP2PSDReceiver(wifiP2pManager, wifip2pChannel, this);
         registerReceiver(wiFiP2PSDReceiver, wifip2pFilter);
 
         LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(DataHandler.DEVICE_LIST_CHANGED));
@@ -266,7 +346,7 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
     protected void onDestroy() {
 //        mNsdHelper.tearDown();
 //        connListener.tearDown();
-        commController.stopConnectionListener();
+        serviceDiscovery.stopConnectionListener();
 
 //        Utility.clearPreferences(LocalDashWiFiP2PSD.this);
 //        Utility.deletePersistentGroups(wifiP2pManager, wifip2pChannel);
@@ -293,9 +373,13 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
         public void onReceive(Context context, Intent intent) {
             switch (intent.getAction()) {
                 case DataHandler.DEVICE_LIST_CHANGED:
+                    Log.d(TAG, "############ " + DataHandler.DEVICE_LIST_CHANGED);
+
                     ArrayList<MobileNode> devices = DBAdapter.getInstance(WiFiP2PSDActivity.this).getMobileDevicesList();
                     int peerCount = (devices == null) ? 0 : devices.size();
                     if (peerCount > 0) {
+                        Log.d(TAG, "############ " + "peerCount > 0");
+
                         isWDConnected = true;
                         progressBar.setVisibility(View.GONE);
                         deviceListFragment = new PeerListFragment();
@@ -307,16 +391,23 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
                         ft.replace(R.id.deviceListHolder, deviceListFragment);
                         ft.setTransition(FragmentTransaction.TRANSIT_NONE);
                         ft.commit();
+                    } else{
+                        Log.d(TAG, "############ " + "peerCount is zero!!!!");
+
                     }
                     setToolBarTitle(peerCount);
                     break;
                 case DataHandler.REQUEST_RECEIVED:
+                    Log.d(TAG, "############ " + DataHandler.REQUEST_RECEIVED);
+
                     MobileNode chatRequesterDevice = (MobileNode) intent.getSerializableExtra(DataHandler
                             .KEY_REQUEST);
                     DialogUtils.getChatRequestDialog(WiFiP2PSDActivity.this,
                             chatRequesterDevice).show();
                     break;
                 case DataHandler.RESPONSE_RECEIVED:
+                    Log.d(TAG, "############ " + DataHandler.RESPONSE_RECEIVED);
+
                     boolean isChatRequestAccepted = intent.getBooleanExtra(DataHandler
                             .KEY_IS_REQUEST_ACCEPTED, false);
                     if (!isChatRequestAccepted) {
@@ -369,10 +460,6 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
         }
     }
 
-    private boolean isConnectionInfoSent = false;
-    private String peerIP = null;
-    private int peerPort = -1;
-
     @Override
     public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
 
@@ -388,45 +475,6 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
             isConnectionInfoSent = true;
         }
     }
-
-
-    private boolean isConnectP2pCalled = false;
-
-    private void connectP2p(WiFiP2pServiceHolder serviceHolder) {
-        if (!isConnectP2pCalled) {
-            isConnectP2pCalled = true;
-            WifiP2pConfig config = new WifiP2pConfig();
-            config.deviceAddress = serviceHolder.device.deviceAddress;
-            config.wps.setup = WpsInfo.PBC;
-            if (serviceRequest != null)
-                wifiP2pManager.removeServiceRequest(wifip2pChannel, serviceRequest,
-                        new WifiP2pManager.ActionListener() {
-
-                            @Override
-                            public void onSuccess() {
-                            }
-
-                            @Override
-                            public void onFailure(int arg0) {
-                            }
-                        });
-
-            wifiP2pManager.connect(wifip2pChannel, config, new WifiP2pManager.ActionListener() {
-
-                @Override
-                public void onSuccess() {
-                    //("Connecting to service");
-                }
-
-                @Override
-                public void onFailure(int errorCode) {
-                    //("Failed connecting to service");
-                }
-            });
-        }
-    }
-
-    private boolean isWDConnected = false;
 
     @Override
     public void onListFragmentInteraction(MobileNode deviceDTO) {
@@ -452,16 +500,9 @@ public class WiFiP2PSDActivity extends AppCompatActivity implements PeerListFrag
         }
     }
 
-    private class WiFiP2pServiceHolder {
-        WifiP2pDevice device;
-        String instanceName;
-        String registrationType;
-    }
-
     private void setToolBarTitle(int peerCount) {
         if (getSupportActionBar() != null) {
-            String title = "connected: " + String
-                    .valueOf(peerCount);
+            String title = "connected: " + peerCount;
             getSupportActionBar().setTitle(title);
 
         }

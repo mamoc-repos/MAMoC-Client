@@ -13,6 +13,7 @@ package io.crossbar.autobahn.wamp.messages;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,26 +27,22 @@ public class Invocation implements IMessage {
 
     public final long request;
     public final long registration;
-    public final Map<String, Object> details;
     public final List<Object> args;
     public final Map<String, Object> kwargs;
 
-    public Invocation(long request, long registration, Map<String, Object> details, List<Object> args,
-            Map<String, Object> kwargs) {
+    public Invocation(long request, long registration, List<Object> args, Map<String, Object> kwargs) {
         this.request = request;
         this.registration = registration;
-        this.details = details;
         this.args = args;
         this.kwargs = kwargs;
     }
 
     public static Invocation parse(List<Object> wmsg) {
-        MessageUtil.validateMessage(wmsg, MESSAGE_TYPE, "INVOCATION", 4, 6);
+        MessageUtil.validateMessage(wmsg, MESSAGE_TYPE, "INNVOCATION", 3, 6);
 
         long request = MessageUtil.parseLong(wmsg.get(1));
         long registration = MessageUtil.parseLong(wmsg.get(2));
         Map<String, Object> details = (Map<String, Object>) wmsg.get(3);
-
         List<Object> args = null;
         if (wmsg.size() > 4) {
             if (wmsg.get(4) instanceof byte[]) {
@@ -57,7 +54,7 @@ public class Invocation implements IMessage {
         if (wmsg.size() > 5) {
             kwargs = (Map<String, Object>) wmsg.get(5);
         }
-        return new Invocation(request, registration, details, args, kwargs);
+        return new Invocation(request, registration, args, kwargs);
     }
 
     @Override
@@ -66,12 +63,8 @@ public class Invocation implements IMessage {
         marshaled.add(MESSAGE_TYPE);
         marshaled.add(request);
         marshaled.add(registration);
-        if (details == null) {
-            // Empty details.
-            marshaled.add(Collections.emptyMap());
-        } else {
-            marshaled.add(details);
-        }
+        // Empty options.
+        marshaled.add(Collections.emptyMap());
         if (kwargs != null) {
             if (args == null) {
                 // Empty args.

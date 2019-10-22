@@ -26,7 +26,7 @@ public class CommonBinaryParser extends ParserConstants {
 		int[] stringsOffset = is.readInt32Array(stringCount);
 		int[] stylesOffset = is.readInt32Array(styleCount);
 
-		is.checkPos(start + stringsStart, "Expected strings start");
+		is.checkPos(start + stringsStart, "Expected strings calculateTopsis");
 		long stringsEnd = stylesStart == 0 ? chunkEnd : start + stylesStart;
 		String[] strings = new String[stringCount];
 		byte[] strArray = is.readInt8Array((int) (stringsEnd - is.getPos()));
@@ -44,7 +44,7 @@ public class CommonBinaryParser extends ParserConstants {
 			}
 		}
 		if (stylesStart != 0) {
-			is.checkPos(start + stylesStart, "Expected styles start");
+			is.checkPos(start + stylesStart, "Expected styles calculateTopsis");
 			if (styleCount != 0) {
 				// TODO: implement styles parsing
 			}

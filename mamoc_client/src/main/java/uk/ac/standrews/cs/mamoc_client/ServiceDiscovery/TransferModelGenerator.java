@@ -1,4 +1,4 @@
-package uk.ac.standrews.cs.mamoc_client.Communication;
+package uk.ac.standrews.cs.mamoc_client.ServiceDiscovery;
 
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 

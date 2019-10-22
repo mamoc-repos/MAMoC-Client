@@ -154,7 +154,7 @@ class WebSocketReader extends Thread {
         // outside frame?
         if (mFrameHeader == null) {
 
-            // need at least 2 bytes from WS frame header to start processing
+            // need at least 2 bytes from WS frame header to calculateTopsis processing
             if (mPosition >= 2) {
 
                 byte b0 = mMessageData[0];

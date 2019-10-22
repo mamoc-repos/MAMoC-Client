@@ -9,16 +9,20 @@ public class Constants {
 
     public static final String DB_NAME = "mamoc.db";
 
-    public static final String EDGE_IP = "192.168.0.12";
+//    public static String EDGE_IP = "192.168.0.12";
+    public static String EDGE_IP = "djs21.host.cs.st-andrews.ac.uk/offload/ws/"; // Change it to student host server for edge server
+
     public static final String EDGE_REALM_NAME = "mamoc_realm";
 
-    public static final String CLOUD_IP = "18.130.29.6";
+    public static String CLOUD_IP = "18.130.29.6";
     public static final String CLOUD_REALM_NAME = "mamoc_realm";
 
     public static final String WAMP_LOOKUP = "wamp.registration.match";
 
     public static final String OFFLOADING_PUB = "uk.ac.standrews.cs.mamoc.offloading";
     public static final String OFFLOADING_RESULT_SUB = "uk.ac.standrews.cs.mamoc.offloadingresult";
+
+    public static final String SERVICE_DISCOVERY_BROADCASTER = "ServiceDiscovery";
 
     public static final int PING = 11;
     public static final int PONG = 12;

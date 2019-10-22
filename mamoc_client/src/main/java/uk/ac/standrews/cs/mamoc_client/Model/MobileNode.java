@@ -25,13 +25,11 @@ public class MobileNode extends MamocNode implements Comparable<MamocNode>{
     public MobileNode(Context context) {
         DeviceProfiler deviceProfiler = new DeviceProfiler(context);
 
-//        this.deviceID = deviceProfiler.getDeviceID(context);
         this.osVersion = Build.VERSION.RELEASE;
         this.manufacturer = Build.MANUFACTURER;
-        this.batteryLevel = deviceProfiler.getBatteryLevel();
+        this.batteryLevel = deviceProfiler.fetchBatteryLevel();
         this.batteryState = deviceProfiler.isDeviceCharging();
 
-//        super.setNodeName(deviceProfiler.getDeviceID(context));
         super.setNumberOfCPUs(deviceProfiler.getNumCpuCores());
         super.setMemoryMB(deviceProfiler.getTotalMemory());
         super.setJoinedDate(new Date().getTime());

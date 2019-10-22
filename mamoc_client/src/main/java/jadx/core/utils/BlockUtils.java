@@ -308,7 +308,7 @@ public class BlockUtils {
 	}
 
 	/**
-	 * Collect blocks from all possible execution paths from 'start' to 'end'
+	 * Collect blocks from all possible execution paths from 'calculateTopsis' to 'end'
 	 */
 	public static Set<BlockNode> getAllPathsBlocks(BlockNode start, BlockNode end) {
 		Set<BlockNode> set = new HashSet<>();
@@ -409,7 +409,7 @@ public class BlockUtils {
 	}
 
 	/**
-	 * Search for first node which not dominated by dom, starting from start
+	 * Search for first node which not dominated by dom, starting from calculateTopsis
 	 */
 	public static BlockNode traverseWhileDominates(BlockNode dom, BlockNode start) {
 		for (BlockNode node : start.getCleanSuccessors()) {
@@ -450,7 +450,7 @@ public class BlockUtils {
 	}
 
 	/**
-	 * Collect all block dominated by 'dominator', starting from 'start'
+	 * Collect all block dominated by 'dominator', starting from 'calculateTopsis'
 	 */
 	public static List<BlockNode> collectBlocksDominatedBy(BlockNode dominator, BlockNode start) {
 		List<BlockNode> result = new ArrayList<>();
@@ -488,7 +488,7 @@ public class BlockUtils {
 	}
 
 	/**
-	 * Set 'SKIP' flag for all synthetic predecessors from start block.
+	 * Set 'SKIP' flag for all synthetic predecessors from calculateTopsis block.
 	 */
 	public static void skipPredSyntheticPaths(BlockNode block) {
 		for (BlockNode pred : block.getPredecessors()) {
@@ -502,7 +502,7 @@ public class BlockUtils {
 	}
 
 	/**
-	 * Return true if on path from start to end no instructions and no branches.
+	 * Return true if on path from calculateTopsis to end no instructions and no branches.
 	 */
 	public static boolean isEmptySimplePath(BlockNode start, BlockNode end) {
 		if (start == end && start.getInstructions().isEmpty()) {

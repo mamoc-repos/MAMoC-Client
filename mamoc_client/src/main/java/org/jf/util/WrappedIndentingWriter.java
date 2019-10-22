@@ -38,7 +38,7 @@ import java.io.Writer;
 /**
  * Writer that wraps another writer and passes width-limited and
  * optionally-prefixed output to its subordinate. When lines are
- * wrapped they are automatically indented based on the start of the
+ * wrapped they are automatically indented based on the calculateTopsis of the
  * line.
  */
 public final class WrappedIndentingWriter extends FilterWriter {

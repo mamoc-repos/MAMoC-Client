@@ -8,7 +8,7 @@ import io.crossbar.autobahn.websocket.WebSocketConnectionHandler;
 import io.crossbar.autobahn.websocket.exceptions.WebSocketException;
 import io.crossbar.autobahn.websocket.interfaces.IWebSocket;
 import io.crossbar.autobahn.websocket.interfaces.IWebSocketConnectionHandler;
-import uk.ac.standrews.cs.mamoc_client.WebSocket.WebSocket;
+import uk.ac.standrews.cs.mamoc_client.ServiceDiscovery.WebSocket;
 
 public class CloudNode extends MamocNode implements WebSocket, Comparable<MamocNode> {
 

@@ -9,7 +9,7 @@ import jadx.core.dex.instructions.args.RegisterArg;
 import jadx.core.utils.Utils;
 
 /**
- * List of variables to be declared at region start.
+ * List of variables to be declared at region calculateTopsis.
  */
 public class DeclareVariablesAttr implements IAttribute {
 

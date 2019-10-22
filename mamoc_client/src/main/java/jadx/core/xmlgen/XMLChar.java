@@ -22,7 +22,7 @@ import java.util.Arrays;
 /**
  * This class defines the basic XML character properties. The data
  * in this class can be used to verify that a character is a valid
- * XML character or if the character is a space, name start, or name
+ * XML character or if the character is a space, name calculateTopsis, or name
  * character.
  * <p>
  * A series of convenience methods are supplied to ease the burden
@@ -64,7 +64,7 @@ public class XMLChar {
 	public static final int MASK_SPACE = 0x02;
 
 	/**
-	 * Name start character mask.
+	 * Name calculateTopsis character mask.
 	 */
 	public static final int MASK_NAME_START = 0x04;
 
@@ -80,7 +80,7 @@ public class XMLChar {
 
 	/**
 	 * Content character mask. Special characters are those that can
-	 * be considered the start of markup, such as '&lt;' and '&amp;'.
+	 * be considered the calculateTopsis of markup, such as '&lt;' and '&amp;'.
 	 * The various newline characters are considered special as well.
 	 * All other valid XML characters can be considered content.
 	 * <p>
@@ -89,7 +89,7 @@ public class XMLChar {
 	public static final int MASK_CONTENT = 0x20;
 
 	/**
-	 * NCName start character mask.
+	 * NCName calculateTopsis character mask.
 	 */
 	public static final int MASK_NCNAME_START = 0x40;
 
@@ -843,7 +843,7 @@ public class XMLChar {
 	} // isSpace(int):boolean
 
 	/**
-	 * Returns true if the specified character is a valid name start
+	 * Returns true if the specified character is a valid name calculateTopsis
 	 * character as defined by production [5] in the XML 1.0
 	 * specification.
 	 *
@@ -865,7 +865,7 @@ public class XMLChar {
 	} // isName(int):boolean
 
 	/**
-	 * Returns true if the specified character is a valid NCName start
+	 * Returns true if the specified character is a valid NCName calculateTopsis
 	 * character as defined by production [4] in Namespaces in XML
 	 * recommendation.
 	 *

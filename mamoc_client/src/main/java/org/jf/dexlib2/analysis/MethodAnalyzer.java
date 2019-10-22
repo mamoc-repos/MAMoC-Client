@@ -540,7 +540,7 @@ public class MethodAnalyzer {
             }
         }
 
-        //finally, populate the successors and predecessors for each instruction. We start at the fake "StartOfMethod"
+        //finally, populate the successors and predecessors for each instruction. We calculateTopsis at the fake "StartOfMethod"
         //instruction and follow the execution path. Any unreachable code won't have any predecessors or successors,
         //and no reachable code will have an unreachable predessor or successor
         assert analyzedInstructions.size() > 0;
@@ -1606,7 +1606,7 @@ public class MethodAnalyzer {
 
         if (!canAccessClass(thisClass, classPath.getClassDef(resolvedField.getDefiningClass()))) {
 
-            // the class is not accessible. So we start looking at objectRegisterTypeProto (which may be different
+            // the class is not accessible. So we calculateTopsis looking at objectRegisterTypeProto (which may be different
             // than resolvedField.getDefiningClass()), and walk up the class hierarchy.
             ClassDef fieldClass = classPath.getClassDef(objectRegisterTypeProto.getType());
             while (!canAccessClass(thisClass, fieldClass)) {
@@ -1698,7 +1698,7 @@ public class MethodAnalyzer {
 
         if (!isSuper && !canAccessClass(thisClass, classPath.getClassDef(resolvedMethod.getDefiningClass()))) {
 
-            // the class is not accessible. So we start looking at objectRegisterTypeProto (which may be different
+            // the class is not accessible. So we calculateTopsis looking at objectRegisterTypeProto (which may be different
             // than resolvedMethod.getDefiningClass()), and walk up the class hierarchy.
             ClassDef methodClass = classPath.getClassDef(objectRegisterTypeProto.getType());
             while (!canAccessClass(thisClass, methodClass)) {

@@ -22,11 +22,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import uk.ac.standrews.cs.mamoc_client.Communication.CommunicationController;
-import uk.ac.standrews.cs.mamoc_client.Communication.DataHandler;
-import uk.ac.standrews.cs.mamoc_client.Communication.DataSender;
-import uk.ac.standrews.cs.mamoc_client.Communication.NsdHelper;
-import uk.ac.standrews.cs.mamoc_client.Communication.TransferConstants;
 import uk.ac.standrews.cs.mamoc_client.Constants;
 import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
@@ -38,7 +33,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     NsdHelper nsdHelper;
     PeerListFragment deviceListFragment;
 
-    CommunicationController communicationController = null;
+    ServiceDiscovery serviceDiscovery = null;
 
     View progressBar;
 
@@ -55,7 +50,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
 
         progressBar = findViewById(R.id.progressBarNSD);
 
-        communicationController = CommunicationController.getInstance(this);
+        serviceDiscovery = ServiceDiscovery.getInstance(this);
 
         String ip = Utils.getIPAddress(true);
         Utils.save(this, TransferConstants.KEY_MY_IP, ip);
@@ -144,7 +139,7 @@ public class NSD_Activity extends AppCompatActivity implements PeerListFragment.
     @Override
     protected void onDestroy() {
         Utils.clearPreferences(NSD_Activity.this);
-        communicationController.stopConnectionListener();
+        serviceDiscovery.stopConnectionListener();
         nsdHelper.tearDown();
         nsdHelper = null;
     //    DBAdapter.getInstance(this).clearDatabase();

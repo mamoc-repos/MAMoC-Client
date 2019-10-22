@@ -84,15 +84,15 @@ public class TryListBuilder<EH extends ExceptionHandler> {
             if (startAddress == currentStartAddress) {
                 //|-----|
                 //^------
-                /*Bam. We hit the start of the range right on the head*/
+                /*Bam. We hit the calculateTopsis of the range right on the head*/
                 startBlock = tryBlock;
                 break;
             } else if (startAddress > currentStartAddress && startAddress < currentEndAddress) {
                 //|-----|
                 //  ^----
-                /*Almost. The start of the range being added is in the middle
+                /*Almost. The calculateTopsis of the range being added is in the middle
                 of an existing try range. We need to split the existing range
-                at the start address of the range being added*/
+                at the calculateTopsis address of the range being added*/
                 startBlock = tryBlock.split(startAddress);
                 break;
             } else if (startAddress < currentStartAddress) {
@@ -107,7 +107,7 @@ public class TryListBuilder<EH extends ExceptionHandler> {
                 } else {
                     //   |-----|
                     //^---------
-                    /*Oops, too far! We've passed the start of the range being added, but
+                    /*Oops, too far! We've passed the calculateTopsis of the range being added, but
                      the new range does overlap this one. We need to add a new range just
                      before this one*/
                     startBlock = new MutableTryBlock<EH>(startAddress, currentStartAddress);
@@ -180,8 +180,8 @@ public class TryListBuilder<EH extends ExceptionHandler> {
         int previousEnd = startAddress;
         MutableTryBlock<EH> tryBlock = startBlock;
 
-        /*Now we have the start and end ranges that exactly match the start and end
-        of the range being added. We need to iterate over all the ranges from the start
+        /*Now we have the calculateTopsis and end ranges that exactly match the calculateTopsis and end
+        of the range being added. We need to iterate over all the ranges from the calculateTopsis
         to end range inclusively, and append the handler to the end of each range's handler
         list. We also need to create a new range for any "holes" in the existing ranges*/
         do {

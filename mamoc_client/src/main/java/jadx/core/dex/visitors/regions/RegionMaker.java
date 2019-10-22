@@ -226,7 +226,7 @@ public class RegionMaker {
 			stack.addExit(out);
 			BlockNode loopBody = condInfo.getThenBlock();
 			Region body = makeRegion(loopBody, stack);
-			// add blocks from loop start to first condition block
+			// add blocks from loop calculateTopsis to first condition block
 			BlockNode conditionBlock = condInfo.getIfBlock();
 			if (loopStart != conditionBlock) {
 				Set<BlockNode> blocks = BlockUtils.getAllPathsBlocks(loopStart, conditionBlock);
@@ -770,7 +770,7 @@ public class RegionMaker {
 			BlockUtils.cleanBitSet(mth, outs);
 		}
 		if (outs.cardinality() > 1) {
-			// filter loop start and successors of other blocks
+			// filter loop calculateTopsis and successors of other blocks
 			for (int i = outs.nextSetBit(0); i >= 0; i = outs.nextSetBit(i + 1)) {
 				BlockNode b = basicBlocks.get(i);
 				outs.andNot(b.getDomFrontier());
@@ -1003,7 +1003,7 @@ public class RegionMaker {
 
 		ExcHandlerAttr excHandlerAttr = start.get(AType.EXC_HANDLER);
 		if (excHandlerAttr == null) {
-			LOG.warn("Missing exception handler attribute for start block");
+			LOG.warn("Missing exception handler attribute for calculateTopsis block");
 		} else {
 			handler.getHandlerRegion().addAttr(excHandlerAttr);
 		}

@@ -3,7 +3,7 @@ package uk.ac.standrews.cs.mamoc_client.Model;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
 import uk.ac.standrews.cs.mamoc_client.Profilers.NetworkType;
 
-public class TaskExecution {
+public class Task {
 
     private String taskName;
     private ExecutionLocation execLocation;
@@ -14,7 +14,7 @@ public class TaskExecution {
     private long executionDate;
     private boolean completed;
 
-    public TaskExecution(){
+    public Task(){
 
     }
 

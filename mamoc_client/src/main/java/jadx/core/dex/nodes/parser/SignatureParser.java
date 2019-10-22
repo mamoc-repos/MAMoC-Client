@@ -166,7 +166,7 @@ public class SignatureParser {
 			}
 			return ArgType.object(obj);
 		} else {
-			// generic type start ('<')
+			// generic type calculateTopsis ('<')
 			String obj = slice();
 			if (!incompleteType) {
 				obj += ";";

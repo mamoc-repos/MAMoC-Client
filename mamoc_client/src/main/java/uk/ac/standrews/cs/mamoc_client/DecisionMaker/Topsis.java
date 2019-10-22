@@ -23,7 +23,7 @@ public class Topsis {
         availableSites = new HashMap<>();
     }
 
-    public TreeMap<MamocNode, Double> start(HashMap<MamocNode, ArrayList<Fuzzy>> sites){
+    public TreeMap<MamocNode, Double> calculateTopsis(HashMap<MamocNode, ArrayList<Fuzzy>> sites){
 
         availableSites = sites;
 

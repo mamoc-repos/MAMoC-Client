@@ -27,16 +27,7 @@ public class DeviceProfiler {
         this.context = context;
     }
 
-//    @SuppressLint({"HardwareIds", "MissingPermission"})
-//    public String getDeviceID(Context context){
-//        TelephonyManager mngr = (TelephonyManager)context.getSystemService(context.TELEPHONY_SERVICE);
-//        String IMEI = mngr.getDeviceId();
-//        String device_unique_id = Settings.Secure.getString(context.getContentResolver(),
-//                Settings.Secure.ANDROID_ID);
-//        return device_unique_id;
-//    }
-
-    public double getTotalCpuFreq(Context mContext) {
+    public double fetchTotalCpuFreq() {
         double result = 0;
         int mCpuCoreNumber = getNumCpuCores();
         BufferedReader br = null;
@@ -82,7 +73,7 @@ public class DeviceProfiler {
         }
     }
 
-    public final int getBatteryLevel() {
+    public int fetchBatteryLevel() {
         int percentage = 0;
         Intent batteryStatus = getBatteryStatusIntent();
         if (batteryStatus != null) {
@@ -99,7 +90,7 @@ public class DeviceProfiler {
         return context.registerReceiver(null, batFilter);
     }
 
-    public final BatteryState isDeviceCharging() {
+    public BatteryState isDeviceCharging() {
         Intent batteryStatus = getBatteryStatusIntent();
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         if (status == BatteryManager.BATTERY_STATUS_CHARGING  || status == BatteryManager.BATTERY_STATUS_FULL){
@@ -109,7 +100,7 @@ public class DeviceProfiler {
         }
     }
 
-    public final long getTotalMemory() {
+    public long getTotalMemory() {
         long totalMemory = 0;
 
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
@@ -125,7 +116,7 @@ public class DeviceProfiler {
         return totalMemory;
     }
 
-    public final long getAvailMemory() {
+    public long fetchAvailableMemory() {
 
         long freeMem = 0;
 

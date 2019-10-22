@@ -4,7 +4,10 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.net.Network;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -147,5 +150,85 @@ public class NetworkProfiler {
                     "\nPermission not granted/missing!\nMake sure you have declared the permission in your manifest file (and granted it on API 23+).\n");
         }
         return permGranted;
+    }
+
+    public float getWiFiSpeed(Context context) {
+        WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+        return getWifiNetworkSpeed(wifiInfo);
+    }
+
+    /**
+     * Return general class of wifi network type. Unfortunately, there is no Android API method
+     * to do this, link speed in {@link WifiInfo#LINK_SPEED_UNITS "Mbps"} must be used
+     * and a maximum speed of wifi class must be compared with the value returned from
+     * {@link WifiInfo#getLinkSpeed()}.
+     *
+     * @param wifiInfo
+     * @return network speed by one of the WIFI_DRAFT_X type
+     */
+    private float getWifiNetworkSpeed(WifiInfo wifiInfo) {
+        if (wifiInfo == null) {
+            return 0;
+        }
+        int linkSpeed = wifiInfo.getLinkSpeed(); //measured using WifiInfo.LINK_SPEED_UNITS
+        return linkSpeed;
+    }
+
+    public float mobileNetSpeed(Context context) {
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        int networkType = tm.getNetworkType();
+        float netSpeed = getMobileNetworkSpeed(networkType);
+        return netSpeed;
+    }
+
+    /**
+     * Return hypothetical speed of mobile network. This method is an equivalent
+     * of {@link TelephonyManager#getNetworkClass()}
+     *
+     * @param networkType
+     * @return network speed by one of the XG type
+     */
+    private float getMobileNetworkSpeed(int networkType) {
+        switch (networkType) {
+            case TelephonyManager.NETWORK_TYPE_GPRS:
+                return 114;
+            case 16: // TelephonyManager.NETWORK_TYPE_GSM:
+                return 0;
+            case TelephonyManager.NETWORK_TYPE_EDGE:
+                return 296;
+            case TelephonyManager.NETWORK_TYPE_CDMA:
+                return 115;
+            case TelephonyManager.NETWORK_TYPE_1xRTT:
+                return 153;
+            case TelephonyManager.NETWORK_TYPE_IDEN:
+                return 60;
+            case TelephonyManager.NETWORK_TYPE_UMTS:
+                return 384;
+            case TelephonyManager.NETWORK_TYPE_EVDO_0:
+                return 2.46F;
+            case TelephonyManager.NETWORK_TYPE_EVDO_A:
+                return 3.1F;
+            case TelephonyManager.NETWORK_TYPE_HSDPA:
+                return 21.6F;
+            case TelephonyManager.NETWORK_TYPE_HSUPA:
+                return 5.76F;
+            case TelephonyManager.NETWORK_TYPE_HSPA:
+                return 14;
+            case TelephonyManager.NETWORK_TYPE_EVDO_B:
+                return 4.9F;
+            case TelephonyManager.NETWORK_TYPE_EHRPD:
+                return 1.285F;
+            case TelephonyManager.NETWORK_TYPE_HSPAP:
+                return 42;
+            case 17: // TelephonyManager.NETWORK_TYPE_TD_SCDMA:
+                return 0;
+            case TelephonyManager.NETWORK_TYPE_LTE:
+                return 100;
+            case 18: // TelephonyManager.NETWORK_TYPE_IWLAN:
+                return 0;
+            default:
+                return 0;
+        }
     }
 }

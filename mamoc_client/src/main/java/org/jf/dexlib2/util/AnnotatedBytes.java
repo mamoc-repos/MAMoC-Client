@@ -63,7 +63,7 @@ public class AnnotatedBytes {
     /**
      * This defines the bytes ranges and their associated range and point annotations.
      * <p>
-     * A range is defined by 2 consecutive keys in the map. The first key is the inclusive start point, the second key
+     * A range is defined by 2 consecutive keys in the map. The first key is the inclusive calculateTopsis point, the second key
      * is the exclusive end point. The range annotation for a range is associated with the first key for that range.
      * The point annotations for a point are associated with the key at that point.
      */

@@ -11,7 +11,7 @@
 
 package io.crossbar.autobahn.wamp.types;
 
-import java.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletableFuture;
 
 import io.crossbar.autobahn.wamp.Session;
 

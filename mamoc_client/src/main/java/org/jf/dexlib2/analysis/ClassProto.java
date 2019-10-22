@@ -200,7 +200,7 @@ public class ClassProto implements TypeProto {
                             fieldOffset += 4;
                         }
                     } else {
-                        //the field values start at 8 bytes into the DataObject dalvik structure
+                        //the field values calculateTopsis at 8 bytes into the DataObject dalvik structure
                         fieldOffset = 8;
                     }
 
@@ -344,7 +344,7 @@ public class ClassProto implements TypeProto {
                 vtable.addAll(superclass.getVtable());
 
                 // if the superclass's vtable wasn't fully resolved, then we can't know where the new methods added by this
-                // class should start, so we just propagate what we can from the parent and hope for the best.
+                // class should calculateTopsis, so we just propagate what we can from the parent and hope for the best.
                 if (!superclass.vtableFullyResolved) {
                     vtableFullyResolved = false;
                     return vtable;

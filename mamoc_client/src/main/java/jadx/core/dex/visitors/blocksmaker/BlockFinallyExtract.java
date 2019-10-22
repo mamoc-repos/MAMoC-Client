@@ -344,7 +344,7 @@ public class BlockFinallyExtract extends AbstractVisitor {
 	}
 
 	/**
-	 * 'Finally' instructions can start in the middle of the first block.
+	 * 'Finally' instructions can calculateTopsis in the middle of the first block.
 	 */
 	private static BlocksRemoveInfo isStartBlock(BlockNode remBlock, BlockNode startBlock) {
 		List<InsnNode> remInsns = remBlock.getInstructions();
@@ -402,7 +402,7 @@ public class BlockFinallyExtract extends AbstractVisitor {
 
 	private static boolean checkBlocksTree(BlockNode remBlock, BlockNode startBlock, BlocksRemoveInfo removeInfo,
 			BitSet bs) {
-		// skip check on start block
+		// skip check on calculateTopsis block
 		if (!removeInfo.getProcessed().isEmpty()
 				&& !sameBlocks(remBlock, startBlock, removeInfo)) {
 			return false;
@@ -502,10 +502,10 @@ public class BlockFinallyExtract extends AbstractVisitor {
 		if (removeInfo.getStart().equals(removeInfo.getEnd())) {
 			removeInfo.setEndSplitIndex(endSplitIndex - startSplitIndex);
 		}
-		// split start block (remBlock)
+		// split calculateTopsis block (remBlock)
 		if (startSplitIndex > 0) {
 			remBlock = splitBlock(mth, remBlock, startSplitIndex);
-			// change start block in removeInfo
+			// change calculateTopsis block in removeInfo
 			removeInfo.getProcessed().remove(removeInfo.getStart());
 			BlocksPair newStart = new BlocksPair(remBlock, startBlock);
 //			removeInfo.setStart(newStart);

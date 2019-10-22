@@ -129,7 +129,7 @@ public class SparseArray<E> {
     }
 
     private void gc() {
-        // Log.e("SparseArray", "gc start with " + mSize);
+        // Log.e("SparseArray", "gc calculateTopsis with " + mSize);
 
         int n = mSize;
         int o = 0;

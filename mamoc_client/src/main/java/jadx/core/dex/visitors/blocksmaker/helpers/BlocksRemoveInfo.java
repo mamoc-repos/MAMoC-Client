@@ -101,7 +101,7 @@ public final class BlocksRemoveInfo {
 
 	@Override
 	public String toString() {
-		return "BRI start: " + start
+		return "BRI calculateTopsis: " + start
 				+ ", end: " + end
 				+ ", list: " + processed
 				+ ", outs: " + outs
