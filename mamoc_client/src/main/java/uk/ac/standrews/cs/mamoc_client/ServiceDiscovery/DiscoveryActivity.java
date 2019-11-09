@@ -50,7 +50,7 @@ public class DiscoveryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarDiscovery);
         setSupportActionBar(toolbar);
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+        LocalBroadcastManager.getInstance(this).registerReceiver(serviceDiscoveryReceiver,
                 new IntentFilter(SERVICE_DISCOVERY_BROADCASTER));
 
         // add back arrow to toolbar
@@ -83,12 +83,12 @@ public class DiscoveryActivity extends AppCompatActivity {
     }
 
     private void loadPrefs() {
-        String enteredEdgeIP = Utils.getValue(this, "edgeIP");
-        if (enteredEdgeIP != null) {
-            edgeTextView.setText(enteredEdgeIP);
-        } else {
+//        String enteredEdgeIP = Utils.getValue(this, "edgeIP");
+//        if (enteredEdgeIP != null) {
+//            edgeTextView.setText(enteredEdgeIP);
+//        } else {
             edgeTextView.setText(EDGE_IP);
-        }
+//        }
 
         String enteredCloudIP = Utils.getValue(this, "cloudIP");
         if (enteredCloudIP != null) {
@@ -120,9 +120,11 @@ public class DiscoveryActivity extends AppCompatActivity {
         cloudBtn.setEnabled(true);
     }
 
-    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver serviceDiscoveryReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d(TAG, "Received Intent: " + intent.getAction());
+
             switch (Objects.requireNonNull(intent.getAction())){
                 case "connected":
                     if (intent.getStringExtra("node").equals("edge"))
@@ -144,7 +146,7 @@ public class DiscoveryActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(serviceDiscoveryReceiver);
         super.onDestroy();
     }
 

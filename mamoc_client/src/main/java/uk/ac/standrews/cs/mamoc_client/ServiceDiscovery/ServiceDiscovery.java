@@ -181,9 +181,11 @@ public class ServiceDiscovery {
         addEdgeDevice(edge);
         Utils.save(mContext,"edgeIP", EDGE_IP);
 
+        Log.d(TAG, "Broadcasting Edge Connect");
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("connected");
         intent.putExtra("node", "edge");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
@@ -191,9 +193,11 @@ public class ServiceDiscovery {
         Log.d(TAG, String.format("Left reason=%s, message=%s", detail.reason, detail.message));
         removeEdgeDevice(edge);
 
+        Log.d(TAG, "Broadcasting Edge Leave");
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("disconnected");
         intent.putExtra("node", "edge");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
@@ -201,9 +205,11 @@ public class ServiceDiscovery {
         Log.d(TAG, String.format("Session with ID=%s, disconnected.", session.getID()));
         removeEdgeDevice(edge);
 
+        Log.d(TAG, "Broadcasting Edge Disconnect");
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("disconnected");
         intent.putExtra("node", "edge");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
@@ -216,6 +222,7 @@ public class ServiceDiscovery {
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("connected");
         intent.putExtra("node", "cloud");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
@@ -226,6 +233,7 @@ public class ServiceDiscovery {
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("disconnected");
         intent.putExtra("node", "cloud");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 
@@ -236,6 +244,7 @@ public class ServiceDiscovery {
         Intent intent = new Intent(SERVICE_DISCOVERY_BROADCASTER);
         intent.setAction("disconnected");
         intent.putExtra("node", "cloud");
+        intent.setClass(mContext, DiscoveryActivity.class);
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
     }
 

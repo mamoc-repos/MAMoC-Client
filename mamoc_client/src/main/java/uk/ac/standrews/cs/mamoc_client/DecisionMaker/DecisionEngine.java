@@ -291,7 +291,7 @@ public class DecisionEngine {
                 siteCriteria.add(Fuzzy.LOW);
             }
 
-            siteCriteria.add(Fuzzy.HIGH); // high security
+            siteCriteria.add(Fuzzy.GOOD); // OK security
             siteCriteria.add(Fuzzy.VERY_LOW); // low price
         }
         // edge or public cloud
@@ -302,7 +302,7 @@ public class DecisionEngine {
                 siteCriteria.add(Fuzzy.VERY_HIGH); // Bandwidth
                 siteCriteria.add(Fuzzy.HIGH);   // Speed
                 siteCriteria.add(Fuzzy.HIGH);   // Availability
-                siteCriteria.add(Fuzzy.HIGH);   // Security
+                siteCriteria.add(Fuzzy.HIGH);   // High Security
                 siteCriteria.add(Fuzzy.LOW);    // Price
             }
             // Public cloud instance

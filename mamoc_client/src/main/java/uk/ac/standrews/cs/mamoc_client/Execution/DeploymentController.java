@@ -7,6 +7,8 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,6 +37,7 @@ import uk.ac.standrews.cs.mamoc_client.Model.Task;
 
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_PUB;
 import static uk.ac.standrews.cs.mamoc_client.Constants.OFFLOADING_RESULT_SUB;
+import static uk.ac.standrews.cs.mamoc_client.Constants.SENDING_FILE_PUB;
 import static uk.ac.standrews.cs.mamoc_client.Constants.WAMP_LOOKUP;
 
 public class DeploymentController {
@@ -53,6 +56,7 @@ public class DeploymentController {
     private Task task;
 
     File outputResults;
+    private boolean subscribed;
 
 
     private DeploymentController(Context context) {
@@ -72,10 +76,11 @@ public class DeploymentController {
         return instance;
     }
 
-    public void runLocally(Task task, String resource_name, Object... params) {
-        Log.d(TAG, "running " + task.getTaskName() + " locally");
+    public void runLocally(Task t, String resource_name, Object... params) {
+        Log.d(TAG, "running " + t.getTaskName() + " locally");
 
-        task.setTaskName(task.getTaskName());
+        task = new Task();
+        task.setTaskName(t.getTaskName());
         task.setExecLocation(ExecutionLocation.LOCAL);
         task.setCommOverhead(0.0);
         task.setNetworkType(framework.networkProfiler.getNetworkType());
@@ -88,8 +93,8 @@ public class DeploymentController {
             Constructor<?> constructor;
             Object instance;
 
-            if (!resource_name.equalsIgnoreCase("None")){
-                String fileContent = getContentFromTextFile(resource_name + ".txt");
+            if (resource_name != null){
+                String fileContent = getContentFromTextFile(resource_name);
 
                 // create a new parameters array with the file content appended to it
                 Object[] newParams = new Object[params.length + 1];
@@ -127,11 +132,12 @@ public class DeploymentController {
         }
     }
 
-    public void runRemotely(Context context, ExecutionLocation location, Task task, String resource_name, Object... params) {
+    public void executeRemotely(Context context, ExecutionLocation location, Task t, String resource_name, Object... params) {
 
-        Log.d(TAG, "running " + task.getTaskName() + " remotely");
+        Log.d(TAG, "running " + t.getTaskName() + " remotely");
 
-        task.setTaskName(task.getTaskName());
+        task = new Task();
+        task.setTaskName(t.getTaskName());
         task.setExecLocation(location);
         task.setNetworkType(framework.networkProfiler.getNetworkType());
         task.setExecutionDate(System.currentTimeMillis());
@@ -139,46 +145,46 @@ public class DeploymentController {
         switch (location) {
 
             case D2D:
-                runNearby(context, task, resource_name, params);
+                runNearby(context, resource_name, params);
                 task.setExecLocation(ExecutionLocation.D2D);
                 break;
 
             case EDGE:
-                runOnEdge(context, task, resource_name, params);
+                runOnEdge(context, resource_name, params);
                 task.setExecLocation(ExecutionLocation.EDGE);
                 break;
 
             case PUBLIC_CLOUD:
-                runOnCloud(context, task, resource_name, params);
+                runOnCloud(context, resource_name, params);
                 task.setExecLocation(ExecutionLocation.PUBLIC_CLOUD);
                 break;
         }
     }
 
-    public void runDynamically(Context context, Task task, String resource_name, Object... params) {
+    public void runDynamically(Context context, Task t, String resource_name, Object... params) {
 
-        Log.d(TAG, "running " + task.getTaskName() + " dynamically");
+        Log.d(TAG, "running " + t.getTaskName() + " dynamically");
 
-        ArrayList<NodeOffloadingPercentage> nodeOffPerc = framework.decisionEngine.makeDecision(task, false, 1, 0);
+        ArrayList<NodeOffloadingPercentage> nodeOffPerc = framework.decisionEngine.makeDecision(t, false, 0.5, 0.5);
 
         if (nodeOffPerc.size() == 1 && nodeOffPerc.get(0).getNode() == framework.getSelfNode()){
-            runLocally(task, resource_name, params);
+            runLocally(t, resource_name, params);
         } else {
             if (nodeOffPerc.get(0).getNode() instanceof MobileNode) {
-                runRemotely(context, ExecutionLocation.D2D, task, resource_name, params);
+                executeRemotely(context, ExecutionLocation.D2D, t, resource_name, params);
             } else if (nodeOffPerc.get(0).getNode() instanceof EdgeNode) {
-                runRemotely(context, ExecutionLocation.EDGE, task, resource_name, params);
+                executeRemotely(context, ExecutionLocation.EDGE, t, resource_name, params);
             } else if (nodeOffPerc.get(0).getNode() instanceof CloudNode) {
-                runRemotely(context, ExecutionLocation.PUBLIC_CLOUD, task, resource_name, params);
+                executeRemotely(context, ExecutionLocation.PUBLIC_CLOUD, t, resource_name, params);
             }
             // This should not happen!
             else {
-                runLocally(task, resource_name, params);
+                runLocally(t, resource_name, params);
             }
         }
     }
 
-    private void runNearby(Context context, Task task, String resource_name, Object... params) {
+    private void runNearby(Context context, String resource_name, Object... params) {
 
         Log.d(TAG, "running " + task.getTaskName() + " nearby");
 
@@ -188,7 +194,7 @@ public class DeploymentController {
 
     }
 
-    private void runOnEdge(Context context, Task task, String resource_name, Object... params){
+    private void runOnEdge(Context context, String resource_name, Object... params){
 
         Log.d(TAG, "running " + task.getTaskName() + " on edge");
 
@@ -197,31 +203,61 @@ public class DeploymentController {
             EdgeNode node = edgeNodes.first(); // for now we assume we are connected to one edge device
 //            task.setRttSpeed(framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
 //            Log.d(TAG, "RTT SPEED TO EDGE: " + framework.networkProfiler.measureRtt(node.getIp(), node.getPort()));
-            runRemotely(context, node, task, resource_name, params);
+            executeRemotely(context, node, resource_name, params);
         } else {
             Toast.makeText(context, "No edge node exists", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void runOnCloud(Context context, Task task, String resource_name, Object... params){
+    private void runOnCloud(Context context, String resource_name, Object... params){
 
         Log.d(TAG, "running " + task.getTaskName() + " on public cloud");
 
         TreeSet<CloudNode> cloudNodes = framework.serviceDiscovery.listPublicNodes();
         if (!cloudNodes.isEmpty()) {
             CloudNode node = cloudNodes.first();
-            runRemotely(context, node, task, resource_name, params);
+            executeRemotely(context, node, resource_name, params);
         } else {
             Toast.makeText(context, "No cloud node exists", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void runRemotely(Context context, EdgeNode node, Task task, String resource_name, Object[] params){
+    /**
+     * Execute the task on the Edge node
+     * @param context
+     * @param node Edge node
+     * @param resource_name The resource name if any
+     * @param params Other params
+     */
+    private void executeRemotely(Context context, EdgeNode node, String resource_name, Object[] params){
 
         if (node.session.isConnected()) {
             Log.d(TAG, "trying to call " +  task.getTaskName() + " procedure");
 
             mContext = context;
+
+            startSendingTime = System.nanoTime();
+
+            // subscribe to the result of offloading
+                CompletableFuture<Subscription> subFuture = node.session.subscribe(
+                        OFFLOADING_RESULT_SUB,
+                        this::onOffloadingResult);
+
+                subFuture.whenComplete((subscription, throwable) -> {
+                    if (throwable == null) {
+
+                        mContext = context;
+                        sub = subscription;
+                        subscribed = true;
+                        // We have successfully subscribed.
+                        Log.d(TAG, "Subscribed to topic " + subscription.topic);
+                    } else {
+                        // Something went bad.
+                        throwable.printStackTrace();
+                        task.setCompleted(false);
+                        addExecutionEntry(task);
+                    }
+                });
 
             // check if procedure is registered
             CompletableFuture<CallResult> registeredFuture = node.session.call(WAMP_LOOKUP, task.getTaskName());
@@ -233,29 +269,26 @@ public class DeploymentController {
                     Toast.makeText(context, task.getTaskName() + " not registered", Toast.LENGTH_SHORT).show();
 
                     try {
-                        // subscribe to the result of offloading
-                        CompletableFuture<Subscription> subFuture = node.session.subscribe(
-                                OFFLOADING_RESULT_SUB,
-                                this::onOffloadingResult);
 
-                        subFuture.whenComplete((subscription, throwable) -> {
-                            if (throwable == null) {
-
-                                mContext = context;
-                                sub = subscription;
-                                // We have successfully subscribed.
-                                Log.d(TAG, "Subscribed to topic " + subscription.topic);
-                            } else {
-                                // Something went bad.
-                                throwable.printStackTrace();
-                                task.setCompleted(false);
-                                addExecutionEntry(task);
-                            }
-                        });
+                        // publish the dependent resource file for the task
+//                        if (resource_name != null) {
+//                            // publish the necessary resource files
+//                            CompletableFuture<Publication> pubFuture = node.session.publish(
+//                                    SENDING_FILE_PUB,
+//                                    "Android",
+//                                    resource_name,
+//                                    readFromAssets(mContext, resource_name));
+//                            pubFuture.thenAccept(publication -> Log.d("publishResult",
+//                                    resource_name + " published successfully"));
+//                            // Shows we can separate out exception handling
+//                            pubFuture.exceptionally(throwable -> {
+//                                Log.e(TAG, "Failed to publish resource file");
+//                                throwable.printStackTrace();
+//                                return null;
+//                            });
+//                        }
 
                         String sourceCode = framework.fetchSourceCode(task.getTaskName());
-
-                        startSendingTime = System.nanoTime();
 
                         // publish (offload) the source code
                         CompletableFuture<Publication> pubFuture = node.session.publish(
@@ -266,32 +299,44 @@ public class DeploymentController {
                                 resource_name,
                                 params);
                         pubFuture.thenAccept(publication -> Log.d("publishResult",
-                                "Published successfully"));
+                                task.getTaskName() + " source code published successfully"));
                         // Shows we can separate out exception handling
                         pubFuture.exceptionally(throwable -> {
                             throwable.printStackTrace();
                             task.setCompleted(false);
-                            addExecutionEntry(task);
                             return null;
                         });
 
                     } catch (Exception e) {
                         e.printStackTrace();
                         task.setCompleted(false);
-                        addExecutionEntry(task);
                     }
                 } else {
                     // Call the task procedure.
                     Log.d(TAG, String.format("RPC ID: %s",
                             registrationResult.results.get(0)));
 
-                    CompletableFuture<CallResult> callFuture = node.session.call(
-                            task.getTaskName(), params);
-                    callFuture.thenAccept(callResult -> {
-                        List<Object> results = (List) callResult.results.get(0);
+                    CompletableFuture<CallResult> callFuture;
 
-                        broadcastResults(results);
-                    });
+                    // We will handle the resource name being null in mamoc server to keep the RPC calls standard across different tasks
+//                    if (resource_name != null) {
+
+                    try {
+                        node.session.call(task.getTaskName(), resource_name, params);
+                    } catch (Exception e) {
+                        Log.e(TAG, "exception in RPC call: " + e.getMessage());
+                        task.setCompleted(false);
+                    }
+//                    } else{
+//                        callFuture = node.session.call(
+//                                task.getTaskName(), params);
+//                    }
+
+//                    callFuture.thenAccept(callResult -> {
+//                        List<Object> results = (List) callResult.results.get(0);
+//
+//                        broadcastResults(results);
+//                    });
                 }
             });
         } else {
@@ -299,7 +344,14 @@ public class DeploymentController {
         }
     }
 
-    private void runRemotely(Context context, CloudNode node, Task task, String resource_name, Object[] params){
+    /**
+     * Runs the task on the Cloud Node
+     * @param context
+     * @param node Cloud node
+     * @param resource_name resource name if any
+     * @param params extra paramaters
+     */
+    private void executeRemotely(Context context, CloudNode node, String resource_name, Object[] params){
 
         if (node.session.isConnected()) {
             Log.d(TAG, "trying to call " +  task.getTaskName() + " procedure");
@@ -333,9 +385,26 @@ public class DeploymentController {
                             }
                         });
 
-                        String sourceCode =  framework.fetchSourceCode(task.getTaskName());
-
                         startSendingTime = System.nanoTime();
+
+                        // publish the dependent resource file for the task
+                        if (resource_name != null) {
+                            // publish the necessary resource files
+                            CompletableFuture<Publication> pubFuture = node.session.publish(
+                                    SENDING_FILE_PUB,
+                                    "Android",
+                                    resource_name,
+                                    "this is file content");
+                            pubFuture.thenAccept(publication -> Log.d("publishResult",
+                                    "Published successfully"));
+                            // Shows we can separate out exception handling
+                            pubFuture.exceptionally(throwable -> {
+                                throwable.printStackTrace();
+                                return null;
+                            });
+                        }
+
+                        String sourceCode =  framework.fetchSourceCode(task.getTaskName());
 
                         // publish (offload) the source code
                         CompletableFuture<Publication> pubFuture = node.session.publish(
@@ -361,13 +430,21 @@ public class DeploymentController {
                     Log.d(TAG, String.format("RPC ID: %s",
                             registrationResult.results.get(0)));
 
-                    CompletableFuture<CallResult> callFuture = node.session.call(
-                            task.getTaskName(), params);
-                    callFuture.thenAccept(callResult -> {
-                        List<Object> results = (List) callResult.results.get(0);
+                    CompletableFuture<CallResult> callFuture;
 
-                        broadcastResults(results);
-                    });
+                    if (resource_name != null) {
+                        callFuture = node.session.call(
+                                task.getTaskName(), resource_name, params);
+                    } else{
+                        callFuture = node.session.call(
+                                task.getTaskName(), params);
+                    }
+
+//                    callFuture.thenAccept(callResult -> {
+//                        List<Object> results = (List) callResult.results.get(0);
+//
+//                        broadcastResults(results);
+//                    });
                 }
             });
         } else {
@@ -385,29 +462,46 @@ public class DeploymentController {
         String executionResult = String.valueOf(results.get(0));
         double executionTime = (Double) results.get(1);
 
+        Log.d(TAG, "Received result: " + executionResult + " in " + executionTime + " secs");
+        
+        Log.d(TAG, "start in ns: " + startSendingTime);
+        Log.d(TAG, "end in ns: " + endSendingTime);
+
         double totalTime = (double)(endSendingTime - startSendingTime) * 1.0e-9;
+
+        Log.d(TAG, "Total time in s: " + totalTime);
+
         double commOverhead = totalTime - executionTime;
 
-        task.setExecutionTime(executionTime);
-        task.setCommOverhead(commOverhead);
-        task.setCompleted(true);
-
-        // insert successful task execution to DB
-        addExecutionEntry(task);
-
-        Log.d(TAG, String.valueOf(commOverhead));
+        Log.d(TAG, "Comm overhead: " + commOverhead);
 
         Log.d(TAG, "Broadcasting offloading result");
+
         Intent intent = new Intent(OFFLOADING_RESULT_SUB);
         intent.putExtra("result", executionResult);
         intent.putExtra("duration", executionTime);
         intent.putExtra("overhead", commOverhead);
 
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
+
+        task.setExecutionTime(executionTime);
+        task.setCommOverhead(commOverhead);
+        task.setCompleted(true);
+
+        Log.d(TAG, "insert it: " + task.getTaskName());
+
+        addExecutionEntry(task);
     }
 
     private void addExecutionEntry(Task task){
-        framework.dbAdapter.addTaskExecution(task);
+        Log.d(TAG, "addExecutionEntry called");
+
+        long insertResult = framework.dbAdapter.addTaskExecution(task);
+        if (insertResult != -1){
+            Log.d(TAG, "inserted " + task.getTaskName());
+        } else {
+            Log.e(TAG, "failed to insert " + task.getTaskName());
+        }
 
         PrintWriter out = null;
         try {

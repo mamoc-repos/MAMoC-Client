@@ -18,6 +18,7 @@ public class TransportOptions {
 
     public TransportOptions() {
         mMaxFramePayloadSize = 128 * 1024;
+//        mMaxFramePayloadSize = 100000 * 1024; // 9.765625 MB
         mAutoPingInterval = 10;
         mAutoPingTimeout = 5;
     }

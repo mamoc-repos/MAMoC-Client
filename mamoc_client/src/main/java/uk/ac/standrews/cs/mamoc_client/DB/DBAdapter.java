@@ -44,21 +44,21 @@ public class DBAdapter {
         return instance;
     }
 
-    public void addTaskExecution(Task task){
+    public long addTaskExecution(Task task){
 
         Log.d(TAG, "inserting task to db: " + task.getTaskName());
 
         ContentValues values = new ContentValues();
         values.put(DBHelper.COL_APP_NAME, context.getPackageName());
         values.put(DBHelper.COL_TASK_NAME, task.getTaskName());
-        values.put(DBHelper.COL_EXEC_LOCATION, task.getExecLocation().toString());
+        values.put(DBHelper.COL_EXEC_LOCATION, task.getExecLocation().getValue());
         values.put(DBHelper.COL_COMMUNICATION_OVERHEAD, task.getCommOverhead());
-        values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().toString());
+        values.put(DBHelper.COL_NETWORK_TYPE, task.getNetworkType().getValue());
         values.put(DBHelper.COL_RTT_SPEED, task.getRttSpeed());
         values.put(DBHelper.COL_OFFLOAD_DATE, task.getExecutionDate());
         values.put(DBHelper.COL_OFFLOAD_COMPLETE, task.isCompleted() ? 1 : 0);
 
-        db.insert(TABLE_OFFLOAD, null, values);
+        return db.insert(TABLE_OFFLOAD, null, values);
     }
 
     public ArrayList<Task> getExecutions(Task task, boolean Remote){
@@ -81,8 +81,7 @@ public class DBAdapter {
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(DBHelper.COL_TASK_NAME));
             if (Remote) {
-                // only fetch the executions where the commOverhead if greater than 0
-                if (name.equalsIgnoreCase(task.getTaskName()) && cursor.getDouble(commIndex) > 0) {
+                if (name.equalsIgnoreCase(task.getTaskName()) && !cursor.getString(locationIndex).equals("LOCAL")) {
                     Task remote = new Task();
                     remote.setTaskName(cursor.getString(nameIndex));
                     remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));
@@ -96,8 +95,7 @@ public class DBAdapter {
                     taskExecutions.add(remote);
                 }
             } else {
-                // only fetch the executions where the commOverhead is 0 (Local Execution)
-                if (name.equalsIgnoreCase(task.getTaskName()) && cursor.getDouble(commIndex) == 0) {
+                if (name.equalsIgnoreCase(task.getTaskName()) && cursor.getString(locationIndex).equals("LOCAL")) {
                     Task remote = new Task();
                     remote.setTaskName(cursor.getString(nameIndex));
                     remote.setExecLocation(ExecutionLocation.valueOf(cursor.getString(locationIndex)));

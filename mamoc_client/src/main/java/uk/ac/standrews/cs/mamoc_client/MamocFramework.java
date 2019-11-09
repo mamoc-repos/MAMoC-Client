@@ -1,20 +1,14 @@
 package uk.ac.standrews.cs.mamoc_client;
 
-import android.app.ActivityManager;
 import android.content.Context;
-import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.util.Log;
 
 import org.atteo.classindex.ClassIndex;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 
 import uk.ac.standrews.cs.mamoc_client.Annotation.Offloadable;
@@ -24,7 +18,6 @@ import uk.ac.standrews.cs.mamoc_client.DB.DBAdapter;
 import uk.ac.standrews.cs.mamoc_client.Decompiler.DexDecompiler;
 import uk.ac.standrews.cs.mamoc_client.DecisionMaker.DecisionEngine;
 import uk.ac.standrews.cs.mamoc_client.Execution.DeploymentController;
-import uk.ac.standrews.cs.mamoc_client.Execution.ExceptionHandler;
 import uk.ac.standrews.cs.mamoc_client.Model.MobileNode;
 import uk.ac.standrews.cs.mamoc_client.Profilers.DeviceProfiler;
 import uk.ac.standrews.cs.mamoc_client.Execution.ExecutionLocation;
@@ -46,7 +39,6 @@ public class MamocFramework {
     private MobileNode selfNode;
 
     private static MamocFramework instance;
-    private ExceptionHandler exceptionHandler;
     public String lastExecution;
 
     private MamocFramework(Context context) {
@@ -109,38 +101,23 @@ public class MamocFramework {
 //        return mamocDir.exists();
 //    }
 
-    private static boolean isFirstInstall(Context context) {
-        try {
-            long firstInstallTime = context.getPackageManager().getPackageInfo(BuildConfig.APPLICATION_ID, 0).firstInstallTime;
-            long lastUpdateTime = context.getPackageManager().getPackageInfo(BuildConfig.APPLICATION_ID, 0).lastUpdateTime;
-            return firstInstallTime == lastUpdateTime;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+    private boolean isFirstInstall(Context context) {
+        final String PREFS_NAME = "MamocPrefs";
+
+        SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+
+        if (settings.getBoolean("my_first_time", true)) {
+            //the app is being launched for first time, do something
+            Log.d(TAG, "First time");
+
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time", false).apply();
+
             return true;
         }
-    }
 
-//    private void findOffloadableTasks() {
-//
-//        ThreadGroup group = new ThreadGroup("Offloadable tasks group");
-//
-//        // increase stack size from 8k (around 260 calls) to 2M (enough for not getting the StackOverFlowException)
-//        int STACK_SIZE = 20 * 1024 * 1024;
-//
-//        Thread offloadableTasksThread = new Thread(group, () -> {
-//            Iterable<Class<?>> klasses = ClassIndex.getAnnotated(Offloadable.class);
-//
-//            for (Class<?> klass : klasses) {
-//                offloadableClasses.add(klass);
-//                Log.d("annotation", "new annotated class found: " + klass.getName());
-//            }
-//
-//        }, "Offloadable Tasks Thread", STACK_SIZE);
-//
-//        offloadableTasksThread.setPriority(Thread.MAX_PRIORITY);
-//        offloadableTasksThread.setUncaughtExceptionHandler(exceptionHandler);
-//        offloadableTasksThread.calculateTopsis();
-//    }
+        return false;
+    }
 
     private void decompileAnnotatedClassFiles() {
 
@@ -194,7 +171,7 @@ public class MamocFramework {
         } else if (location == ExecutionLocation.LOCAL) {
             deploymentController.runLocally(task, resource_name, params);
         } else {
-            deploymentController.runRemotely(mContext, location, task, resource_name, params);
+            deploymentController.executeRemotely(mContext, location, task, resource_name, params);
         }
     }
 
